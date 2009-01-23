@@ -38,14 +38,14 @@
 
 	// club, axe, tk, ram, catapult, hero, target_one, target_two
 	$plan = array(
-			array(0,  12220,   717,  90,   50,  1 ,15,11),
-			array(0,    100,    '',   '' , 30, '' ,4, 4),
-			array(0,    100,    '',   '' , 30, '' ,4, 4),
-			array(0,    100,    '',   '' , 30, '' ,4, 4),
+			array(4384, 2400,   95,  53,  146,  1 ,15,11),
+			array(0,    100,    '',   '' , 48, '' ,4, 4),
+			array(0,    100,    '',   '' , 48, '' ,4, 4),
+			array(0,    100,    '',   '' , 48, '' ,4, 4),
 	);
 
-	$target_x = -58;
-	$target_y = -76;
+	$target_x = 96;
+	$target_y = 19;
 
 
 	// ----------------------------------------------------------------------------
@@ -190,11 +190,11 @@
 	
 	// file_put_contents($filename, $content);
 	$output = array();
-	exec("chmod 755 $filename", $output);
+	system("chmod 755 $filename", $output);
 	foreach ($output as $line)
 		echo "$line\n";
 
-	exec("/bin/bash $filename", $output);
+	system("/bin/bash $filename", $output);
 	foreach ($output as $line)
 		echo "$line\n";
 
