@@ -130,7 +130,7 @@
 				return false;
 			}
 			
-			$min_capacity = array(800, 800, 800, 1200, 1700, 2300, 3100, 4100, 9600, 14000);
+			$min_capacity = array(1200, 1700, 2300, 3100, 4000, 5000, 6300, 7800, 9600, 14000);
 			
 			if($min_capacity[$level] > $warehouse_capacity){
 				if(build_warehouse()){
