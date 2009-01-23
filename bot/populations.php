@@ -125,7 +125,7 @@
 	// load my villages
 	$my_villages = load_my_villages();
 
-	get_map(-15, -101, $my_villages);
+	get_map(94, 28, $my_villages);
 
 	$sql = "delete from populations where `daystamp` < to_days(now()) - 5";
 	if(!mysql_query($sql)) die(mysql_error());
