@@ -16,8 +16,8 @@
 		$hours = $today['hours'];
 		$r = intval($hours / 6);
 
-		$cookie = "cookie_$account.$r.txt";
-
+		$cookie = dirname(__FILE__) . "/cookie_$account.$r.txt";
+		touch($cookie);
 		$header[0] = "Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5";
 		$header[]  = "Accept-Language: ja,en-us;q=0.7,en;q=0.3";
 		$header[]  = "Accept-Charset: UTF-8,*";
