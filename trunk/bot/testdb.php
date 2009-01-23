@@ -1,5 +1,17 @@
 <?php
-    
+    function table_exist($table_name)
+	{
+		$res = mysql_query("SHOW TABLES LIKE '$table_name'");
+		if($res){
+			$row = mysql_fetch_row($res);
+			
+			if($row && $row[0] == $table_name){
+				return true;
+			}
+		}
+		return false;
+	}
+	
     include("db.php");    
     
     
@@ -9,13 +21,9 @@
     system('wget http://s1.travian.jp/map.sql.gz -O ' . $sqldump . '.gz');
     system('gzip -d ' . $sqldump . '.gz');
 
-	$res = mysql_query("SHOW TABLES LIKE 'x_world'");
-	if($res){
-		$row = mysql_fetch_row($res);
-		
-		if($row && $row[0] == 'x_world'){
-			mysql_query("RENAME TABLE x_world TO x_world_" . date('Y_m_d'));
-		}
+	if(table_exist('x_world')){
+		echo "Drop table x_world.\n";
+		mysql_query("DROP TABLE x_world");
 	}
 	
 	
@@ -42,7 +50,7 @@
         // Exceute map.sql using the programme "mysql"
         // IMPORTANT: The charset "latin1" has to be used for T2 game worlds (if there should be any left with that version)
         system('mysql --host=localhost --user=root --password= --default-character-set=utf8 test < ' . $sqldump);
-        
+        mysql_query("RENAME TABLE x_world TO x_world_" . date('Y_m_d'));
         echo 'Update finished!';
         
     } else {
