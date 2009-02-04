@@ -66,28 +66,29 @@
 	function get_res_info($result)
 	{
 		// <td id=l4 title=3000>40184/160000</td>
-		$ret = preg_match('/<td id=l4 title=[-0-9]+>([0-9]+)\/([0-9]+)<\/td>/', $result, $matches);
+		// <td id="l4" title="14">308/800</td>
+		$ret = preg_match('/<td id="?l4"? title="?[-0-9]+"?>([0-9]+)\/([0-9]+)<\/td>/', $result, $matches);
 		if(!$ret) die("FAILED : get_res_info() : wood");
 		
 		$wood = $matches[1];
 		$max_wood = $matches[2];
 
 		// brick
-		$ret = preg_match('/<td id=l3 title=[-0-9]+>([0-9]+)\/([0-9]+)<\/td>/', $result, $matches);
+		$ret = preg_match('/<td id="?l3"? title="?[-0-9]+"?>([0-9]+)\/([0-9]+)<\/td>/', $result, $matches);
 		if(!$ret) die("FAILED : get_res_info() : brick");
 		
 		$brick = $matches[1];
 		$max_brick = $matches[2];
 
 		// iron
-		$ret = preg_match('/<td id=l2 title=[-0-9]+>([0-9]+)\/([0-9]+)<\/td>/', $result, $matches);
+		$ret = preg_match('/<td id="?l2"? title="?[-0-9]+"?>([0-9]+)\/([0-9]+)<\/td>/', $result, $matches);
 		if(!$ret) die("FAILED : get_res_info() : iron");
 		
 		$iron = $matches[1];
 		$max_iron = $matches[2];
 		
 		// food
-		$ret = preg_match('/<td id=l1 title=[-0-9]+>([0-9]+)\/([0-9]+)<\/td>/', $result, $matches);
+		$ret = preg_match('/<td id="?l1"? title="?[-0-9]+"?>([0-9]+)\/([0-9]+)<\/td>/', $result, $matches);
 		if(!$ret) die("FAILED : get_res_info() : food");
 		
 		$food = $matches[1];
