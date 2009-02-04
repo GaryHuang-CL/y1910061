@@ -41,7 +41,7 @@ if(!mysql_query($sql)) die(mysql_error());
 echo "loading table data ... \n";
 
 $sql = "
-LOAD DATA INFILE 'c:\\\\map.sql'
+LOAD DATA INFILE '$dumpfile'
 INTO TABLE $tblname
 CHARACTER SET utf8
 FIELDS TERMINATED BY ','
