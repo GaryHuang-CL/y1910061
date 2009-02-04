@@ -41,13 +41,15 @@ if(!mysql_query($sql)) die(mysql_error());
 echo "loading table data ... \n";
 
 $sql = "
-LOAD DATA INFILE '$dumpfile'
+LOAD DATA LOCAL INFILE '$dumpfile'
 INTO TABLE $tblname
 CHARACTER SET utf8
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '\''
 LINES STARTING BY 'INSERT INTO `x_world` VALUES ('
 TERMINATED BY ');';";
+
+echo "$sql\n";
 
 if(!mysql_query($sql)) die(mysql_error());
 ?>
