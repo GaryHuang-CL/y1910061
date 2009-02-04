@@ -79,7 +79,7 @@
 			// echo $var_password . "\n";
 			
 			// <p align="center"><input type="hidden" name="e50439e" value="">
-			$ret = preg_match('/<p align="center"><input type="hidden" name="([a-z0-9]+)" value="([a-z0-9]*)">/', $result, $matches);
+			$ret = preg_match('/<input type="hidden" name="([a-z0-9]{7})" value="([a-z0-9]*)">/', $result, $matches);
 			if(!$ret) die("get post anonymous name and value failed.");
 
 			$var_anonymous_name = $matches[1];
