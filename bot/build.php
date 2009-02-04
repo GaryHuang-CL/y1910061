@@ -76,7 +76,11 @@
 		
 		$out = array();
 		// <area href="build.php?id=1" coords="101,33,28" shape="circle" title="‚«‚±‚è ƒŒƒxƒ‹ 4">
-		if(preg_match_all('#<area href="build.php\?id=([0-9]+)" coords="[0-9]+,[0-9]+,[0-9]+" shape="circle" title="(\S+) [^0-9"]+?([0-9]+)">#', $result, $matches, PREG_SET_ORDER)){
+		// 				<area href="build.php?id=1"
+		// coords="101,33,28" shape="circle"
+		// title="Holzf&auml;ller Stufe 0" alt="" />
+
+		if(preg_match_all('#<area href="build.php\?id=([0-9]+)"\s+coords="[0-9]+,[0-9]+,[0-9]+" shape="circle"\s+title="(\S+) [^0-9"]+?([0-9]+)"#', $result, $matches, PREG_SET_ORDER)){
 			foreach($matches as $match){
 				$type = $convert[$match[2]];
 				$id = $match[1];
