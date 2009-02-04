@@ -19,7 +19,7 @@
 		curl_close ($ch);
 
 		// check if need login
-		$ret = preg_match('/<td><img class="res"/', $result);
+		$ret = preg_match('/statistiken\.php/', $result);
 		
 		//echo $result;
 		
@@ -48,7 +48,7 @@
 				$result = curl_exec ($ch);
 				curl_close ($ch);
 				
-				if(preg_match('/<td><img class="res"/', $result)){
+				if(preg_match('/statistiken\.php/', $result)){
 					echo "login ok ....\n";
 					return $result;
 				}else{
@@ -108,7 +108,7 @@
 
 			// echo $result;
 			
-			$ret = preg_match('/<td><img class="res"/', $result);
+			$ret = preg_match('/statistiken\.php/', $result);
 			if($ret){
 				echo "login ok.\n";
 			}else{
