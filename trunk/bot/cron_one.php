@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	function shutdown($account)
 	{
 		$sql = "update accounts set busy = 0 where id = $account";
@@ -142,29 +142,6 @@
 						sell(750, 4, 750, 2, 4, 9000);
 					}
 
-				}else if($server == "speed.travian.hk"){
-					build_infantry(1, 70);
-					attack_and_farm_loop($village, $attack_time_left);
-
-					if($attack_time_left >=0 && $attack_time_left < 375){
-						sleep($attack_time_left - 50);
-						build_infantry(1, 0);
-						attack_and_farm_loop($village, $attack_time_left);
-					}
-
-					if($crop > 7000){
-						sell(3000, 4, 3000, 1, 0, 5000);
-					}
-
-					if($iron > 7000){
-						sell(3000, 3, 3000, 1, 0, 5000);
-					}
-
-					if($brick > 7000){
-						sell(3000, 2, 3000, 1, 0, 5000);
-					}
-
-					read_self_attack_reports();
 
 				}else if($server == "s3.travian.jp" && $user == "inblackhole"){
 					
@@ -267,13 +244,13 @@
 						sell(1000, 4, 1000, rand(1, 2), 4, 1000);
 					}
 
-					//attack_and_farm_loop($village, $attack_time_left);
+					attack_and_farm_loop($village, $attack_time_left);
 
-					//if($attack_time_left >=0 && $attack_time_left < 420){
-					//	avoid_attack_teutonic(94, 29);
-					//}
+					if($attack_time_left >=0 && $attack_time_left < 420){
+						avoid_attack_teutonic(95, 29);
+					}
 
-					//read_self_attack_reports();
+					read_self_attack_reports();
 
 				}
 
@@ -285,9 +262,11 @@
 					sleep($attack_time_left - 50);
 					build_infantry(1, 0);
 					reinforce(94, 28, array(1 => 0));
-				}
+				}*/
+				
+				
 				attack_and_farm_loop($village, $attack_time_left);
-				*/
+				
 				transfer_to_village($village, $main_village);
 			
 
