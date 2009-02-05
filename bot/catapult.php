@@ -165,14 +165,14 @@
 
 	}
 
-	$filename = "./catapult2.sh";
+	$filename = "./catapult.sh";
 	
 	$content = '';
 	foreach ($posts as $i => $postfields) {
 		if($i == 0){
-			$content = $content . '/usr/local/bin/php catapult-child.php "' . $postfields. '" ' . (1000000 * 0) . " &\n";
+			$content = $content . 'php catapult-child.php "' . $postfields. '" ' . (1000000 * 0) . " &\n";
 		}else{
-			$content = $content . '/usr/local/bin/php catapult-child.php "' . $postfields. '" ' . (1000000 * $i * 0.2) . " &\n";
+			$content = $content . 'php catapult-child.php "' . $postfields. '" ' . (1000000 * $i * 0.2) . " &\n";
 		}
 	}
 	
@@ -191,11 +191,11 @@
 	
 	// file_put_contents($filename, $content);
 	$output = array();
-	system("chmod 755 $filename", $output);
+	//system("chmod 755 $filename", $output);
 	foreach ($output as $line)
 		echo "$line\n";
 
-	system("/bin/bash $filename", $output);
+	//system("/bin/bash $filename", $output);
 	foreach ($output as $line)
 		echo "$line\n";
 
