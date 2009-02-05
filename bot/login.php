@@ -58,28 +58,30 @@
 
 
 			// <input type="hidden" name="login" value="1198128845">
-			$ret = preg_match('/<input type="hidden" name="login" value="([0-9]+)"\s*>/', $result, $matches);
+			// <input type="hidden" name="login" value="1233822933" />
+			$ret = preg_match('/<input type="hidden" name="login" value="([0-9]+)"/', $result, $matches);
+			             
 			if(!$ret) die("get post value login failed.");
 			
 			$login = $matches[1];
 			// echo $login . "\n";
 			
 			// <input class="fm fm110" type="text" name="e96c60c" value="" maxlength="15"> <span class="e f7"></span>
-			$ret = preg_match('/<input class="fm fm110" type="text" name="([a-z0-9]+)" value=".*?" maxlength="15"\s*> <span class="e f7"><\/span>/', $result, $matches);
+			$ret = preg_match('/<input class="fm fm110" type="text" name="([a-z0-9]+)" value=".*?" maxlength="15"/', $result, $matches);
 			if(!$ret) die("get post name user failed.");
 
 			$var_user = $matches[1];
 			// echo $var_user . "\n";
 			
 			// <input class="fm fm110" type="password" name="ee54ffc" value="" maxlength="20"> <span class="e f7"></span>
-			$ret = preg_match('/<input class="fm fm110" type="password" name="([a-z0-9]+)" value=".*?" maxlength="20"\s*> <span class="e f7"><\/span>/', $result, $matches);
+			$ret = preg_match('/<input class="fm fm110" type="password" name="([a-z0-9]+)" value=".*?" maxlength="20"/', $result, $matches);
 			if(!$ret) die("get post name password failed.");
 
 			$var_password = $matches[1];
 			// echo $var_password . "\n";
 			
 			// <p align="center"><input type="hidden" name="e50439e" value="">
-			$ret = preg_match('/<input type="hidden" name="([a-z0-9]{7})" value="([a-z0-9]*)"\s*>/', $result, $matches);
+			$ret = preg_match('/<input type="hidden" name="([a-z0-9]{7})" value="([a-z0-9]*)"/', $result, $matches);
 			if(!$ret) die("get post anonymous name and value failed.");
 
 			$var_anonymous_name = $matches[1];
