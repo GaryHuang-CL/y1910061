@@ -98,7 +98,8 @@
 		curl_close ($ch);
 
 		// <area href="build.php?id=19" title="兵營 等級 9" coords="53,91,53,37,128,37,128,91,91,112" shape="poly">
-		if(!preg_match_all('/<area href="build\.php\?id=([0-9]+)" title="(.+?)" coords=".+?" shape=".+?">/', $result, $matches, PREG_SET_ORDER)) die("No matching dorf2.");
+		// <area href="build.php?id=40" title="Aussen Bauplatz" coords="220,230,185" shape="circle" alt="" />
+		if(!preg_match_all('/<area href="build\.php\?id=([0-9]+)" title="(.+?)" coords=".+?" shape=".+?"/', $result, $matches, PREG_SET_ORDER)) die("No matching dorf2.");
 
 		foreach ($matches as $val) {
 			$buildings[$val[1]] = $val[2];
