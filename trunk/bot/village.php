@@ -74,7 +74,11 @@
 		
 		
 		// <area href="build.php?id=1" coords="101,33,28" shape="circle" title="伐木場 等級 0">
-		if(!preg_match_all('/<area href="build\.php\?id=([0-9]+)"\s+coords=".+?" shape="circle"\s+title="(.+?)">/', $result, $matches, PREG_SET_ORDER)) die("No matching dorf1.");
+		// <area href="build.php?id=1"
+		// coords="101,33,28" shape="circle"
+		// title="Holzfäller Stufe 1" alt="" />
+
+		if(!preg_match_all('/<area href="build\.php\?id=([0-9]+)"\s+coords=".+?" shape="circle"\s+title="(.+?)"/', $result, $matches, PREG_SET_ORDER)) die("No matching dorf1.");
 
 		$buildings = array();
 		// print_r($matches);
