@@ -68,7 +68,10 @@
 		// <td id=l4 title=3000>40184/160000</td>
 		// <td id="l4" title="14">308/800</td>
 		$ret = preg_match('/<td id="?l4"? title="?[-0-9]+"?>([0-9]+)\/([0-9]+)<\/td>/', $result, $matches);
-		if(!$ret) die("FAILED : get_res_info() : wood");
+		if(!$ret){
+			echo $result;
+			die("FAILED : get_res_info() : wood");
+		}
 		
 		$wood = $matches[1];
 		$max_wood = $matches[2];
