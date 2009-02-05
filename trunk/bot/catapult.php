@@ -38,16 +38,15 @@
 
 	// club, axe, tk, ram, catapult, hero, target_one, target_two
 	$plan = array(
-			array(3459, 0,   100,  100,  10,  1 ,15,''),
-			array(0,    900,    '',   '' , 20, '' ,8, 9),
-			array(0,    900,    '',   '' , 20, '' ,4, 4),
-			array(0,    900,    '',   '' , 20, '' ,4, 4),
-			array(0,    900,    '',   '' , 20, '' ,4, 4),
+			array(4900, 6270,  164,  110, 140,  1 ,15,11),
+			array(0,    100,    '',   '' , 38, '' ,4, 4),
+			array(0,    100,    '',   '' , 38, '' ,4, 4),
+			array(0,    100,    '',   '' , 38, '' ,4, 4),
+			array(0,    100,    '',   '' , 20, '' ,8, 9),
 	);
 
-
-	$target_x = 95;
-	$target_y = 30;
+	$target_x = 99;
+	$target_y = 26;
 
 
 	// ----------------------------------------------------------------------------
@@ -166,14 +165,14 @@
 
 	}
 
-	$filename = "./catapult.sh";
+	$filename = "./catapult2.sh";
 	
 	$content = '';
 	foreach ($posts as $i => $postfields) {
 		if($i == 0){
-			$content = $content . 'php catapult-child.php "' . $postfields. '" ' . (1000000 * 0) . " &\n";
+			$content = $content . '/usr/local/bin/php catapult-child.php "' . $postfields. '" ' . (1000000 * 0) . " &\n";
 		}else{
-			$content = $content . 'php catapult-child.php "' . $postfields. '" ' . (1000000 * $i * 0.2) . " &\n";
+			$content = $content . '/usr/local/bin/php catapult-child.php "' . $postfields. '" ' . (1000000 * $i * 0.2) . " &\n";
 		}
 	}
 	
