@@ -22,7 +22,7 @@
 		$limit = $_GET['limit'];;
 	}
 
-	if(!array_key_exists('x', $_GET) || !array_key_exists('y', $_GET) die("No x|y.");
+	if(!array_key_exists('x', $_GET) || !array_key_exists('y', $_GET)) die("No x|y.");
 	
 	$x = $_GET['x'];
 	$y = $_GET['y'];
