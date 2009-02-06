@@ -5,7 +5,7 @@ $server = "s3.travian.jp";
 
 $dumpfile = dirname(__FILE__) . "/map.sql";
 $tblname = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd');
-$tblname_yesterday = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600 * 24);
+$tblname_yesterday = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600 * 48);
 $tblname_idle_player = "idle_players_" . str_replace(".", "_", $server);
 
 unlink($dumpfile); 
