@@ -82,7 +82,7 @@ left outer join idle_players_s3_travian_jp e on a.uid = e.uid
 		
     	if($raid == 0) $raid = 1;
 
-    	echo "<tr><td><a href=\"http://$server/karte.php?d=$d&c=$c\">$village_name</a></td><td>$x</td><td>$y</td><td>$distance</td><td>$player_name</td><td>$ally_name</td>";
+    	echo "<tr><td><a href=\"http://$server/karte.php?z=$d\">$village_name</a></td><td>$x</td><td>$y</td><td>$distance</td><td>$player_name</td><td>$ally_name</td>";
 
 		if(!empty($idle)){
     		echo "<td style=\"background-color:gray\">$day0</td><td style=\"background-color:gray\">$day1</td><td style=\"background-color:gray\">$day2</td><td>";
