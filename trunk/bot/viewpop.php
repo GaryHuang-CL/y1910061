@@ -22,58 +22,31 @@
 		$limit = $_GET['limit'];;
 	}
 
-    $sql = "select max(`daystamp`) from populations";
-    
-    $res = mysql_query($sql);
-    if(!$res) die(mysql_error());
-    
-    $row = mysql_fetch_row($res);
-    $today = $row[0];
-
-	$sql = "select m.* from " .
-	" (select a.x, a.y, c.pop as pop1, b.pop as pop2, a.pop as pop3, a.player_name, a.village_name, a.ally_name, a.d, a.c, a.distance, IFNULL(d.invalid, 3) as invalid, d.invalid_msg, a.nearest_village, v.name, IFNULL(d.interval, 1), IFNULL(d.raid, 1), d.score" .
-	" from " .
-	" (select x, y, population as pop, player_name, village_name, ally_name, d, c, distance, nearest_village from populations where daystamp = $today ";
+	if(!array_key_exists('x', $_GET) || !array_key_exists('y', $_GET) die("No x|y.");
 	
-	if(array_key_exists('x', $_GET)){
-		$sql = $sql . " and x = " . intval($_GET['x']);
-	}
-	
-	$sql = $sql . ") as a " .
+	$x = $_GET['x'];
+	$y = $_GET['y'];
 
-	" left outer join " .
-	" (select x, y, population as pop from populations where daystamp = $today - 1) as b " .
-	" on a.x = b.x and a.y = b.y " .
-		
-	" left outer join " .
-	" (select x, y, population as pop from populations where daystamp = $today - 2) as c " .
-	" on a.x = c.x and a.y = c.y " .
-
-	" left outer join targets as d" .
-	" on a.x = d.x and a.y = d.y " .
-
-	" left outer join villages as v" .
-	" on v.id = a.nearest_village and v.account = $account ) as m ";
-	
-	
-	// Limit :
-	// 1 : fixed pop
-	// 2 : farmed 
-	if($limit == 1){
-		$sql = $sql . " where m.pop3 <= m.pop2 ";
-	}else if($limit == 2){
-		$sql = $sql . " where m.invalid = 0 ";
-	}else if(array_key_exists('a', $_GET)){
-		$ally = $_GET['a'];;
-		$sql = $sql . " where m.ally_name LIKE '%" . $ally . "%' ";
-	}
-
-
-	$sql = $sql . " order by m.distance, m.player_name, m.village_name ";
+	$tblname = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd');
+	$tblname_yesterday = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600 * 24);
+	$tblname_before_yesterday = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600 * 48);
+	$tblname_idle_player = "idle_players_" . str_replace(".", "_", $server);
 
 	$p = array_key_exists('p', $_GET) ? intval($_GET['p']) : 0;
+	$start = ($p * 20);
 	
-	$sql = $sql . " limit ". ($p * 20) . ", 20 ";
+	$sql = "
+select a.x, a.y, c.population as pop1, b.population as pop2, a.population as pop3, a.player, a.village, a.alliance, a.id, NULL, a.distance, IFNULL(d.invalid, 3), IFNULL(d.invalid, 3) as invalid, d.invalid_msg, NULL, NULL, IFNULL(d.interval, 1), IFNULL(d.raid, 1), d.score, e.uid
+from
+(
+   select a.*, sqrt((a.x - $x) * (a.x - $x) + (a.y - $y) * (a.y - $y)) as distance from $tblname a order by distance, player, village limit $start, 20
+) a
+left outer join $tblname_yesterday b on a.id = b.id
+left outer join $tblname_before_yesterday c on a.id = c.id
+left outer join targets as d on a.x = d.x and a.y = d.y
+left outer join idle_players_s3_travian_jp e on a.uid = e.uid
+";
+
 
     $res = mysql_query($sql);
     if(!$res) die(mysql_error());
