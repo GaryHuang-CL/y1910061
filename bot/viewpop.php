@@ -175,14 +175,14 @@ left outer join idle_players_s3_travian_jp e on a.uid = e.uid
     echo "</table><br>";
     
     if($p > 0){
-	    echo '<a href="viewpop.php?x=$ox&y=$oy&p=' . ($p - 1);
+	    echo '<a href="viewpop.php?' . "x=$ox&y=$oy&p=" . ($p - 1);
 	   	echo "&limit=" . $limit;
 	   	
 	   	echo '">Prev</a>&nbsp;';
     }
     
     $p = $p + 1;
-    echo '<a href="viewpop.php?x=$ox&y=$oy&p=' . $p;
+    echo '<a href="viewpop.php?' . "x=$ox&y=$oy&p=" . $p;
    	echo "&limit=" . $limit;
 	
    	echo '">Next</a><br><hr>';
