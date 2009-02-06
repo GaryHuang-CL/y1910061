@@ -78,21 +78,16 @@ left outer join idle_players_s3_travian_jp e on a.uid = e.uid
 		$interval = $row[15];
 		$raid = $row[16];
 		$score = $row[17];
+		$idle = $row[18];
 		
     	if($raid == 0) $raid = 1;
 
     	echo "<tr><td><a href=\"http://$server/karte.php?d=$d&c=$c\">$village_name</a></td><td>$x</td><td>$y</td><td>$distance</td><td>$player_name</td><td>$ally_name</td>";
 
-		if($day0 == $day2){
-			echo "<td style=\"background-color:gray\">$day0</td>";
-		}else{
-    		echo "<td>$day0</td>";
-    	}
-    	
-    	if($day1 == $day2){
-    		echo "<td style=\"background-color:gray\">$day1</td><td style=\"background-color:gray\">$day2</td><td>";
+		if(!empty($idle)){
+    		echo "<td style=\"background-color:gray\">$day0</td><td style=\"background-color:gray\">$day1</td><td style=\"background-color:gray\">$day2</td><td>";
     	}else{
-    		echo "<td>$day1</td><td>$day2</td><td>";
+    		echo "<td>$day0</td><td>$day1</td><td>$day2</td><td>";
     	}
 
 		$new_raid = $raid + 1;
