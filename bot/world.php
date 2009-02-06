@@ -18,7 +18,7 @@ $cmd = "gzip -d $dumpfile";
 echo $cmd . "\n";
 system($cmd);
 
-$sql = "DROP TABLE $tblname IF EXISTS";
+$sql = "DROP TABLE IF EXISTS $tblname ";
 echo $sql . "\n";
 if(!mysql_query($sql)) die(mysql_error());
 
@@ -59,7 +59,7 @@ echo "$sql\n";
 if(!mysql_query($sql)) die(mysql_error());
 
 
-$sql = "DROP TABLE $tblname_idle_player IF EXISTS";
+$sql = "DROP TABLE IF EXISTS $tblname_idle_player ";
 echo $sql . "\n";
 if(!mysql_query($sql)) die(mysql_error());
 
