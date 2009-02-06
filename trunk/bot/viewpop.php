@@ -36,7 +36,7 @@
 	$start = ($p * 20);
 	
 	$sql = "
-select a.x, a.y, c.population as pop1, b.population as pop2, a.population as pop3, a.player, a.village, a.alliance, a.id, NULL, round(a.distance, 1), IFNULL(d.invalid, 3), IFNULL(d.invalid, 3) as invalid, d.invalid_msg, NULL, NULL, IFNULL(d.interval, 1), IFNULL(d.raid, 1), d.score, e.uid
+select a.x, a.y, c.population as pop1, b.population as pop2, a.population as pop3, a.player, a.village, a.alliance, a.id, NULL, round(a.distance, 1), IFNULL(d.invalid, 3) as invalid, d.invalid_msg, NULL, NULL, IFNULL(d.interval, 1), IFNULL(d.raid, 1), d.score, e.uid
 from
 (
    select a.*, sqrt((a.x - $ox) * (a.x - $ox) + (a.y - $oy) * (a.y - $oy)) as distance from $tblname a order by distance, player, village limit $start, 20
