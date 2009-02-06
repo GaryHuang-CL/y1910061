@@ -193,6 +193,8 @@
 					if($crop > $granary_capacity * 0.9){
 						sell(500, 4, 500, 3, 5, 9000);
 					}
+				}else if($server == "www.travian.org" && $user == "Kimon"){
+					build_infantry(1, 0);
 
 				}else if($server == "s3.travian.jp" && $user == "Kimon"){
 					
