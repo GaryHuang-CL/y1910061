@@ -26,6 +26,9 @@
 	
 	$ox = $_GET['x'];
 	$oy = $_GET['y'];
+	
+	
+	$fx = $_GET['fx'];
 
 	$tblname = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd');
 	$tblname_yesterday = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600 * 24);
@@ -39,7 +42,11 @@
 select a.x, a.y, c.population as pop1, b.population as pop2, a.population as pop3, a.player, a.village, a.alliance, a.id, NULL, round(a.distance, 1), IFNULL(d.invalid, 3) as invalid, d.invalid_msg, NULL, NULL, IFNULL(d.interval, 1), IFNULL(d.raid, 1), d.score, e.uid
 from
 (
-   select a.*, sqrt((a.x - $ox) * (a.x - $ox) + (a.y - $oy) * (a.y - $oy)) as distance from $tblname a order by distance, player, village limit $start, 20
+   select *, sqrt((x - $ox) * (x - $ox) + (y - $oy) * (y - $oy)) as distance from $tblname " .
+
+(array_key_exists('fx', $_GET) ? ("where x = " . $_GET['fx']) : "") . 
+   		
+" order by distance, player, village limit $start, 20
 ) a
 left outer join $tblname_yesterday b on a.id = b.id
 left outer join $tblname_before_yesterday c on a.id = c.id
