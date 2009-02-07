@@ -39,21 +39,22 @@
 	$start = ($p * 20);
 	
 	$sql = "
-select a.x, a.y, c.population as pop1, b.population as pop2, a.population as pop3, a.player, a.village, a.alliance, a.id, NULL, round(a.distance, 1), IFNULL(d.invalid, 3) as invalid, d.invalid_msg, NULL, NULL, IFNULL(d.interval, 1), IFNULL(d.raid, 1), d.score, e.uid
-from
-(
-   select *, sqrt((x - $ox) * (x - $ox) + (y - $oy) * (y - $oy)) as distance from $tblname " .
-
-(array_key_exists('fx', $_GET) ? ("where x = " . $_GET['fx']) : "") . 
-   		
-" order by distance, player, village limit $start, 20
-) a
+select a.x, a.y, c.population as pop1, b.population as pop2, a.population as pop3, a.player, a.village, a.alliance, a.id, NULL, 
+		round(sqrt((a.x - $ox) * (a.x - $ox) + (a.y - $oy) * (a.y - $oy)), 1) as distance, IFNULL(d.invalid, 3) as invalid, d.invalid_msg, NULL, NULL, IFNULL(d.interval, 1), IFNULL(d.raid, 1), d.score, e.id
+from $tblname a
 left outer join $tblname_yesterday b on a.id = b.id
-left outer join $tblname_before_yesterday c on a.id = c.id
-left outer join targets as d on a.x = d.x and a.y = d.y
-left outer join idle_players_s3_travian_jp e on a.uid = e.uid
-";
+left outer join $tblname_before_yesterday c on a.id = c.id " .
 
+	(($limit == 2) ? " inner join targets as d on a.x = d.x and a.y = d.y and d.invalid = 0 "
+				   : " left outer join targets as d on a.x = d.x and a.y = d.y ") .
+		
+	(($limit == 1) ? " inner join idle_villages_s3_travian_jp e on a.id = e.id "
+				   : " left outer join idle_villages_s3_travian_jp e on a.id = e.id ");
+
+	if(array_key_exists('fx', $_GET))
+		$sql .= " where a.x = " . $_GET['fx'];
+	
+	$sql .= " order by distance, player, village limit $start, 20 ";
 
     $res = mysql_query($sql);
     if(!$res) die(mysql_error());

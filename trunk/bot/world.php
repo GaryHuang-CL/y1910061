@@ -1,12 +1,13 @@
 <?php
-include("db.php");
+if($argc < 2) die("need server parameter");
+$server = $argv[1];
 
-$server = "s3.travian.jp";
+include("db.php");
 
 $dumpfile = dirname(__FILE__) . "/map.sql";
 $tblname = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd');
 $tblname_yesterday = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600 * 48);
-$tblname_idle_player = "idle_players_" . str_replace(".", "_", $server);
+$tblname_idle_village = "idle_villages_" . str_replace(".", "_", $server);
 
 unlink($dumpfile); 
 
@@ -58,15 +59,41 @@ echo "$sql\n";
 
 if(!mysql_query($sql)) die(mysql_error());
 
+// update crops information
+@mysql_query("BEGIN");
+$sql = "
+UPDATE y1910061_travian.crops a, y1910061_travian.servers c
+ SET a.player = NULL, a.ally = NULL, a.pop = NULL, a.village_name= NULL
+WHERE a.server = c.id and c.name = '$server'
+";
 
-$sql = "DROP TABLE IF EXISTS $tblname_idle_player ";
 echo $sql . "\n";
 if(!mysql_query($sql)) die(mysql_error());
 
 $sql = "
-CREATE TABLE $tblname_idle_player AS 
-SELECT m.uid
-FROM
+UPDATE y1910061_travian.crops a, y1910061_traviandb.$tblname b, y1910061_travian.servers c
+ SET a.player = b.player, a.ally = b.alliance, a.pop = b.population, a.village_name= b.village
+WHERE a.server = c.id and c.name = '$server' and a.d = b.id
+";
+
+echo $sql . "\n";
+if(!mysql_query($sql)) die(mysql_error());
+
+@mysql_query("COMMIT");
+
+// create idle villages table
+$sql = "DROP TABLE IF EXISTS $tblname_idle_village ";
+echo $sql . "\n";
+if(!mysql_query($sql)) die(mysql_error());
+
+$sql = "
+CREATE TABLE $tblname_idle_village AS
+SELECT a.*
+FROM $tblname a
+INNER JOIN
+(
+  SELECT m.uid
+  FROM
 	(
 	SELECT uid, count(*) x
 	FROM $tblname
@@ -80,13 +107,15 @@ FROM
 	  AND a.population = b.population
 	GROUP BY a.uid
 	) n
-WHERE m.uid = n.uid and m.x = n.x
+  WHERE m.uid = n.uid and m.x = n.x
+) idle_players
+ON a.uid = idle_players.uid
 ";
 
 echo $sql . "\n";
 if(!mysql_query($sql)) die(mysql_error());
 
-$sql = "ALTER TABLE $tblname_idle_playerd ADD PRIMARY KEY (`uid`);";
+$sql = "ALTER TABLE $tblname_idle_village ADD PRIMARY KEY (`id`);";
 echo $sql . "\n";
 if(!mysql_query($sql)) die(mysql_error());
 
