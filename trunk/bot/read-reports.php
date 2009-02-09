@@ -310,8 +310,8 @@
 			echo "FAILED: can not read ally report well $id ......\n";
 		}
 
-		for($i = 0; $i < count($matches2); $i++){
-			$attack_power += $matches2[$i][1];
+		for($i = 1; $i < count($matches2); $i++){
+			$attack_power += $matches2[$i];
 		}
 
 		if(count($match) < 2){
@@ -326,8 +326,8 @@
 					continue;
 				}
 
-				for($j = 0; $j < count($matches2); $i++){
-					$defend_power += $matches2[$j][1];
+				for($j = 1; $j < count($matches2); $i++){
+					$defend_power += $matches2[$j];
 				}
 			}
 		}
