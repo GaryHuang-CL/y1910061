@@ -6,7 +6,7 @@
 	
 	if(array_key_exists('id', $_GET)){
 		$id = intval($_GET['id']);
-		$sql = "select contents from ally_reports where `id` = $id";
+		$sql = "select content from ally_reports where `id` = $id";
 	    $res = mysql_query($sql);
 	    if(!$res) die(mysql_error());
 		$row = mysql_fetch_row($res);
@@ -26,7 +26,7 @@
 	    	$title = $row[1];
 	    	$attack_power = $row[2];
 	    	$defend_power = $row[3];
-	    	$link = $_SERVER['PHP_SELF'] . "id=$id" ;
+	    	$link = $_SERVER['PHP_SELF'] . "?id=$id" ;
 	    	
 	    	echo "<tr><td><a href=\"$link\">$title</a></td><td>$attack_power</td><td>$defend_power</td></tr>\n";
 		}
