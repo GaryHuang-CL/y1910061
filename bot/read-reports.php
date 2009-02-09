@@ -320,7 +320,7 @@
 			$defend_power = 0;
 			
 			for($i = 1; $i < count($matches); $i++){
-				$defend_power_str = $matches[i][1];
+				$defend_power_str = $matches[$i][1];
 				
 				if(!preg_match_all('#<td>[0-9]+</td>#', $defend_power_str, $matches2)){
 					continue;
