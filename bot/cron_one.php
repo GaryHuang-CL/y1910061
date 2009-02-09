@@ -253,7 +253,6 @@
 					}
 
 					read_self_attack_reports();
-					read_ally_reports();
 				}
 
 			// raid village
@@ -301,5 +300,5 @@
 	}
 	
 	delete_self_trade_reports();
-
+	read_ally_reports();
 ?>
