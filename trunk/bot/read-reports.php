@@ -298,7 +298,7 @@
 		$defend_village = mysql_escape_string($matches[1][5]);
 		
 		// <tr><td>兵士</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td>2</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td></tr>
-		if(preg_match_all('#<tr><td>兵士</td>(.+?)</tr>#', $result, $matches, PREG_SET_ORDER)){
+		if(!preg_match_all('#<tr><td>兵士</td>(.+?)</tr>#', $result, $matches, PREG_SET_ORDER)){
 			echo "FAILED: can not read ally report well $id ....\n";
 			return;
 		}
