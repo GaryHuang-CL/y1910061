@@ -253,7 +253,7 @@
 					}
 
 					read_self_attack_reports();
-
+					read_ally_reports();
 				}
 
 			// raid village
