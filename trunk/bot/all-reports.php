@@ -17,7 +17,7 @@
 		$content = str_replace('<a href="', '<a href="http://' . $server . '/', $content);
 		$content = str_replace(' src="', ' src="http://' . $server . '/', $content);
 
-		echo content;
+		echo $content;
 
 	}else{
 		echo '<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"></head>';
