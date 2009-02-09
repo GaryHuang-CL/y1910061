@@ -23,7 +23,12 @@
 	}else{
 		echo '<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"></head>';
 
-		$sql = "select id, title, attack_power, defend_power, attack_ally, defend_ally from ally_reports order by id desc limit 50";
+		$start = 0;
+		if(array_key_exists('p', $_GET)){
+			$start = $_GET[['p'] * 50;
+		}
+		
+		$sql = "select id, title, attack_power, defend_power, attack_ally, defend_ally from ally_reports order by id desc limit $start, 50";
 	    $res = mysql_query($sql);
 	    if(!$res) die(mysql_error());
 	    echo "<table>\n";
@@ -42,5 +47,9 @@
 		}
 		
 		echo "\n</table>";
+		
+		
+		$link = $_SERVER['PHP_SELF'] . "?p=" . ($start / 50 + 1);
+		echo "<p><a href=\"$link\">Next</a></p>\n";
 	}
 ?>
