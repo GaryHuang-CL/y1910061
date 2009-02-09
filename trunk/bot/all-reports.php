@@ -15,6 +15,7 @@
 		$content = $row[0];
 		
 		$content = str_replace('<a href="', '<a href="http://' . $server . '/', $content);
+		$content = preg_replace('#<a href=([^"])#', '<a href=http://' . $server . '/$1', $content);
 		$content = str_replace(' src="', ' src="http://' . $server . '/', $content);
 
 		echo $content;
