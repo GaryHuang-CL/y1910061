@@ -7,6 +7,7 @@
 		if(!mysql_query($sql)) die(mysql_error());
 	}
 
+/*
 	function get_village_name_from_report_title($title)
 	{
 		// β ひのがtown of tomaton＠UMAを攻撃しました
@@ -21,12 +22,16 @@
 			return false;
 		}
 	}
+*/
 	
 	// read self attack reports for farm suppose
 	function read_report($id, $title)
 	{
 		global $server;
 		global $user;
+		
+		// x_world will be get at 0:30
+		$tblname = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600);
 		
 		$url = "http://$server/berichte.php?id=$id";
 		echo $url . "\n";
@@ -37,7 +42,7 @@
 		curl_close ($ch);
 
 		// <td colspan="10"><a href=spieler.php?uid=6431>Hömeless</a> 所有の <a href=karte.php?d=298467&c=80>新しい村</a></td>
-		if(!preg_match_all('#<td colspan="1[01]"><a href="?spieler\.php\?uid=[0-9]+"?>([^<]+)</a>#', $result, $matches, PREG_SET_ORDER)){
+		if(!preg_match_all('#<td colspan="1[01]"><a href="?spieler\.php\?uid=[0-9]+"?>([^<]+)</a>[^<]+<a href=karte\.php\?d=([0-9]+)&c=[a-z0-9]{2}>#', $result, $matches, PREG_SET_ORDER)){
 			echo "FAILED: can not read report well $id\n";
 			record_report($id, "【未知】$title");
 			return;
@@ -50,6 +55,31 @@
 			return;
 		}
 
+		if(count($matches) < 2){
+			record_report($id, "【防衛者情報不明】$title");
+			return;
+		}
+
+		$player = $matches[1][1];
+		$village_id = $matches[1][2];
+
+		$sql = "select x, y from $tblname where id = $village_id";
+		$res = mysql_query($sql);
+		if(!$res){
+			record_report($id, "【X-WORLD】$title");
+			return;
+		}
+
+	    $row = mysql_fetch_row($res);
+
+		if(!$res){
+			record_report($id, "【X-WORLD-2】$title");
+			return;
+		}
+	    
+	    $x = $row[0];
+	    $y = $row[1];
+
 		if(preg_match('#<tr><td>[^<]+?</td><td>([0-9]+)</td>.*?</tr>(<tr><td>.*?</tr>)#', $result, $match)){
 			$soldiers = $match[1];
 			$died_str = $match[2];
@@ -61,44 +91,20 @@
 			echo "$died dead.\n";
 			
 		}else{
-			record_report($id, "【兵士未知】$title");
+			record_report($id, "【クラブ以外あり】$title");
 			return;
 		}
 
-		if($soldiers == $died || count($matches) < 2){
-			// echo "all die.\n";
-			// get target village name
-			// -- zaútočil na German
-			// β ひのがtown of tomaton＠UMAを攻撃しました
-			
-			$xy = "";
-			
-			$village_name = get_village_name_from_report_title($title);
-			if($village_name){
-				$village_name = mysql_escape_string($village_name);
-				$sql = "select distinct x, y from populations where village_name = '$village_name'";
-				
-			    $res = mysql_query($sql);
-			    if(!$res) die(mysql_error());
-			    while($row = mysql_fetch_row($res))
-			    {
-			    	$x = $row[0];
-			    	$y = $row[1];
+		if($soldiers == $died){
 			    	
-			    	$sql = "update targets set invalid = 1, invalid_msg = '全滅' where x = $x and y = $y";
-			    	if(!mysql_query($sql)) die(mysql_error());
-			    	
-			    	$xy = $xy . "($x,$y)";
-			    }
-			}
-			
-			// try remove this one from raid list?
-			record_report($id, "【全滅】$title $xy");
+			// remove this one from raid list?
+	    	$sql = "update targets set invalid = 1, invalid_msg = '全滅' where x = $x and y = $y";
+	    	if(!mysql_query($sql)) die(mysql_error());
+	    	
+			record_report($id, "【全滅】$title ($x,$y)");
 			return;
-
 		}
 		
-		$player = $matches[1][1];
 
 		// <img class="res" src="img/un/r/1.gif">44 
 		// <img class="res" src="img/un/r/2.gif">44 
@@ -117,66 +123,37 @@
 		
 		$score = round(($total * 100) / (($soldiers - $died) * 60));
 		
-		$village_name = get_village_name_from_report_title($title);
-		if($village_name){
-			$village_name = mysql_escape_string($village_name);
-			$player = mysql_escape_string($player);
-			
-			$sql = "select distinct x, y from populations where village_name = '$village_name' and player_name = '$player'";
-			
-		    $res = mysql_query($sql);
-		    if(!$res) die(mysql_error());
-
-		    if(mysql_num_rows($res) == 0){
-				$sql = "select distinct x, y from populations where player_name = '$player'";
-			    $res = mysql_query($sql);
-			    if(!$res) die(mysql_error());
-		    }
-		    
-		    if(mysql_num_rows($res) == 1){
-			    $row = mysql_fetch_row($res);
-		    	$x = $row[0];
-		    	$y = $row[1];
-		    	
-		    	$sql = "select score from targets where x = $x and y = $y";
-			    $res = mysql_query($sql); if(!$res) die(mysql_error());
-			    $row = mysql_fetch_row($res); 
-			    if(!$row){
-					record_report($id, "【レコード】$title");
-					return;
-			    }
-			    
-				$old_score = $row[0];
-				if(empty($old_score)){
-					$scores = array();
-				}else{
-		    		$scores = explode('|', $old_score);
-		    	}
-		    	
-		    	array_push($scores, $score);
-
-				if(count($scores) > 5){
-					array_shift($scores);
-				}
-				
-				$new_score = implode('|', $scores);
-				
-		    	if($total == $soldiers * 60){
-					echo "reraid...($x,$y) $soldiers $total\n";
-			    	$sql = "update targets set `timestamp` = date_sub(now(),  interval 1 day), `score` = '$new_score' where x = $x and y = $y";
-			    }else{
-			    	$sql = "update targets set `timestamp` = `timestamp`, `score` = '$new_score' where x = $x and y = $y";
-			    }
-			    
-		    	if(!mysql_query($sql)) die(mysql_error());
-			}else{
-				record_report($id, "【村名重複】$title");
-				return;
-			}
-		}else{
-			record_report($id, "【村名】$title");
+    	$sql = "select score from targets where x = $x and y = $y";
+	    $res = mysql_query($sql); if(!$res) die(mysql_error());
+	    $row = mysql_fetch_row($res); 
+	    if(!$row){
+			record_report($id, "【ファーム対象外】$title");
 			return;
+	    }
+	    
+		$old_score = $row[0];
+		if(empty($old_score)){
+			$scores = array();
+		}else{
+    		$scores = explode('|', $old_score);
+    	}
+    	
+    	array_push($scores, $score);
+
+		if(count($scores) > 5){
+			array_shift($scores);
 		}
+		
+		$new_score = implode('|', $scores);
+		
+    	if($total == $soldiers * 60){
+			echo "reraid...($x,$y) $soldiers $total\n";
+	    	$sql = "update targets set `timestamp` = date_sub(now(),  interval 1 day), `score` = '$new_score' where x = $x and y = $y";
+	    }else{
+	    	$sql = "update targets set `timestamp` = `timestamp`, `score` = '$new_score' where x = $x and y = $y";
+	    }
+	    
+    	if(!mysql_query($sql)) die(mysql_error());
 
 		// <td class="c">0</td>
 		// <td>1</td>
@@ -194,6 +171,12 @@
 	// read self attack reports for farm suppose
 	function read_self_attack_reports()
 	{
+		// TEST
+		$id = "9464522";
+		if(!mysql_query("delete from reports where id = $id")) die(mysql_error());
+		read_report($id, "ホームがふひひを攻撃しました");
+		return;
+		
 		global $server;
 
 		$s = 0;
