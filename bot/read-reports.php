@@ -66,14 +66,14 @@
 		$sql = "select x, y from $tblname where id = $village_id";
 		$res = mysql_query($sql);
 		if(!$res){
-			record_report($id, "【X-WORLD】$title");
+			record_report($id, "【X-WORLD】$title $village_id");
 			return;
 		}
 
 	    $row = mysql_fetch_row($res);
 
 		if(!$res){
-			record_report($id, "【X-WORLD-2】$title");
+			record_report($id, "【X-WORLD-2】$title $village_id");
 			return;
 		}
 	    
@@ -326,7 +326,7 @@
 					continue;
 				}
 
-				for($j = 0; $j < count($matches2); $i++){
+				for($j = 0; $j < count($matches2); $j++){
 					$defend_power += $matches2[$j][1];
 				}
 			}
