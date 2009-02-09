@@ -300,5 +300,5 @@
 	}
 	
 	delete_self_trade_reports();
-	// read_ally_reports();
+	read_ally_reports();
 ?>
