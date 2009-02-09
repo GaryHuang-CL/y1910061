@@ -334,7 +334,7 @@
 		
 		
 		$sql = "insert into ally_reports(id, attack_uid, attacker, attack_village, attack_village_id, attack_ally, attack_power, defend_uid, defender, defend_village, defend_village_id, defend_ally, defend_power, datetime, content, title, attack_village_id_c, defend_village_id_c) " .
-		       " values($id, $attack_id, '$attacker', '$attack_village', $attack_village_id, '$ally1', $attack_power, $defend_id, '$defender', '$defend_village', $defend_village_id, '$ally2', $defend_power, '$datetime', '$content', '$title', $attack_village_id_c, $defend_village_id_c)";
+		       " values($id, $attack_id, '$attacker', '$attack_village', $attack_village_id, '$ally1', $attack_power, $defend_id, '$defender', '$defend_village', $defend_village_id, '$ally2', $defend_power, '$datetime', '$content', '$title', '$attack_village_id_c', '$defend_village_id_c')";
 		if(!mysql_query($sql)) die(mysql_error());
 
 	}
