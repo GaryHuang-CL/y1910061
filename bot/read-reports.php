@@ -306,7 +306,7 @@
 		$attack_power_str = $matches[0][1];
 		$attack_power = 0;
 		
-		if(!preg_match_all('#<td>[0-9]+</td>#', $attack_power_str, $matches2)){
+		if(!preg_match_all('#<td>([0-9]+)</td>#', $attack_power_str, $matches2)){
 			echo "FAILED: can not read ally report well $id ......\n";
 		}
 
@@ -322,7 +322,7 @@
 			for($i = 1; $i < count($matches); $i++){
 				$defend_power_str = $matches[$i][1];
 				
-				if(!preg_match_all('#<td>[0-9]+</td>#', $defend_power_str, $matches2)){
+				if(!preg_match_all('#<td>([0-9]+)</td>#', $defend_power_str, $matches2)){
 					continue;
 				}
 
