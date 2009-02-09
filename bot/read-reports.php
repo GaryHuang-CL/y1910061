@@ -265,7 +265,7 @@
 		//<td class="s7">日付： 09/02/09 時間： 14:34:16</span><span> 時</td>
 		if(!preg_match('#<td class="s7">日付： ([0-9]+/[0-9]+/[0-9]+) 時間： ([0-9]+:[0-9]+:[0-9]+)</span><span> 時</td>#', $result, $match)){
 			echo "FAILED: can not read ally report datetime $id \n";
-			return 
+			return;
 		}
 		
 		$datetime = $match[1] . " " . $match[2];
@@ -334,7 +334,7 @@
 		
 		
 		$sql = "insert into ally_reports(id, attack_uid, attacker, attack_village, attack_village_id, attack_ally, attack_power, defend_uid, defender, defend_village, defend_village_id, defend_ally, defend_power, datetime, content, title, attack_village_id_c, defend_village_id_c) " .
-		       " values($id, $attack_id, '$attacker', '$attack_village', $attack_village_id, '$ally1', $attack_power, $defend_id, '$defender', '$defend_village', $defend_village_id, '$ally2', $defend_power, '$title', '$content', '$title', $attack_village_id_c, $defend_village_id_c)";
+		       " values($id, $attack_id, '$attacker', '$attack_village', $attack_village_id, '$ally1', $attack_power, $defend_id, '$defender', '$defend_village', $defend_village_id, '$ally2', $defend_power, '$datetime', '$content', '$title', $attack_village_id_c, $defend_village_id_c)";
 		if(!mysql_query($sql)) die(mysql_error());
 
 	}
