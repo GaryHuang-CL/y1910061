@@ -26,9 +26,9 @@
 	    	$title = $row[1];
 	    	$attack_power = $row[2];
 	    	$defend_power = $row[3];
-	    	$link = $_SERVER['php_self'] . "id=$id" ;
+	    	$link = $_SERVER['PHP_SELF'] . "id=$id" ;
 	    	
-	    	echo "<td><a href=\"$link\">$title</a></td><td>$attack_power</td><td>$defend_power</td>\n";
+	    	echo "<tr><td><a href=\"$link\">$title</a></td><td>$attack_power</td><td>$defend_power</td></tr>\n";
 		}
 		
 		echo "\n</table>";
