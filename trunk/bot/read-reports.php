@@ -172,10 +172,12 @@
 	function read_self_attack_reports()
 	{
 		// TEST
+		/*
 		$id = "9464522";
 		if(!mysql_query("delete from reports where id = $id")) die(mysql_error());
 		read_report($id, "ホームがふひひを攻撃しました");
 		return;
+		*/
 		
 		global $server;
 
