@@ -28,7 +28,15 @@
 			$start = $_GET['p'] * 50;
 		}
 		
-		$sql = "select id, title, attack_power, defend_power, attack_ally, defend_ally from ally_reports order by id desc limit $start, 50";
+		$sql = "select id, title, attack_power, defend_power, attack_ally, defend_ally from ally_reports ";
+
+		if(array_key_exists('u', $_GET)){
+			$uid = $_GET['u'];
+			$sql = $sql . " where attack_uid = $uid ";
+		}
+
+		$sql = $sql . " order by id desc limit $start, 50";
+		
 	    $res = mysql_query($sql);
 	    if(!$res) die(mysql_error());
 	    echo "<table>\n";
