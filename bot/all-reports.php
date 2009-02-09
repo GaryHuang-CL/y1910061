@@ -25,7 +25,7 @@
 
 		$start = 0;
 		if(array_key_exists('p', $_GET)){
-			$start = $_GET[['p'] * 50;
+			$start = $_GET['p'] * 50;
 		}
 		
 		$sql = "select id, title, attack_power, defend_power, attack_ally, defend_ally from ally_reports order by id desc limit $start, 50";
