@@ -306,7 +306,7 @@
 		$attack_power_str = $matches[0][1];
 		$attack_power = 0;
 		
-		if(!preg_match_all('#<td>([0-9]+)</td>#', $attack_power_str, $matches2)){
+		if(!preg_match_all('#<td>([0-9]+)</td>#', $attack_power_str, $matches2, PREG_SET_ORDER)){
 			echo "FAILED: can not read ally report well $id ......\n";
 		}
 
@@ -322,7 +322,7 @@
 			for($i = 1; $i < count($matches); $i++){
 				$defend_power_str = $matches[$i][1];
 				
-				if(!preg_match_all('#<td>([0-9]+)</td>#', $defend_power_str, $matches2)){
+				if(!preg_match_all('#<td>([0-9]+)</td>#', $defend_power_str, $matches2, PREG_SET_ORDER)){
 					continue;
 				}
 
@@ -333,7 +333,7 @@
 		}
 		
 		
-		$sql = "insert into ally_reports(id, attack_uid, attacker, attack_village, attack_village_id, attack_ally, attack_power, defend_uid, defender, defend_village, defend_village_id, defend_ally, defend_power, datetime, content, title, attack_village_id_c, defend_village_id_c) " .
+		$sql = "replace into ally_reports(id, attack_uid, attacker, attack_village, attack_village_id, attack_ally, attack_power, defend_uid, defender, defend_village, defend_village_id, defend_ally, defend_power, datetime, content, title, attack_village_id_c, defend_village_id_c) " .
 		       " values($id, $attack_id, '$attacker', '$attack_village', $attack_village_id, '$ally1', $attack_power, $defend_id, '$defender', '$defend_village', $defend_village_id, '$ally2', $defend_power, '$datetime', '$content', '$title', '$attack_village_id_c', '$defend_village_id_c')";
 		if(!mysql_query($sql)) die(mysql_error());
 
