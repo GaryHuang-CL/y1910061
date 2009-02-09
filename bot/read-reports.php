@@ -241,16 +241,10 @@
 
 	}
 
-	// we record all damage above 100
-	function read_ally_report($id, $title)
+	function read_ally_report($id, $title, $ally1, $ally2)
 	{
 		global $server;
 		global $user;
-		/*
-		if(strstr($title, '偵察')){
-			echo "scout, ignore.\n";
-			return;
-		}*/
 		
 		$url = "http://$server/berichte.php?id=$id";
 		echo $url . "\n";
@@ -260,44 +254,88 @@
 		$result = curl_exec ($ch);
 		curl_close ($ch);
 
-		if(!preg_match_all('#<td colspan="1[01]"><a href="?spieler\.php\?uid=[0-9]+"?>([^<]+)</a>#', $result, $matches, PREG_SET_ORDER)){
-			echo "FAILED: can not read report well $id\n";
+		if(!preg_match('#(<table cellspacing="1" cellpadding="2" class="tbg">.+</table>)</p></div></div>#s', $result, $match)){
+			echo "read ally report contents failed.\n";
+			return;
+		}
+
+		$content = mysql_escape_string($match[1]);
+		
+		// datetime
+		//<td class="s7">日付： 09/02/09 時間： 14:34:16</span><span> 時</td>
+		if(!preg_match('#<td class="s7">日付： ([0-9]+/[0-9]+/[0-9]+) 時間： ([0-9]+:[0-9]+:[0-9]+)</span><span> 時</td>#', $result, $match)){
+			echo "FAILED: can not read ally report datetime $id \n";
+			return 
+		}
+		
+		$datetime = $match[1] . " " . $match[2];
+		
+		// <td colspan="10"><a href=spieler.php?uid=6431>Hömeless</a> 所有の <a href=karte.php?d=298467&c=80>新しい村</a></td>
+		if(!preg_match_all('#<td colspan="1[01]"><a href="?spieler\.php\?uid=([0-9]+)"?>([^<]+)</a>[^<]+<a href=karte\.php\?d=([0-9]+)&c=([a-z0-9]{2})>([^<]+)</a>#', $result, $matches, PREG_SET_ORDER)){
+			echo "FAILED: can not read ally report well $id \n";
 			return;
 		}
 		
 		if(count($matches) < 2){
-			echo "all die.\n";
-			// try remove this one from raid list?
-			//record_report($id, $title);
+			echo "FAILED: can not read ally report well $id ..\n";
 			return;
 		}
 		
-		// <td class="c">0</td>
-		// <td>1</td>
-		// <tr><td>死傷</td><td>5</td><td class="c">0</td><td>6</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td></tr>
-		if(preg_match('#<td>[0-9]+</td>.*?</tr>(.+?)</tr>#', $result, $match)){
-			
-			if(!preg_match_all('#<td>([0-9]+)</td>#', $match[1], $matches, PREG_SET_ORDER)){
-				echo "Noone died.\n";
-				return;
-			}
-			
-			echo $match[1] . "\n";
-			echo "soldier died.\n";
-			
-			$total = 0;
-			foreach($matches as $match){
-				$num = $match[1];
-				$total += $num;
-			}
+		$title = mysql_escape_string($title);
+		$ally1 = mysql_escape_string($ally1);
+		$ally2 = mysql_escape_string($ally2);
 
-			if($total > 40){
-				mail_report($id, $title, $result);
-				return;
-			}
-		}else{
-			echo "failed to match.\n";
+		$attack_id = $matches[0][1];
+		$attacker = mysql_escape_string($matches[0][2]);
+		$attack_village_id = $matches[0][3];
+		$attack_village_id_c = $matches[0][4];
+		$attack_village = mysql_escape_string($matches[0][5]);
+		
+		$defend_id = $matches[1][1];
+		$defender = mysql_escape_string($matches[1][2]);
+		$defend_village_id = $matches[1][3];
+		$defend_village_id_c = $matches[1][4];
+		$defend_village = mysql_escape_string($matches[1][5]);
+		
+		// <tr><td>兵士</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td>2</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td></tr>
+		if(preg_match_all('#<tr><td>兵士</td>(.+?)</tr>#', $result, $matches, PREG_SET_ORDER)){
+			echo "FAILED: can not read ally report well $id ....\n";
+			return;
 		}
+
+		$attack_power_str = $matches[0][1];
+		$attack_power = 0;
+		
+		if(!preg_match_all('#<td>[0-9]+</td>#', $attack_power_str, $matches2)){
+			echo "FAILED: can not read ally report well $id ......\n";
+		}
+
+		for($i = 0; $i < count($matches2); $i++){
+			$attack_power += $matches2[$i][1];
+		}
+
+		if(count($match) < 2){
+			$defend_power = 9999999;
+		}else{
+			$defend_power = 0;
+			
+			for($i = 1; $i < count($matches); $i++){
+				$defend_power_str = $matches[i][1];
+				
+				if(!preg_match_all('#<td>[0-9]+</td>#', $defend_power_str, $matches2)){
+					continue;
+				}
+
+				for($j = 0; $j < count($matches2); $i++){
+					$defend_power += $matches2[$j][1];
+				}
+			}
+		}
+		
+		
+		$sql = "insert into ally_reports(id, attack_uid, attacker, attack_village, attack_village_id, attack_ally, attack_power, defend_uid, defender, defend_village, defend_village_id, defend_ally, defend_power, datetime, content, title, attack_village_id_c, defend_village_id_c) " .
+		       " values($id, $attack_id, '$attacker', '$attack_village', $attack_village_id, '$ally1', $attack_power, $defend_id, '$defender', '$defend_village', $defend_village_id, '$ally2', $defend_power, '$title', '$content', '$title', $attack_village_id_c, $defend_village_id_c)";
+		if(!mysql_query($sql)) die(mysql_error());
 
 	}
 
@@ -329,7 +367,7 @@
 		$result = curl_exec ($ch);
 		curl_close ($ch);
 		
-		if(!preg_match_all('#<td class="s7"><a href="berichte\.php\?id=([0-9]+)">([^<]+)</a></td>#', $result, $matches, PREG_SET_ORDER)){
+		if(!preg_match_all('#<td class="s7"><a href="berichte\.php\?id=([0-9]+)">([^<]+)</a></td>\s+<td class="c f8">(\S*) - (\S*)</td>#', $result, $matches, PREG_SET_ORDER)){
 			echo "failed to get ally reports list.\n";
 			return;
 		}
@@ -339,10 +377,12 @@
 		foreach($matches as $match){
 			$id = $match[1];
 			$title = $match[2];
+			$ally1 = $match[3];
+			$ally2 = $match[4];
 			
 			if($id <= $maxid) continue;
 			
-			read_ally_report($id, $title);
+			read_ally_report($id, $title, $ally1, $ally2);
 		}
 
 		$id = $matches[0][1];
