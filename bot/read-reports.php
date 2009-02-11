@@ -31,7 +31,8 @@
 		global $user;
 		
 		// x_world will be get at 0:30
-		$tblname = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600);
+		// run at hostjava.net
+		$tblname = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600 * 3);
 		
 		$url = "http://$server/berichte.php?id=$id";
 		echo $url . "\n";
