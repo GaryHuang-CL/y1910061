@@ -40,7 +40,7 @@
 	
 	$sql = "
 select a.x, a.y, c.population as pop1, b.population as pop2, a.population as pop3, a.player, a.village, a.alliance, a.id, NULL, 
-		round(sqrt((a.x - $ox) * (a.x - $ox) + (a.y - $oy) * (a.y - $oy)), 1) as distance, IFNULL(d.invalid, 3) as invalid, d.invalid_msg, NULL, NULL, IFNULL(d.interval, 1), IFNULL(d.raid, 1), d.score, e.id
+		round(sqrt((a.x - $ox) * (a.x - $ox) + (a.y - $oy) * (a.y - $oy)), 1) as distance, IFNULL(d.invalid, 3) as invalid, d.invalid_msg, NULL, NULL, IFNULL(d.interval, 1), IFNULL(d.raid, 1), d.score, e.id, a.uid
 from $tblname a
 left outer join $tblname_yesterday b on a.id = b.id
 left outer join $tblname_before_yesterday c on a.id = c.id " .
@@ -87,6 +87,14 @@ left outer join $tblname_before_yesterday c on a.id = c.id " .
 		$raid = $row[16];
 		$score = $row[17];
 		$idle = $row[18];
+		$uid = $row[19];
+
+		$sql = "select count(1) from ally_reports r where r.attack_uid = $uid or r.defend_uid = $uid";
+	    $res2 = mysql_query($sql);
+	    if(!$res2) die(mysql_error());
+		
+		$row2 = mysql_fetch_row($res2);
+		$reports = $row2[0];
 		
     	if($raid == 0) $raid = 1;
 
@@ -171,7 +179,11 @@ left outer join $tblname_before_yesterday c on a.id = c.id " .
     	}
     	
    		echo "</td><td><a href=\"addmission.php?x=$x&y=$y\">Add</a></td>";
-    	echo "</td><td>$my_v_name</td><td>$score</td><td>$errmsg</td></tr>\n";
+    	echo "</td><td>$my_v_name</td><td>$score</td><td>";
+    	
+    	if($reports > 0)
+    		echo '<a href="all-reports.php?u=' . $uid . '">Ｒ(' . $reports . ')';
+    	echo "</td><td>$errmsg</td></tr>\n";
     	
     }
     

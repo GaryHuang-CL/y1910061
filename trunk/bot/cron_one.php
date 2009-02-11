@@ -38,7 +38,7 @@
 	require_once('transfer.php');
 	require_once('army.php');
 	require_once('read-reports.php');
-
+	
 	$sql = "select server, user, password, race, main_village, last_report, beacon, message, busy from accounts where id = $account";
 	$res = mysql_query($sql);
 	if(!$res) die(mysql_error());
