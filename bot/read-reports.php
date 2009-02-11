@@ -3,7 +3,7 @@
 	// record self attack reports for farm suppose
 	function record_report($id, $title)
 	{
-		$sql = "insert into reports(id, title) values($id, '$title')";
+		$sql = "replace into reports(id, title) values($id, '$title')";
 		if(!mysql_query($sql)) die(mysql_error());
 	}
 
@@ -43,26 +43,36 @@
 		curl_close ($ch);
 
 		// <td colspan="10"><a href=spieler.php?uid=6431>Hömeless</a> 所有の <a href=karte.php?d=298467&c=80>新しい村</a></td>
-		if(!preg_match_all('#<td colspan="1[01]"><a href="?spieler\.php\?uid=[0-9]+"?>([^<]+)</a>[^<]+<a href=karte\.php\?d=([0-9]+)&c=[a-z0-9]{2}>#', $result, $matches, PREG_SET_ORDER)){
-			echo "FAILED: can not read report well $id\n";
-			record_report($id, "【未知】$title");
+		if(!preg_match_all('#<a href="?spieler\.php\?uid=[0-9]+"?>([^<]+)</a>#', $result, $matches, PREG_SET_ORDER)){
+			record_report($id, "【プレイヤー不明】$title");
+			return;
+		}
+
+		if(count($matches) < 3){
+			record_report($id, "【プレイヤー不足】$title");
 			return;
 		}
 
 		// attacked !
-		if($matches[0][1] != $user){
+		if($matches[1][1] != $user){
 			// echo "attacked.\n";
 			record_report($id, "【防衛】$title");
 			return;
 		}
 
-		if(count($matches) < 2){
-			record_report($id, "【防衛者情報不明】$title");
+		$player = $matches[2][1];
+
+		if(!preg_match_all('#<a href=karte\.php\?d=([0-9]+)&c=[a-z0-9]{2}>#', $result, $matches, PREG_SET_ORDER)){
+			record_report($id, "【村不明】$title");
 			return;
 		}
 
-		$player = $matches[1][1];
-		$village_id = $matches[1][2];
+		if(count($matches) < 2){
+			record_report($id, "【村不足】$title");
+			return;
+		}
+
+		$village_id = $matches[1][1];
 
 		$sql = "select x, y from $tblname where id = $village_id";
 		$res = mysql_query($sql);
@@ -174,7 +184,7 @@
 	{
 		// TEST
 		/*
-		$id = "9464522";
+		$id = "9673533";
 		if(!mysql_query("delete from reports where id = $id")) die(mysql_error());
 		read_report($id, "ホームがふひひを攻撃しました");
 		return;
@@ -207,7 +217,7 @@
 		}
 	}
 	
-	
+	/*
 	function mail_report($id, $title, $result)
 	{
 		global $server;
@@ -240,7 +250,7 @@
 		// Mail it
 		mail($to, $subject, $message, $headers);
 
-	}
+	}*/
 
 	function read_ally_report($id, $title, $ally1, $ally2)
 	{
@@ -272,31 +282,42 @@
 		$datetime = $match[1] . " " . $match[2];
 		
 		// <td colspan="10"><a href=spieler.php?uid=6431>Hömeless</a> 所有の <a href=karte.php?d=298467&c=80>新しい村</a></td>
-		if(!preg_match_all('#<td colspan="1[01]"><a href="?spieler\.php\?uid=([0-9]+)"?>([^<]+)</a>[^<]+<a href=karte\.php\?d=([0-9]+)&c=([a-z0-9]{2})>([^<]+)</a>#', $result, $matches, PREG_SET_ORDER)){
+		if(!preg_match_all('#<a href="?spieler\.php\?uid=([0-9]+)"?>([^<]+)</a>#', $result, $matches, PREG_SET_ORDER)){
 			echo "FAILED: can not read ally report well $id \n";
 			return;
 		}
 		
-		if(count($matches) < 2){
+		if(count($matches) < 3){
 			echo "FAILED: can not read ally report well $id ..\n";
 			return;
 		}
-		
+
+		// <td colspan="10"><a href=spieler.php?uid=6431>Hömeless</a> 所有の <a href=karte.php?d=298467&c=80>新しい村</a></td>
+		if(!preg_match_all('#<a href=karte\.php\?d=([0-9]+)&c=([a-z0-9]{2})>([^<]+)</a>#', $result, $matches3, PREG_SET_ORDER)){
+			echo "FAILED: can not read ally report well $id ,,\n";
+			return;
+		}
+
+		if(count($matches3) < 2){
+			echo "FAILED: can not read ally report well $id ,,,,\n";
+			return;
+		}
+
 		$title = mysql_escape_string($title);
 		$ally1 = mysql_escape_string($ally1);
 		$ally2 = mysql_escape_string($ally2);
 
-		$attack_id = $matches[0][1];
-		$attacker = mysql_escape_string($matches[0][2]);
-		$attack_village_id = $matches[0][3];
-		$attack_village_id_c = $matches[0][4];
-		$attack_village = mysql_escape_string($matches[0][5]);
+		$attack_id = $matches[1][1];
+		$attacker = mysql_escape_string($matches[1][2]);
+		$attack_village_id = $matches3[0][1];
+		$attack_village_id_c = $matches3[0][2];
+		$attack_village = mysql_escape_string($matches3[0][3]);
 		
-		$defend_id = $matches[1][1];
-		$defender = mysql_escape_string($matches[1][2]);
-		$defend_village_id = $matches[1][3];
-		$defend_village_id_c = $matches[1][4];
-		$defend_village = mysql_escape_string($matches[1][5]);
+		$defend_id = $matches[2][1];
+		$defender = mysql_escape_string($matches[2][2]);
+		$defend_village_id = $matches3[1][1];
+		$defend_village_id_c = $matches3[1][2];
+		$defend_village = mysql_escape_string($matches3[1][3]);
 		
 		// <tr><td>兵士</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td>2</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td></tr>
 		if(!preg_match_all('#<tr><td>兵士</td>(.+?)</tr>#', $result, $matches, PREG_SET_ORDER)){
