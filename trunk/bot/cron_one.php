@@ -75,7 +75,7 @@
 	$result = login();
 	$hour = get_server_hour($result);
 	
-	$sql = "select id, auto_transfer, noraid, name, newbie, last_beg from villages where account = $account order by rand()";
+	$sql = "select id, auto_transfer, noraid, name, newbie, last_beg, crop, cart_capacity from villages where account = $account order by rand()";
 	$res = mysql_query($sql);
 	if(!$res) die(mysql_error());
 	
@@ -86,6 +86,14 @@
 		$name = $row[3];
 		$newbie = $row[4];
 		$last_beg = $row[5];
+		$buycrop = $row[6];
+		$cart_capacity = $row[7];
+		
+		if($cart_capacity == 0){
+			if($race == "teuton") $cart_capacity = 1000;
+			else if($race == "gaolic") $cart_capacity = 750;
+			else $cart_capacity = 500;
+		}
 		
 		echo "\n +++++++ $name +++++++\n";
 
@@ -254,25 +262,17 @@
 
 					read_self_attack_reports();
 				}
-
-			// raid village
-			}else if($server == "s3.travian.jp" && $user == "Hömeless" && $noraid == 0){
-				/*
-				if($attack_time_left >=0 && $attack_time_left < 360){
-					echo "URGENT 2 !!!! $attack_time_left\n";
-					sleep($attack_time_left - 50);
-					build_infantry(1, 0);
-					reinforce(94, 28, array(1 => 0));
-				}*/
+			}else {
 				
-				
-				attack_and_farm_loop($village, $attack_time_left);
-				
-				transfer_to_village($village, $main_village);
+				if($attack_time_left >= 0 && $attack_time_left < 3600){
+					transfer_to_village($village, $main_village);
+				}else{
+					transfer_to_village($village, $main_village, false, 75);
+				}
+			}
 			
-
 			// new village logic
-			}else if($newbie > 0){
+			if($newbie > 0){
 				
 				if(time() - $last_beg > 2000)
 					transfer_to_newbie($main_village, $village, $result);
@@ -286,15 +286,14 @@
 					transfer_to_village($village, $main_village);
 				}*/
 			
+			// sell resources for crops
+			}
+			
+			if($buycrop > 0){
+				sell_for_crop(1.5, 0, 4);
+				transfer_to_village($village, $main_village, false, 60);
+			
 			// villages in building
-			}else {
-				
-				if($attack_time_left >= 0 && $attack_time_left < 3600){
-					transfer_to_village($village, $main_village);
-				}else{
-					transfer_to_village($village, $main_village, false, 75);
-				}
-				
 			}
 		}
 	}

@@ -28,11 +28,16 @@
 			$start = $_GET['p'] * 50;
 		}
 		
-		$sql = "select id, title, attack_power, defend_power, attack_ally, defend_ally from ally_reports ";
+		$sql = "select id, title, attack_power, defend_power, attack_ally, defend_ally, `datetime` from ally_reports where 1 = 1";
 
 		if(array_key_exists('u', $_GET)){
 			$uid = $_GET['u'];
-			$sql = $sql . " where attack_uid = $uid ";
+			$sql = $sql . " and (attack_uid = $uid or defend_uid = $uid) ";
+		}
+
+		if(array_key_exists('min', $_GET)){
+			$min_power = $_GET['min'];
+			$sql = $sql . " and (attack_power >= $min_power or defend_power >= $min_power) ";
 		}
 
 		$sql = $sql . " order by id desc limit $start, 50";
@@ -48,10 +53,11 @@
 	    	$defend_power = $row[3];
 	    	$ally1 = $row[4];
 	    	$ally2 = $row[5];
+	    	$datetime = $row[6];
 	    	
 	    	$link = $_SERVER['PHP_SELF'] . "?id=$id" ;
 	    	
-	    	echo "<tr><td><a href=\"$link\">$title</a></td><td>$attack_power</td><td>$defend_power</td><td>$ally1</td><td>$ally2</td></tr>\n";
+	    	echo "<tr><td><a href=\"$link\">$title</a></td><td>$attack_power</td><td>$defend_power</td><td>$ally1</td><td>$ally2</td><td>$datetime</td></tr>\n";
 		}
 		
 		echo "\n</table>";
