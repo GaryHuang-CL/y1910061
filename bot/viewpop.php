@@ -30,7 +30,7 @@
 	
 	$fx = $_GET['fx'];
 
-	$tblname = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd');
+	$tblname = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600);
 	$tblname_yesterday = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600 * 24);
 	$tblname_before_yesterday = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600 * 48);
 	$tblname_idle_player = "idle_players_" . str_replace(".", "_", $server);

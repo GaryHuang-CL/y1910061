@@ -472,15 +472,23 @@
 		echo "Transfering 0 | 0 | 0 | $total to ($x|$y)\n";
 	}
 
-	function sell_for_crop($wood, $brick, $iron, $offer, $crop, $reserve, $reserve_carts)
+	// sell 1 carts resource for crops
+	function sell_for_crop($ratio, $reserve, $reserve_carts)
 	{
-		if($wood >= $brick && $wood >= $iron && $wood >= $reserve + $offer)
-			sell($offer, 1, $crop, 4, $reserve_carts, $reserve);
+		global $wood, $brick, $iron, $cart_capacity;
 		
-		else if($brick >= $wood && $brick >= $iron && $brick >= $reserve + $offer)
-			sell($offer, 2, $crop, 4, $reserve_carts, $reserve);
+		if($wood >= $brick && $wood >= $iron && $wood >= $reserve + $cart_capacity)
+			$x = 1;
+		
+		else if($brick >= $wood && $brick >= $iron && $brick >= $reserve + $cart_capacity)
+			$x = 2;
 
-		else if($iron >= $wood && $iron >= $brick && $iron >= $reserve + $offer)
-			sell($offer, 3, $crop, 4, $reserve_carts, $reserve);
+		else if($iron >= $wood && $iron >= $brick && $iron >= $reserve + $cart_capacity)
+			$x = 3;
+		
+		else return;
+		
+		sell($cart_capacity, $x, $cart_capacity * $ratio, 4, $reserve_carts, $reserve);
+
 	}
 ?>

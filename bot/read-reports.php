@@ -66,7 +66,7 @@
 		$sql = "select x, y from $tblname where id = $village_id";
 		$res = mysql_query($sql);
 		if(!$res){
-			record_report($id, "【X-WORLD】$title $village_id");
+			record_report($id, "【X-WORLD】$title $village_id $tblname");
 			return;
 		}
 
