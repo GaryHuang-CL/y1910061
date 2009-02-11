@@ -43,8 +43,8 @@
 		global $server;
 		$url = "http://$server/a2b.php";
 
-		$max_clubs = 1000;
-		$min_clubs = 90;
+		$max_clubs = 400;
+		$min_clubs = 20;
 
 		// How many clubs there ?
 		// onClick="document.snd.t1.value=1; return false;
