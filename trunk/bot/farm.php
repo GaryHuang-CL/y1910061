@@ -46,21 +46,25 @@
 		$max_clubs = 400;
 		$min_clubs = 20;
 
-		// How many clubs there ?
-		// onClick="document.snd.t1.value=1; return false;
-		if(!preg_match('/onClick="document\.snd\.t1\.value=([0-9]+); return false;/', $result, $matches)){
-			// echo "no club there.\n";
-			return false;
-		}
+		$troops = get_troops($result);
 
-		$curr_clubs = $matches[1];
+		$curr_clubs = 0;
+		$curr_axes = 0;
+		$curr_tks = 0;
 		
-		echo $curr_clubs . " clubs availabe.\n";
-		
-		if($curr_clubs < $min_clubs){
-			// echo("no enough clubs (min).\n");
+		if(isset($troops[1]))
+			$curr_clubs = $troops[1];
+
+		if(isset($troops[3]))
+			$curr_axes = $troops[3];
+
+		if(isset($troops[6]))
+			$curr_tks = $troops[6];
+
+		if($curr_clubs < $min_clubs && $curr_axes < $min_clubs && $curr_tks < $min_clubs)
 			return false;
-		}
+
+		echo "$curr_clubs clubs, $curr_axes axes, $curr_tks tks availabe.\n";
 		
 		// Get a target
 		$sql = "SELECT x, y, `raid`, `score` FROM `targets` WHERE `village` = $village and `invalid` = 0 and NOW() > date_add(`timestamp`, INTERVAL (`interval` * 80) MINUTE) order by date_add(`timestamp`, INTERVAL (`interval` * 80) MINUTE) limit 1";
@@ -92,28 +96,54 @@
 
 		echo "Want to raid : (" . $row[0] . " , " . $row[1] . ")\n";
 
-		if($curr_clubs < $min_clubs){
-			echo("no enough clubs. $min_clubs \n");
+		if($curr_clubs < $min_clubs && $curr_axes < $min_clubs && $curr_tks < $min_clubs){
+			echo("no enough troops. $min_clubs \n");
 			return false;
 		}
 
+		$clubs = '';
+		$axes = '';
+		$tks = '';
 		
-		if($curr_clubs <= $max_clubs){
-			$clubs = $curr_clubs;
-
-		}else{
-			$clubs = $min_clubs + round(($max_clubs - $min_clubs) * $score / 100);
-			
-			if($curr_clubs - $clubs < $old_min_clubs)
+		if($curr_clubs >= $min_clubs){
+			if($curr_clubs <= $max_clubs){
 				$clubs = $curr_clubs;
+			}else{
+				$clubs = $min_clubs + round(($max_clubs - $min_clubs) * $score / 100);
+				
+				if($curr_clubs - $clubs < $old_min_clubs)
+					$clubs = $curr_clubs;
+			}
+		}else if($curr_axes >= $min_clubs){
+			if($curr_axes <= $max_clubs){
+				$axes = $curr_axes;
+
+			}else{
+				$axes = $min_clubs + round(($max_clubs - $min_clubs) * $score / 100);
+				
+				if($curr_axes - $axes < $old_min_clubs)
+					$axes = $curr_axes;
+			}
+		}else if($curr_tks >= $min_clubs){
+			if($curr_tks <= $max_clubs){
+				$tks = $curr_tks;
+
+			}else{
+				$tks = $min_clubs + round(($max_clubs - $min_clubs) * $score / 100);
+				
+				if($curr_axes - $tks < $old_min_clubs)
+					$tks = $curr_tks;
+			}
 		}
 		
 		// Update the target
 		$sql = "update `targets` set `timestamp` = now() where x = " . $target_x . " and y = " . $target_y;
 		mysql_query($sql);
 
-		if(attack_func($target_x, $target_y, $clubs, '', '', '', '', '', $result)){
-			return $clubs < $curr_clubs;
+		if(attack_func($target_x, $target_y, $clubs, $axes, $tks, '', '', '', $result)){
+			return ($curr_clubs - intval($clubs) >= $old_min_clubs ||
+				    $curr_axes - intval($axes) >= $old_min_clubs ||
+				    $curr_tks - intval($tks) >= $old_min_clubs);
 		}
 		
 		return true;
