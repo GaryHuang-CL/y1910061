@@ -1,5 +1,31 @@
 <?php
 	
+	function get_report_line($result, $type)
+	{
+		if(preg_match('#<tr><td>' . $type . '</td>(.*?)</td></tr>#', $result, $match)){
+			
+			$line = $match[1];
+			$ret = explode ('</td>', $line);
+			
+			if(count($ret) < 9){
+				echo "get_report_line: element too few `$line`\n";
+			}
+			
+			foreach($ret as $i=>$x){
+				$ret[$i] = strip_tags($x);
+				if(!is_numeric($ret[$i])){
+					echo "get_report_line: not numeric [$i] $x\n";
+					return false;
+				}
+			}
+			
+			return $ret;
+		}else{
+			echo "get_report_line: can not match `$type`\n";
+			return false;
+		}
+	}
+	
 	// record self attack reports for farm suppose
 	function record_report($id, $title)
 	{
@@ -91,22 +117,35 @@
 	    $x = $row[0];
 	    $y = $row[1];
 
-		if(preg_match('#<tr><td>[^<]+?</td><td>([0-9]+)</td>.*?</tr>(<tr><td>.*?</tr>)#', $result, $match)){
-			$soldiers = $match[1];
-			$died_str = $match[2];
-			
-			$died = 0;
-			if(preg_match('#<td>([0-9]+)</td>#', $died_str, $match)){
-				$died = $match[1];
-			}
-			echo "$died dead.\n";
-			
-		}else{
-			record_report($id, "【クラブ以外あり】$title");
+
+		$soldiers = get_report_line($result, '兵士');
+		if(!$soldiers){
+			record_report($id, "【兵士情報不明】$title");
 			return;
 		}
 
-		if($soldiers == $died){
+		$died = get_report_line($result, '死傷');
+		$captured = get_report_line($result, '捕虜');
+
+		if(!$died && !$captured){
+			record_report($id, "【死傷捕虜不明】$title");
+			return;
+		}
+
+		if(!$died){
+			$died = $captured;
+		}else if($captured){
+			if(count($died) != count($captured)){
+				record_report($id, "【死傷捕虜数合わない】$title");
+				return;
+			}
+			
+			for($i = 0; $i < count($died); $i++){
+				$died[$i] += $captured[$i];
+			}
+		}
+
+		if(array_sum($soldiers) == array_sum($died)){
 			    	
 			// remove this one from raid list?
 	    	$sql = "update targets set invalid = 1, invalid_msg = '全滅' where x = $x and y = $y";
@@ -132,7 +171,8 @@
 			$total += $match[1];
 		}
 		
-		$score = round(($total * 100) / (($soldiers - $died) * 60));
+		$max_raid = (($soldiers[0] - $died[0]) * 60 + ($soldiers[2] - $died[2]) * 50 + ($soldiers[5] - $died[5]) * 80);
+		$score = round(($total * 100) / $max_raid);
 		
     	$sql = "select score from targets where x = $x and y = $y";
 	    $res = mysql_query($sql); if(!$res) die(mysql_error());
@@ -157,7 +197,7 @@
 		
 		$new_score = implode('|', $scores);
 		
-    	if($total == $soldiers * 60){
+    	if($total == $max_raid){
 			echo "reraid...($x,$y) $soldiers $total\n";
 	    	$sql = "update targets set `timestamp` = date_sub(now(),  interval 1 day), `score` = '$new_score' where x = $x and y = $y";
 	    }else{
@@ -168,9 +208,9 @@
 
 		// <td class="c">0</td>
 		// <td>1</td>
-		if($died > 0){
+		if(array_sum($died) > 0){
 
-			record_report($id, "【死傷】$title ($died)");
+			record_report($id, "【死傷】$title (" . array_sum($died) . ")");
 			
 		}else if($total == 0){
 			echo "raid zero.\n";
@@ -183,12 +223,17 @@
 	function read_self_attack_reports()
 	{
 		// TEST
-		/*
-		$id = "9673533";
+		
+		$id = "10400879";
 		if(!mysql_query("delete from reports where id = $id")) die(mysql_error());
-		read_report($id, "ホームがふひひを攻撃しました");
+		read_report($id, "ホームがソウル・ソサエティを攻撃しました");
+
+		$id = "10432010";
+		if(!mysql_query("delete from reports where id = $id")) die(mysql_error());
+		read_report($id, "ホームがhyougoを攻撃しました");
+
 		return;
-		*/
+
 		
 		global $server;
 
