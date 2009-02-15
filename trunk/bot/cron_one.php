@@ -75,7 +75,7 @@
 	$result = login();
 	$hour = get_server_hour($result);
 	
-	$sql = "select id, auto_transfer, noraid, name, newbie, last_beg, crop, cart_capacity from villages where account = $account order by rand()";
+	$sql = "select id, auto_transfer, noraid, name, newbie, last_beg, crop, cart_capacity, defence from villages where account = $account order by rand()";
 	$res = mysql_query($sql);
 	if(!$res) die(mysql_error());
 	
@@ -88,7 +88,8 @@
 		$last_beg = $row[5];
 		$buycrop = $row[6];
 		$cart_capacity = $row[7];
-		
+		$defence = $row[8];
+				
 		if($cart_capacity == 0){
 			if($race == "teuton") $cart_capacity = 1000;
 			else if($race == "gaolic") $cart_capacity = 750;
@@ -185,6 +186,11 @@
 						sell(500, 4, 500, 3, 5, 9000);
 					}
 
+					// トマト@k9999	(89|19)
+					//if($hour > 2 && $hour < 10){
+					//	transfer_resouce_to_xy($village, 89, 19, 0, 0, 0, 1000, 0);
+					//}
+
 				}else if($server == "s3.travian.jp" && $user == "docomo2"){
 					
 					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.9 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
@@ -264,7 +270,7 @@
 				}
 			}else {
 				
-				if($attack_time_left >= 0 && $attack_time_left < 3600){
+				if($attack_time_left >= 0 && $attack_time_left < 3600 && $defence == 0){
 					transfer_to_village($village, $main_village);
 				}else{
 					transfer_to_village($village, $main_village, false, 75);
