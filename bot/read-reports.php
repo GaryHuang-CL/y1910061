@@ -223,7 +223,7 @@
 	function read_self_attack_reports()
 	{
 		// TEST
-		
+		/*
 		$id = "10400879";
 		if(!mysql_query("delete from reports where id = $id")) die(mysql_error());
 		read_report($id, "ホームがソウル・ソサエティを攻撃しました");
@@ -233,7 +233,7 @@
 		read_report($id, "ホームがhyougoを攻撃しました");
 
 		return;
-
+		*/
 		
 		global $server;
 
