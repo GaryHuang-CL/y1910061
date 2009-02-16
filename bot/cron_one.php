@@ -136,12 +136,12 @@
 
 				if($server == "s3.travian.jp" && $user == "3x3x3"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.9 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.2){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 55);
 						$c4 = round($crop / 30);
-						$c = min($c1, $c2, $c3, $c4) - 10;
+						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
 						
 						if($c > 0) build_infantry(1, $c);
 
@@ -154,12 +154,12 @@
 
 				}else if($server == "s3.travian.jp" && $user == "inblackhole"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.9 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.2){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 55);
 						$c4 = round($crop / 30);
-						$c = min($c1, $c2, $c3, $c4) - 10;
+						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
 						
 						if($c > 0) build_infantry(1, $c);
 
@@ -171,12 +171,12 @@
 					
 				}else if($server == "s3.travian.jp" && $user == "papurica731"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.9 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.2){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 160);
 						$c4 = round($crop / 70);
-						$c = min($c1, $c2, $c3, $c4) - 10;
+						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
 						
 						if($c > 0) build_infantry(2, $c);
 
@@ -193,12 +193,12 @@
 
 				}else if($server == "s3.travian.jp" && $user == "docomo2"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.9 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.2){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 160);
 						$c4 = round($crop / 70);
-						$c = min($c1, $c2, $c3, $c4) - 10;
+						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
 						
 						if($c > 0) build_infantry(2, $c);
 
@@ -212,14 +212,14 @@
 
 				}else if($server == "s3.travian.jp" && $user == "Kimon"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.9 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.2){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 160);
 						$c4 = round($crop / 70);
-						$c = min($c1, $c2, $c3, $c4) - 10;
+						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
 						
-						if($c > 0) build_infantry(2, $c);
+						if($c > 0) build_infantry(3, $c);
 
 					}
 					
@@ -229,30 +229,31 @@
 					
 				}else if($server == "s3.travian.jp" && $user == "Hömeless"){
 
-					if($wood > $warehouse_capacity * 0.9){
+					if($wood > $warehouse_capacity * 0.8){
 						$c1 = round($wood / 95);
 						$c2 = round($brick / 75);
 						$c3 = round($iron / 40);
 						$c4 = round($crop / 40);
-						$c = min($c1, $c2, $c3, $c4) - 10;
+						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
+
 						build_infantry(1, $c);
 					}
 
-					if($brick > $warehouse_capacity * 0.9){
+					if($brick > $warehouse_capacity * 0.8){
 						$c1 = round($wood / 450);
 						$c2 = round($brick / 515);
 						$c3 = round($iron / 480);
 						$c4 = round($crop / 80);
-						$c = min($c1, $c2, $c3, $c4) - 2;
+						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
 						build_cavalry(6, $c);
 					}
 					
-					if($iron > $warehouse_capacity * 0.9){
+					if($iron > $warehouse_capacity * 0.8){
 						$c1 = round($wood / 130);
 						$c2 = round($brick / 120);
 						$c3 = round($iron / 170);
 						$c4 = round($crop / 70);
-						$c = min($c1, $c2, $c3, $c4) - 8;
+						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
 						build_infantry(3, $c);
 					}
 
