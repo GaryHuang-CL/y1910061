@@ -292,7 +292,7 @@
 	$QryTablePlanets    .= "`planet_type` int(11) NOT NULL default '1', ";
 	$QryTablePlanets    .= "`destruyed` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`b_building` int(11) NOT NULL default '0', ";
-	$QryTablePlanets    .= "`b_building_id` text character set latin1 NOT NULL, ";
+	$QryTablePlanets    .= "`b_building_id` text character set latin1 default '', ";
 	$QryTablePlanets    .= "`b_tech` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`b_tech_id` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`b_hangar` int(11) NOT NULL default '0', ";
@@ -380,8 +380,8 @@
 	$QryTableRw         .= "UNIQUE KEY `rid` (`rid`), ";
 	$QryTableRw         .= "KEY `id_owner1` (`id_owner1`,`rid`), ";
 	$QryTableRw         .= "KEY `id_owner2` (`id_owner2`,`rid`), ";
-	$QryTableRw         .= "KEY `time` (`time`), ";
-	$QryTableRw         .= "FULLTEXT KEY `raport` (`raport`) ";
+	$QryTableRw         .= "KEY `time` (`time`) ";
+	//$QryTableRw         .= "FULLTEXT KEY `raport` (`raport`) ";
 	$QryTableRw         .= ") ENGINE=InnoDB;";
 
 	// Table statpoints
@@ -425,7 +425,7 @@
 	$QryTableUsers      .= "`password` varchar(64) character set latin1 NOT NULL default '', ";
 	$QryTableUsers      .= "`email` varchar(64) character set latin1 NOT NULL default '', ";
 	$QryTableUsers      .= "`email_2` varchar(64) character set latin1 NOT NULL default '', ";
-	$QryTableUsers      .= "`lang` varchar(8) character set latin1 NOT NULL default 'fr', ";
+	$QryTableUsers      .= "`lang` varchar(8) character set latin1 NOT NULL default 'en', ";
 	$QryTableUsers      .= "`authlevel` tinyint(4) NOT NULL default '0', ";
 	$QryTableUsers      .= "`sex` char(1) character set latin1 default NULL, ";
 	$QryTableUsers      .= "`avatar` varchar(255) character set latin1 NOT NULL default '', ";
@@ -437,8 +437,8 @@
 	$QryTableUsers      .= "`current_planet` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`user_lastip` varchar(16) character set latin1 NOT NULL default '', ";
 	$QryTableUsers      .= "`ip_at_reg` varchar(16) character set latin1 NOT NULL default '', ";
-	$QryTableUsers      .= "`user_agent` text character set latin1 NOT NULL, ";
-	$QryTableUsers      .= "`current_page` text character set latin1 NOT NULL, ";
+	$QryTableUsers      .= "`user_agent` text character set latin1 default '', ";
+	$QryTableUsers      .= "`current_page` text character set latin1 default NULL, ";
 	$QryTableUsers      .= "`register_time` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`onlinetime` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`dpath` varchar(255) character set latin1 NOT NULL default '', ";
@@ -459,7 +459,7 @@
 	$QryTableUsers      .= "`urlaubs_until` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`db_deaktjava` tinyint(4) NOT NULL default '0', ";
 	$QryTableUsers      .= "`new_message` int(11) NOT NULL default '0', ";
-	$QryTableUsers      .= "`fleet_shortcut` text character set latin1, ";
+	$QryTableUsers      .= "`fleet_shortcut` text character set latin1 default '', ";
 	$QryTableUsers      .= "`b_tech_planet` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`spy_tech` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`computer_tech` int(11) NOT NULL default '0', ";
