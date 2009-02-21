@@ -1,0 +1,109 @@
+<?php
+
+$lang['user_level'] = array (
+	'0' => '普通玩家',
+	'1' => '游戏管理',
+	'2' => '系统管理',
+	'3' => '网站管理',
+);
+
+$lang['sys_overview'] 				= "概况一览";
+$lang['mod_marchand'] 				= "商人";
+$lang['sys_moon'] 				= "月球";
+$lang['sys_error'] 				= "错误";
+$lang['sys_no_vars'] 				= "文件错误，请联系管理员!";
+$lang['sys_attacker_lostunits'] 		= "攻击者损失了 %s单位的资源.";
+$lang['sys_defender_lostunits'] 		= "防御方损失了%s单位的资源.";
+$lang['sys_gcdrunits'] 				= "在这个空间产生了%s %s和%s %s的废墟.";
+$lang['sys_moonproba'] 				= "产生一个月球的机会是: %d %% ";
+$lang['sys_moonbuilt'] 				= "漂浮在这个空间的废墟形成了一个绕着星球 %s [%d:%d:%d] 的月球!";
+$lang['sys_attack_title']    			= "在星球 %s 发生了一场战斗:";
+$lang['sys_attack_attacker_pos']	      = "攻击者 %s [%s:%s:%s]";
+$lang['sys_attack_techologies'] 		= "武器: %d %% 防御盾: %d %% 装甲: %d %% ";
+$lang['sys_attack_defender_pos'] 		= "防御者 %s [%s:%s:%s]";
+$lang['sys_ship_type'] 				= "类型";
+$lang['sys_ship_count'] 			= "总数";
+$lang['sys_ship_weapon'] 			= "武器";
+$lang['sys_ship_shield'] 			= "防御盾";
+$lang['sys_ship_armour'] 			= "装甲";
+$lang['sys_destroyed'] 				= "被摧毁!";
+$lang['sys_attack_attack_wave'] 		= "攻击者的舰队总共开火 %s 次，总共造成 对方%s 的伤害，对方防御盾吸收 %s 的伤害.";
+$lang['sys_attack_defend_wave']		= "防御者的舰队总共开火 %s 次，总共造成 对方%s 的伤害，对方防御盾吸收 %s 的伤害.";
+$lang['sys_attacker_won'] 			= "攻击者赢得了这场战斗!";
+$lang['sys_defender_won'] 			= "防御方赢得了这场战斗!";
+$lang['sys_both_won'] 				= "战斗不分胜负!各回各家，各找各妈.";
+$lang['sys_stealed_ressources'] 		= "攻击者掠夺了 %s 金属 %s %s 晶体 %s 和 %s %s 重氢.";
+$lang['sys_rapport_build_time'] 		= "战斗报告产生于 %s 秒.";
+$lang['sys_mess_tower'] 			= "Space Control";
+$lang['sys_mess_attack_report'] 		= "Combat Report";
+$lang['sys_spy_maretials'] 			= "资源";
+$lang['sys_spy_fleet'] 				= "舰队";
+$lang['sys_spy_defenses'] 			= "防御";
+$lang['sys_mess_qg'] 				= "舰队命令";
+$lang['sys_mess_spy_report'] 			= "侦查报告";
+$lang['sys_mess_spy_lostproba'] 		= "间谍卫星被攻击的几率是: %d %% ";
+$lang['sys_mess_spy_control'] 		= "Space Control";
+$lang['sys_mess_spy_activity'] 		= "间谍活动";
+$lang['sys_mess_spy_ennemyfleet'] 		= "一支敌对的舰队从星球";
+$lang['sys_mess_spy_seen_at'] 		= "对你的星球进行间谍活动";
+$lang['sys_mess_spy_destroyed'] 		= "卫星被摧毁!";
+$lang['sys_object_arrival'] 			= "到达星球";
+$lang['sys_stay_mess_stay'] 			= "Fleet Deployment";
+$lang['sys_stay_mess_start'] 			= "你的舰队到达星球";
+$lang['sys_stay_mess_back'] 			= "你的舰队返回星球";
+$lang['sys_stay_mess_end'] 			= " 运送:";
+$lang['sys_stay_mess_bend'] 			= " 资源:";
+$lang['sys_adress_planet'] 			= "[%s:%s:%s]";
+$lang['sys_stay_mess_goods'] 			= "%s : %s, %s : %s, %s : %s";
+$lang['sys_colo_mess_from'] 			= "殖民";
+$lang['sys_colo_mess_report'] 		= "殖民报告";
+$lang['sys_colo_defaultname'] 		= "殖民船";
+$lang['sys_colo_arrival'] 			= "舰队到达殖民星球";
+$lang['sys_colo_maxcolo'] 			= ",你的星球以达到最大，不能进行更多的殖民.";
+$lang['sys_colo_allisok'] 			= ",并开始发展新的星球.";
+$lang['sys_colo_badpos']  			= ", Da die Siedler kein Umfeld gefunden haben sie beschlossen, v&ouml;llig umzukehren.";
+$lang['sys_colo_notfree'] 			= ", Als deine Siedler auf den Koordinaten ankamen, mussten sie ferststellen das es dort bereits eine Welt gibt. V&ouml;llig demoralisiert kehrten sie um";
+$lang['sys_colo_planet']  			= "星球!";
+$lang['sys_expe_report'] 			= "远征报告";
+$lang['sys_recy_report'] 			= "回收报告";
+$lang['sys_expe_blackholl_1'] 		= "Deine Armarda traf auf ein schwarzes Loch und wurde teilweise zerst&ouml;rt!";
+$lang['sys_expe_blackholl_2'] 		= "Deine Armarda traf auf ein schwarzes Loch und wurde komplett zerst&ouml;rt!";
+$lang['sys_expe_nothing_1'] 			= "Deine Forscher wurden zeugen einer SuperNova und haben sch&ouml;ne Bilder gemacht! Sonst hat sich nichts ereignet.";
+$lang['sys_expe_nothing_2'] 			= "Deine Forscher haben haben nichts entdecken k&ouml;nnen,weder Rohstoffe noch Verlassene Raumschiffe.";
+$lang['sys_expe_found_goods'] 		= "Deine Forscher haben einen Rohstoffreichen Planeten gefunden !<br>Sie haben %s %s, %s %s und %s %s abgebaut";
+$lang['sys_expe_found_ships'] 		= "Deine Forscher haben Raumschiffe in einwandfreiem Zustand gefunden!.<br>Bergen konnten Sie: ";
+$lang['sys_expe_back_home'] 			= "远征舰队返回母星.";
+$lang['sys_mess_transport'] 			= "舰队运输";
+$lang['sys_tran_mess_owner'] 			= "你的舰队从星球%s %s 出发.并运送了 %s %s, %s  %s 和 %s %s的资源.";
+$lang['sys_tran_mess_user']  			= "一支友好的舰队从星球%s %s 出发，到达星球 %s %s 并运送了 %s %s, %s  %s 和 %s %s的资源.";
+$lang['sys_mess_fleetback'] 			= "舰队返回";
+$lang['sys_tran_mess_back'] 			= "你的一支舰队从星球 %s %s 返回.";
+$lang['sys_recy_gotten'] 			= "你的回收船搜集到 %s %s 和 %s %s 的资源.";
+$lang['sys_notenough_money'] 			= "你没有足够的资源来建筑 %s.你只有 %s %s , %s %s 和 %s %s. 建筑需要 %s %s , %s %s 和 %s %s.";
+$lang['sys_nomore_level'] 			= "Sie versuchen, ein Geb&auml;ude zu zerst&ouml;ren,was sie nicht mehr besitzen( %s ).";
+$lang['sys_buildlist'] 				= "建筑列表";
+$lang['sys_buildlist_fail'] 			= "无法完成建筑";
+$lang['sys_gain'] 				= "Gains";
+$lang['sys_perte_attaquant'] 			= "攻击者损失";
+$lang['sys_perte_defenseur'] 			= "防御者损失";
+$lang['sys_debris'] 				= "Debris field";
+$lang['sys_noaccess'] 				= "Access denied;";
+$lang['sys_noalloaw'] 				= "你没有权限";
+$lang['sys_request_ok'] = "Votre requ&ecirc;te &agrave; bien &eacute;t&eacute; envoy&eacute;e !";
+$lang['sys_ok'] = "OK";
+
+//Destruction de lune
+$lang['sys_destruc_title']    = "Tentative de destruction lunaire du %s :";
+$lang['sys_mess_destruc_report'] = "Rapport de destruction";
+$lang['sys_destruc_lune'] = "La probabilit&eacute;e de destruction de lune est de : %d %% ";
+$lang['sys_destruc_rip'] = "La probabilit&eacute;e de destruction de la flotte d\'&eacute;toile de la mort est de : %d %% ";
+$lang['sys_destruc_stop'] = "Le d&eacute;fenseur a r&eacute;ussi a bloquer la tentative de destruction de lune";
+$lang['sys_destruc_mess1'] = "Cette flotte d\'&eacute;toile de la mort concentre leurs chocs de gravitons alternants sur cette lune";
+$lang['sys_destruc_mess'] = "Une flotte de la plan&egrave;te %s [%d:%d:%d] atteint la lune de la plan&egrave;te en [%d:%d:%d]";
+$lang['sys_destruc_echec'] = ". Des tremblements secouent la surface de la lune. Mais quelque chose se passe mal. Les canons de gravitons secouent la flotte d\'&eacute;toile de la mort, il y a retour fatal. H&eacute;las ! La flotte d\'&eacute;toile de la mort explose en millions de fragments! L\'explosion d&eacute;truit enti&egrave;rement la flotte.";
+$lang['sys_destruc_reussi'] = ", provoquant un tremblement puis un d&eacute;chirement total de celle-ci. Tous les b&agrave;timents sont d&eacute;truits - Mission accomplie !La lune est d&eacute;truite! La flotte rentre &agrave; la plan&egrave;te de d&eacute;part.";
+$lang['sys_destruc_null'] = ", visiblement la flotte ne d&eacute;veloppe pas la puissance n&eacute;cessaire - Echec de la mission! La flotte rentre &agrave; la plan&egrave;te de d&eacute;part.";
+
+// Created by Perberos. All rights reversed (C) 2006
+// Complet by XNova Team. All rights reversed (C) 2008
+?>

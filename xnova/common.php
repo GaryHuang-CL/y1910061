@@ -21,7 +21,7 @@ $IsUserChecked = false;
 define('DEFAULT_SKINPATH' , 'skins/xnova/');
 define('TEMPLATE_DIR'     , 'templates/');
 define('TEMPLATE_NAME'    , 'OpenGame');
-define('DEFAULT_LANG'     , 'fr');
+define('DEFAULT_LANG'     , 'cn');
 
 $HTTP_ACCEPT_LANGUAGE = DEFAULT_LANG;
 
