@@ -207,7 +207,8 @@ if ($_POST) {
         doquery($QryUpdateUser, 'users');
         // Envois d'un message in-game sympa ^^
         $from = $lang['sender_message_ig'];
-        $sender = "Admin";
+        #$sender = "Admin";
+        $sender = "0";
         $Subject = $lang['subject_message_ig'];
         $message = $lang['text_message_ig'];
         SendSimpleMessage($iduser, $sender, $Time, 1, $from, $Subject, $message);

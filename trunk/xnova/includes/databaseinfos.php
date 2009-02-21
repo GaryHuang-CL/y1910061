@@ -27,7 +27,7 @@
 	$QryTableAks        .= "`planet` int(2) default NULL, ";
 	$QryTableAks        .= "`eingeladen` int(11) default NULL, ";
 	$QryTableAks        .= "PRIMARY KEY  (`id`) ";
-	$QryTableAks        .= ") ENGINE=MyISAM;";
+	$QryTableAks        .= ") ENGINE=InnoDB;";
 
 	// Table annonce
 	$QryTableAnnonce     = "CREATE TABLE `{{table}}` ( ";
@@ -42,7 +42,7 @@
 	$QryTableAnnonce    .= "`cristals` bigint(11) NOT NULL, ";
 	$QryTableAnnonce    .= "`deuts` bigint(11) NOT NULL, ";
 	$QryTableAnnonce    .= "PRIMARY KEY  (`id`) ";
-	$QryTableAnnonce    .= ") ENGINE=MyISAM;";
+	$QryTableAnnonce    .= ") ENGINE=InnoDB;";
 
 	// Table alliance
 	$QryTableAlliance    = "CREATE TABLE `{{table}}` ( ";
@@ -62,7 +62,7 @@
 	$QryTableAlliance   .= "`ally_ranks` text character set latin1, ";
 	$QryTableAlliance   .= "`ally_members` int(11) NOT NULL default '0', ";
 	$QryTableAlliance   .= "PRIMARY KEY  (`id`) ";
-	$QryTableAlliance   .= ") ENGINE=MyISAM;";
+	$QryTableAlliance   .= ") ENGINE=InnoDB;";
 
 	// Table banned
 	$QryTableBanned      = "CREATE TABLE `{{table}}` ( ";
@@ -75,7 +75,7 @@
 	$QryTableBanned     .= "`author` varchar(11) character set latin1 NOT NULL default '', ";
 	$QryTableBanned     .= "`email` varchar(20) character set latin1 NOT NULL default '', ";
 	$QryTableBanned     .= "KEY `ID` (`id`) ";
-	$QryTableBanned     .= ") ENGINE=MyISAM;";
+	$QryTableBanned     .= ") ENGINE=InnoDB;";
 
 	// Table buddy
 	$QryTableBuddy       = "CREATE TABLE `{{table}}` ( ";
@@ -85,7 +85,7 @@
 	$QryTableBuddy      .= "`active` tinyint(3) NOT NULL default '0', ";
 	$QryTableBuddy      .= "`text` text character set latin1, ";
 	$QryTableBuddy      .= "PRIMARY KEY  (`id`) ";
-	$QryTableBuddy      .= ") ENGINE=MyISAM;";
+	$QryTableBuddy      .= ") ENGINE=InnoDB;";
 
 	// Table chat
 	$QryTableChat        = "CREATE TABLE `{{table}}` ( ";
@@ -94,13 +94,13 @@
 	$QryTableChat       .= "`message` text NOT NULL, ";
 	$QryTableChat       .= "`timestamp` int(11) NOT NULL default '0', ";
 	$QryTableChat       .= "PRIMARY KEY  (`messageid`) ";
-	$QryTableChat       .= ") ENGINE=MyISAM;";
+	$QryTableChat       .= ") ENGINE=InnoDB;";
 
 	// Table config
 	$QryTableConfig      = "CREATE TABLE `{{table}}` ( ";
 	$QryTableConfig     .= "`config_name` varchar(64) character set latin1 NOT NULL default '', ";
 	$QryTableConfig     .= "`config_value` text character set latin1 NOT NULL ";
-	$QryTableConfig     .= ") ENGINE=MyISAM;";
+	$QryTableConfig     .= ") ENGINE=InnoDB;";
 
 	// Valeurs de base de la config
 	$QryInsertConfig     = "INSERT INTO `{{table}}` ";
@@ -165,7 +165,7 @@
 	$QryTabledeclared        .= "`reason`TEXT NOT NULL, ";
 	$QryTabledeclared        .= "`declarator_name`TEXT NOT NULL ";
 
-	$QryTabledeclared       .= ") ENGINE=MyISAM;";
+	$QryTabledeclared       .= ") ENGINE=InnoDB;";
 
 	// Table errors
 	$QryTableErrors      = "CREATE TABLE `{{table}}` ( ";
@@ -175,7 +175,7 @@
 	$QryTableErrors     .= "`error_type` varchar(32) character set latin1 NOT NULL default 'unknown', ";
 	$QryTableErrors     .= "`error_text` text character set latin1, ";
 	$QryTableErrors     .= "PRIMARY KEY  (`error_id`) ";
-	$QryTableErrors     .= ") ENGINE=MyISAM;";
+	$QryTableErrors     .= ") ENGINE=InnoDB;";
 
 	// Table fleets
 	$QryTableFleets      = "CREATE TABLE `{{table}}` ( ";
@@ -204,7 +204,7 @@
 	$QryTableFleets     .= "`fleet_mess` int(11) NOT NULL default '0', ";
 	$QryTableFleets     .= "`start_time` int(11) default NULL, ";
 	$QryTableFleets     .= "PRIMARY KEY  (`fleet_id`) ";
-	$QryTableFleets     .= ") ENGINE=MyISAM;";
+	$QryTableFleets     .= ") ENGINE=InnoDB;";
 
 	// Table galaxy
 	$QryTableGalaxy      = "CREATE TABLE `{{table}}` ( ";
@@ -219,7 +219,7 @@
 	$QryTableGalaxy     .= "KEY `galaxy` (`galaxy`), ";
 	$QryTableGalaxy     .= "KEY `system` (`system`), ";
 	$QryTableGalaxy     .= "KEY `planet` (`planet`) ";
-	$QryTableGalaxy     .= ") ENGINE=MyISAM;";
+	$QryTableGalaxy     .= ") ENGINE=InnoDB;";
 
 	// Table iraks
 	$QryTableIraks       = "CREATE TABLE `{{table}}` ( ";
@@ -236,7 +236,7 @@
 	$QryTableIraks      .= "`anzahl` int(32) default NULL, ";
 	$QryTableIraks      .= "`primaer` int(32) default NULL, ";
 	$QryTableIraks      .= "PRIMARY KEY  (`id`) ";
-	$QryTableIraks      .= ") ENGINE=MyISAM;";
+	$QryTableIraks      .= ") ENGINE=InnoDB;";
 
 	// Table lunas
 	$QryTableLunas       = "CREATE TABLE `{{table}}` ( ";
@@ -253,7 +253,7 @@
 	$QryTableLunas      .= "`temp_max` int(11) NOT NULL default '0', ";
 	$QryTableLunas      .= "`diameter` int(11) NOT NULL default '0', ";
 	$QryTableLunas      .= "PRIMARY KEY  (`id`) ";
-	$QryTableLunas      .= ") ENGINE=MyISAM;";
+	$QryTableLunas      .= ") ENGINE=InnoDB;";
 
 	// Table messages
 	$QryTableMessages    = "CREATE TABLE `{{table}}` ( ";
@@ -266,7 +266,7 @@
 	$QryTableMessages   .= "`message_subject` varchar(48) character set latin1 default NULL, ";
 	$QryTableMessages   .= "`message_text` text character set latin1, ";
 	$QryTableMessages   .= "PRIMARY KEY  (`message_id`) ";
-	$QryTableMessages   .= ") ENGINE=MyISAM;";
+	$QryTableMessages   .= ") ENGINE=InnoDB;";
 
 	// Table notes
 	$QryTableNotes       = "CREATE TABLE `{{table}}` ( ";
@@ -277,7 +277,7 @@
 	$QryTableNotes      .= "`title` varchar(32) character set latin1 default NULL, ";
 	$QryTableNotes      .= "`text` text character set latin1, ";
 	$QryTableNotes      .= "PRIMARY KEY  (`id`) ";
-	$QryTableNotes      .= ") ENGINE=MyISAM;";
+	$QryTableNotes      .= ") ENGINE=InnoDB;";
 
 	// Table planets
 	$QryTablePlanets     = "CREATE TABLE `{{table}}` ( ";
@@ -296,7 +296,7 @@
 	$QryTablePlanets    .= "`b_tech` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`b_tech_id` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`b_hangar` int(11) NOT NULL default '0', ";
-	$QryTablePlanets    .= "`b_hangar_id` text character set latin1 NOT NULL, ";
+	$QryTablePlanets    .= "`b_hangar_id` text character set latin1 default NULL, ";
 	$QryTablePlanets    .= "`b_hangar_plus` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`image` varchar(32) character set latin1 NOT NULL default 'normaltempplanet01', ";
 	$QryTablePlanets    .= "`diameter` int(11) NOT NULL default '12800', ";
@@ -367,7 +367,7 @@
 	$QryTablePlanets    .= "`sprungtor` bigint(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`last_jump_time` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "PRIMARY KEY  (`id`) ";
-	$QryTablePlanets    .= ") ENGINE=MyISAM;";
+	$QryTablePlanets    .= ") ENGINE=InnoDB;";
 
 	// Table rw
 	$QryTableRw          = "CREATE TABLE `{{table}}` ( ";
@@ -382,7 +382,7 @@
 	$QryTableRw         .= "KEY `id_owner2` (`id_owner2`,`rid`), ";
 	$QryTableRw         .= "KEY `time` (`time`), ";
 	$QryTableRw         .= "FULLTEXT KEY `raport` (`raport`) ";
-	$QryTableRw         .= ") ENGINE=MyISAM;";
+	$QryTableRw         .= ") ENGINE=InnoDB;";
 
 	// Table statpoints
 	$QryTableStatPoints  = "CREATE TABLE `{{table}}` ( ";
@@ -416,7 +416,7 @@
 	$QryTableStatPoints .= "KEY `DEFS` (`defs_points`), ";
 	$QryTableStatPoints .= "KEY `FLEET` (`fleet_points`), ";
 	$QryTableStatPoints .= "KEY `TOTAL` (`total_points`) ";
-	$QryTableStatPoints .= ") ENGINE=MyISAM;";
+	$QryTableStatPoints .= ") ENGINE=InnoDB;";
 
 	// Table users
 	$QryTableUsers       = "CREATE TABLE `{{table}}` ( ";
@@ -509,22 +509,22 @@
 	$QryTableUsers      .= "`xpminier` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`raids` bigint(20) NOT NULL default '0', ";
 	$QryTableUsers      .= "`p_infligees` bigint(20) NOT NULL default '0', ";
-	$QryTableUsers      .= "`mnl_alliance` INT( 11 ) NOT NULL , ";
-	$QryTableUsers      .= "`mnl_joueur` INT( 11 ) NOT NULL , ";
-	$QryTableUsers      .= "`mnl_attaque` INT( 11 ) NOT NULL , ";
-	$QryTableUsers      .= "`mnl_spy` INT( 11 ) NOT NULL , ";
-	$QryTableUsers      .= "`mnl_exploit` INT( 11 ) NOT NULL , ";
-	$QryTableUsers      .= "`mnl_transport` INT( 11 ) NOT NULL , ";
-	$QryTableUsers      .= "`mnl_expedition` INT( 11 ) NOT NULL , ";
-	$QryTableUsers      .= "`mnl_general` INT( 11 ) NOT NULL , ";
-	$QryTableUsers      .= "`mnl_buildlist` INT (11) NOT NULL , ";
-	$QryTableUsers      .= "`bana` int(11) default NULL , ";
+	$QryTableUsers      .= "`mnl_alliance` INT( 11 ) default NULL, ";
+	$QryTableUsers      .= "`mnl_joueur` INT( 11 ) default NULL, ";
+	$QryTableUsers      .= "`mnl_attaque` INT( 11 ) default NULL, ";
+	$QryTableUsers      .= "`mnl_spy` INT( 11 ) default NULL, ";
+	$QryTableUsers      .= "`mnl_exploit` INT( 11 ) default NULL, ";
+	$QryTableUsers      .= "`mnl_transport` INT( 11 ) default NULL, ";
+	$QryTableUsers      .= "`mnl_expedition` INT( 11 ) default NULL, ";
+	$QryTableUsers      .= "`mnl_general` INT( 11 ) default NULL, ";
+	$QryTableUsers      .= "`mnl_buildlist` INT (11) default NULL, ";
+	$QryTableUsers      .= "`bana` int(11) default NULL, ";
 	$QryTableUsers      .= "`multi_validated` int(11) default NULL , ";
 	$QryTableUsers      .= "`banaday` int(11) default NULL , ";
 	$QryTableUsers      .= "`raids1` int(11) default NULL , ";
 	$QryTableUsers      .= "`raidswin` int(11) default NULL , ";
 	$QryTableUsers      .= "`raidsloose` int(11) default NULL  ";
-	$QryTableUsers      .= ") ENGINE=MyISAM;";
+	$QryTableUsers      .= ") ENGINE=InnoDB;";
 
 	// Multi
 	$QryTableMulti       = "CREATE TABLE `{{table}}` ( ";
@@ -533,6 +533,6 @@
 	$QryTableMulti      .= "`sharer` bigint(11) unsigned NOT NULL, ";
 	$QryTableMulti      .= "`reason` text character set latin1 NOT NULL, ";
 	$QryTableMulti      .= "PRIMARY KEY  (`id`) ";
-	$QryTableMulti      .= ") ENGINE=MyISAM;";
+	$QryTableMulti      .= ") ENGINE=InnoDB;";
 
 ?>

@@ -1,0 +1,9 @@
+<?php
+
+$lang['md5_title']  = "MD5ÃÜÂë×ª»»¹¤¾ß";
+$lang['md5_pswcyp'] = "ÇëÊäÈëÃÜÂë";
+$lang['md5_psw']    = "Ã÷ÎÄÃÜÂë";
+$lang['md5_pswenc'] = "¼ÓÃÜÃÜÂë";
+$lang['md5_doit']   = "×ª»»";
+
+?>

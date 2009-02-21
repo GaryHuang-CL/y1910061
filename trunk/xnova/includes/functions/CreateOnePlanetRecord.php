@@ -34,7 +34,7 @@ function PlanetSizeRandomiser ($Position, $HomeWorld = false) {
 }
 
 function CreateOnePlanetRecord($Galaxy, $System, $Position, $PlanetOwnerID, $PlanetName = '', $HomeWorld = false) {
-	global $lang;
+	global $lang, $game_config;
 
 	// Avant tout, on verifie s'il existe deja une planete a cet endroit
 	$QrySelectPlanet  = "SELECT	`id` ";
@@ -45,7 +45,7 @@ function CreateOnePlanetRecord($Galaxy, $System, $Position, $PlanetOwnerID, $Pla
 	$QrySelectPlanet .= "`planet` = '". $Position ."';";
 	$PlanetExist = doquery( $QrySelectPlanet, 'planets', true);
 
-	// Si $PlanetExist est autre chose que false ... c'est qu'il y a quelque chose là bas ...
+	// Si $PlanetExist est autre chose que false ... c'est qu'il y a quelque chose l bas ...
 	// C'est donc aussi que je ne peux pas m'y poser !!
 	if (!$PlanetExist) {
 		$planet                      = PlanetSizeRandomiser ($Position, $HomeWorld);
@@ -140,7 +140,7 @@ function CreateOnePlanetRecord($Galaxy, $System, $Position, $PlanetOwnerID, $Pla
 		$QryInsertPlanet .= "`deuterium_max` = '".     $planet['deuterium_max']     ."';";
 		doquery( $QryInsertPlanet, 'planets');
 
-		// On recupere l'id de planete nouvellement créé
+		// On recupere l'id de planete nouvellement cr
 		$QrySelectPlanet  = "SELECT `id` ";
 		$QrySelectPlanet .= "FROM {{table}} ";
 		$QrySelectPlanet .= "WHERE ";
@@ -160,7 +160,7 @@ function CreateOnePlanetRecord($Galaxy, $System, $Position, $PlanetOwnerID, $Pla
 		$GetGalaxyID      = doquery( $QrySelectGalaxy, 'galaxy', true);
 
 		if ($GetGalaxyID) {
-			// Ah ... Ce secteur de ce vaste monde a deja ete occupé
+			// Ah ... Ce secteur de ce vaste monde a deja ete occup
 			$QryUpdateGalaxy  = "UPDATE {{table}} SET ";
 			$QryUpdateGalaxy .= "`id_planet` = '". $GetPlanetID['id'] ."' ";
 			$QryUpdateGalaxy .= "WHERE ";
