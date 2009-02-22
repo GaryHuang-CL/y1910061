@@ -233,7 +233,7 @@ for ($a = 0; $a < 4; $a++) {
     for($i = 0; $i < count($t); $i++) {
 ?>
                     <tr>
-                        <th style="width: 30%"><?=$t[$i][0]?></td>
+                        <th style="width: 30%"><?=$t[$i][0]?></th>
                         <th style="text-align: center; width: 10%"><input type="text" name="<?=$c?>[]" value="<?=!empty(${$d}[$i]) ? ${$d}[$i]: 0;?>" style="width: 30px;"></th>
                         <th style="width: 15%"><span style="color: green"><?=number_format($t_v[$i][0], 0, ',', '.');?></span></th>
                         <th style="width: 15%"><span style="color: blue"><?=number_format($t_v[$i][1], 0, ',', '.');?></span></th>
@@ -247,7 +247,7 @@ for ($a = 0; $a < 4; $a++) {
 ?>
                     <tr>
                         <td colspan="4">&nbsp;</td>
-                        <td class="c">Summe: </th>
+                        <td class="c">Summe: </td>
                         <th><?=$to[$a]?> (<?=@round((100 * $to[$a]) / $tot)?>%)</th>
                     </tr>
                 </table><br />

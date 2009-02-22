@@ -8,7 +8,7 @@
  * @copyright 2008 By Chlorel for XNova
  */
 
-// Verification du nombre de cases utilisées sur la planete courrante
+// Verification of the number of boxes used on the current planet
 function CheckPlanetUsedFields ( &$planet ) {
 	global $resource;
 

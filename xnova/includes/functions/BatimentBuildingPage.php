@@ -12,7 +12,7 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 
 	CheckPlanetUsedFields ( $CurrentPlanet );
 
-	// Tables des batiments possibles par type de planete
+	// Tables of buildings by type of possible planet
 	$Allowed['1'] = array(  1,  2,  3,  4, 12, 14, 15, 21, 22, 23, 24, 31, 33, 34, 44);
 	$Allowed['3'] = array( 12, 14, 21, 22, 23, 24, 34, 41, 42, 43);
 
@@ -72,9 +72,9 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 
 	$Queue = ShowBuildingQueue ( $CurrentPlanet, $CurrentUser );
 
-	// On enregistre ce que l'on a modifié dans planet !
+	// On enregistre ce que l'on a modifiï¿½ dans planet !
 	BuildingSavePlanetRecord ( $CurrentPlanet );
-	// On enregistre ce que l'on a eventuellement modifié dans users
+	// On enregistre ce que l'on a eventuellement modifiï¿½ dans users
 	BuildingSaveUserRecord ( $CurrentUser );
 
 	if ($Queue['lenght'] < MAX_BUILDING_QUEUE_SIZE) {
@@ -111,7 +111,7 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 				$NextBuildLevel        = $CurrentPlanet[$resource[$Element]] + 1;
 
 				if ($Element == 31) {
-					// Spécial Laboratoire
+					// Spï¿½cial Laboratoire
 					if ($CurrentUser["b_tech_planet"] != 0 &&     // Si pas 0 y a une recherche en cours
 						$game_config['BuildLabWhileRun'] != 1) {  // Variable qui contient le parametre
 						// On verifie si on a le droit d'evoluer pendant les recherches (Setting dans config)
