@@ -292,11 +292,11 @@
 	$QryTablePlanets    .= "`planet_type` int(11) NOT NULL default '1', ";
 	$QryTablePlanets    .= "`destruyed` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`b_building` int(11) NOT NULL default '0', ";
-	$QryTablePlanets    .= "`b_building_id` blob  default '', ";
+	$QryTablePlanets    .= "`b_building_id` text  default '', ";
 	$QryTablePlanets    .= "`b_tech` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`b_tech_id` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`b_hangar` int(11) NOT NULL default '0', ";
-	$QryTablePlanets    .= "`b_hangar_id` blob  default NULL, ";
+	$QryTablePlanets    .= "`b_hangar_id` text default '', ";
 	$QryTablePlanets    .= "`b_hangar_plus` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`image` varbinary(32)  NOT NULL default 'normaltempplanet01', ";
 	$QryTablePlanets    .= "`diameter` int(11) NOT NULL default '12800', ";

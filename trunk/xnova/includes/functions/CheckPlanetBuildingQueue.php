@@ -47,13 +47,13 @@ function CheckPlanetBuildingQueue ( &$CurrentPlanet, &$CurrentUser ) {
 			if ($ForDestroy == false) {
 				// Mise a jours de l'XP Minier
 				if (in_array($Element, $XPBuildings)) {
-					$AjoutXP                        = $Units / 1000;
+					$AjoutXP                        = round($Units / 1000);
 					$CurrentUser['xpminier']       += $AjoutXP;
 				}
 			} else {
 				// Mise a jours de l'XP Minier
 				if (in_array($Element, $XPBuildings)) {
-					$AjoutXP                        = ($Units * 3) / 1000;
+					$AjoutXP                        = round(($Units * 3) / 1000);
 					$CurrentUser['xpminier']       -= $AjoutXP;
 				}
 			}
