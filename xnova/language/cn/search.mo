@@ -1,26 +1,26 @@
 <?php
 
-$lang['Position'] = 'Î»ÖÃ';
-$lang['Player'] = 'Íæ¼Ò';
-$lang['Name'] = 'êÇ³Æ';
-$lang['Player_name'] = 'Íæ¼ÒêÇ³Æ';
-$lang['Planet'] = 'ÐÇÇò';
-$lang['Planet_name'] = 'ÐÇÇòÃû³Æ';
-$lang['Alliance'] = 'ÁªÃË';
-$lang['Alliance_name'] = 'ÁªÃËÃû³Æ';
-$lang['Tag'] = '±êÇ©';
-$lang['Alliance_tag'] = 'ÁªÃË±êÇ©';
-$lang['Members'] = '³ÉÔ±';
-$lang['Points'] = '»ý·Ö';
-$lang['PerMember'] = 'Ã¿Î»³ÉÔ±';
-$lang['Coordinated'] = '×ù±ê';
-$lang['Position'] = 'Î»ÖÃ';
-$lang['Search'] = 'ËÑÑ°';
-$lang['Search_in_all_game'] = "Ñ°ÕÒÕû¸öËÅ·þÆ÷";
-$lang['Back'] = '·µ»Ø';
-$lang['Search'] = 'ËÑÑ°';
-$lang['write_a_messege'] = '×«Ð´Ñ¶Ï¢';
-$lang['buddy_request'] = 'ÑûÇëÅóÓÑ';
+$lang['Position'] = 'ä½ç½®';
+$lang['Player'] = 'çŽ©å®¶';
+$lang['Name'] = 'æ˜µç§°';
+$lang['Player_name'] = 'çŽ©å®¶æ˜µç§°';
+$lang['Planet'] = 'æ˜Ÿçƒ';
+$lang['Planet_name'] = 'æ˜Ÿçƒåç§°';
+$lang['Alliance'] = 'è”ç›Ÿ';
+$lang['Alliance_name'] = 'è”ç›Ÿåç§°';
+$lang['Tag'] = 'æ ‡ç­¾';
+$lang['Alliance_tag'] = 'è”ç›Ÿæ ‡ç­¾';
+$lang['Members'] = 'æˆå‘˜';
+$lang['Points'] = 'ç§¯åˆ†';
+$lang['PerMember'] = 'æ¯ä½æˆå‘˜';
+$lang['Coordinated'] = 'åº§æ ‡';
+$lang['Position'] = 'ä½ç½®';
+$lang['Search'] = 'æœå¯»';
+$lang['Search_in_all_game'] = "å¯»æ‰¾æ•´ä¸ªä¼ºæœå™¨";
+$lang['Back'] = 'è¿”å›ž';
+$lang['Search'] = 'æœå¯»';
+$lang['write_a_messege'] = 'æ’°å†™è®¯æ¯';
+$lang['buddy_request'] = 'é‚€è¯·æœ‹å‹';
 
 // Created by Perberos. All rights reversed (C) 2006
 // Complet by XNova Team. All rights reversed (C) 2008

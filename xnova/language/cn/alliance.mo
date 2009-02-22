@@ -1,137 +1,137 @@
 <?php
 
-$lang['alliance'] = 'ÁªÃË';
-$lang['your_alliance'] = 'ÄãµÄÁªÃË';
-$lang['make_alliance_owner'] = '½¨Á¢Äã×Ô¼ºµÄÁªÃË';
-$lang['search_alliance'] = 'ËÑË÷ÁªÃË';
-$lang['make_alliance'] = '´´Á¢ÁªÃË';
-$lang['search_alliance'] = 'ËÑË÷ÁªÃË';
+$lang['alliance'] = 'è”ç›Ÿ';
+$lang['your_alliance'] = 'ä½ çš„è”ç›Ÿ';
+$lang['make_alliance_owner'] = 'å»ºç«‹ä½ è‡ªå·±çš„è”ç›Ÿ';
+$lang['search_alliance'] = 'æœç´¢è”ç›Ÿ';
+$lang['make_alliance'] = 'åˆ›ç«‹è”ç›Ÿ';
+$lang['search_alliance'] = 'æœç´¢è”ç›Ÿ';
 
-$lang['searched_alliance_availables'] = 'ÕÒµ½µÄÁªÃË:';
-$lang['alliance_has_been_maked'] = 'ÁªÃË %s ÒÑ¾­±»´´Á¢';
-$lang['have_not_tag'] = 'ÁªÃËÃ»ÓĞ¼ò³Æ!';
-$lang['have_not_name'] = 'ÁªÃËÃ»ÓĞÈ«Ãû!';
-$lang['always_exist'] = '%s ÒÑ´æÔÚ';
-$lang['ally_maked'] = '%s ÒÑ´´Á¢';
-$lang['ally_notexist'] = 'ÁªÃË²»´æÔÚ!';
-$lang['Send_circular_mail'] = '´«ËÍÈº×éĞÅ¼ş';
-$lang['Text_mail'] = 'ĞÅ¼şÄÚÈİ';
-$lang['Members_list'] = '³ÉÔ±ÁĞ±í';
-$lang['Alliance_admin'] = '¹ÜÀíÁªÃË';
-$lang['Range'] = 'ÄãµÄ³ÆºÅ';
-$lang['Members'] = '³ÉÔ±';
-$lang['Name'] = 'È«Ãû';
-$lang['Tag'] = '¼ò³Æ';
-$lang['Circular_message'] = 'Èº×éĞÅ¼ş';
-$lang['Inner_section'] = 'ÎÄ×ÖÑ¶Ï¢';
-$lang['Main_Page'] = 'Ö÷ÒªÒ³Ãæ';
+$lang['searched_alliance_availables'] = 'æ‰¾åˆ°çš„è”ç›Ÿ:';
+$lang['alliance_has_been_maked'] = 'è”ç›Ÿ %s å·²ç»è¢«åˆ›ç«‹';
+$lang['have_not_tag'] = 'è”ç›Ÿæ²¡æœ‰ç®€ç§°!';
+$lang['have_not_name'] = 'è”ç›Ÿæ²¡æœ‰å…¨å!';
+$lang['always_exist'] = '%s å·²å­˜åœ¨';
+$lang['ally_maked'] = '%s å·²åˆ›ç«‹';
+$lang['ally_notexist'] = 'è”ç›Ÿä¸å­˜åœ¨!';
+$lang['Send_circular_mail'] = 'ä¼ é€ç¾¤ç»„ä¿¡ä»¶';
+$lang['Text_mail'] = 'ä¿¡ä»¶å†…å®¹';
+$lang['Members_list'] = 'æˆå‘˜åˆ—è¡¨';
+$lang['Alliance_admin'] = 'ç®¡ç†è”ç›Ÿ';
+$lang['Range'] = 'ä½ çš„ç§°å·';
+$lang['Members'] = 'æˆå‘˜';
+$lang['Name'] = 'å…¨å';
+$lang['Tag'] = 'ç®€ç§°';
+$lang['Circular_message'] = 'ç¾¤ç»„ä¿¡ä»¶';
+$lang['Inner_section'] = 'æ–‡å­—è®¯æ¯';
+$lang['Main_Page'] = 'ä¸»è¦é¡µé¢';
 
-$lang['alliance_tag'] = 'ÁªÃË¼ò³Æ';
-$lang['allyance_name'] = 'ÁªÃËÈ«Ãû';
-$lang['members'] = 'ËùÓĞ³ÉÔ±';
-$lang['member'] = '³ÉÔ±';
-$lang['Novate'] = 'ĞÂ³ÉÔ±';
+$lang['alliance_tag'] = 'è”ç›Ÿç®€ç§°';
+$lang['allyance_name'] = 'è”ç›Ÿå…¨å';
+$lang['members'] = 'æ‰€æœ‰æˆå‘˜';
+$lang['member'] = 'æˆå‘˜';
+$lang['Novate'] = 'æ–°æˆå‘˜';
 
-$lang['Founder'] = '´´½¨Õß';
+$lang['Founder'] = 'åˆ›å»ºè€…';
 
-$lang['Circular_sended'] = 'ÒÔÏÂ³ÉÔ±ÒÑÊÕµ½Ñ¶Ï¢';
+$lang['Circular_sended'] = 'ä»¥ä¸‹æˆå‘˜å·²æ”¶åˆ°è®¯æ¯';
 
 //Solicitud
-$lang['it_is_not_posible_to_apply'] = "ÎŞĞ§ÉêÇë";
-$lang['write_apply'] = "ÄãµÄÉêÇë";
-$lang['your_apply'] = 'ÌîĞ´ÉêÇë';
-$lang['apply_registered'] = 'ÉêÇëÒÑËÍ³ö,Èç¹ûÉêÇëÍ¨¹ıÄã»áÊÕµ½ÁªÃË´«À´µÄÑ¶Ï¢<br><br><a href=alliance.php>·µ»Ø</a>';
-$lang['apply_cantbeadded'] = 'ÉêÇëÊ§°Ü, ÇëÖØÊÔ!';
+$lang['it_is_not_posible_to_apply'] = "æ— æ•ˆç”³è¯·";
+$lang['write_apply'] = "ä½ çš„ç”³è¯·";
+$lang['your_apply'] = 'å¡«å†™ç”³è¯·';
+$lang['apply_registered'] = 'ç”³è¯·å·²é€å‡º,å¦‚æœç”³è¯·é€šè¿‡ä½ ä¼šæ”¶åˆ°è”ç›Ÿä¼ æ¥çš„è®¯æ¯<br><br><a href=alliance.php>è¿”å›</a>';
+$lang['apply_cantbeadded'] = 'ç”³è¯·å¤±è´¥, è¯·é‡è¯•!';
 
-$lang['Exit_of_this_alliance'] = "ÍË³öÁªÃË";
-$lang['Continue'] = "¼ÌĞø";
-$lang['All_players'] = 'ËùÓĞ³ÉÔ±';
-$lang['Send_Apply'] = 'ËÍ³öÉêÇë';
-$lang['Delete_apply'] = 'È¡ÏûÉêÇë';
-$lang['Send'] = 'ËÍ³ö';
-$lang['Ok'] = 'È·¶¨';
-$lang['Reload'] = 'ÖØÖÃ';
-$lang['Clear'] = 'Çå³ı';
-$lang['Back'] = '·µ»Ø';
-$lang['Help'] = '°ïÖú';
-$lang['Message'] = 'Ñ¶Ï¢';
-$lang['characters'] = '×Ö';
-$lang['Destiny'] = '½ÓÊÕÕß';
+$lang['Exit_of_this_alliance'] = "é€€å‡ºè”ç›Ÿ";
+$lang['Continue'] = "ç»§ç»­";
+$lang['All_players'] = 'æ‰€æœ‰æˆå‘˜';
+$lang['Send_Apply'] = 'é€å‡ºç”³è¯·';
+$lang['Delete_apply'] = 'å–æ¶ˆç”³è¯·';
+$lang['Send'] = 'é€å‡º';
+$lang['Ok'] = 'ç¡®å®š';
+$lang['Reload'] = 'é‡ç½®';
+$lang['Clear'] = 'æ¸…é™¤';
+$lang['Back'] = 'è¿”å›';
+$lang['Help'] = 'å¸®åŠ©';
+$lang['Message'] = 'è®¯æ¯';
+$lang['characters'] = 'å­—';
+$lang['Destiny'] = 'æ¥æ”¶è€…';
 
-$lang['Write_to_alliance'] = 'µİ½»ÉêÇëµ½ÁªÃË [%s]';
+$lang['Write_to_alliance'] = 'é€’äº¤ç”³è¯·åˆ°è”ç›Ÿ [%s]';
 
-$lang['There_is_no_a_text_apply'] = 'Ã»ÓĞÉêÇëÎÄ×Ö';
-$lang['Waiting_a_request_text'] = 'ÄãÒÑ¾­·¢ËÍÉêÇëµ½ÁªÃË[%s].ÇëµÈ´ıÁªÃË¹ÜÀíÔ±´¦ÀíÄãµÄÉêÇë¡£';
-$lang['Canceled_a_request_text'] = 'ÁªÃË[%s]Ã»ÓĞÔÊÈ¡ÄãµÄÉêÇë£¬ÇëÖØĞÂÉêÇë»ò´´½¨×Ô¼ºµÄÁªÃË.';
+$lang['There_is_no_a_text_apply'] = 'æ²¡æœ‰ç”³è¯·æ–‡å­—';
+$lang['Waiting_a_request_text'] = 'ä½ å·²ç»å‘é€ç”³è¯·åˆ°è”ç›Ÿ[%s].è¯·ç­‰å¾…è”ç›Ÿç®¡ç†å‘˜å¤„ç†ä½ çš„ç”³è¯·ã€‚';
+$lang['Canceled_a_request_text'] = 'è”ç›Ÿ[%s]æ²¡æœ‰å…å–ä½ çš„ç”³è¯·ï¼Œè¯·é‡æ–°ç”³è¯·æˆ–åˆ›å»ºè‡ªå·±çš„è”ç›Ÿ.';
 
-$lang['Online'] = 'ÏßÉÏ';
-$lang['Ammount'] = 'È«²¿';
-$lang['Name'] = 'êÇ³Æ';
+$lang['Online'] = 'çº¿ä¸Š';
+$lang['Ammount'] = 'å…¨éƒ¨';
+$lang['Name'] = 'æ˜µç§°';
 $lang['Number'] = 'ID.';
 $lang['Position'] = 'Statut';
-$lang['Points'] = '»ı·Ö';
-$lang['Coordinated'] = '×ù±ê';
-$lang['Member_from'] = '×î½üµÇÈë';
-$lang['Function'] = '¹¦ÄÜ';
-$lang['Write_a_message'] = '·¢ËÍÑ¶Ï¢';
-$lang['On'] = 'ÏßÉÏ';
+$lang['Points'] = 'ç§¯åˆ†';
+$lang['Coordinated'] = 'åº§æ ‡';
+$lang['Member_from'] = 'æœ€è¿‘ç™»å…¥';
+$lang['Function'] = 'åŠŸèƒ½';
+$lang['Write_a_message'] = 'å‘é€è®¯æ¯';
+$lang['On'] = 'çº¿ä¸Š';
 $lang['15_min'] = '15 min';
-$lang['Off'] = 'ÀëÏß';
+$lang['Off'] = 'ç¦»çº¿';
 
 //Admin
-$lang['Transfer_alliance'] = 'È¡Ïû/½ÓÊÕ ÁªÃË';
-$lang['Texts'] = '¹ÜÀíÎÄµµ';
-$lang['External_text'] = 'Íâ²¿Ñ¶Ï¢';
-$lang['Internal_text'] = 'ÄÚ²¿Ñ¶Ï¢';
-$lang['Request_text'] = '¼ÓÈëÌõ¼ş';
-$lang['Show_of_request_text'] = 'Íâ²¿Ñ¶Ï¢';
+$lang['Transfer_alliance'] = 'å–æ¶ˆ/æ¥æ”¶ è”ç›Ÿ';
+$lang['Texts'] = 'ç®¡ç†æ–‡æ¡£';
+$lang['External_text'] = 'å¤–éƒ¨è®¯æ¯';
+$lang['Internal_text'] = 'å†…éƒ¨è®¯æ¯';
+$lang['Request_text'] = 'åŠ å…¥æ¡ä»¶';
+$lang['Show_of_request_text'] = 'å¤–éƒ¨è®¯æ¯';
 
-$lang['Law_settings'] = 'È¨ÏŞÉè¶¨';
-$lang['Members_administrate'] = '¹ÜÀí³ÉÔ±';
+$lang['Law_settings'] = 'æƒé™è®¾å®š';
+$lang['Members_administrate'] = 'ç®¡ç†æˆå‘˜';
 
-$lang['Return_to_overview'] = '·µ»Ø';
-$lang['Configure_laws'] = 'È¨ÏŞÉè¶¨';
-$lang['Range_name'] = 'µÈ¼¶Ãû³Æ';
-$lang['Range_make'] = '½¨Á¢ĞÂµÈ¼¶';
+$lang['Return_to_overview'] = 'è¿”å›';
+$lang['Configure_laws'] = 'æƒé™è®¾å®š';
+$lang['Range_name'] = 'ç­‰çº§åç§°';
+$lang['Range_make'] = 'å»ºç«‹æ–°ç­‰çº§';
 $lang['Delete_range'] = '<img src="/images/ally/delete.gif"';
-$lang['Make'] = '½¨Á¢';
-$lang['Law_leyends'] = 'È¨ÏŞÃèÊö';
-$lang['Alliance_dissolve'] = '½âÉ¢ÁªÃË';
-$lang['Expel_users'] = 'ÇıÖğ³ÉÔ±';
-$lang['See_the_requests'] = 'ÏÔÊ¾ÉêÇë';
-$lang['See_the_list_members'] = 'ÏÔÊ¾³ÉÔ±ÁĞ±í';
-$lang['Check_the_requests'] = '½ÓÊÜÉêÇë';
-$lang['See_the_online_list_member'] = '¹Û¿´ÏßÉÏ³ÉÔ±';
-$lang['Make_a_circular_message'] = '·¢ËÍÁªÃËÑ¶Ï¢';
-$lang['Left_hand_text'] = "È¨ÏŞĞŞ¸Ä(¹ÜÀíÔ±)";
-$lang['Save'] = '´¢´æ';
-$lang['There_is_not_range'] = 'Ã»ÓĞ¸ÃµÈ¼¶';
+$lang['Make'] = 'å»ºç«‹';
+$lang['Law_leyends'] = 'æƒé™æè¿°';
+$lang['Alliance_dissolve'] = 'è§£æ•£è”ç›Ÿ';
+$lang['Expel_users'] = 'é©±é€æˆå‘˜';
+$lang['See_the_requests'] = 'æ˜¾ç¤ºç”³è¯·';
+$lang['See_the_list_members'] = 'æ˜¾ç¤ºæˆå‘˜åˆ—è¡¨';
+$lang['Check_the_requests'] = 'æ¥å—ç”³è¯·';
+$lang['See_the_online_list_member'] = 'è§‚çœ‹çº¿ä¸Šæˆå‘˜';
+$lang['Make_a_circular_message'] = 'å‘é€è”ç›Ÿè®¯æ¯';
+$lang['Left_hand_text'] = "æƒé™ä¿®æ”¹(ç®¡ç†å‘˜)";
+$lang['Save'] = 'å‚¨å­˜';
+$lang['There_is_not_range'] = 'æ²¡æœ‰è¯¥ç­‰çº§';
 $lang['s'] = '[N/A]';
 
-$lang['Change_the_ally_tag'] = 'ĞŞ¸ÄÁªÃË¼ò³Æ';
-$lang['Change_the_ally_name'] = 'ĞŞ¸ÄÁªÃËÈ«Ãû';
-$lang['Options'] = "Éè¶¨";
-$lang['Alliance_logo'] = "ÁªÃËLOGO";
-$lang['Requests'] = 'ÉêÇëÈËÊı';
-$lang['Allow_request'] = 'ÊÇ';
-$lang['No_allow_request'] = '·ñ';
-$lang['Founder_name'] = '½¨Á¢ÕßêÇ³Æ';
-$lang['Reset'] = "ÖØÖÃ";
+$lang['Change_the_ally_tag'] = 'ä¿®æ”¹è”ç›Ÿç®€ç§°';
+$lang['Change_the_ally_name'] = 'ä¿®æ”¹è”ç›Ÿå…¨å';
+$lang['Options'] = "è®¾å®š";
+$lang['Alliance_logo'] = "è”ç›ŸLOGO";
+$lang['Requests'] = 'ç”³è¯·äººæ•°';
+$lang['Allow_request'] = 'æ˜¯';
+$lang['No_allow_request'] = 'å¦';
+$lang['Founder_name'] = 'å»ºç«‹è€…æ˜µç§°';
+$lang['Reset'] = "é‡ç½®";
 
 
-$lang['Apply_ally_overview'] = "ÉêÇëÑ¶Ï¢";
-$lang['Candidate'] = "Ãû³Æ";
+$lang['Apply_ally_overview'] = "ç”³è¯·è®¯æ¯";
+$lang['Candidate'] = "åç§°";
 
-$lang['Date_of_the_request'] = "ÉêÇëÈÕÆÚ";
-$lang['Search'] = "ËÑÑ°";
-$lang['Request_responde'] = '»Ø¸²ÉêÇë';
-$lang['Motive_optional'] = 'ÀíÓÉ';
-$lang['Go_out_welldone'] = 'È·¶¨ÍË³ö ?';
-$lang['Want_go_out'] = 'È·¶¨ÍËÃË ?';
+$lang['Date_of_the_request'] = "ç”³è¯·æ—¥æœŸ";
+$lang['Search'] = "æœå¯»";
+$lang['Request_responde'] = 'å›è¦†ç”³è¯·';
+$lang['Motive_optional'] = 'ç†ç”±';
+$lang['Go_out_welldone'] = 'ç¡®å®šé€€å‡º ?';
+$lang['Want_go_out'] = 'ç¡®å®šé€€ç›Ÿ ?';
 
 
 
-$lang['Denied_access'] = 'ÄãÃ»ÓĞÈ¨ÏŞ !';
+$lang['Denied_access'] = 'ä½ æ²¡æœ‰æƒé™ !';
 
 // Created by Ichigo. All rights reversed (C) 2006 
 ?>

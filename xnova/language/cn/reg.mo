@@ -5,43 +5,43 @@ if (!defined('INSIDE')) {
 }
 
 // Registration form
-$lang['registry']          = '×¢²á';
-$lang['form']              = '±íµ¥';
+$lang['registry']          = 'æ³¨å†Œ';
+$lang['form']              = 'è¡¨å•';
 $lang['Register']          = 'XNova Inscription';
-$lang['Undefined']         = '- Ã»ÓĞÑ¡È¡ -';
-$lang['Male']              = 'ÄĞ';
-$lang['Female']            = 'Å®';
+$lang['Undefined']         = '- æ²¡æœ‰é€‰å– -';
+$lang['Male']              = 'ç”·';
+$lang['Female']            = 'å¥³';
 $lang['Multiverse']        = 'XNova';
-$lang['E-Mail']            = 'ĞÅÏä';
-$lang['MainPlanet']        = 'ĞÇÇòÃû³Æ';
-$lang['GameName']          = 'Íæ¼ÒêÇ³Æ';
-$lang['Sex']               = 'Íæ¼ÒĞÔ±ğ';
-$lang['accept']            = 'ÎÒÍ¬Òâ×¢²áĞ­Òé';
-$lang['signup']            = ' ×¢²á ';
-$lang['neededpass']        = 'Íæ¼ÒÃÜÂë';
+$lang['E-Mail']            = 'ä¿¡ç®±';
+$lang['MainPlanet']        = 'æ˜Ÿçƒåç§°';
+$lang['GameName']          = 'ç©å®¶æ˜µç§°';
+$lang['Sex']               = 'ç©å®¶æ€§åˆ«';
+$lang['accept']            = 'æˆ‘åŒæ„æ³¨å†Œåè®®';
+$lang['signup']            = ' æ³¨å†Œ ';
+$lang['neededpass']        = 'ç©å®¶å¯†ç ';
 
 // Send
-$lang['mail_welcome']      = '¸ĞĞ»×¢²á¶àÈËÍøÒ³ÏßÉÏÓÎÏ·({gameurl}) \nÄãµÄÃÜÂëÊÇ: {password}\n\nGOOD LUCK!\n{gameurl}';
-$lang['mail_title']        = 'Äã×¢²áµÄXNOVAÓÎÏ·ĞÅÏ¢';
-$lang['thanksforregistry'] = '¸ĞĞ»×¢²áÎÒÃÇµÄÓÎÏ·';
+$lang['mail_welcome']      = 'æ„Ÿè°¢æ³¨å†Œå¤šäººç½‘é¡µçº¿ä¸Šæ¸¸æˆ({gameurl}) \nä½ çš„å¯†ç æ˜¯: {password}\n\nGOOD LUCK!\n{gameurl}';
+$lang['mail_title']        = 'ä½ æ³¨å†Œçš„XNOVAæ¸¸æˆä¿¡æ¯';
+$lang['thanksforregistry'] = 'æ„Ÿè°¢æ³¨å†Œæˆ‘ä»¬çš„æ¸¸æˆ';
 $lang['sender_message_ig'] = 'Admin';
 $lang['subject_message_ig']= 'Bienvenue';
 $lang['text_message_ig']   = 'Bienvenue sur XNova, nous vous souhaitons bon jeu et bonne chance !';
 
 
 // Errors
-$lang['error_mail']        = 'ÎŞĞ§µÄE-MailµØÖ·!<br />';
-$lang['error_hplanet']     = 'ÎŞĞ§µÄĞÇÇòÃû³Æ!<br />';
-$lang['error_hplanetnum']  = '±ØĞëÊäÈëÓ¢ÎÄ!<br />';
-$lang['error_character']   = 'ÎŞĞ§µÄÓÃ»§Ãû!<br />';
-$lang['error_charalpha']   = 'ÓÃ»§Ãû±ØĞëÊ¹ÓÃÓ¢ÎÄ(²»ÔÊĞíÊ¹ÓÃ¿Õ¸ñ)!<br />';
-$lang['error_password']    = 'ÃÜÂëÖÁÉÙ8Î»!<br />';
-$lang['error_rgt']         = 'Äã±ØĞëÍ¬ÒâÌõ¿î!<br />';
-$lang['error_userexist']   = 'ÓÃ»§ÃûÒÑ´æÔÚ,ÇëÖØĞÂÑ¡ÔñÓÃ»§Ãû!<br />';
-$lang['error_emailexist']  = 'E-MailµØÖ·ÒÑ±»Ê¹ÓÃ!<br />';
-$lang['error_sex']         = 'ÇëÑ¡ÔñĞÔ±ğ!<br />';
-$lang['error_mailsend']    = 'ÓÊ¼ş·¢ËÍ´íÎó£¬ÄãµÄÃÜÂëÊÇ: ';
-$lang['reg_welldone']      = '×¢²á³É¹¦!';
+$lang['error_mail']        = 'æ— æ•ˆçš„E-Mailåœ°å€!<br />';
+$lang['error_hplanet']     = 'æ— æ•ˆçš„æ˜Ÿçƒåç§°!<br />';
+$lang['error_hplanetnum']  = 'å¿…é¡»è¾“å…¥è‹±æ–‡!<br />';
+$lang['error_character']   = 'æ— æ•ˆçš„ç”¨æˆ·å!<br />';
+$lang['error_charalpha']   = 'ç”¨æˆ·åå¿…é¡»ä½¿ç”¨è‹±æ–‡(ä¸å…è®¸ä½¿ç”¨ç©ºæ ¼)!<br />';
+$lang['error_password']    = 'å¯†ç è‡³å°‘8ä½!<br />';
+$lang['error_rgt']         = 'ä½ å¿…é¡»åŒæ„æ¡æ¬¾!<br />';
+$lang['error_userexist']   = 'ç”¨æˆ·åå·²å­˜åœ¨,è¯·é‡æ–°é€‰æ‹©ç”¨æˆ·å!<br />';
+$lang['error_emailexist']  = 'E-Mailåœ°å€å·²è¢«ä½¿ç”¨!<br />';
+$lang['error_sex']         = 'è¯·é€‰æ‹©æ€§åˆ«!<br />';
+$lang['error_mailsend']    = 'é‚®ä»¶å‘é€é”™è¯¯ï¼Œä½ çš„å¯†ç æ˜¯: ';
+$lang['reg_welldone']      = 'æ³¨å†ŒæˆåŠŸ!';
 
 // Created by Perberos. All rights reversed (C) 2006
 // Complet by XNova Team. All rights reversed (C) 2008

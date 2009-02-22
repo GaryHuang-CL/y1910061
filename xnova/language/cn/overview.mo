@@ -1,103 +1,103 @@
 <?php
 
 // General
-$lang['cancel']                  = "È¡Ïû";
-$lang['Planet_menu']             = "ÐÇÇòÑ¡µ¥";
-$lang['Planet']                  = "ÐÇÇò";
-$lang['Have_new_message']        = "ÄãÓÐ 1 ·âÐÂÑ¶Ï¢";
-$lang['Have_new_messages']       = "ÄãÓÐ %m ·âÐÂÑ¶Ï¢";
-$lang['Have_new_level_mineur']   = "ÄãµÄ½ðÊô¼Ó¹¤³§³É¹¦Éý¼¶!";
-$lang['Have_new_level_raid']     = "ÄãµÄ¾§ÌåÌáÁ¶³§³É¹¦Éý¼¶!";
-$lang['Server_time']             = "Ê±¼ä";
-$lang['Events']                  = "ÊÂ¼þ";
-$lang['Free']                    = "ÎÞ¶¯×÷";
-$lang['Diameter']                = "Ö±¾¶";
-$lang['fields']                  = "·½Ô²";
-$lang['Developed_fields']        = "Ãæ»ýÊ¹ÓÃ";
-$lang['max_eveloped_fields']     = "×î´óÃæ»ý";
-$lang['Temperature']             = "ÎÂ¶È";
-$lang['approx']                  = "´óÔ¼";
-$lang['to']                      = "µ½";
-$lang['Centigrade']              = "¡æ";
-$lang['Position']                = "Î»ÖÃ";
-$lang['Points']                  = "»ý·Ö";
-$lang['Rank']                    = "ÅÅÃû";
-$lang['of']                      = "ÔÚ";
+$lang['cancel']                  = "å–æ¶ˆ";
+$lang['Planet_menu']             = "æ˜Ÿçƒé€‰å•";
+$lang['Planet']                  = "æ˜Ÿçƒ";
+$lang['Have_new_message']        = "ä½ æœ‰ 1 å°æ–°è®¯æ¯";
+$lang['Have_new_messages']       = "ä½ æœ‰ %m å°æ–°è®¯æ¯";
+$lang['Have_new_level_mineur']   = "ä½ çš„é‡‘å±žåŠ å·¥åŽ‚æˆåŠŸå‡çº§!";
+$lang['Have_new_level_raid']     = "ä½ çš„æ™¶ä½“æç‚¼åŽ‚æˆåŠŸå‡çº§!";
+$lang['Server_time']             = "æ—¶é—´";
+$lang['Events']                  = "äº‹ä»¶";
+$lang['Free']                    = "æ— åŠ¨ä½œ";
+$lang['Diameter']                = "ç›´å¾„";
+$lang['fields']                  = "æ–¹åœ†";
+$lang['Developed_fields']        = "é¢ç§¯ä½¿ç”¨";
+$lang['max_eveloped_fields']     = "æœ€å¤§é¢ç§¯";
+$lang['Temperature']             = "æ¸©åº¦";
+$lang['approx']                  = "å¤§çº¦";
+$lang['to']                      = "åˆ°";
+$lang['Centigrade']              = "â„ƒ";
+$lang['Position']                = "ä½ç½®";
+$lang['Points']                  = "ç§¯åˆ†";
+$lang['Rank']                    = "æŽ’å";
+$lang['of']                      = "åœ¨";
 $lang['banner']                  = "Votre banni&egrave;re";
-$lang['InfoBanner']              = "Ç©Ãûµµºá·ù:";
+$lang['InfoBanner']              = "ç­¾åæ¡£æ¨ªå¹…:";
 
-$lang['ov_off_expe']             = "¾­Ñé";
-$lang['ov_off_level']            = "µÈ¼¶";
-$lang['ov_off_mines']            = "Ö¸»Ó¹Ù";
-$lang['ov_off_raids']            = "Õ½¶·";
+$lang['ov_off_expe']             = "ç»éªŒ";
+$lang['ov_off_level']            = "ç­‰çº§";
+$lang['ov_off_mines']            = "æŒ‡æŒ¥å®˜";
+$lang['ov_off_raids']            = "æˆ˜æ–—";
 
-$lang['ov_temp_from']            = "´Ó";
+$lang['ov_temp_from']            = "ä»Ž";
 $lang['ov_temp_unit']            = "&deg;C";
-$lang['ov_temp_to']              = "µ½";
+$lang['ov_temp_to']              = "åˆ°";
 
-$lang['ov_local_cdr']            = "»ù´¡½¨Éè";
-$lang['ov_pts_build']            = "½¨Öþ";
-$lang['ov_pts_fleet']            = "½¢¶Ó";
-$lang['ov_pts_reche']            = "ÑÐ¾¿";
-$lang['ov_pts_total']            = "ÕûÌå";
+$lang['ov_local_cdr']            = "åŸºç¡€å»ºè®¾";
+$lang['ov_pts_build']            = "å»ºç­‘";
+$lang['ov_pts_fleet']            = "èˆ°é˜Ÿ";
+$lang['ov_pts_reche']            = "ç ”ç©¶";
+$lang['ov_pts_total']            = "æ•´ä½“";
 
 
 // Colony
-$lang['colony_abandon']          = "·ÅÆúÖ³ÃñµØ";
-$lang['ov_rena_dele']            = "·ÅÆúÖ³ÃñµØºÍ¸ü¸ÄÃû³Æ";
-$lang['functions']               = "¹¦ÄÜ";
-$lang['coords']                  = "×ù±ê";
-$lang['your_planet']             = "ÄãµÄÐÇÇò";
-$lang['colony_abandon']          = "·ÅÆúÖ³ÃñµØ";
-$lang['deleteplanet']            = "É¾³ýÐÇÇò!";
-$lang['security_query']          = "È·ÈÏÉ¾³ý";
-$lang['name']                    = "Ãû³Æ";
-$lang['namer']                   = "ÃüÃû";
-$lang['password']                = "ÃÜÂë";
-$lang['confirm_planet_delete']   = "È·ÈÏ·ÅÆúÄãµÄÖ³ÃñµØ";
-$lang['confirmed_with_password'] = "ÊäÈëÄãµÄÃÜÂë";
+$lang['colony_abandon']          = "æ”¾å¼ƒæ®–æ°‘åœ°";
+$lang['ov_rena_dele']            = "æ”¾å¼ƒæ®–æ°‘åœ°å’Œæ›´æ”¹åç§°";
+$lang['functions']               = "åŠŸèƒ½";
+$lang['coords']                  = "åº§æ ‡";
+$lang['your_planet']             = "ä½ çš„æ˜Ÿçƒ";
+$lang['colony_abandon']          = "æ”¾å¼ƒæ®–æ°‘åœ°";
+$lang['deleteplanet']            = "åˆ é™¤æ˜Ÿçƒ!";
+$lang['security_query']          = "ç¡®è®¤åˆ é™¤";
+$lang['name']                    = "åç§°";
+$lang['namer']                   = "å‘½å";
+$lang['password']                = "å¯†ç ";
+$lang['confirm_planet_delete']   = "ç¡®è®¤æ”¾å¼ƒä½ çš„æ®–æ°‘åœ°";
+$lang['confirmed_with_password'] = "è¾“å…¥ä½ çš„å¯†ç ";
 
 
 // Rename planet
-$lang['deletemessage_ok']    = "·ÅÆúÖ³ÃñµØ³É¹¦";
-$lang['deletemessage_wrong'] = "ÎÞ·¨·ÅÆúÖ÷ÐÇ!";
-$lang['deletemessage_fail']  = "´íÎóµÄÃÜÂë!";
+$lang['deletemessage_ok']    = "æ”¾å¼ƒæ®–æ°‘åœ°æˆåŠŸ";
+$lang['deletemessage_wrong'] = "æ— æ³•æ”¾å¼ƒä¸»æ˜Ÿ!";
+$lang['deletemessage_fail']  = "é”™è¯¯çš„å¯†ç !";
 
 // Divers
-$lang['MembersOnline']       = "ÏßÉÏÍæ¼Ò";
-$lang['ov_news_title']       = "¹«¸æ";
+$lang['MembersOnline']       = "çº¿ä¸ŠçŽ©å®¶";
+$lang['ov_news_title']       = "å…¬å‘Š";
 $lang['Raids']               = "Raids";
 $lang['NumberOfRaids']       = "Raids Effectu&eacute;s";
 $lang['RaidsWin']            = "Raids Gagn&eacute;s";
 $lang['RaidsLoose']          = "Raids Perdus";
 
 // Gestion des flottes
-$lang['ov_fleet']            = "½¢¶Ó";
-$lang['ov_une']              = "ÄãµÄÒ»¸ö ";
-$lang['ov_vennant']          = " µ½ ";
-$lang['ov_planet_to']        = "ÐÇÇò ";
-$lang['ov_moon_to']          = "ÔÂÇò ";
+$lang['ov_fleet']            = "èˆ°é˜Ÿ";
+$lang['ov_une']              = "ä½ çš„ä¸€ä¸ª ";
+$lang['ov_vennant']          = " åˆ° ";
+$lang['ov_planet_to']        = "æ˜Ÿçƒ ";
+$lang['ov_moon_to']          = "æœˆçƒ ";
 $lang['ov_atteint']          = " erreicht ";
-$lang['ov_planet_to_target'] = "ÐÇÇò ";
-$lang['ov_moon_to_target']   = "ÔÂÇò ";
-$lang['ov_debris_to_target'] = "·ÏÐæ ";
-$lang['ov_explo_to_target']  = "×ù±ê ";
-$lang['ov_mission']          = " ÈÎÎñÊÇ : ";
+$lang['ov_planet_to_target'] = "æ˜Ÿçƒ ";
+$lang['ov_moon_to_target']   = "æœˆçƒ ";
+$lang['ov_debris_to_target'] = "åºŸå¢Ÿ ";
+$lang['ov_explo_to_target']  = "åº§æ ‡ ";
+$lang['ov_mission']          = " ä»»åŠ¡æ˜¯ : ";
 
-$lang['ov_explo_stay']       = " Ì½ÏÕ ";
-$lang['ov_explo_mission']    = " ÈÎÎñÊÇ : ";
+$lang['ov_explo_stay']       = " æŽ¢é™© ";
+$lang['ov_explo_mission']    = " ä»»åŠ¡æ˜¯ : ";
 
-$lang['ov_rentrant']         = " ·µ»Ø ";
-$lang['ov_planet_from']      = "´ÓÐÇÇò ";
-$lang['ov_moon_from']        = "´ÓÔÂÇò ";
-$lang['ov_debris_from']      = "´Ó·ÏÐæ ";
-$lang['ov_explo_from']       = " ×ù±ê ";
-$lang['ov_back_planet']      = " µ½ÐÇÇò ";
-$lang['ov_back_moon']        = " µ½ÔÂÇò ";
+$lang['ov_rentrant']         = " è¿”å›ž ";
+$lang['ov_planet_from']      = "ä»Žæ˜Ÿçƒ ";
+$lang['ov_moon_from']        = "ä»Žæœˆçƒ ";
+$lang['ov_debris_from']      = "ä»ŽåºŸå¢Ÿ ";
+$lang['ov_explo_from']       = " åº§æ ‡ ";
+$lang['ov_back_planet']      = " åˆ°æ˜Ÿçƒ ";
+$lang['ov_back_moon']        = " åˆ°æœˆçƒ ";
 
-$lang['ov_une_hostile']      = "Ò»¸ö ";
-$lang['ov_hostile']          = " µÐ¶ÔµÄ ";
-$lang['ov_message']          = "·¢ËÍÑ¶Ï¢";
+$lang['ov_une_hostile']      = "ä¸€ä¸ª ";
+$lang['ov_hostile']          = " æ•Œå¯¹çš„ ";
+$lang['ov_message']          = "å‘é€è®¯æ¯";
 
 // Created by Perberos. All rights reversed (C) 2006
 // Complet by XNova Team. All rights reversed (C) 2008

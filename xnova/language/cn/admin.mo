@@ -1,117 +1,117 @@
 <?php
-//Tweaks vue gÑâİale
-$lang['usr_email']               = "ĞÅÏä";
-$lang['xp_raid']               = "Õ½¶·¾­Ñé";
-$lang['xp_min']               = "Ö¸»Ó¹Ù¾­Ñé";
-$lang['lang_vacancy']    = "¼ÙÆÚÄ£Ê½";
-$lang['is_in_vacancy']    = "´ò¿ª¼ÙÆÚÄ£Ê½";
-$lang['not_in_vacancy']               = "¹Ø±Õ¼ÙÆÚÄ£Ê½";
-$lang['is_banned_lang']               = "·ñ";
-$lang['banned_lang']               = "½ûÖ¹"; 
-$lang['usr_current_planet']               = "Ä¸ĞÇ";
-$lang['usr_current_page']               = "ä¯ÀÀÒ³Ãæ";
+//Tweaks vue gå¹¯å»¨ale
+$lang['usr_email']               = "ä¿¡ç®±";
+$lang['xp_raid']               = "æˆ˜æ–—ç»éªŒ";
+$lang['xp_min']               = "æŒ‡æŒ¥å®˜ç»éªŒ";
+$lang['lang_vacancy']    = "å‡æœŸæ¨¡å¼";
+$lang['is_in_vacancy']    = "æ‰“å¼€å‡æœŸæ¨¡å¼";
+$lang['not_in_vacancy']               = "å…³é—­å‡æœŸæ¨¡å¼";
+$lang['is_banned_lang']               = "å¦";
+$lang['banned_lang']               = "ç¦æ­¢"; 
+$lang['usr_current_planet']               = "æ¯æ˜Ÿ";
+$lang['usr_current_page']               = "æµè§ˆé¡µé¢";
 
-$lang['oups_youre_banned']               = "ÄãµÄÕÊºÅÒÑ¾­±»Í£Ö¹!";
-$lang['user_is_banned_for']               = "ÄãÒÑ¾­±»½ûÖ¹, Ô­ÒòÈçÏÂ : ";
-$lang['banned_until']               = "ÄãÒÑ¾­±»½ûÖ¹, Ö±µ½ ";
-$lang['who_has_banned']    = "Ë­±»½ûÖ¹";
+$lang['oups_youre_banned']               = "ä½ çš„å¸å·å·²ç»è¢«åœæ­¢!";
+$lang['user_is_banned_for']               = "ä½ å·²ç»è¢«ç¦æ­¢, åŸå› å¦‚ä¸‹ : ";
+$lang['banned_until']               = "ä½ å·²ç»è¢«ç¦æ­¢, ç›´åˆ° ";
+$lang['who_has_banned']    = "è°è¢«ç¦æ­¢";
 
-$lang['adm_ul_data_ip_reg']    = "×¢²áIP";
-
-
-$lang['bbcode_settings'] = "BBCodeÖ§Ô®<br />(¹Ø±Õ = 0, ´ò¿ª = 1)";
-$lang['messages_settings'] = "Ñ¶Ï¢BBCodeÖ§Ô®Éè¶¨";
+$lang['adm_ul_data_ip_reg']    = "æ³¨å†ŒIP";
 
 
-$lang['adm_done']               = "Íê³É";
-$lang['adm_stat_title']         = "Í³¼Æ";
-$lang['adm_cleaner_title']      = "È¡Ïû½¨ÖşÅÅ³Ì";
-$lang['adm_cleaned']            = "ÊäÈëÒªÈ¡ÏûµÄ½¨ÖşÅÅ³ÌµÄÊı×Ö : ";
-$lang['Fix']                    = "ĞŞ¸Ä³É¹¦";
-$lang['Welcome_to_Fix_section'] = "»¶Ó­À´µ½ĞŞ¸Ä½éÃæ";
-$lang['There_is_not_need_fix']  = "ĞŞ¸ÄÍê³É";
-$lang['Fix_welldone']           = "ĞŞ¸ÄÎŞ·¨Ö´ĞĞ";
-
-$lang['adm_ov_title'] = "¸Å¿ö";
-$lang['adm_ov_infos'] = "Ñ¶Ï¢";
-$lang['adm_ov_yourv'] = "°æ±¾";
-$lang['adm_ov_lastv'] = "»ñÈ¡ĞÂ°æ";
-$lang['adm_ov_here']  = "¹Ù·½ÍøÕ¾";
-$lang['adm_ov_onlin'] = "ÏßÉÏ";
-$lang['adm_ov_ally']  = "ÁªÃË";
-$lang['adm_ov_point'] = "»ı·Ö";
-$lang['adm_ov_activ'] = "»î¶¯";
-$lang['adm_ov_count'] = "ÏßÉÏÍæ¼Ò";
-$lang['adm_ov_wrtpm'] = "Ğ´Ñ¶Ï¢";
-$lang['adm_ov_altpm'] = "Ñ¶Ï¢";
+$lang['bbcode_settings'] = "BBCodeæ”¯æ´<br />(å…³é—­ = 0, æ‰“å¼€ = 1)";
+$lang['messages_settings'] = "è®¯æ¯BBCodeæ”¯æ´è®¾å®š";
 
 
-$lang['adm_ul_title'] = "Íæ¼ÒÁĞ±í";
-$lang['adm_ul_ttle2'] = "ËùÓĞÍæ¼Ò";
+$lang['adm_done']               = "å®Œæˆ";
+$lang['adm_stat_title']         = "ç»Ÿè®¡";
+$lang['adm_cleaner_title']      = "å–æ¶ˆå»ºç­‘æ’ç¨‹";
+$lang['adm_cleaned']            = "è¾“å…¥è¦å–æ¶ˆçš„å»ºç­‘æ’ç¨‹çš„æ•°å­— : ";
+$lang['Fix']                    = "ä¿®æ”¹æˆåŠŸ";
+$lang['Welcome_to_Fix_section'] = "æ¬¢è¿æ¥åˆ°ä¿®æ”¹ä»‹é¢";
+$lang['There_is_not_need_fix']  = "ä¿®æ”¹å®Œæˆ";
+$lang['Fix_welldone']           = "ä¿®æ”¹æ— æ³•æ‰§è¡Œ";
+
+$lang['adm_ov_title'] = "æ¦‚å†µ";
+$lang['adm_ov_infos'] = "è®¯æ¯";
+$lang['adm_ov_yourv'] = "ç‰ˆæœ¬";
+$lang['adm_ov_lastv'] = "è·å–æ–°ç‰ˆ";
+$lang['adm_ov_here']  = "å®˜æ–¹ç½‘ç«™";
+$lang['adm_ov_onlin'] = "çº¿ä¸Š";
+$lang['adm_ov_ally']  = "è”ç›Ÿ";
+$lang['adm_ov_point'] = "ç§¯åˆ†";
+$lang['adm_ov_activ'] = "æ´»åŠ¨";
+$lang['adm_ov_count'] = "çº¿ä¸Šç©å®¶";
+$lang['adm_ov_wrtpm'] = "å†™è®¯æ¯";
+$lang['adm_ov_altpm'] = "è®¯æ¯";
+
+
+$lang['adm_ul_title'] = "ç©å®¶åˆ—è¡¨";
+$lang['adm_ul_ttle2'] = "æ‰€æœ‰ç©å®¶";
 $lang['adm_ul_id']    = "ID";
-$lang['adm_ul_name']  = "êÇ³Æ";
-$lang['adm_ul_mail']  = "ĞÅÏä";
+$lang['adm_ul_name']  = "æ˜µç§°";
+$lang['adm_ul_mail']  = "ä¿¡ç®±";
 $lang['adm_ul_adip']  = "IP";
-$lang['adm_ul_regd']  = "×¢²áIP";
-$lang['adm_ul_lconn'] = "×îºóµÇÈë";
-$lang['adm_ul_bana']  = "½ûÖ¹";
-$lang['adm_ul_detai'] = "ÃèÊö";
-$lang['adm_ul_actio'] = "¶¯×÷";
-$lang['adm_ul_playe'] = " Íæ¼Ò(s)";
-$lang['adm_ul_yes']   = "ÊÇ";
-$lang['adm_ul_no']    = "·ñ";
+$lang['adm_ul_regd']  = "æ³¨å†ŒIP";
+$lang['adm_ul_lconn'] = "æœ€åç™»å…¥";
+$lang['adm_ul_bana']  = "ç¦æ­¢";
+$lang['adm_ul_detai'] = "æè¿°";
+$lang['adm_ul_actio'] = "åŠ¨ä½œ";
+$lang['adm_ul_playe'] = " ç©å®¶(s)";
+$lang['adm_ul_yes']   = "æ˜¯";
+$lang['adm_ul_no']    = "å¦";
 
-$lang['adm_pl_title'] = "ĞÇÇò»î¶¯";
-$lang['adm_pl_activ'] = "ĞÇÇò»î¶¯";
-$lang['adm_pl_name']  = "ĞÇÇòÃû³Æ";
-$lang['adm_pl_posit'] = "Î»ÖÃ";
-$lang['adm_pl_point'] = "»ı·Ö";
-$lang['adm_pl_since'] = "¶¯×÷";
-$lang['adm_pl_they']  = "È«²¿";
-$lang['adm_pl_apla']  = "ĞÇÇòÏßÉÏ";
+$lang['adm_pl_title'] = "æ˜Ÿçƒæ´»åŠ¨";
+$lang['adm_pl_activ'] = "æ˜Ÿçƒæ´»åŠ¨";
+$lang['adm_pl_name']  = "æ˜Ÿçƒåç§°";
+$lang['adm_pl_posit'] = "ä½ç½®";
+$lang['adm_pl_point'] = "ç§¯åˆ†";
+$lang['adm_pl_since'] = "åŠ¨ä½œ";
+$lang['adm_pl_they']  = "å…¨éƒ¨";
+$lang['adm_pl_apla']  = "æ˜Ÿçƒçº¿ä¸Š";
 
-$lang['adm_am_plid']  = "ĞÇÇòID";
-$lang['adm_am_done']  = "³É¹¦¸øÓè";
-$lang['adm_am_ttle']  = "¸øÓè×ÊÔ´";
-$lang['adm_am_add']   = "¸øÓè";
-$lang['adm_am_form']  = "¸øÓèµ½";
+$lang['adm_am_plid']  = "æ˜ŸçƒID";
+$lang['adm_am_done']  = "æˆåŠŸç»™äºˆ";
+$lang['adm_am_ttle']  = "ç»™äºˆèµ„æº";
+$lang['adm_am_add']   = "ç»™äºˆ";
+$lang['adm_am_form']  = "ç»™äºˆåˆ°";
 
-$lang['adm_bn_ttle']  = "½ûÖ¹ÓÃ»§";
-$lang['adm_bn_plto']  = "½ûÖ¹ÓÃ»§";
-$lang['adm_bn_name']  = "Íæ¼ÒêÇ³Æ";
-$lang['adm_bn_reas']  = "½ûÖ¹Ô­Òò";
-$lang['adm_bn_time']  = "½ûÖ¹ÆÚÏŞ";
-$lang['adm_bn_days']  = "ÈÕ";
-$lang['adm_bn_hour']  = "Ê±";
-$lang['adm_bn_mins']  = "·Ö";
-$lang['adm_bn_secs']  = "Ãë";
-$lang['adm_bn_bnbt']  = "½ûÖ¹";
-$lang['adm_bn_thpl']  = "ÓÃ»§";
-$lang['adm_bn_isbn']  = "±»½ûÖ¹!";
+$lang['adm_bn_ttle']  = "ç¦æ­¢ç”¨æˆ·";
+$lang['adm_bn_plto']  = "ç¦æ­¢ç”¨æˆ·";
+$lang['adm_bn_name']  = "ç©å®¶æ˜µç§°";
+$lang['adm_bn_reas']  = "ç¦æ­¢åŸå› ";
+$lang['adm_bn_time']  = "ç¦æ­¢æœŸé™";
+$lang['adm_bn_days']  = "æ—¥";
+$lang['adm_bn_hour']  = "æ—¶";
+$lang['adm_bn_mins']  = "åˆ†";
+$lang['adm_bn_secs']  = "ç§’";
+$lang['adm_bn_bnbt']  = "ç¦æ­¢";
+$lang['adm_bn_thpl']  = "ç”¨æˆ·";
+$lang['adm_bn_isbn']  = "è¢«ç¦æ­¢!";
 
-$lang['adm_rz_ttle']  = "ÖØÖÃËÅ·şÆ÷";
-$lang['adm_rz_done']  = " ÖØÖÃ ";
-$lang['adm_rz_conf']  = " È·ÈÏ ";
-$lang['adm_rz_text']  = "µãÑ¡ºó½«»áÖØÖÃËÅ·şÆ÷£¬¶øÇÒÎŞ·¨»Ö¸´¡£ÇëÊÂÏÈ±¸·İ×ÊÁÏ¿â¡£";
-$lang['adm_rz_doit']  = " È·¶¨ ";
+$lang['adm_rz_ttle']  = "é‡ç½®ä¼ºæœå™¨";
+$lang['adm_rz_done']  = " é‡ç½® ";
+$lang['adm_rz_conf']  = " ç¡®è®¤ ";
+$lang['adm_rz_text']  = "ç‚¹é€‰åå°†ä¼šé‡ç½®ä¼ºæœå™¨ï¼Œè€Œä¸”æ— æ³•æ¢å¤ã€‚è¯·äº‹å…ˆå¤‡ä»½èµ„æ–™åº“ã€‚";
+$lang['adm_rz_doit']  = " ç¡®å®š ";
 
-$lang['adm_ch_ttle']  = "¹ÜÀíÁÄÌì";
-$lang['adm_ch_list']  = "ÁÄÌìÁĞ±í";
-$lang['adm_ch_clear'] = "Çå³ı";
-$lang['adm_ch_msg']   = "Ñ¶Ï¢";
-$lang['adm_ch_delet'] = "É¾³ı";
-$lang['adm_ch_play']  = "Íæ¼Ò";
-$lang['adm_ch_time']  = "Ê±¼ä";
-$lang['adm_ch_nbs']   = "ËùÓĞÑ¶Ï¢...";
+$lang['adm_ch_ttle']  = "ç®¡ç†èŠå¤©";
+$lang['adm_ch_list']  = "èŠå¤©åˆ—è¡¨";
+$lang['adm_ch_clear'] = "æ¸…é™¤";
+$lang['adm_ch_msg']   = "è®¯æ¯";
+$lang['adm_ch_delet'] = "åˆ é™¤";
+$lang['adm_ch_play']  = "ç©å®¶";
+$lang['adm_ch_time']  = "æ—¶é—´";
+$lang['adm_ch_nbs']   = "æ‰€æœ‰è®¯æ¯...";
 
-$lang['adm_er_ttle']  = "´íÎóÑ¶Ï¢";
-$lang['adm_er_list']  = "´íÎóÁĞ±í";
-$lang['adm_er_clear'] = "Çå³ıÁĞ±í";
+$lang['adm_er_ttle']  = "é”™è¯¯è®¯æ¯";
+$lang['adm_er_list']  = "é”™è¯¯åˆ—è¡¨";
+$lang['adm_er_clear'] = "æ¸…é™¤åˆ—è¡¨";
 $lang['adm_er_idmsg'] = "ID";
-$lang['adm_er_type']  = "ÀàĞÍ";
-$lang['adm_er_play']  = "Íæ¼ÒÊı";
-$lang['adm_er_time']  = "ÈÕÆÚ";
-$lang['adm_er_delete']= "É¾³ı";
-$lang['adm_er_nbs']   = "ËùÓĞ´íÎó...";
+$lang['adm_er_type']  = "ç±»å‹";
+$lang['adm_er_play']  = "ç©å®¶æ•°";
+$lang['adm_er_time']  = "æ—¥æœŸ";
+$lang['adm_er_delete']= "åˆ é™¤";
+$lang['adm_er_nbs']   = "æ‰€æœ‰é”™è¯¯...";
 
 ?>

@@ -1,39 +1,39 @@
 <?php
 
-$lang['adm_usr_level'][0] = "ÓÃ»§";
-$lang['adm_usr_level'][1] = "ÓÎÏ·¹ÜÀíÔ±";
-$lang['adm_usr_level'][2] = "³¬¼¶¹ÜÀíÔ±";
-$lang['adm_usr_level'][3] = "¹ÜÀíÕß";
-$lang['adm_usr_genre']['M'] = "ÄÐ";
-$lang['adm_usr_genre']['F'] = "Å®";
+$lang['adm_usr_level'][0] = "ç”¨æˆ·";
+$lang['adm_usr_level'][1] = "æ¸¸æˆç®¡ç†å‘˜";
+$lang['adm_usr_level'][2] = "è¶…çº§ç®¡ç†å‘˜";
+$lang['adm_usr_level'][3] = "ç®¡ç†è€…";
+$lang['adm_usr_genre']['M'] = "ç”·";
+$lang['adm_usr_genre']['F'] = "å¥³";
 
 // Admin Strings
-$lang['panel_mainttl'] = "¹ÜÀíÃæ°å";
+$lang['panel_mainttl'] = "ç®¡ç†é¢æ¿";
 // Admin Panel A Template 1
-$lang['adm_panel_mnu'] = "ËÑË÷·þÎñ";
-$lang['adm_panel_ttl'] = "ËÑË÷ÀàÐÍ";
-$lang['adm_search_pl'] = "ËÑË÷ÓÃ»§";
-$lang['adm_search_ip'] = "ËÑË÷IP";
-$lang['adm_stat_play'] = "ÓÃ»§×´Ì¬";
-$lang['adm_mod_level'] = "ÐÞ¸ÄÓÃ»§µÈ¼¶";
+$lang['adm_panel_mnu'] = "æœç´¢æœåŠ¡";
+$lang['adm_panel_ttl'] = "æœç´¢ç±»åž‹";
+$lang['adm_search_pl'] = "æœç´¢ç”¨æˆ·";
+$lang['adm_search_ip'] = "æœç´¢IP";
+$lang['adm_stat_play'] = "ç”¨æˆ·çŠ¶æ€";
+$lang['adm_mod_level'] = "ä¿®æ”¹ç”¨æˆ·ç­‰çº§";
 
-$lang['adm_player_nm'] = "ÓÃ»§Ãû";
-$lang['adm_ip']        = "ÓÃ»§IP";
-$lang['adm_plyer_wip'] = "ÓÃ»§ËùÓÐIP";
+$lang['adm_player_nm'] = "ç”¨æˆ·å";
+$lang['adm_ip']        = "ç”¨æˆ·IP";
+$lang['adm_plyer_wip'] = "ç”¨æˆ·æ‰€æœ‰IP";
 $lang['adm_frm1_id']   = "ID";
-$lang['adm_frm1_name'] = "Ãû³Æ";
+$lang['adm_frm1_name'] = "åç§°";
 $lang['adm_frm1_ip']   = "IP";
 $lang['adm_frm1_mail'] = "E-Mail";
 $lang['adm_frm1_acc']  = "Zugang";
-$lang['adm_frm1_gen']  = "ÐÔ±ð";
-$lang['adm_frm1_main'] = "ÐÇÇòID";
-$lang['adm_frm1_gpos'] = "×ø±ê";
-$lang['adm_mess_lvl1'] = "Èë¿Ú";
-$lang['adm_mess_lvl2'] = "ÏÖÔÚÊÇ";
-$lang['adm_colony']    = "Ö³ÃñµØ";
-$lang['adm_planet']    = "Ö÷ÐÇ";
-$lang['adm_moon']      = "ÔÂÇò";
-$lang['adm_technos']   = "ÑÐ¾¿Ï¸½Ú";
-$lang['adm_bt_search'] = "ËÑË÷";
-$lang['adm_bt_change'] = "¸ü¸Ä";
+$lang['adm_frm1_gen']  = "æ€§åˆ«";
+$lang['adm_frm1_main'] = "æ˜ŸçƒID";
+$lang['adm_frm1_gpos'] = "åæ ‡";
+$lang['adm_mess_lvl1'] = "å…¥å£";
+$lang['adm_mess_lvl2'] = "çŽ°åœ¨æ˜¯";
+$lang['adm_colony']    = "æ®–æ°‘åœ°";
+$lang['adm_planet']    = "ä¸»æ˜Ÿ";
+$lang['adm_moon']      = "æœˆçƒ";
+$lang['adm_technos']   = "ç ”ç©¶ç»†èŠ‚";
+$lang['adm_bt_search'] = "æœç´¢";
+$lang['adm_bt_change'] = "æ›´æ”¹";
 ?>

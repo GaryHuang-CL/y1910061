@@ -1,13 +1,13 @@
 <?php
 
-$lang['ban_title']    = "±»½ûÖ¹»áÔ±ÁÐ±í";
-$lang['ban_name']     = "êÇ³Æ";
-$lang['ban_reason']   = "½ûÖ¹Ô­Òò";
-$lang['ban_from']     = "·¢²¼Õß";
-$lang['ban_to']       = "½ûÖ¹¶Ô";
-$lang['ban_by']       = "ÓÉ";
-$lang['ban_no']       = "½ûÖ¹±àºÅ";
-$lang['ban_thereare'] = "ÓÐ";
-$lang['ban_players']  = "½ûÖ¹Íæ¼Ò";
+$lang['ban_title']    = "è¢«ç¦æ­¢ä¼šå‘˜åˆ—è¡¨";
+$lang['ban_name']     = "æ˜µç§°";
+$lang['ban_reason']   = "ç¦æ­¢åŽŸå› ";
+$lang['ban_from']     = "å‘å¸ƒè€…";
+$lang['ban_to']       = "ç¦æ­¢å¯¹";
+$lang['ban_by']       = "ç”±";
+$lang['ban_no']       = "ç¦æ­¢ç¼–å·";
+$lang['ban_thereare'] = "æœ‰";
+$lang['ban_players']  = "ç¦æ­¢çŽ©å®¶";
 
 ?>

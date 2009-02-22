@@ -1,7 +1,7 @@
 <?php
 
 //Player search
-$lang['SearchPlayer'] = "ÊäÈëÒ»¸öÍæ¼ÒÃû³Æ";
+$lang['SearchPlayer'] = "è¾“å…¥ä¸€ä¸ªçŽ©å®¶åç§°";
 
 // Created by Perberos. All rights reversed (C) 2006
 // Complet by XNova. All rights reversed (C) 2008

@@ -1,33 +1,33 @@
 <?php
 
-$lang['Request_sent'] = '¼ÓÎªºÃÓÑ.';
-$lang['Buddy_request'] = 'ÉêÇë¼ÓÎªºÃÓÑ';
-$lang['A_request_exists_already_for_this_user'] = 'ÒÑÊÇºÃÓÑ';
-$lang['You_cannot_ask_yourself_for_a_request'] = '²»ÄÜ¼Ó×Ô¼ººÃÓÑ...';
-$lang['Buddy_list'] = 'ºÃÓÐÁÐ±í';
-$lang['There_is_no_request'] = 'Ã»ÓÐÉêÇë';
-$lang['Request_text'] = 'ÉêÇëÄÚÈÝ';
-$lang['characters'] = '½ÇÉ«';
-$lang['Back'] = '·µ»Ø';
-$lang['Send'] = 'ËÍ³ö';
-$lang['Delete_request'] = 'È¡ÏûÉêÇë';
-$lang['Ok'] = 'Í¬Òâ';
-$lang['Reject'] = '»Ø¸²';
-$lang['Delete'] = 'É¾³ý';
-$lang['On'] = 'ÉÏÏß';
+$lang['Request_sent'] = 'åŠ ä¸ºå¥½å‹.';
+$lang['Buddy_request'] = 'ç”³è¯·åŠ ä¸ºå¥½å‹';
+$lang['A_request_exists_already_for_this_user'] = 'å·²æ˜¯å¥½å‹';
+$lang['You_cannot_ask_yourself_for_a_request'] = 'ä¸èƒ½åŠ è‡ªå·±å¥½å‹...';
+$lang['Buddy_list'] = 'å¥½æœ‰åˆ—è¡¨';
+$lang['There_is_no_request'] = 'æ²¡æœ‰ç”³è¯·';
+$lang['Request_text'] = 'ç”³è¯·å†…å®¹';
+$lang['characters'] = 'è§’è‰²';
+$lang['Back'] = 'è¿”å›ž';
+$lang['Send'] = 'é€å‡º';
+$lang['Delete_request'] = 'å–æ¶ˆç”³è¯·';
+$lang['Ok'] = 'åŒæ„';
+$lang['Reject'] = 'å›žè¦†';
+$lang['Delete'] = 'åˆ é™¤';
+$lang['On'] = 'ä¸Šçº¿';
 $lang['15_min'] = '15 min';
-$lang['Off'] = 'ÀëÏß';
-$lang['Player'] = 'êÇ³Æ';
+$lang['Off'] = 'ç¦»çº¿';
+$lang['Player'] = 'æ˜µç§°';
 
-$lang['Name'] = 'Ãû³Æ';
-$lang['User'] = 'ÓÃ»§';
-$lang['Alliance'] = 'ÁªÃË';
-$lang['Coordinates'] = '×ù±ê';
-$lang['Position'] = 'Î»ÖÃ';
-$lang['Text'] = 'ÄÚÈÝ';
-$lang['Requests'] = 'ÇëÇó';
-$lang['My_requests'] = 'ÎÒµÄÇëÇó';
-$lang['Anothers_requests'] = 'ÆäËûÇëÇó';
+$lang['Name'] = 'åç§°';
+$lang['User'] = 'ç”¨æˆ·';
+$lang['Alliance'] = 'è”ç›Ÿ';
+$lang['Coordinates'] = 'åº§æ ‡';
+$lang['Position'] = 'ä½ç½®';
+$lang['Text'] = 'å†…å®¹';
+$lang['Requests'] = 'è¯·æ±‚';
+$lang['My_requests'] = 'æˆ‘çš„è¯·æ±‚';
+$lang['Anothers_requests'] = 'å…¶ä»–è¯·æ±‚';
 
 // Created by Perberos. All rights reversed (C) 2006
 ?>

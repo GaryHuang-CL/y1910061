@@ -1,11 +1,11 @@
 <?php
 
-$lang['Qry_title']  = "×ÊÁÏ¿â²éÑ¯";
-$lang['qry_title'] = "×ÊÁÏ¿â²éÑ¯";
-$lang['qry_succesful']    = "²éÑ¯³É¹¦Ö´ÐÐ";
-$lang['exec_check']    = "È·¶¨Ö´ÐÐÃüÁî, Õâ½«ÎÞ·¨»¹Ô­?";
-$lang['qry_unsuccesful']    = "µ±·¢ÉúÎÊÌâÊ±, Çë¼ì²éÄãµÄÓï·¨";
+$lang['Qry_title']  = "èµ„æ–™åº“æŸ¥è¯¢";
+$lang['qry_title'] = "èµ„æ–™åº“æŸ¥è¯¢";
+$lang['qry_succesful']    = "æŸ¥è¯¢æˆåŠŸæ‰§è¡Œ";
+$lang['exec_check']    = "ç¡®å®šæ‰§è¡Œå‘½ä»¤, è¿™å°†æ— æ³•è¿˜åŽŸ?";
+$lang['qry_unsuccesful']    = "å½“å‘ç”Ÿé—®é¢˜æ—¶, è¯·æ£€æŸ¥ä½ çš„è¯­æ³•";
 
-$lang['md5_doit']   = "[ Ö´ÐÐ ]";
+$lang['md5_doit']   = "[ æ‰§è¡Œ ]";
 
 ?>

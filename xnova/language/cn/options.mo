@@ -7,68 +7,68 @@ $lang['Error'] = "Erreur";
 
 
 // Messages
-$lang['changue_pass'] = "¸ü¸ÄÃÜÂë";
-$lang['Download'] = "ÏÂÔØ";
-$lang['Search'] = "ËÑÑ°";
-$lang['succeful_changepass'] = "ÃÜÂëÒÑ¾­±ä¸ü<br /><a href=\"login.php\" target=\"_top\">·µ»Ø</a>";
-$lang['succeful_save'] = "ËùÓĞÉè¶¨ÒÑ¾­´¢´æ<br /><a href=\"options.php\">·µ»Ø</a>";
+$lang['changue_pass'] = "æ›´æ”¹å¯†ç ";
+$lang['Download'] = "ä¸‹è½½";
+$lang['Search'] = "æœå¯»";
+$lang['succeful_changepass'] = "å¯†ç å·²ç»å˜æ›´<br /><a href=\"login.php\" target=\"_top\">è¿”å›</a>";
+$lang['succeful_save'] = "æ‰€æœ‰è®¾å®šå·²ç»å‚¨å­˜<br /><a href=\"options.php\">è¿”å›</a>";
 
 // Form
-$lang['userdata'] = "Íæ¼Ò×ÊÑ¶";
-$lang['username'] = "êÇ³Æ";
-$lang['lastpassword'] = "¾ÉÃÜÂë";
-$lang['newpassword'] = "ĞÂÃÜÂë (×îÉÙ¡¡8¡¡×Ö)";
-$lang['newpasswordagain'] = "ĞÂÃÜÂë (ÖØ¸´)";
-$lang['emaildir'] = "ĞÅÏäµØÖ·";
-$lang['emaildir_tip'] = "ÆßÌìÄÚ²¿ĞŞ¸ÄÕâ¸öĞÅÏä,´ËÕÊºÅ½«ÓëÕâ¸öĞÅÏä°ó¶¨.";
-$lang['permanentemaildir'] = "ÓÀ¾ÃĞÅÏä";
+$lang['userdata'] = "ç©å®¶èµ„è®¯";
+$lang['username'] = "æ˜µç§°";
+$lang['lastpassword'] = "æ—§å¯†ç ";
+$lang['newpassword'] = "æ–°å¯†ç  (æœ€å°‘ã€€8ã€€å­—)";
+$lang['newpasswordagain'] = "æ–°å¯†ç  (é‡å¤)";
+$lang['emaildir'] = "ä¿¡ç®±åœ°å€";
+$lang['emaildir_tip'] = "ä¸ƒå¤©å†…éƒ¨ä¿®æ”¹è¿™ä¸ªä¿¡ç®±,æ­¤å¸å·å°†ä¸è¿™ä¸ªä¿¡ç®±ç»‘å®š.";
+$lang['permanentemaildir'] = "æ°¸ä¹…ä¿¡ç®±";
 
-$lang['opt_lst_ord']  = "ĞÇÇòÅÅĞò :";
-$lang['opt_lst_ord0'] = "ÒÀÖ³ÃñµØÅÅĞò";
-$lang['opt_lst_ord1'] = "ÒÀ×ù±êÅÅĞò";
-$lang['opt_lst_ord2'] = "ÒÀÃû³ÆÅÅĞò";
-$lang['opt_lst_cla']  = "ÅÅÁĞ·½Ê½ :";
-$lang['opt_lst_cla0'] = "ÉıĞòÅÅĞò";
-$lang['opt_lst_cla1'] = "½µĞòÅÅĞò";
-$lang['opt_chk_skin'] = "Ê¹ÓÃ·ç¸ñ";
+$lang['opt_lst_ord']  = "æ˜Ÿçƒæ’åº :";
+$lang['opt_lst_ord0'] = "ä¾æ®–æ°‘åœ°æ’åº";
+$lang['opt_lst_ord1'] = "ä¾åº§æ ‡æ’åº";
+$lang['opt_lst_ord2'] = "ä¾åç§°æ’åº";
+$lang['opt_lst_cla']  = "æ’åˆ—æ–¹å¼ :";
+$lang['opt_lst_cla0'] = "å‡åºæ’åº";
+$lang['opt_lst_cla1'] = "é™åºæ’åº";
+$lang['opt_chk_skin'] = "ä½¿ç”¨é£æ ¼";
 
 // Admin Options
-$lang['opt_adm_title'] = "¹ÜÀíÔ±Éè¶¨";
-$lang['opt_adm_planet_prot'] = "ĞÇÇò±£»¤";
+$lang['opt_adm_title'] = "ç®¡ç†å‘˜è®¾å®š";
+$lang['opt_adm_planet_prot'] = "æ˜Ÿçƒä¿æŠ¤";
 
 // General options
-$lang['thanksforregistry'] = "¸ĞĞ´ÄãµÄ×¢²á<br />Äã½«»áÊÕµ½Ò»·â¸½´øÃÜÂëµÄĞÅ";
-$lang['general_settings'] = "»ù±¾Éè¶¨";
-$lang['skins_example'] = "±¾»ú·ç¸ñÂ·¾¶ (ex. C:\style)";
-$lang['avatar_example'] = "Í·ÏñÍøÖ· (ex. /img/avatar.jpg)";
-$lang['untoggleip'] = "IP¼ì²é";
-$lang['untoggleip_tip'] = "IP¼ì²éÒÑ·ÀÖ¹¶àÖØÕÊºÅ!";
+$lang['thanksforregistry'] = "æ„Ÿå†™ä½ çš„æ³¨å†Œ<br />ä½ å°†ä¼šæ”¶åˆ°ä¸€å°é™„å¸¦å¯†ç çš„ä¿¡";
+$lang['general_settings'] = "åŸºæœ¬è®¾å®š";
+$lang['skins_example'] = "æœ¬æœºé£æ ¼è·¯å¾„ (ex. C:\style)";
+$lang['avatar_example'] = "å¤´åƒç½‘å€ (ex. /img/avatar.jpg)";
+$lang['untoggleip'] = "IPæ£€æŸ¥";
+$lang['untoggleip_tip'] = "IPæ£€æŸ¥å·²é˜²æ­¢å¤šé‡å¸å·!";
 
 // Option galaxy
-$lang['galaxyvision_options'] = "ĞÇÏµ²é¿´Éè¶¨";
-$lang['spy_cant'] = "¿Õ¼äÌ½²âÆ÷ÊıÁ¿";
-$lang['spy_cant_tip'] = "ÎŞ·¨Ì½²â, Ã»ÓĞ×ã¹»µÄ¼äµı";
-$lang['tooltip_time'] = "ÏÔÊ¾¹¤¾ßÊ±¼ä";
-$lang['mess_ammount_max'] = "×î´ó½¢¶Ó±¨¸æÊıÁ¿";
-$lang['show_ally_logo'] = "ÏÔÊ¾ÁªÃË±êÖ¾";
-$lang['seconds'] = "Ãë";
+$lang['galaxyvision_options'] = "æ˜Ÿç³»æŸ¥çœ‹è®¾å®š";
+$lang['spy_cant'] = "ç©ºé—´æ¢æµ‹å™¨æ•°é‡";
+$lang['spy_cant_tip'] = "æ— æ³•æ¢æµ‹, æ²¡æœ‰è¶³å¤Ÿçš„é—´è°";
+$lang['tooltip_time'] = "æ˜¾ç¤ºå·¥å…·æ—¶é—´";
+$lang['mess_ammount_max'] = "æœ€å¤§èˆ°é˜ŸæŠ¥å‘Šæ•°é‡";
+$lang['show_ally_logo'] = "æ˜¾ç¤ºè”ç›Ÿæ ‡å¿—";
+$lang['seconds'] = "ç§’";
 
 //Rapport acces
-$lang['shortcut'] = "¿ìËÙÅÉÇ²";
-$lang['show'] = "ÏÔÊ¾";
-$lang['write_a_messege'] = "×«Ğ´Ñ¶Ï¢";
-$lang['spy'] = "¼äµı";
-$lang['add_to_buddylist'] = "¼ÓÎªºÃÓÑ";
-$lang['attack_with_missile'] = "µ¼µ¯¹¥»÷";
-$lang['show_report'] = "ÏÔÊ¾±¨¸æ";
+$lang['shortcut'] = "å¿«é€Ÿæ´¾é£";
+$lang['show'] = "æ˜¾ç¤º";
+$lang['write_a_messege'] = "æ’°å†™è®¯æ¯";
+$lang['spy'] = "é—´è°";
+$lang['add_to_buddylist'] = "åŠ ä¸ºå¥½å‹";
+$lang['attack_with_missile'] = "å¯¼å¼¹æ”»å‡»";
+$lang['show_report'] = "æ˜¾ç¤ºæŠ¥å‘Š";
 
 //Vacations mod
-$lang['delete_vacations'] = "¼ÙÆÚÄ£Ê½Éè¶¨";
-$lang['mode_vacations'] = "¼ÙÆÚÄ£Ê½";
-$lang['vacations_tip'] = "ÄãµÄÕÊºÅÄ¿Ç°ÊÇ¼ÙÆÚÄ£Ê½";
-$lang['deleteaccount'] = "É¾³ıÕÊºÅ";
-$lang['deleteaccount_tip'] = "ÄãµÄÕÊºÅ½«»áÔÚÆßÌìÄÚÉ¾³ı";
-$lang['save_settings'] = "¸ü¸Ä";
+$lang['delete_vacations'] = "å‡æœŸæ¨¡å¼è®¾å®š";
+$lang['mode_vacations'] = "å‡æœŸæ¨¡å¼";
+$lang['vacations_tip'] = "ä½ çš„å¸å·ç›®å‰æ˜¯å‡æœŸæ¨¡å¼";
+$lang['deleteaccount'] = "åˆ é™¤å¸å·";
+$lang['deleteaccount_tip'] = "ä½ çš„å¸å·å°†ä¼šåœ¨ä¸ƒå¤©å†…åˆ é™¤";
+$lang['save_settings'] = "æ›´æ”¹";
 
 
 // Created by Perberos. All rights reversed (C) 2006

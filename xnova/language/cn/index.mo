@@ -1,5 +1,5 @@
 <?php
 
-$lang['NoFrames'] = "ä¯ÀÀÆ÷²»Ö§³Ö.NET Frame";
+$lang['NoFrames'] = "æµè§ˆå™¨ä¸æ”¯æŒ.NET Frame";
 
 ?>

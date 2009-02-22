@@ -1,9 +1,9 @@
 <?php
 
-$lang['adm_mt_title']  = "·ÖÉíÐû¸æ";
-$lang['adm_mt_list']   = "ÁÐ³ö";
-$lang['adm_mt_player'] = "ÓÃ»§Ãû";
-$lang['adm_mt_text']   = "ÄÚÈÝ";
-$lang['adm_mt_multi']  = "·ÖÉí...";
+$lang['adm_mt_title']  = "åˆ†èº«å®£å‘Š";
+$lang['adm_mt_list']   = "åˆ—å‡º";
+$lang['adm_mt_player'] = "ç”¨æˆ·å";
+$lang['adm_mt_text']   = "å†…å®¹";
+$lang['adm_mt_multi']  = "åˆ†èº«...";
 
 ?>

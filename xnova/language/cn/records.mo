@@ -1,15 +1,15 @@
 <?php
 
 //Record
-$lang['rec_title']  = "ÓîÖæ×î¸ß¼ÇÂ¼";
-$lang['rec_build']  = "»ù´¡½¨Öþ";
-$lang['rec_specb']  = "ÌØÊâ½¨Öþ";
-$lang['rec_playe']  = "ÓÃ»§";
-$lang['rec_defes']  = "·ÀÓù½¨Öþ";
-$lang['rec_fleet']  = "½¢´¬ÊýÁ¿";
-$lang['rec_techn']  = "¿Æ¼¼ÑÐ¾¿";
-$lang['rec_level']  = "µÈ¼¶";
-$lang['rec_nbre']   = "ÊýÁ¿";
+$lang['rec_title']  = "å®‡å®™æœ€é«˜è®°å½•";
+$lang['rec_build']  = "åŸºç¡€å»ºç­‘";
+$lang['rec_specb']  = "ç‰¹æ®Šå»ºç­‘";
+$lang['rec_playe']  = "ç”¨æˆ·";
+$lang['rec_defes']  = "é˜²å¾¡å»ºç­‘";
+$lang['rec_fleet']  = "èˆ°èˆ¹æ•°é‡";
+$lang['rec_techn']  = "ç§‘æŠ€ç ”ç©¶";
+$lang['rec_level']  = "ç­‰çº§";
+$lang['rec_nbre']   = "æ•°é‡";
 $lang['rec_rien']   = "-";
 
 // Created by Chlorel (XNova Team). All rights reversed (C) 2008
