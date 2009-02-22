@@ -1,7 +1,7 @@
 <?php
 
-$lang['cookies']['Error1'] = 'Cookies error!ÓÃ»§ÃûÖØ¸´<a href=login.php>µÇÂ½</a>ÇëÒÆ³ıCookiesºóÖØÊÔ£¬Èç»¹ÓĞÎÊÌâ£¬ÇëÁªÏµ¹ÜÀíÔ±';
-$lang['cookies']['Error2'] = 'Cookies error!Ã»ÓĞÄúµÄCookiesĞÅÏ¢!<a href=login.php>µÇÂ½</a>ÇëÒÆ³ıCookiesºóÖØÊÔ£¬Èç»¹ÓĞÎÊÌâ£¬ÇëÁªÏµ¹ÜÀíÔ±';
-$lang['cookies']['Error3'] = 'Cookies error!Ïß³Ì´íÎó£¬ÇëÖØÁ¬½Ó£¡!<a href=login.php>µÇÂ½</a>ÇëÒÆ³ıCookiesºóÖØÊÔ£¬Èç»¹ÓĞÎÊÌâ£¬ÇëÁªÏµ¹ÜÀíÔ±';
+$lang['cookies']['Error1'] = 'Cookies error!ç”¨æˆ·åé‡å¤<a href=login.php>ç™»é™†</a>è¯·ç§»é™¤Cookiesåé‡è¯•ï¼Œå¦‚è¿˜æœ‰é—®é¢˜ï¼Œè¯·è”ç³»ç®¡ç†å‘˜';
+$lang['cookies']['Error2'] = 'Cookies error!æ²¡æœ‰æ‚¨çš„Cookiesä¿¡æ¯!<a href=login.php>ç™»é™†</a>è¯·ç§»é™¤Cookiesåé‡è¯•ï¼Œå¦‚è¿˜æœ‰é—®é¢˜ï¼Œè¯·è”ç³»ç®¡ç†å‘˜';
+$lang['cookies']['Error3'] = 'Cookies error!çº¿ç¨‹é”™è¯¯ï¼Œè¯·é‡è¿æ¥ï¼!<a href=login.php>ç™»é™†</a>è¯·ç§»é™¤Cookiesåé‡è¯•ï¼Œå¦‚è¿˜æœ‰é—®é¢˜ï¼Œè¯·è”ç³»ç®¡ç†å‘˜';
 
 ?>

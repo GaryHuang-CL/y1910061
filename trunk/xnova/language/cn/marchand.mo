@@ -7,17 +7,17 @@
  * @copyright 2008 By Chlorel for XNova
  */
 
-$lang['mod_ma_title'] = "ÕÙ»½ÉÌÈË";
-$lang['mod_ma_typer'] = "ÕÙ»½ÉÌÈË¹ºÂò:";
-$lang['mod_ma_rates'] = "½»Ò×±ÈÂÊÊÇ2/1/0.5";
-$lang['mod_ma_buton'] = "ÕÙ»½ÉÌÈË";
-$lang['mod_ma_noten'] = "×ÊÔ´²»¹»";
-$lang['mod_ma_done']  = "×ÊÔ´½»Ò×³É¹¦!";
-$lang['mod_ma_error'] = "´íÎó";
-$lang['mod_ma_donet'] = "½»Ò×³É¹¦";
-$lang['mod_ma_excha'] = "½»Ò×";
-$lang['mod_ma_cours'] = "½»Ò×±ÈÂÊÊÇ";
-$lang['mod_ma_nbre']  = "×ÊÔ´²»¹»!!!";
+$lang['mod_ma_title'] = "å¬å”¤å•†äºº";
+$lang['mod_ma_typer'] = "å¬å”¤å•†äººè´­ä¹°:";
+$lang['mod_ma_rates'] = "äº¤æ˜“æ¯”çŽ‡æ˜¯2/1/0.5";
+$lang['mod_ma_buton'] = "å¬å”¤å•†äºº";
+$lang['mod_ma_noten'] = "èµ„æºä¸å¤Ÿ";
+$lang['mod_ma_done']  = "èµ„æºäº¤æ˜“æˆåŠŸ!";
+$lang['mod_ma_error'] = "é”™è¯¯";
+$lang['mod_ma_donet'] = "äº¤æ˜“æˆåŠŸ";
+$lang['mod_ma_excha'] = "äº¤æ˜“";
+$lang['mod_ma_cours'] = "äº¤æ˜“æ¯”çŽ‡æ˜¯";
+$lang['mod_ma_nbre']  = "èµ„æºä¸å¤Ÿ!!!";
 
 
 ?>

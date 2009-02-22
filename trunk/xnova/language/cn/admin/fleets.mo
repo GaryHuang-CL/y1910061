@@ -1,15 +1,15 @@
 <?php
 
 $lang['flt_id']       = "ID";
-$lang['flt_fleet']    = "½¢¶Ó";
-$lang['flt_mission']  = "ÈÎÎñ";
-$lang['flt_owner']    = "ËùÓÐÕß";
-$lang['flt_planet']   = "³ö·¢ÐÇÇò";
-$lang['flt_time_st']  = "³ö·¢Ê±¼ä";
-$lang['flt_e_owner']  = "Ä¿±ê";
-$lang['flt_time_en']  = "·µ»ØÊ±¼ä";
-$lang['flt_staying']  = "Í£ÁôÊ±¼ä";
-$lang['flt_action']   = "¶¯×÷";
-$lang['flt_title']    = "½¢¶Ó»î¶¯";
+$lang['flt_fleet']    = "èˆ°é˜Ÿ";
+$lang['flt_mission']  = "ä»»åŠ¡";
+$lang['flt_owner']    = "æ‰€æœ‰è€…";
+$lang['flt_planet']   = "å‡ºå‘æ˜Ÿçƒ";
+$lang['flt_time_st']  = "å‡ºå‘æ—¶é—´";
+$lang['flt_e_owner']  = "ç›®æ ‡";
+$lang['flt_time_en']  = "è¿”å›žæ—¶é—´";
+$lang['flt_staying']  = "åœç•™æ—¶é—´";
+$lang['flt_action']   = "åŠ¨ä½œ";
+$lang['flt_title']    = "èˆ°é˜Ÿæ´»åŠ¨";
 
 ?>

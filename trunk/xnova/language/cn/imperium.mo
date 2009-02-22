@@ -1,18 +1,18 @@
 <?php
 
-$lang['imperium_vision'] = "ÐÇÇò×´¿ö×ÜÀÀ";
-$lang['name'] = "Ãû³Æ";
-$lang['coordinates'] = "Î»ÖÃ";
-$lang['fields'] = "·½Ô²";
-$lang['resources'] = "¿Æ¼¼";
-$lang['metal'] = "½ðÊô";
-$lang['crystal'] = "¾§Ìå";
-$lang['deuterium'] = "ÖØÇâ";
-$lang['energy'] = "ÄÜÔ´";
-$lang['buildings'] = "½¨Öþ";
-$lang['investigation'] = "ÑÐ¾¿";
-$lang['ships'] = "½¢¶Ó";
-$lang['defense'] = "·ÀÓù";
+$lang['imperium_vision'] = "æ˜ŸçƒçŠ¶å†µæ€»è§ˆ";
+$lang['name'] = "åç§°";
+$lang['coordinates'] = "ä½ç½®";
+$lang['fields'] = "æ–¹åœ†";
+$lang['resources'] = "ç§‘æŠ€";
+$lang['metal'] = "é‡‘å±ž";
+$lang['crystal'] = "æ™¶ä½“";
+$lang['deuterium'] = "é‡æ°¢";
+$lang['energy'] = "èƒ½æº";
+$lang['buildings'] = "å»ºç­‘";
+$lang['investigation'] = "ç ”ç©¶";
+$lang['ships'] = "èˆ°é˜Ÿ";
+$lang['defense'] = "é˜²å¾¡";
 
 // Created by Perberos. All rights reserved (C) 2006 
 ?>

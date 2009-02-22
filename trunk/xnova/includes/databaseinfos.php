@@ -18,9 +18,9 @@
 	// Table aks
 	$QryTableAks         = "CREATE TABLE `{{table}}` ( ";
 	$QryTableAks        .= "`id` bigint(20) unsigned NOT NULL auto_increment, ";
-	$QryTableAks        .= "`name` varchar(50) collate latin1_general_ci default NULL, ";
-	$QryTableAks        .= "`teilnehmer` text collate latin1_general_ci, ";
-	$QryTableAks        .= "`flotten` text collate latin1_general_ci, ";
+	$QryTableAks        .= "`name` varbinary(50)  default NULL, ";
+	$QryTableAks        .= "`teilnehmer` blob, ";
+	$QryTableAks        .= "`flotten` blob, ";
 	$QryTableAks        .= "`ankunft` int(32) default NULL, ";
 	$QryTableAks        .= "`galaxy` int(2) default NULL, ";
 	$QryTableAks        .= "`system` int(4) default NULL, ";
@@ -32,7 +32,7 @@
 	// Table annonce
 	$QryTableAnnonce     = "CREATE TABLE `{{table}}` ( ";
 	$QryTableAnnonce    .= "`id` int(11) NOT NULL auto_increment, ";
-	$QryTableAnnonce    .= "`user` text collate latin1_general_ci NOT NULL, ";
+	$QryTableAnnonce    .= "`user` blob  NOT NULL, ";
 	$QryTableAnnonce    .= "`galaxie` int(11) NOT NULL, ";
 	$QryTableAnnonce    .= "`systeme` int(11) NOT NULL, ";
 	$QryTableAnnonce    .= "`metala` bigint(11) NOT NULL, ";
@@ -47,19 +47,19 @@
 	// Table alliance
 	$QryTableAlliance    = "CREATE TABLE `{{table}}` ( ";
 	$QryTableAlliance   .= "`id` bigint(11) NOT NULL auto_increment, ";
-	$QryTableAlliance   .= "`ally_name` varchar(32) character set latin1 default '', ";
-	$QryTableAlliance   .= "`ally_tag` varchar(8) character set latin1 default '', ";
+	$QryTableAlliance   .= "`ally_name` varbinary(32)  default '', ";
+	$QryTableAlliance   .= "`ally_tag` varbinary(8)  default '', ";
 	$QryTableAlliance   .= "`ally_owner` int(11) NOT NULL default '0', ";
 	$QryTableAlliance   .= "`ally_register_time` int(11) NOT NULL default '0', ";
-	$QryTableAlliance   .= "`ally_description` text character set latin1, ";
-	$QryTableAlliance   .= "`ally_web` varchar(255) character set latin1 default '', ";
-	$QryTableAlliance   .= "`ally_text` text character set latin1, ";
-	$QryTableAlliance   .= "`ally_image` varchar(255) character set latin1 default '', ";
-	$QryTableAlliance   .= "`ally_request` text character set latin1, ";
-	$QryTableAlliance   .= "`ally_request_waiting` text character set latin1, ";
+	$QryTableAlliance   .= "`ally_description` blob, ";
+	$QryTableAlliance   .= "`ally_web` varbinary(255)  default '', ";
+	$QryTableAlliance   .= "`ally_text` blob, ";
+	$QryTableAlliance   .= "`ally_image` varbinary(255)  default '', ";
+	$QryTableAlliance   .= "`ally_request` blob, ";
+	$QryTableAlliance   .= "`ally_request_waiting` blob, ";
 	$QryTableAlliance   .= "`ally_request_notallow` tinyint(4) NOT NULL default '0', ";
-	$QryTableAlliance   .= "`ally_owner_range` varchar(32) character set latin1 default '', ";
-	$QryTableAlliance   .= "`ally_ranks` text character set latin1, ";
+	$QryTableAlliance   .= "`ally_owner_range` varbinary(32)  default '', ";
+	$QryTableAlliance   .= "`ally_ranks` blob, ";
 	$QryTableAlliance   .= "`ally_members` int(11) NOT NULL default '0', ";
 	$QryTableAlliance   .= "PRIMARY KEY  (`id`) ";
 	$QryTableAlliance   .= ") ENGINE=InnoDB;";
@@ -67,13 +67,13 @@
 	// Table banned
 	$QryTableBanned      = "CREATE TABLE `{{table}}` ( ";
 	$QryTableBanned     .= "`id` bigint(11) NOT NULL auto_increment, ";
-	$QryTableBanned     .= "`who` varchar(11) character set latin1 NOT NULL default '', ";
-	$QryTableBanned     .= "`theme` text character set latin1 NOT NULL, ";
-	$QryTableBanned     .= "`who2` varchar(11) character set latin1 NOT NULL default '', ";
+	$QryTableBanned     .= "`who` varbinary(11)  NOT NULL default '', ";
+	$QryTableBanned     .= "`theme` blob  NOT NULL, ";
+	$QryTableBanned     .= "`who2` varbinary(11)  NOT NULL default '', ";
 	$QryTableBanned     .= "`time` int(11) NOT NULL default '0', ";
 	$QryTableBanned     .= "`longer` int(11) NOT NULL default '0', ";
-	$QryTableBanned     .= "`author` varchar(11) character set latin1 NOT NULL default '', ";
-	$QryTableBanned     .= "`email` varchar(20) character set latin1 NOT NULL default '', ";
+	$QryTableBanned     .= "`author` varbinary(11)  NOT NULL default '', ";
+	$QryTableBanned     .= "`email` varbinary(20)  NOT NULL default '', ";
 	$QryTableBanned     .= "KEY `ID` (`id`) ";
 	$QryTableBanned     .= ") ENGINE=InnoDB;";
 
@@ -83,23 +83,23 @@
 	$QryTableBuddy      .= "`sender` int(11) NOT NULL default '0', ";
 	$QryTableBuddy      .= "`owner` int(11) NOT NULL default '0', ";
 	$QryTableBuddy      .= "`active` tinyint(3) NOT NULL default '0', ";
-	$QryTableBuddy      .= "`text` text character set latin1, ";
+	$QryTableBuddy      .= "`text` blob, ";
 	$QryTableBuddy      .= "PRIMARY KEY  (`id`) ";
 	$QryTableBuddy      .= ") ENGINE=InnoDB;";
 
 	// Table chat
 	$QryTableChat        = "CREATE TABLE `{{table}}` ( ";
 	$QryTableChat       .= "`messageid` int(5) unsigned NOT NULL auto_increment, ";
-	$QryTableChat       .= "`user` varchar(255) NOT NULL default '', ";
-	$QryTableChat       .= "`message` text NOT NULL, ";
+	$QryTableChat       .= "`user` varbinary(255) NOT NULL default '', ";
+	$QryTableChat       .= "`message` blob NOT NULL, ";
 	$QryTableChat       .= "`timestamp` int(11) NOT NULL default '0', ";
 	$QryTableChat       .= "PRIMARY KEY  (`messageid`) ";
 	$QryTableChat       .= ") ENGINE=InnoDB;";
 
 	// Table config
 	$QryTableConfig      = "CREATE TABLE `{{table}}` ( ";
-	$QryTableConfig     .= "`config_name` varchar(64) character set latin1 NOT NULL default '', ";
-	$QryTableConfig     .= "`config_value` text character set latin1 NOT NULL ";
+	$QryTableConfig     .= "`config_name` varbinary(64)  NOT NULL default '', ";
+	$QryTableConfig     .= "`config_value` blob  NOT NULL ";
 	$QryTableConfig     .= ") ENGINE=InnoDB;";
 
 	// Valeurs de base de la config
@@ -158,22 +158,22 @@
 	
 	// Table declared (multicomptes)
 	$QryTabledeclared         = "CREATE TABLE `{{table}}` ( ";
-	$QryTabledeclared        .= "`declarator`TEXT NOT NULL, ";
-	$QryTabledeclared        .= "`declared_1`TEXT NOT NULL, ";
-	$QryTabledeclared        .= "`declared_2`TEXT NOT NULL, ";
-	$QryTabledeclared        .= "`declared_3`TEXT NOT NULL, ";
-	$QryTabledeclared        .= "`reason`TEXT NOT NULL, ";
-	$QryTabledeclared        .= "`declarator_name`TEXT NOT NULL ";
+	$QryTabledeclared        .= "`declarator` blob NOT NULL, ";
+	$QryTabledeclared        .= "`declared_1` blob NOT NULL, ";
+	$QryTabledeclared        .= "`declared_2` blob NOT NULL, ";
+	$QryTabledeclared        .= "`declared_3` blob NOT NULL, ";
+	$QryTabledeclared        .= "`reason` blob NOT NULL, ";
+	$QryTabledeclared        .= "`declarator_name` blob NOT NULL ";
 
 	$QryTabledeclared       .= ") ENGINE=InnoDB;";
 
 	// Table errors
 	$QryTableErrors      = "CREATE TABLE `{{table}}` ( ";
 	$QryTableErrors     .= "`error_id` bigint(11) NOT NULL auto_increment, ";
-	$QryTableErrors     .= "`error_sender` varchar(32) character set latin1 NOT NULL default '0', ";
+	$QryTableErrors     .= "`error_sender` varbinary(32)  NOT NULL default '0', ";
 	$QryTableErrors     .= "`error_time` int(11) NOT NULL default '0', ";
-	$QryTableErrors     .= "`error_type` varchar(32) character set latin1 NOT NULL default 'unknown', ";
-	$QryTableErrors     .= "`error_text` text character set latin1, ";
+	$QryTableErrors     .= "`error_type` varbinary(32)  NOT NULL default 'unknown', ";
+	$QryTableErrors     .= "`error_text` blob, ";
 	$QryTableErrors     .= "PRIMARY KEY  (`error_id`) ";
 	$QryTableErrors     .= ") ENGINE=InnoDB;";
 
@@ -183,7 +183,7 @@
 	$QryTableFleets     .= "`fleet_owner` int(11) NOT NULL default '0', ";
 	$QryTableFleets     .= "`fleet_mission` int(11) NOT NULL default '0', ";
 	$QryTableFleets     .= "`fleet_amount` bigint(11) NOT NULL default '0', ";
-	$QryTableFleets     .= "`fleet_array` text character set latin1, ";
+	$QryTableFleets     .= "`fleet_array` blob, ";
 	$QryTableFleets     .= "`fleet_start_time` int(11) NOT NULL default '0', ";
 	$QryTableFleets     .= "`fleet_start_galaxy` int(11) NOT NULL default '0', ";
 	$QryTableFleets     .= "`fleet_start_system` int(11) NOT NULL default '0', ";
@@ -242,8 +242,8 @@
 	$QryTableLunas       = "CREATE TABLE `{{table}}` ( ";
 	$QryTableLunas      .= "`id` bigint(11) NOT NULL auto_increment, ";
 	$QryTableLunas      .= "`id_luna` int(11) NOT NULL default '0', ";
-	$QryTableLunas      .= "`name` varchar(11) character set latin1 NOT NULL default 'Lune', ";
-	$QryTableLunas      .= "`image` varchar(11) character set latin1 NOT NULL default 'mond', ";
+	$QryTableLunas      .= "`name` varbinary(11)  NOT NULL default 'Lune', ";
+	$QryTableLunas      .= "`image` varbinary(11)  NOT NULL default 'mond', ";
 	$QryTableLunas      .= "`destruyed` int(11) NOT NULL default '0', ";
 	$QryTableLunas      .= "`id_owner` int(11) default NULL, ";
 	$QryTableLunas      .= "`galaxy` int(11) default NULL, ";
@@ -262,9 +262,9 @@
 	$QryTableMessages   .= "`message_sender` int(11) NOT NULL default '0', ";
 	$QryTableMessages   .= "`message_time` int(11) NOT NULL default '0', ";
 	$QryTableMessages   .= "`message_type` int(11) NOT NULL default '0', ";
-	$QryTableMessages   .= "`message_from` varchar(48) character set latin1 default NULL, ";
-	$QryTableMessages   .= "`message_subject` varchar(48) character set latin1 default NULL, ";
-	$QryTableMessages   .= "`message_text` text character set latin1, ";
+	$QryTableMessages   .= "`message_from` varbinary(48)  default NULL, ";
+	$QryTableMessages   .= "`message_subject` varbinary(48)  default NULL, ";
+	$QryTableMessages   .= "`message_text` blob, ";
 	$QryTableMessages   .= "PRIMARY KEY  (`message_id`) ";
 	$QryTableMessages   .= ") ENGINE=InnoDB;";
 
@@ -274,15 +274,15 @@
 	$QryTableNotes      .= "`owner` int(11) default NULL, ";
 	$QryTableNotes      .= "`time` int(11) default NULL, ";
 	$QryTableNotes      .= "`priority` tinyint(1) default NULL, ";
-	$QryTableNotes      .= "`title` varchar(32) character set latin1 default NULL, ";
-	$QryTableNotes      .= "`text` text character set latin1, ";
+	$QryTableNotes      .= "`title` varbinary(32)  default NULL, ";
+	$QryTableNotes      .= "`text` blob, ";
 	$QryTableNotes      .= "PRIMARY KEY  (`id`) ";
 	$QryTableNotes      .= ") ENGINE=InnoDB;";
 
 	// Table planets
 	$QryTablePlanets     = "CREATE TABLE `{{table}}` ( ";
 	$QryTablePlanets    .= "`id` bigint(11) NOT NULL auto_increment, ";
-	$QryTablePlanets    .= "`name` varchar(255) character set latin1 default NULL, ";
+	$QryTablePlanets    .= "`name` varbinary(255)  default NULL, ";
 	$QryTablePlanets    .= "`id_owner` int(11) default NULL, ";
 	$QryTablePlanets    .= "`id_level` int(11) default NULL, ";
 	$QryTablePlanets    .= "`galaxy` int(11) NOT NULL default '0', ";
@@ -292,13 +292,13 @@
 	$QryTablePlanets    .= "`planet_type` int(11) NOT NULL default '1', ";
 	$QryTablePlanets    .= "`destruyed` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`b_building` int(11) NOT NULL default '0', ";
-	$QryTablePlanets    .= "`b_building_id` text character set latin1 default '', ";
+	$QryTablePlanets    .= "`b_building_id` blob  default '', ";
 	$QryTablePlanets    .= "`b_tech` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`b_tech_id` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`b_hangar` int(11) NOT NULL default '0', ";
-	$QryTablePlanets    .= "`b_hangar_id` text character set latin1 default NULL, ";
+	$QryTablePlanets    .= "`b_hangar_id` blob  default NULL, ";
 	$QryTablePlanets    .= "`b_hangar_plus` int(11) NOT NULL default '0', ";
-	$QryTablePlanets    .= "`image` varchar(32) character set latin1 NOT NULL default 'normaltempplanet01', ";
+	$QryTablePlanets    .= "`image` varbinary(32)  NOT NULL default 'normaltempplanet01', ";
 	$QryTablePlanets    .= "`diameter` int(11) NOT NULL default '12800', ";
 	$QryTablePlanets    .= "`points` bigint(20) default '0', ";
 	$QryTablePlanets    .= "`ranks` bigint(20) default '0', ";
@@ -373,8 +373,8 @@
 	$QryTableRw          = "CREATE TABLE `{{table}}` ( ";
 	$QryTableRw         .= "`id_owner1` int(11) NOT NULL default '0', ";
 	$QryTableRw         .= "`id_owner2` int(11) NOT NULL default '0', ";
-	$QryTableRw         .= "`rid` varchar(72) character set latin1 NOT NULL, ";
-	$QryTableRw         .= "`raport` text character set latin1 NOT NULL, ";
+	$QryTableRw         .= "`rid` varbinary(72)  NOT NULL, ";
+	$QryTableRw         .= "`raport` blob  NOT NULL, ";
 	$QryTableRw         .= "`a_zestrzelona` tinyint(3) unsigned NOT NULL default '0', ";
 	$QryTableRw         .= "`time` int(10) unsigned NOT NULL default '0', ";
 	$QryTableRw         .= "UNIQUE KEY `rid` (`rid`), ";
@@ -421,27 +421,27 @@
 	// Table users
 	$QryTableUsers       = "CREATE TABLE `{{table}}` ( ";
 	$QryTableUsers      .= "`id` bigint(11) unsigned NOT NULL auto_increment PRIMARY KEY, ";
-	$QryTableUsers      .= "`username` varchar(64) character set latin1 NOT NULL default '', ";
-	$QryTableUsers      .= "`password` varchar(64) character set latin1 NOT NULL default '', ";
-	$QryTableUsers      .= "`email` varchar(64) character set latin1 NOT NULL default '', ";
-	$QryTableUsers      .= "`email_2` varchar(64) character set latin1 NOT NULL default '', ";
-	$QryTableUsers      .= "`lang` varchar(8) character set latin1 NOT NULL default 'en', ";
+	$QryTableUsers      .= "`username` varbinary(64)  NOT NULL default '', ";
+	$QryTableUsers      .= "`password` varbinary(64)  NOT NULL default '', ";
+	$QryTableUsers      .= "`email` varbinary(64)  NOT NULL default '', ";
+	$QryTableUsers      .= "`email_2` varbinary(64)  NOT NULL default '', ";
+	$QryTableUsers      .= "`lang` varbinary(8)  NOT NULL default 'en', ";
 	$QryTableUsers      .= "`authlevel` tinyint(4) NOT NULL default '0', ";
-	$QryTableUsers      .= "`sex` char(1) character set latin1 default NULL, ";
-	$QryTableUsers      .= "`avatar` varchar(255) character set latin1 NOT NULL default '', ";
-	$QryTableUsers      .= "`sign` text character set latin1, ";
+	$QryTableUsers      .= "`sex` char(1)  default NULL, ";
+	$QryTableUsers      .= "`avatar` varbinary(255)  NOT NULL default '', ";
+	$QryTableUsers      .= "`sign` blob, ";
 	$QryTableUsers      .= "`id_planet` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`galaxy` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`system` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`planet` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`current_planet` int(11) NOT NULL default '0', ";
-	$QryTableUsers      .= "`user_lastip` varchar(16) character set latin1 NOT NULL default '', ";
-	$QryTableUsers      .= "`ip_at_reg` varchar(16) character set latin1 NOT NULL default '', ";
-	$QryTableUsers      .= "`user_agent` text character set latin1 default '', ";
-	$QryTableUsers      .= "`current_page` text character set latin1 default NULL, ";
+	$QryTableUsers      .= "`user_lastip` varbinary(16)  NOT NULL default '', ";
+	$QryTableUsers      .= "`ip_at_reg` varbinary(16)  NOT NULL default '', ";
+	$QryTableUsers      .= "`user_agent` blob  default '', ";
+	$QryTableUsers      .= "`current_page` blob  default NULL, ";
 	$QryTableUsers      .= "`register_time` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`onlinetime` int(11) NOT NULL default '0', ";
-	$QryTableUsers      .= "`dpath` varchar(255) character set latin1 NOT NULL default '', ";
+	$QryTableUsers      .= "`dpath` varbinary(255)  NOT NULL default '', ";
 	$QryTableUsers      .= "`design` tinyint(4) NOT NULL default '1', ";
 	$QryTableUsers      .= "`noipcheck` tinyint(4) NOT NULL default '1', ";
 	$QryTableUsers      .= "`planet_sort` tinyint(1) NOT NULL default '0', ";
@@ -459,7 +459,7 @@
 	$QryTableUsers      .= "`urlaubs_until` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`db_deaktjava` tinyint(4) NOT NULL default '0', ";
 	$QryTableUsers      .= "`new_message` int(11) NOT NULL default '0', ";
-	$QryTableUsers      .= "`fleet_shortcut` text character set latin1 default '', ";
+	$QryTableUsers      .= "`fleet_shortcut` blob  default '', ";
 	$QryTableUsers      .= "`b_tech_planet` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`spy_tech` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`computer_tech` int(11) NOT NULL default '0', ";
@@ -478,15 +478,15 @@
 	$QryTableUsers      .= "`expedition_tech` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`graviton_tech` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`ally_id` int(11) NOT NULL default '0', ";
-	$QryTableUsers      .= "`ally_name` varchar(32) character set latin1 default '', ";
+	$QryTableUsers      .= "`ally_name` varbinary(32)  default '', ";
 	$QryTableUsers      .= "`ally_request` int(11) NOT NULL default '0', ";
-	$QryTableUsers      .= "`ally_request_text` text character set latin1, ";
+	$QryTableUsers      .= "`ally_request_text` blob, ";
 	$QryTableUsers      .= "`ally_register_time` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`ally_rank_id` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`current_luna` int(11) NOT NULL default '0', ";
-	$QryTableUsers      .= "`kolorminus` varchar(11) character set latin1 NOT NULL default 'red', ";
-	$QryTableUsers      .= "`kolorplus` varchar(11) character set latin1 NOT NULL default '#00FF00', ";
-	$QryTableUsers      .= "`kolorpoziom` varchar(11) character set latin1 NOT NULL default 'yellow', ";
+	$QryTableUsers      .= "`kolorminus` varbinary(11)  NOT NULL default 'red', ";
+	$QryTableUsers      .= "`kolorplus` varbinary(11)  NOT NULL default '#00FF00', ";
+	$QryTableUsers      .= "`kolorpoziom` varbinary(11)  NOT NULL default 'yellow', ";
 	$QryTableUsers      .= "`rpg_geologue` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`rpg_amiral` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`rpg_ingenieur` int(11) NOT NULL default '0', ";
@@ -531,7 +531,7 @@
 	$QryTableMulti      .= "`id` int(11) NOT NULL auto_increment, ";
 	$QryTableMulti      .= "`player` bigint(11) unsigned NOT NULL, ";
 	$QryTableMulti      .= "`sharer` bigint(11) unsigned NOT NULL, ";
-	$QryTableMulti      .= "`reason` text character set latin1 NOT NULL, ";
+	$QryTableMulti      .= "`reason` blob  NOT NULL, ";
 	$QryTableMulti      .= "PRIMARY KEY  (`id`) ";
 	$QryTableMulti      .= ") ENGINE=InnoDB;";
 

@@ -1,10 +1,10 @@
 <?php
 
-$lang['md5_title']  = "¸ü¸ÄÍæ¼ÒÃÜÂë";
-$lang['md5_pswcyp'] = "¸ü¸ÄÍæ¼ÒÃÜÂë";
-$lang['md5_psw']    = "ÃÜÂë";
+$lang['md5_title']  = "æ›´æ”¹çŽ©å®¶å¯†ç ";
+$lang['md5_pswcyp'] = "æ›´æ”¹çŽ©å®¶å¯†ç ";
+$lang['md5_psw']    = "å¯†ç ";
 
-$lang['md5_doit']   = "[ ¸ü¸ÄÃÜÂë ]";
-$lang['user_to_change']   = "Íæ¼ÒêÇ³Æ ?";
+$lang['md5_doit']   = "[ æ›´æ”¹å¯†ç  ]";
+$lang['user_to_change']   = "çŽ©å®¶æ˜µç§° ?";
 
 ?>

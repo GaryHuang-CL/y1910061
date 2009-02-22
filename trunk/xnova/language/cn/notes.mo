@@ -1,43 +1,43 @@
 <?php
 
-$lang['Notes'] = '±Ê¼Ç';
+$lang['Notes'] = 'ç¬”è®°';
 
-$lang['Createnote'] = 'ĞÂÔö±Ê¼Ç';
-$lang['MakeNewNote'] = 'ÂíÉÏĞÂÔö±Ê¼Ç';
-$lang['Editnote'] = '±à¼­±Ê¼Ç';
+$lang['Createnote'] = 'æ–°å¢ç¬”è®°';
+$lang['MakeNewNote'] = 'é©¬ä¸Šæ–°å¢ç¬”è®°';
+$lang['Editnote'] = 'ç¼–è¾‘ç¬”è®°';
 
-$lang['Priority'] = 'ÓÅÏÈ¶È';
+$lang['Priority'] = 'ä¼˜å…ˆåº¦';
 
-$lang['Important'] = 'ÖØÒª';
-$lang['Normal'] = 'Ò»°ã';
-$lang['Unimportant'] = '²»ÖØÒª';
+$lang['Important'] = 'é‡è¦';
+$lang['Normal'] = 'ä¸€èˆ¬';
+$lang['Unimportant'] = 'ä¸é‡è¦';
 
-$lang['Subject'] = 'Ö÷Ìâ';
-$lang['NoTitle'] = 'Ã»ÓĞ±êÌâ';
-$lang['NoText'] = 'Ã»ÓĞÄÚÈİ';
+$lang['Subject'] = 'ä¸»é¢˜';
+$lang['NoTitle'] = 'æ²¡æœ‰æ ‡é¢˜';
+$lang['NoText'] = 'æ²¡æœ‰å†…å®¹';
 
-$lang['Date'] = 'ÈÕÆÚ';
-$lang['Size'] = '´óĞ¡';
+$lang['Date'] = 'æ—¥æœŸ';
+$lang['Size'] = 'å¤§å°';
 
-$lang['Note'] = '±Ê¼Ç';
+$lang['Note'] = 'ç¬”è®°';
 
-$lang['characters'] = '×ÖÔª';
+$lang['characters'] = 'å­—å…ƒ';
 
-$lang['Apply'] = 'Í¬Òâ';
-$lang['Back'] = '·µ»Ø';
-$lang['Save'] = '´¢´æ';
-$lang['Delete'] = 'É¾³ı';
-$lang['Reset'] = 'ÖØÉè';
+$lang['Apply'] = 'åŒæ„';
+$lang['Back'] = 'è¿”å›';
+$lang['Save'] = 'å‚¨å­˜';
+$lang['Delete'] = 'åˆ é™¤';
+$lang['Reset'] = 'é‡è®¾';
 
 //mensajes
-$lang['ThereIsNoNote'] = 'ÕâÀïÃ»ÓĞ±Ê¼Ç';
+$lang['ThereIsNoNote'] = 'è¿™é‡Œæ²¡æœ‰ç¬”è®°';
 
-$lang['NoteUpdated'] = '±Ê¼ÇÒÑ¸üĞÂ, <a href="notes.php"><blink>×ª»»ÖĞ...</blink></a>';
+$lang['NoteUpdated'] = 'ç¬”è®°å·²æ›´æ–°, <a href="notes.php"><blink>è½¬æ¢ä¸­...</blink></a>';
 
-$lang['NoteAdded'] = '±Ê¼ÇÒÑĞÂÔö, <a href="notes.php"><blink>×ª»»ÖĞ...</blink></a>';
+$lang['NoteAdded'] = 'ç¬”è®°å·²æ–°å¢, <a href="notes.php"><blink>è½¬æ¢ä¸­...</blink></a>';
 
-$lang['NoteDeleted'] = '±Ê¼ÇÒÑÉ¾³ı, <a href="notes.php"><blink>×ª»»ÖĞ...</blink></a>';
-$lang['NoteDeleteds'] = '±Ê¼ÇÒÑÉ¾³ı, <a href="notes.php"><blink>×ª»»ÖĞ...</blink></a>';
+$lang['NoteDeleted'] = 'ç¬”è®°å·²åˆ é™¤, <a href="notes.php"><blink>è½¬æ¢ä¸­...</blink></a>';
+$lang['NoteDeleteds'] = 'ç¬”è®°å·²åˆ é™¤, <a href="notes.php"><blink>è½¬æ¢ä¸­...</blink></a>';
 
 // Created by Perberos. All rights reversed (C) 2006 
 ?>

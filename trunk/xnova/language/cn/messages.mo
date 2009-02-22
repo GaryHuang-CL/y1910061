@@ -1,45 +1,45 @@
 <?php
 
-$lang['alliance']   = 'ÁªÃË';
-$lang['title']      = "²¿·ÖÑ¶Ï¢Ñ¡µ¥";
-$lang['head_type']  = "Ñ¶Ï¢ÀàÐÍ";
-$lang['head_count'] = "Î´¶ÁÈ¡(s)";
-$lang['head_total'] = "×Ü¼Æ";
-$lang['type'][0]    = "Õì²ìÑ¶Ï¢";
-$lang['type'][1]    = "Íæ¼ÒÑ¶Ï¢";
-$lang['type'][2]    = "ÁªÃËÑ¶Ï¢";
-$lang['type'][3]    = "×÷Õ½±¨¸æ";
-$lang['type'][4]    = "Éú²ú±¨¸æ";
-$lang['type'][5]    = "ÔËÊä±¨¸æ";
-$lang['type'][15]   = "Ô¶³Ì±¨¸æ";
-$lang['type'][99]   = "½¨Öþ±¨¸æ";
-$lang['type'][100]  = "ËùÓÐÑ¶Ï¢";
+$lang['alliance']   = 'è”ç›Ÿ';
+$lang['title']      = "éƒ¨åˆ†è®¯æ¯é€‰å•";
+$lang['head_type']  = "è®¯æ¯ç±»åž‹";
+$lang['head_count'] = "æœªè¯»å–(s)";
+$lang['head_total'] = "æ€»è®¡";
+$lang['type'][0]    = "ä¾¦å¯Ÿè®¯æ¯";
+$lang['type'][1]    = "çŽ©å®¶è®¯æ¯";
+$lang['type'][2]    = "è”ç›Ÿè®¯æ¯";
+$lang['type'][3]    = "ä½œæˆ˜æŠ¥å‘Š";
+$lang['type'][4]    = "ç”Ÿäº§æŠ¥å‘Š";
+$lang['type'][5]    = "è¿è¾“æŠ¥å‘Š";
+$lang['type'][15]   = "è¿œç¨‹æŠ¥å‘Š";
+$lang['type'][99]   = "å»ºç­‘æŠ¥å‘Š";
+$lang['type'][100]  = "æ‰€æœ‰è®¯æ¯";
 
-$lang['mess_pagetitle']      = "ËÍ³öÑ¶Ï¢";
-$lang['mess_error']          = "´íÎó";
-$lang['mess_no_ownerid']     = "·¢ÏÖ´íÎó, ÇëÖØÊÔ¡£Èç¹û»¹ÓÐ´íÎóÇëÁªÂç¹ÜÀíÔ±!";
-$lang['mess_no_ownerpl']     = "·¢ÏÖ´íÎó£¬ÄãÁªÏµµÄÐÇÇòÊÇÎÞÈËÐÇÇò!";
-$lang['mess_no_owner']       = "Õâ¸öÓÃ»§²»´æÔÚ";
-$lang['mess_recipient']      = "½ÓÊÕÕß";
-$lang['mess_message']        = "Ñ¶Ï¢";
-$lang['mess_characters']     = "×Ö";
-$lang['mess_subject']        = "Ö÷Ìâ";
-$lang['mess_envoyer']        = " ËÍ³ö ";
-$lang['mess_no_subject']     = "Ã»ÓÐÖ÷Ìâ";
-$lang['mess_no_text']        = "ÄÚÈÝÎª¿Õ?";
-$lang['mess_sended']         = "Ñ¶Ï¢ÒÑËÍ³ö !";
-$lang['mess_partialreport']  = "×ÊÁÏÏÔÊ¾£¬½öÓÐ²¿·Ö±¨¸æ½øÐÐ¼äµý»î¶¯";
-$lang['mess_deleteunmarked'] = "É¾³ýÎ´Ñ¡È¡Ñ¶Ï¢";
-$lang['mess_deletemarked']   = "É¾³ýÑ¡È¡µÄÑ¶Ï¢";
-$lang['mess_deleteall']      = "É¾³ýËùÓÐµÄÑ¶Ï¢";
-$lang['mess_its_ok']         = " È·¶¨ ";
-$lang['mess_from']           = "À´×Ô";
-$lang['mess_action']         = "¶¯×÷";
-$lang['mess_date']           = "ÈÕÆÚ";
-$lang['mess_answer']         = "»Ø¸²";
+$lang['mess_pagetitle']      = "é€å‡ºè®¯æ¯";
+$lang['mess_error']          = "é”™è¯¯";
+$lang['mess_no_ownerid']     = "å‘çŽ°é”™è¯¯, è¯·é‡è¯•ã€‚å¦‚æžœè¿˜æœ‰é”™è¯¯è¯·è”ç»œç®¡ç†å‘˜!";
+$lang['mess_no_ownerpl']     = "å‘çŽ°é”™è¯¯ï¼Œä½ è”ç³»çš„æ˜Ÿçƒæ˜¯æ— äººæ˜Ÿçƒ!";
+$lang['mess_no_owner']       = "è¿™ä¸ªç”¨æˆ·ä¸å­˜åœ¨";
+$lang['mess_recipient']      = "æŽ¥æ”¶è€…";
+$lang['mess_message']        = "è®¯æ¯";
+$lang['mess_characters']     = "å­—";
+$lang['mess_subject']        = "ä¸»é¢˜";
+$lang['mess_envoyer']        = " é€å‡º ";
+$lang['mess_no_subject']     = "æ²¡æœ‰ä¸»é¢˜";
+$lang['mess_no_text']        = "å†…å®¹ä¸ºç©º?";
+$lang['mess_sended']         = "è®¯æ¯å·²é€å‡º !";
+$lang['mess_partialreport']  = "èµ„æ–™æ˜¾ç¤ºï¼Œä»…æœ‰éƒ¨åˆ†æŠ¥å‘Šè¿›è¡Œé—´è°æ´»åŠ¨";
+$lang['mess_deleteunmarked'] = "åˆ é™¤æœªé€‰å–è®¯æ¯";
+$lang['mess_deletemarked']   = "åˆ é™¤é€‰å–çš„è®¯æ¯";
+$lang['mess_deleteall']      = "åˆ é™¤æ‰€æœ‰çš„è®¯æ¯";
+$lang['mess_its_ok']         = " ç¡®å®š ";
+$lang['mess_from']           = "æ¥è‡ª";
+$lang['mess_action']         = "åŠ¨ä½œ";
+$lang['mess_date']           = "æ—¥æœŸ";
+$lang['mess_answer']         = "å›žè¦†";
 $lang['mess_answer_prefix']  = "Re:";
 
-$lang['Player_say'] = '<font color="#7f7f7f">ÓÃ»§</font> %s <font color="#7f7f7f"´«ËÍÒÔÏÂÑ¶Ï¢:</font><br>';
+$lang['Player_say'] = '<font color="#7f7f7f">ç”¨æˆ·</font> %s <font color="#7f7f7f"ä¼ é€ä»¥ä¸‹è®¯æ¯:</font><br>';
 
 
 

@@ -1,11 +1,11 @@
 <?php
 
-$lang['Chat']  = "ÁÄÌìÊÒ";
-$lang['chat_loading']  = "ÁÄÌìÊÒÔØÈëÖÐ...";
-$lang['chat_disc']     = "ÓÎÏ·ÁÄÌì";
-$lang['chat_message']  = "Ñ¶Ï¢";
-$lang['chat_short']    = "Ô¤ÀÀ";
-$lang['chat_text']     = "ÄÚÈÝ";
-$lang['chat_send']     = "·¢ËÍ";
+$lang['Chat']  = "èŠå¤©å®¤";
+$lang['chat_loading']  = "èŠå¤©å®¤è½½å…¥ä¸­...";
+$lang['chat_disc']     = "æ¸¸æˆèŠå¤©";
+$lang['chat_message']  = "è®¯æ¯";
+$lang['chat_short']    = "é¢„è§ˆ";
+$lang['chat_text']     = "å†…å®¹";
+$lang['chat_send']     = "å‘é€";
 
 ?>

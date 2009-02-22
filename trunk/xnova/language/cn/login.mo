@@ -1,29 +1,29 @@
 <?php
 
-$lang['Login'] = 'µÇÈë';
-$lang['User_name'] = 'êÇ³Æ:';
-$lang['Password'] = 'ÃÜÂë:';
-$lang['Please_Login'] = '»¶Ó­£¡ <a href="login.php" target="_main">µÇÈëÖĞ...</a>';
-$lang['Please_Wait'] = 'ÇëÉÔµÈ';
-$lang['Remember_me'] = '¼Ç×¡ÕÊºÅ';
-$lang['Register'] = '×¢²áÕÊºÅ';
-$lang['Login_Error'] = '´íÎó';
-$lang['PleaseWait'] = 'ÇëÉÔµÈ';
+$lang['Login'] = 'ç™»å…¥';
+$lang['User_name'] = 'æ˜µç§°:';
+$lang['Password'] = 'å¯†ç :';
+$lang['Please_Login'] = 'æ¬¢è¿ï¼ <a href="login.php" target="_main">ç™»å…¥ä¸­...</a>';
+$lang['Please_Wait'] = 'è¯·ç¨ç­‰';
+$lang['Remember_me'] = 'è®°ä½å¸å·';
+$lang['Register'] = 'æ³¨å†Œå¸å·';
+$lang['Login_Error'] = 'é”™è¯¯';
+$lang['PleaseWait'] = 'è¯·ç¨ç­‰';
 
-$lang['Login_Ok'] = '³É¹¦µÇÈë, <a href="./"><blink>redirection...</blink></a><br><center><img src="images/progressbar.gif"></center>';
-$lang['Login_FailPassword'] = '´íÎóµÄÃÜÂë£¡<br /><a href="login.php" target="_top">ÖØÊÔ</a>';
-$lang['Login_FailUser'] = '´íÎóµÄÕÊºÅ<br><a href=login.php>ÖØÊÔ</a>';
+$lang['Login_Ok'] = 'æˆåŠŸç™»å…¥, <a href="./"><blink>redirection...</blink></a><br><center><img src="images/progressbar.gif"></center>';
+$lang['Login_FailPassword'] = 'é”™è¯¯çš„å¯†ç ï¼<br /><a href="login.php" target="_top">é‡è¯•</a>';
+$lang['Login_FailUser'] = 'é”™è¯¯çš„å¸å·<br><a href=login.php>é‡è¯•</a>';
 
-$lang['log_univ'] = 'ÇëÑ¡ÔñÓîÖæ!';
-$lang['log_reg'] = '×¢²á';
-$lang['log_cred'] = 'ÍÅ¶Ó';
-$lang['log_desc'] = 'ÊÇÒ»¸ö<strong>Õ½ÂÔĞÔ¿Õ¼äÄ£ÄâÓÎÏ·</strong> ³ÉÇ§ÉÏÍòµÄÍæ¼ÒÍ¬Ê±ÔÚÏßÓÎÏ·£¬ÄúÖ»ĞèÒªÒ»¸öÍøÒ³ä¯ÀÀÆ÷¾Í¿ÉÒÔ½øĞĞÓÎÏ·¡£XNova·±ÌåÖĞÎÄ»¯£¬ÈÎºÎÈË½øĞĞÈÎºÎÉÌÒµµÄÄ¿µÄ¾ùÓë±¾Õ¾ÎŞ¹Ø';
-$lang['log_toreg'] = 'ÂíÉÏ¼ÓÈëÓÎÏ·£¡';
-$lang['log_online'] = 'ÏßÉÏÍæ¼Ò';
-$lang['log_lastreg'] = '×îºó×¢²á';
-$lang['log_numbreg'] = 'Íæ¼Ò×ÜÊı';
-$lang['log_welcome'] = '»¶Ó­À´µ½ ';
+$lang['log_univ'] = 'è¯·é€‰æ‹©å®‡å®™!';
+$lang['log_reg'] = 'æ³¨å†Œ';
+$lang['log_cred'] = 'å›¢é˜Ÿ';
+$lang['log_desc'] = 'æ˜¯ä¸€ä¸ª<strong>æˆ˜ç•¥æ€§ç©ºé—´æ¨¡æ‹Ÿæ¸¸æˆ</strong> æˆåƒä¸Šä¸‡çš„ç©å®¶åŒæ—¶åœ¨çº¿æ¸¸æˆï¼Œæ‚¨åªéœ€è¦ä¸€ä¸ªç½‘é¡µæµè§ˆå™¨å°±å¯ä»¥è¿›è¡Œæ¸¸æˆã€‚XNovaç¹ä½“ä¸­æ–‡åŒ–ï¼Œä»»ä½•äººè¿›è¡Œä»»ä½•å•†ä¸šçš„ç›®çš„å‡ä¸æœ¬ç«™æ— å…³';
+$lang['log_toreg'] = 'é©¬ä¸ŠåŠ å…¥æ¸¸æˆï¼';
+$lang['log_online'] = 'çº¿ä¸Šç©å®¶';
+$lang['log_lastreg'] = 'æœ€åæ³¨å†Œ';
+$lang['log_numbreg'] = 'ç©å®¶æ€»æ•°';
+$lang['log_welcome'] = 'æ¬¢è¿æ¥åˆ° ';
 
-$lang['PasswordLost'] = 'Íü¼ÇÃÜÂë?';
+$lang['PasswordLost'] = 'å¿˜è®°å¯†ç ?';
 
 ?>

@@ -1,9 +1,9 @@
 <?php
 
-$lang['ctc_title'] = "ÁªÂç";
-$lang['ctc_intro'] = "ÏÂÃæÎª¹ÜÀíÍÅ¶ÓÁÐ±í";
-$lang['ctc_name']  = "êÇ³Æ";
-$lang['ctc_rank']  = "½×¼¶";
-$lang['ctc_mail']  = "ÐÅÏä";
+$lang['ctc_title'] = "è”ç»œ";
+$lang['ctc_intro'] = "ä¸‹é¢ä¸ºç®¡ç†å›¢é˜Ÿåˆ—è¡¨";
+$lang['ctc_name']  = "æ˜µç§°";
+$lang['ctc_rank']  = "é˜¶çº§";
+$lang['ctc_mail']  = "ä¿¡ç®±";
 
 ?>

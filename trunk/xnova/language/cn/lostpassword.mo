@@ -1,10 +1,10 @@
 <?php
 
-$lang['ResetPass'] = "ÖØÉèÃÜÂë";
-$lang['TextPass1'] = "·¢ËÍÃÜÂëÍê³É";
-$lang['TextPass2'] = "Èç¹ûÄã²»ÖªµÀÄãµÄÃÜÂëÇëÔÚÏÂÃæÌîÐ´ÐÅÏäºó°´ÏÂËÍ³ö";
-$lang['email']    = "ÐÅÏä";
-$lang['ButtonSendPass'] = "ËÍ³ö";
-$lang['PassForm'] = "ÃÜÂë±íµ¥";
+$lang['ResetPass'] = "é‡è®¾å¯†ç ";
+$lang['TextPass1'] = "å‘é€å¯†ç å®Œæˆ";
+$lang['TextPass2'] = "å¦‚æžœä½ ä¸çŸ¥é“ä½ çš„å¯†ç è¯·åœ¨ä¸‹é¢å¡«å†™ä¿¡ç®±åŽæŒ‰ä¸‹é€å‡º";
+$lang['email']    = "ä¿¡ç®±";
+$lang['ButtonSendPass'] = "é€å‡º";
+$lang['PassForm'] = "å¯†ç è¡¨å•";
 
 ?>

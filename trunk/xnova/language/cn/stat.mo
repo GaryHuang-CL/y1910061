@@ -1,27 +1,27 @@
 <?php
 
 // Language file for Statistic module
-$lang['stat_title']    = "Í³¼Æ";
-$lang['stat_show']     = "ÅÅÃû";
-$lang['stat_by']       = "ÒÔÏÂ";
-$lang['stat_range']    = "µØ·½";
+$lang['stat_title']    = "ç»Ÿè®¡";
+$lang['stat_show']     = "æŽ’å";
+$lang['stat_by']       = "ä»¥ä¸‹";
+$lang['stat_range']    = "åœ°æ–¹";
 
-$lang['stat_player']   = "Íæ¼Ò";
-$lang['stat_allys']    = "ÁªÃË";
-$lang['stat_main']     = "Ò»°ã";
-$lang['stat_fleet']    = "½¢¶Ó";
-$lang['stat_research'] = "ÑÐ¾¿";
-$lang['stat_building'] = "½¨Öþ";
-$lang['stat_defenses'] = "·ÀÓù";
+$lang['stat_player']   = "çŽ©å®¶";
+$lang['stat_allys']    = "è”ç›Ÿ";
+$lang['stat_main']     = "ä¸€èˆ¬";
+$lang['stat_fleet']    = "èˆ°é˜Ÿ";
+$lang['stat_research'] = "ç ”ç©¶";
+$lang['stat_building'] = "å»ºç­‘";
+$lang['stat_defenses'] = "é˜²å¾¡";
 
-$lang['Position']      = "µØ·½";
-$lang['Difference']    = "×´Ì¬.";
-$lang['Player']        = "Íæ¼Ò";
-$lang['Alliance']      = "ÁªÃË";
-$lang['Points']        = "»ý·Ö";
-$lang['Members']       = "ÓÃ»§";
-$lang['PerMember']     = "Ã¿¸ö³ÉÔ±";
-$lang['Ecrire']        = "×«Ð´Ñ¶Ï¢";
+$lang['Position']      = "åœ°æ–¹";
+$lang['Difference']    = "çŠ¶æ€.";
+$lang['Player']        = "çŽ©å®¶";
+$lang['Alliance']      = "è”ç›Ÿ";
+$lang['Points']        = "ç§¯åˆ†";
+$lang['Members']       = "ç”¨æˆ·";
+$lang['PerMember']     = "æ¯ä¸ªæˆå‘˜";
+$lang['Ecrire']        = "æ’°å†™è®¯æ¯";
 
 // Created by Chlorel (XNova Team). All rights reversed (C) 2008
 ?>

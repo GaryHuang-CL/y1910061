@@ -1,17 +1,17 @@
 <?php
 
-$lang['Production_of_resources_in_the_planet'] = 'ÐÇÇòÉÏµÄ×ÊÔ´Éú²úÔÚ  "%s"';
-$lang['Production_level'] = 'Éú²úµÈ¼¶';
-$lang['Basic_income'] = '»ù±¾ÊÕÈë';
-$lang['quantity'] = '×ÜÊý';
-$lang['level'] = 'µÈ¼¶';
-$lang['Stores_capacity'] = '´¢´æÆ÷ÈÝÁ¿';
-$lang['Widespread_production'] = '²úÁ¿¼ÆËã';
-$lang['Daily'] = 'Ã¿Ìì';
-$lang['Weekly'] = 'Ã¿ÖÜ';
-$lang['Monthly'] = 'Ã¿ÔÂ';
-$lang['Storage_state'] = '²Ö¿âÊ¹ÓÃ×´Ì¬';
-$lang['Calcule'] = '¼ÆËã';
+$lang['Production_of_resources_in_the_planet'] = 'æ˜Ÿçƒä¸Šçš„èµ„æºç”Ÿäº§åœ¨  "%s"';
+$lang['Production_level'] = 'ç”Ÿäº§ç­‰çº§';
+$lang['Basic_income'] = 'åŸºæœ¬æ”¶å…¥';
+$lang['quantity'] = 'æ€»æ•°';
+$lang['level'] = 'ç­‰çº§';
+$lang['Stores_capacity'] = 'å‚¨å­˜å™¨å®¹é‡';
+$lang['Widespread_production'] = 'äº§é‡è®¡ç®—';
+$lang['Daily'] = 'æ¯å¤©';
+$lang['Weekly'] = 'æ¯å‘¨';
+$lang['Monthly'] = 'æ¯æœˆ';
+$lang['Storage_state'] = 'ä»“åº“ä½¿ç”¨çŠ¶æ€';
+$lang['Calcule'] = 'è®¡ç®—';
 $lang['o/o'] = '%';
 $lang['k'] = 'k';
 

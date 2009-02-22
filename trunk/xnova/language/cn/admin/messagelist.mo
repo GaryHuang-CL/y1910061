@@ -1,29 +1,29 @@
 <?php
 
-$lang['mlst_title']       = "ÐÅÏ¢ÁÐ±í";
-$lang['mlst_mess_del']    = "É¾³ýµÄÐÅÏ¢";
-$lang['mlst_hdr_page']    = "Ò³Ãæ";
-$lang['mlst_hdr_title']   = " ) µÄÐÅÏ¢ :";
-$lang['mlst_hdr_prev']    = "Ç°Ò³";
-$lang['mlst_hdr_next']    = "ºóÒ³";
+$lang['mlst_title']       = "ä¿¡æ¯åˆ—è¡¨";
+$lang['mlst_mess_del']    = "åˆ é™¤çš„ä¿¡æ¯";
+$lang['mlst_hdr_page']    = "é¡µé¢";
+$lang['mlst_hdr_title']   = " ) çš„ä¿¡æ¯ :";
+$lang['mlst_hdr_prev']    = "å‰é¡µ";
+$lang['mlst_hdr_next']    = "åŽé¡µ";
 $lang['mlst_hdr_id']      = "ID";
-$lang['mlst_hdr_type']    = "ÀàÐÍ";
-$lang['mlst_hdr_time']    = "Ê±¼ä";
-$lang['mlst_hdr_from']    = "·¢¼þÈË";
-$lang['mlst_hdr_to']      = "µ½";
-$lang['mlst_hdr_text']    = "ÄÚÈÝ";
-$lang['mlst_hdr_action']  = "Ñ¡Ôñ";
-$lang['mlst_del_mess']    = "É¾³ý";
-$lang['mlst_bt_delsel']   = "É¾³ýÈ«²¿Ñ¡ÖÐµÄÐÅÏ¢";
-$lang['mlst_bt_deldate']  = "É¾³ýÀ´×ÔÐÇÇòµÄÐÅÏ¢";
-$lang['mlst_hdr_delfrom'] = "É¾³ý";
-$lang['mlst_mess_typ__0'] = "¼äµý»î¶¯";
-$lang['mlst_mess_typ__1'] = "ÓÃ»§";
-$lang['mlst_mess_typ__2'] = "ÁªÃË";
-$lang['mlst_mess_typ__3'] = "¹¥»÷";
-$lang['mlst_mess_typ__4'] = "Ã°ÏÕ";
-$lang['mlst_mess_typ__5'] = "ÔËÊä";
-$lang['mlst_mess_typ_15'] = "Ô¶Õ÷";
-$lang['mlst_mess_typ_99'] = "½¨ÖþÁÐ±í";
+$lang['mlst_hdr_type']    = "ç±»åž‹";
+$lang['mlst_hdr_time']    = "æ—¶é—´";
+$lang['mlst_hdr_from']    = "å‘ä»¶äºº";
+$lang['mlst_hdr_to']      = "åˆ°";
+$lang['mlst_hdr_text']    = "å†…å®¹";
+$lang['mlst_hdr_action']  = "é€‰æ‹©";
+$lang['mlst_del_mess']    = "åˆ é™¤";
+$lang['mlst_bt_delsel']   = "åˆ é™¤å…¨éƒ¨é€‰ä¸­çš„ä¿¡æ¯";
+$lang['mlst_bt_deldate']  = "åˆ é™¤æ¥è‡ªæ˜Ÿçƒçš„ä¿¡æ¯";
+$lang['mlst_hdr_delfrom'] = "åˆ é™¤";
+$lang['mlst_mess_typ__0'] = "é—´è°æ´»åŠ¨";
+$lang['mlst_mess_typ__1'] = "ç”¨æˆ·";
+$lang['mlst_mess_typ__2'] = "è”ç›Ÿ";
+$lang['mlst_mess_typ__3'] = "æ”»å‡»";
+$lang['mlst_mess_typ__4'] = "å†’é™©";
+$lang['mlst_mess_typ__5'] = "è¿è¾“";
+$lang['mlst_mess_typ_15'] = "è¿œå¾";
+$lang['mlst_mess_typ_99'] = "å»ºç­‘åˆ—è¡¨";
 
 ?>

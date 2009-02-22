@@ -1,13 +1,13 @@
 <?php
 
-$lang['addm_title']    = "Ôö¼ÓÔÂÇò";
-$lang['addm_addform']  = "Ôö¼ÓÔÂÇò¸ø";
-$lang['addm_playerid'] = "ÐÇÇòID";
-$lang['addm_moonname'] = "ÔÂÇòÃû³Æ";
-$lang['addm_moongala'] = "ÔÂÇòËùÔÚÐÇÏµ";
-$lang['addm_moonsyst'] = "ÔÂÇòËùÔÚÌ«ÑôÏµ";
-$lang['addm_moonplan'] = "ÔÂÇòËùÔÚÎ»ÖÃ";
-$lang['addm_moondoit'] = "È·¶¨";
-$lang['addm_done']     = "³É¹¦Ôö¼ÓÔÂÇò";
+$lang['addm_title']    = "å¢žåŠ æœˆçƒ";
+$lang['addm_addform']  = "å¢žåŠ æœˆçƒç»™";
+$lang['addm_playerid'] = "æ˜ŸçƒID";
+$lang['addm_moonname'] = "æœˆçƒåç§°";
+$lang['addm_moongala'] = "æœˆçƒæ‰€åœ¨æ˜Ÿç³»";
+$lang['addm_moonsyst'] = "æœˆçƒæ‰€åœ¨å¤ªé˜³ç³»";
+$lang['addm_moonplan'] = "æœˆçƒæ‰€åœ¨ä½ç½®";
+$lang['addm_moondoit'] = "ç¡®å®š";
+$lang['addm_done']     = "æˆåŠŸå¢žåŠ æœˆçƒ";
 
 ?>

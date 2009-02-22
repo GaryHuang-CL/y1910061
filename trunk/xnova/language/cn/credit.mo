@@ -1,25 +1,25 @@
 <?php
 
-$lang['cred_link']    = 'Á¬½Ó';
-$lang['cred_site']    = 'Õ¾µã';
-$lang['cred_forum']   = 'ÂÛÌ³';
-$lang['cred_credit']  = 'ÍÅ¶Ó';
-$lang['cred_creat']   = '´´½¨Õß';
-$lang['cred_prog']    = '¹¤³ÌÊ¦';
-$lang['cred_master']  = '¹ÜÀíÔ±';
-$lang['cred_design']  = 'Éè¼Æ';
-$lang['cred_web']     = 'ÍøÕ¾¹ÜÀíÔ±';
-$lang['cred_thx']     = '¸ÐÐ»';
-$lang['cred_based']   = 'XNova.frºÍXNova.pl¿ª·¢ÑÐ¾¿.';
+$lang['cred_link']    = 'è¿žæŽ¥';
+$lang['cred_site']    = 'ç«™ç‚¹';
+$lang['cred_forum']   = 'è®ºå›';
+$lang['cred_credit']  = 'å›¢é˜Ÿ';
+$lang['cred_creat']   = 'åˆ›å»ºè€…';
+$lang['cred_prog']    = 'å·¥ç¨‹å¸ˆ';
+$lang['cred_master']  = 'ç®¡ç†å‘˜';
+$lang['cred_design']  = 'è®¾è®¡';
+$lang['cred_web']     = 'ç½‘ç«™ç®¡ç†å‘˜';
+$lang['cred_thx']     = 'æ„Ÿè°¢';
+$lang['cred_based']   = 'XNova.frå’ŒXNova.plå¼€å‘ç ”ç©¶.';
 $lang['cred_start']   = 'For XNova zh_TW';
 
-$lang['cred_ext']     = 'ÑÓÉì°æÈ¨';
-$lang['cred_info']    = '×ÊÑ¶';
-$lang['cred_infotxt'] = 'Äã¿ÉÒÔÔÚÏÂ·½ÐÂÔöÄã×¨ÊôµÄ°æÈ¨Ñ¶Ï¢¡£';
-$lang['cred_added']   = 'ÏÔÊ¾ÔÚÍøÒ³ÉÏ';
-$lang['cred_name']    = 'Ãû³Æ (Ã¿ÐÐÒ»¸ö)';
-$lang['cred_funct']   = 'Ö°Î» (Ã¿ÐÐÒ»¸ö)';
-$lang['cred_save']    = '´¢´æ';
-$lang['cred_done']    = '°æÈ¨Ñ¶Ï¢³É¹¦±ä¸ü';
+$lang['cred_ext']     = 'å»¶ä¼¸ç‰ˆæƒ';
+$lang['cred_info']    = 'èµ„è®¯';
+$lang['cred_infotxt'] = 'ä½ å¯ä»¥åœ¨ä¸‹æ–¹æ–°å¢žä½ ä¸“å±žçš„ç‰ˆæƒè®¯æ¯ã€‚';
+$lang['cred_added']   = 'æ˜¾ç¤ºåœ¨ç½‘é¡µä¸Š';
+$lang['cred_name']    = 'åç§° (æ¯è¡Œä¸€ä¸ª)';
+$lang['cred_funct']   = 'èŒä½ (æ¯è¡Œä¸€ä¸ª)';
+$lang['cred_save']    = 'å‚¨å­˜';
+$lang['cred_done']    = 'ç‰ˆæƒè®¯æ¯æˆåŠŸå˜æ›´';
 
 ?>

@@ -1,101 +1,101 @@
 <?php
 
 // User menu links
-$lang['qry']   = '◊ ¡œø‚≤È—Ø';
+$lang['qry']   = 'ËµÑÊñôÂ∫ìÊü•ËØ¢';
 
 
-$lang['Multiverse']   = '<b>XNova</b> ”Ó÷Ê';
+$lang['Multiverse']   = '<b>XNova</b> ÂÆáÂÆô';
 
-$lang['Overview']     = '∏≈°°°°øˆ';
-$lang['Officiers']    = 'æ¸°°°°πŸ';
+$lang['Overview']     = 'Ê¶Ç„ÄÄ„ÄÄÂÜµ';
+$lang['Officiers']    = 'ÂÜõ„ÄÄ„ÄÄÂÆò';
 
-$lang['Buildings']    = 'Ω®°°°°÷˛';
-$lang['Research']     = '—–°°°°æø';
-$lang['Shipyard']     = '¥¨°°°°≤∫';
-$lang['Defense']      = '∑¿°°°°”˘';
+$lang['Buildings']    = 'Âª∫„ÄÄ„ÄÄÁ≠ë';
+$lang['Research']     = 'Á†î„ÄÄ„ÄÄÁ©∂';
+$lang['Shipyard']     = 'Ëàπ„ÄÄ„ÄÄÂü†';
+$lang['Defense']      = 'Èò≤„ÄÄ„ÄÄÂæ°';
 
-$lang['multi']      = '–˚°°°°—‘';
+$lang['multi']      = 'ÂÆ£„ÄÄ„ÄÄË®Ä';
 
-$lang['Resources']    = '◊ °°°°‘¥';
-$lang['Imperium']     = '–«°°°°«Ú';
-$lang['Marchand']     = '√≥°°°°“◊';
-$lang['Annonces']     = 'Õ®°°°°÷™';
-$lang['Technology']   = 'ø∆°°°°ºº';
+$lang['Resources']    = 'ËµÑ„ÄÄ„ÄÄÊ∫ê';
+$lang['Imperium']     = 'Êòü„ÄÄ„ÄÄÁêÉ';
+$lang['Marchand']     = 'Ë¥∏„ÄÄ„ÄÄÊòì';
+$lang['Annonces']     = 'ÈÄö„ÄÄ„ÄÄÁü•';
+$lang['Technology']   = 'Áßë„ÄÄ„ÄÄÊäÄ';
 
-$lang['Galaxy']       = '“¯°°°°∫”';
-$lang['Fleet']        = 'Ω¢°°°°∂”';
+$lang['Galaxy']       = 'Èì∂„ÄÄ„ÄÄÊ≤≥';
+$lang['Fleet']        = 'Ëà∞„ÄÄ„ÄÄÈòü';
 
-$lang['Alliance']     = '¡™°°°°√À';
-$lang['Chat']         = '¡ƒ°°°°ÃÏ';
-$lang['Statistics']   = 'Õ≥°°°°º∆';
-$lang['Search']       = 'À—°°°°—∞';
-$lang['blocked']      = 'Ω˚÷π”√ªß';
-$lang['Records']      = 'º«°°°°¬º';
+$lang['Alliance']     = 'ËÅî„ÄÄ„ÄÄÁõü';
+$lang['Chat']         = 'ËÅä„ÄÄ„ÄÄÂ§©';
+$lang['Statistics']   = 'Áªü„ÄÄ„ÄÄËÆ°';
+$lang['Search']       = 'Êêú„ÄÄ„ÄÄÂØª';
+$lang['blocked']      = 'Á¶ÅÊ≠¢Áî®Êà∑';
+$lang['Records']      = 'ËÆ∞„ÄÄ„ÄÄÂΩï';
 
-$lang['Messages']     = '—∂°°°°œ¢';
-$lang['Notes']        = '± °°°°º«';
-$lang['Buddylist']    = '≈Û°°°°”—';
+$lang['Messages']     = 'ËÆØ„ÄÄ„ÄÄÊÅØ';
+$lang['Notes']        = 'Á¨î„ÄÄ„ÄÄËÆ∞';
+$lang['Buddylist']    = 'Êúã„ÄÄ„ÄÄÂèã';
 
-$lang['Board']        = '¬€°°°°Ã≥';
-$lang['Contact']      = '¡™°°°°¬Á';
-$lang['Options']      = '…Ë°°°°∂®';
+$lang['Board']        = 'ËÆ∫„ÄÄ„ÄÄÂùõ';
+$lang['Contact']      = 'ËÅî„ÄÄ„ÄÄÁªú';
+$lang['Options']      = 'ËÆæ„ÄÄ„ÄÄÂÆö';
 
-$lang['Logout']       = 'µ«°°°°≥ˆ';
+$lang['Logout']       = 'Áôª„ÄÄ„ÄÄÂá∫';
 
-$lang['Help']         = '∞Ô°°°°÷˙';
-$lang['Rules']        = 'πÊ°°°°‘Ú';
+$lang['Help']         = 'Â∏Æ„ÄÄ„ÄÄÂä©';
+$lang['Rules']        = 'ËßÑ„ÄÄ„ÄÄÂàô';
 
 // User menu titles
-$lang['devlp']        = '÷˜°°°°“™';
-$lang['navig']        = '∫Ω°°°°––';
-$lang['observ']       = '∆‰°°°°À˚';
-$lang['commun']       = '∏ˆ°°°°»À';
-$lang['infog']        = '◊ °°°°—∂';
+$lang['devlp']        = '‰∏ª„ÄÄ„ÄÄË¶Å';
+$lang['navig']        = 'Ëà™„ÄÄ„ÄÄË°å';
+$lang['observ']       = 'ÂÖ∂„ÄÄ„ÄÄ‰ªñ';
+$lang['commun']       = '‰∏™„ÄÄ„ÄÄ‰∫∫';
+$lang['infog']        = 'ËµÑ„ÄÄ„ÄÄËÆØ';
 
 // Administrator menu links
-$lang['adm_over']     = '∏≈°°°°“™';
-$lang['adm_conf']     = '…Ë°°°°∂®';
-$lang['adm_reset']    = '÷ÿ…Ë”Ó÷Ê';
-$lang['adm_extcopy']  = '◊ °°°°—∂';
+$lang['adm_over']     = 'Ê¶Ç„ÄÄ„ÄÄË¶Å';
+$lang['adm_conf']     = 'ËÆæ„ÄÄ„ÄÄÂÆö';
+$lang['adm_reset']    = 'ÈáçËÆæÂÆáÂÆô';
+$lang['adm_extcopy']  = 'ËµÑ„ÄÄ„ÄÄËÆØ';
 
-$lang['adm_multi']    = '¡–≥ˆ∑÷…Ì';
-$lang['multis_declared']    = '∑÷…Ì–˚∏Ê';
+$lang['adm_multi']    = 'ÂàóÂá∫ÂàÜË∫´';
+$lang['multis_declared']    = 'ÂàÜË∫´ÂÆ£Âëä';
 
-$lang['adm_plrlst']   = '¡–≥ˆÕÊº“';
-$lang['adm_plrsch']   = 'À——∞”√ªß';
-$lang['adm_addres']   = '∏¯”Ë◊ ‘¥';
+$lang['adm_plrlst']   = 'ÂàóÂá∫Áé©ÂÆ∂';
+$lang['adm_plrsch']   = 'ÊêúÂØªÁî®Êà∑';
+$lang['adm_addres']   = 'Áªô‰∫àËµÑÊ∫ê';
 
-$lang['adm_pltlst']   = '¡–≥ˆ–««Ú';
-$lang['adm_actplt']   = 'ªÓ‘æ–««Ú';
+$lang['adm_pltlst']   = 'ÂàóÂá∫ÊòüÁêÉ';
+$lang['adm_actplt']   = 'Ê¥ªË∑ÉÊòüÁêÉ';
 
-$lang['adm_moonlst']  = '¡–≥ˆŒ¿–«';
-$lang['adm_addmoon']  = '∏¯”ËŒ¿–«';
+$lang['adm_moonlst']  = 'ÂàóÂá∫Âç´Êòü';
+$lang['adm_addmoon']  = 'Áªô‰∫àÂç´Êòü';
 
-$lang['adm_fleet']    = 'Ω¢∂”––∂Ø';
+$lang['adm_fleet']    = 'Ëà∞ÈòüË°åÂä®';
 
-$lang['adm_ban']      = 'Ω˚÷π”√ªß';
-$lang['adm_unban']    = 'Ω‚≥˝Ω˚÷π';
+$lang['adm_ban']      = 'Á¶ÅÊ≠¢Áî®Êà∑';
+$lang['adm_unban']    = 'Ëß£Èô§Á¶ÅÊ≠¢';
 
-$lang['adm_chat']     = 'π‹¿Ì¡ƒÃÏ';
-$lang['adm_updpt']    = 'À¢–¬ª˝∑÷';
-$lang['adm_msg']      = '¡–≥ˆ—∂œ¢';
-$lang['adm_md5']      = 'MD5π§æﬂ';
-$lang['adm_build']    = 'Ω®÷˛π§æﬂ';
+$lang['adm_chat']     = 'ÁÆ°ÁêÜËÅäÂ§©';
+$lang['adm_updpt']    = 'Âà∑Êñ∞ÁßØÂàÜ';
+$lang['adm_msg']      = 'ÂàóÂá∫ËÆØÊÅØ';
+$lang['adm_md5']      = 'MD5Â∑•ÂÖ∑';
+$lang['adm_build']    = 'Âª∫Á≠ëÂ∑•ÂÖ∑';
 
-$lang['adm_error']    = '¥ÌŒÛ';
-$lang['change_pass']    = 'ÕÊº“√‹¬Î';
-$lang['adm_help']     = '∞Ô÷˙';
-$lang['adm_back']     = '∑µªÿ';
+$lang['adm_error']    = 'ÈîôËØØ';
+$lang['change_pass']    = 'Áé©ÂÆ∂ÂØÜÁ†Å';
+$lang['adm_help']     = 'Â∏ÆÂä©';
+$lang['adm_back']     = 'ËøîÂõû';
 
 // Administrator menu titles
-$lang['admin']        = 'œµÕ≥π‹¿Ì';
-$lang['player']       = 'ÕÊ°°°°º“';
-$lang['tool']         = 'π§°°°°æﬂ';
+$lang['admin']        = 'Á≥ªÁªüÁÆ°ÁêÜ';
+$lang['player']       = 'Áé©„ÄÄ„ÄÄÂÆ∂';
+$lang['tool']         = 'Â∑•„ÄÄ„ÄÄÂÖ∑';
 
 // Informations serveur
-$lang['lm_ifo_serv']  = "…˙≤˙ÀŸ∂»";
-$lang['lm_ifo_game']  = "”Œœ∑ÀŸ∂»";
-$lang['lm_ifo_fleet'] = "Ω¢∂”ÀŸ∂»";
-$lang['lm_ifo_queue'] = "∆‰°°°°À˚";
+$lang['lm_ifo_serv']  = "Áîü‰∫ßÈÄüÂ∫¶";
+$lang['lm_ifo_game']  = "Ê∏∏ÊàèÈÄüÂ∫¶";
+$lang['lm_ifo_fleet'] = "Ëà∞ÈòüÈÄüÂ∫¶";
+$lang['lm_ifo_queue'] = "ÂÖ∂„ÄÄ„ÄÄ‰ªñ";
 
 ?>

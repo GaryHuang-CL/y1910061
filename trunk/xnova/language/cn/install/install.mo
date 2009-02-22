@@ -8,57 +8,57 @@
  */
 
 $lang['ins_appname']      = "XNova";
-$lang['ins_tx_state']     = "²½Öè";
-$lang['ins_tx_sys']       = "°²×°ÏµÍ³";
-$lang['ins_btn_next']     = "ÏÂÒ»²½";
-$lang['ins_btn_inst']     = "°²×°";
-$lang['ins_btn_creat']    = "´´½¨";
-$lang['ins_btn_login']    = "µÇÈë";
-$lang['ins_btn_prev']     = "·µ»Ø";
+$lang['ins_tx_state']     = "æ­¥éª¤";
+$lang['ins_tx_sys']       = "å®‰è£…ç³»ç»Ÿ";
+$lang['ins_btn_next']     = "ä¸‹ä¸€æ­¥";
+$lang['ins_btn_inst']     = "å®‰è£…";
+$lang['ins_btn_creat']    = "åˆ›å»º";
+$lang['ins_btn_login']    = "ç™»å…¥";
+$lang['ins_btn_prev']     = "è¿”å›";
 
-$lang['ins_mnu_intro']    = "ÏµÍ³½éÉÜ";
-$lang['ins_mnu_inst']     = "È«ĞÂ°²×°";
-$lang['ins_mnu_goto']     = "×ÊÁÏ´«ËÍ";
-$lang['ins_mnu_upgr']     = "ÏµÍ³¸üĞÂ";
-$lang['ins_mnu_quit']     = "Àë¿ªÏµÍ³";
+$lang['ins_mnu_intro']    = "ç³»ç»Ÿä»‹ç»";
+$lang['ins_mnu_inst']     = "å…¨æ–°å®‰è£…";
+$lang['ins_mnu_goto']     = "èµ„æ–™ä¼ é€";
+$lang['ins_mnu_upgr']     = "ç³»ç»Ÿæ›´æ–°";
+$lang['ins_mnu_quit']     = "ç¦»å¼€ç³»ç»Ÿ";
 
-$lang['ins_error']        = "´íÎó";
-$lang['ins_error1']       = "´íÎó£ºÎŞ·¨Á¬½Óµ½MySQL×ÊÁÏ¿â";
-$lang['ins_error2']       = "´íÎó£ºÇë¼ì²éÄãµÄ Config.php";
+$lang['ins_error']        = "é”™è¯¯";
+$lang['ins_error1']       = "é”™è¯¯ï¼šæ— æ³•è¿æ¥åˆ°MySQLèµ„æ–™åº“";
+$lang['ins_error2']       = "é”™è¯¯ï¼šè¯·æ£€æŸ¥ä½ çš„ Config.php";
 
-$lang['ins_tx_welco']     = "»¶Ó­Ê¹ÓÃ XNova °²×°ÏµÍ³";
-$lang['ins_tx_intr1']     = "ÕâÊÇÒ»¸öÄ£·ÂOGameµÄÓÎÏ·ÏµÍ³";
-$lang['ins_tx_intr2']     = "XNova ÊÇÒ»¿îÃâ·ÑÇÒ¿ª·ÅµÄÈíÌå";
-$lang['ins_tx_intr3']     = "Çë×ğÖØ XNova ÇÒ²»Òª¸ü¸Ä°æÈ¨";
-$lang['ins_tx_inst1']     = "Çë¼ì²é Config.php µÄÈ¨ÏŞÊÇ·ñÎª 777";
-$lang['ins_tx_inst2']     = "ÒÔÏÂÊÇ MySQL µÄÏà¹ØÉè¶¨×ÊÁÏ";
-$lang['ins_tx_inst3']     = "ÇëÌîĞ´ÕıÈ·µÄ×ÊÑ¶ÒÔ°²×°XNova";
-$lang['ins_tx_acc1']      = "¹ÜÀíÔ±ÕÊ»§";
-$lang['ins_tx_acc2']      = "ÇëÕıÈ·ÌîĞ´ÏÂÁĞ×ÊÁÏÒÔÍê³É¹ÜÀíÔ±ÕÊºÅĞÂÔö:";
-$lang['ins_tx_goto1']     = "½åÓÉÕâ¸öÏµÍ³ UGamela µÄ×ÊÁÏ¿ÉÒÔ×ª»»µ½ XNova";
-$lang['ins_tx_goto2']     = "Õâ¸öÑ¡ÔñµÄ×÷ÓÃ, ²»µ«¿É½« XNova ×ÊÁÏ±£ÁôµÃ¸üºÃ";
-$lang['ins_tx_goto3']     = "ÔÚ½« UGamela ×ÊÁÏ×ªÈëÖ®Ç°£¬ÇëÏÈ±¸·İ×ÊÁÏ¿â";
-$lang['ins_tx_goto4']     = "±ØĞëÔÚÖ®Ç°ÓĞ°²×°¹ı UGamela";
-$lang['ins_tx_goto5']     = "Ê¹ÓÃ UGamela ×ÊÁÏ¿â×ªÈëÇë×¼È·µÄÌîĞ´ÏÂÃæµÄ×ÊÁÏ:";
-$lang['ins_tx_done1']     = "»ù´¡µÄ°²×°ÒÑ¾­Íê³É";
-$lang['ins_tx_done2']     = "ÏÖÔÚ¹ÜÀíÔ±ÕÊºÅÒÑ¾­ÕıÈ·ĞÂÔö";
-$lang['ins_tx_done3']     = "ÇëÒÆ³ı <i>install</i> ×ÊÁÏ¼Ğ±ÜÃâÖØ¸´°²×°";
-$lang['ins_tx_done4']     = "×ÊÁÏµÄ×ª»»±»³É¹¦Ö´ĞĞ";
+$lang['ins_tx_welco']     = "æ¬¢è¿ä½¿ç”¨ XNova å®‰è£…ç³»ç»Ÿ";
+$lang['ins_tx_intr1']     = "è¿™æ˜¯ä¸€ä¸ªæ¨¡ä»¿OGameçš„æ¸¸æˆç³»ç»Ÿ";
+$lang['ins_tx_intr2']     = "XNova æ˜¯ä¸€æ¬¾å…è´¹ä¸”å¼€æ”¾çš„è½¯ä½“";
+$lang['ins_tx_intr3']     = "è¯·å°Šé‡ XNova ä¸”ä¸è¦æ›´æ”¹ç‰ˆæƒ";
+$lang['ins_tx_inst1']     = "è¯·æ£€æŸ¥ Config.php çš„æƒé™æ˜¯å¦ä¸º 777";
+$lang['ins_tx_inst2']     = "ä»¥ä¸‹æ˜¯ MySQL çš„ç›¸å…³è®¾å®šèµ„æ–™";
+$lang['ins_tx_inst3']     = "è¯·å¡«å†™æ­£ç¡®çš„èµ„è®¯ä»¥å®‰è£…XNova";
+$lang['ins_tx_acc1']      = "ç®¡ç†å‘˜å¸æˆ·";
+$lang['ins_tx_acc2']      = "è¯·æ­£ç¡®å¡«å†™ä¸‹åˆ—èµ„æ–™ä»¥å®Œæˆç®¡ç†å‘˜å¸å·æ–°å¢:";
+$lang['ins_tx_goto1']     = "è—‰ç”±è¿™ä¸ªç³»ç»Ÿ UGamela çš„èµ„æ–™å¯ä»¥è½¬æ¢åˆ° XNova";
+$lang['ins_tx_goto2']     = "è¿™ä¸ªé€‰æ‹©çš„ä½œç”¨, ä¸ä½†å¯å°† XNova èµ„æ–™ä¿ç•™å¾—æ›´å¥½";
+$lang['ins_tx_goto3']     = "åœ¨å°† UGamela èµ„æ–™è½¬å…¥ä¹‹å‰ï¼Œè¯·å…ˆå¤‡ä»½èµ„æ–™åº“";
+$lang['ins_tx_goto4']     = "å¿…é¡»åœ¨ä¹‹å‰æœ‰å®‰è£…è¿‡ UGamela";
+$lang['ins_tx_goto5']     = "ä½¿ç”¨ UGamela èµ„æ–™åº“è½¬å…¥è¯·å‡†ç¡®çš„å¡«å†™ä¸‹é¢çš„èµ„æ–™:";
+$lang['ins_tx_done1']     = "åŸºç¡€çš„å®‰è£…å·²ç»å®Œæˆ";
+$lang['ins_tx_done2']     = "ç°åœ¨ç®¡ç†å‘˜å¸å·å·²ç»æ­£ç¡®æ–°å¢";
+$lang['ins_tx_done3']     = "è¯·ç§»é™¤ <i>install</i> èµ„æ–™å¤¹é¿å…é‡å¤å®‰è£…";
+$lang['ins_tx_done4']     = "èµ„æ–™çš„è½¬æ¢è¢«æˆåŠŸæ‰§è¡Œ";
 
-$lang['ins_form_server']  = "×ÊÁÏ¿âËÅ·şÆ÷";
-$lang['ins_form_db']      = "×ÊÁÏ¿âµÄÃû³Æ";
-$lang['ins_form_prefix']  = "±í¸ñÇ°ÖÃÎÄ×Ö";
-$lang['ins_form_login']   = "Ê¹ÓÃÕßµÄÕÊºÅ";
-$lang['ins_form_pass']    = "Ê¹ÓÃÕßµÄÃÜÂë";
-$lang['ins_form_install'] = "°²×°";
+$lang['ins_form_server']  = "èµ„æ–™åº“ä¼ºæœå™¨";
+$lang['ins_form_db']      = "èµ„æ–™åº“çš„åç§°";
+$lang['ins_form_prefix']  = "è¡¨æ ¼å‰ç½®æ–‡å­—";
+$lang['ins_form_login']   = "ä½¿ç”¨è€…çš„å¸å·";
+$lang['ins_form_pass']    = "ä½¿ç”¨è€…çš„å¯†ç ";
+$lang['ins_form_install'] = "å®‰è£…";
 
-$lang['ins_acc_user']     = "¹ÜÀíÕÊºÅ";
-$lang['ins_acc_pass']     = "¹ÜÀíÃÜÂë";
-$lang['ins_acc_email']    = "µç×ÓĞÅÏä";
-$lang['ins_acc_planet']   = "ĞÇÇòÃû³Æ";
-$lang['ins_acc_sex']      = "Íæ¼ÒĞÔ±ğ";
-$lang['ins_acc_sex0']     = "-Ã»ÓĞÑ¡È¡-";
-$lang['ins_acc_sex1']     = "ÄĞĞÔ";
-$lang['ins_acc_sex2']     = "Å®ĞÔ";
+$lang['ins_acc_user']     = "ç®¡ç†å¸å·";
+$lang['ins_acc_pass']     = "ç®¡ç†å¯†ç ";
+$lang['ins_acc_email']    = "ç”µå­ä¿¡ç®±";
+$lang['ins_acc_planet']   = "æ˜Ÿçƒåç§°";
+$lang['ins_acc_sex']      = "ç©å®¶æ€§åˆ«";
+$lang['ins_acc_sex0']     = "-æ²¡æœ‰é€‰å–-";
+$lang['ins_acc_sex1']     = "ç”·æ€§";
+$lang['ins_acc_sex2']     = "å¥³æ€§";
 
 ?>
