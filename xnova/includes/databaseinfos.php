@@ -152,6 +152,7 @@
 	$QryInsertConfig    .= "('ban_duration'          , '30' ), ";
 	$QryInsertConfig    .= "('enable_bot'          , '0' ), ";
 	$QryInsertConfig    .= "('enable_bbcode'          , '1' ), ";          
+	$QryInsertConfig    .= "('copyright'          , 'XNova' ), ";          
 	$QryInsertConfig    .= "('debug'                 , '0') ";
 	$QryInsertConfig    .= ";";
 
@@ -292,11 +293,11 @@
 	$QryTablePlanets    .= "`planet_type` int(11) NOT NULL default '1', ";
 	$QryTablePlanets    .= "`destruyed` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`b_building` int(11) NOT NULL default '0', ";
-	$QryTablePlanets    .= "`b_building_id` text  default '', ";
+	$QryTablePlanets    .= "`b_building_id` text, ";
 	$QryTablePlanets    .= "`b_tech` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`b_tech_id` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`b_hangar` int(11) NOT NULL default '0', ";
-	$QryTablePlanets    .= "`b_hangar_id` text default '', ";
+	$QryTablePlanets    .= "`b_hangar_id` text, ";
 	$QryTablePlanets    .= "`b_hangar_plus` int(11) NOT NULL default '0', ";
 	$QryTablePlanets    .= "`image` varbinary(32)  NOT NULL default 'normaltempplanet01', ";
 	$QryTablePlanets    .= "`diameter` int(11) NOT NULL default '12800', ";
@@ -437,8 +438,8 @@
 	$QryTableUsers      .= "`current_planet` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`user_lastip` varbinary(16)  NOT NULL default '', ";
 	$QryTableUsers      .= "`ip_at_reg` varbinary(16)  NOT NULL default '', ";
-	$QryTableUsers      .= "`user_agent` blob  default '', ";
-	$QryTableUsers      .= "`current_page` blob  default NULL, ";
+	$QryTableUsers      .= "`user_agent` blob, ";
+	$QryTableUsers      .= "`current_page` blob, ";
 	$QryTableUsers      .= "`register_time` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`onlinetime` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`dpath` varbinary(255)  NOT NULL default '', ";
@@ -459,7 +460,7 @@
 	$QryTableUsers      .= "`urlaubs_until` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`db_deaktjava` tinyint(4) NOT NULL default '0', ";
 	$QryTableUsers      .= "`new_message` int(11) NOT NULL default '0', ";
-	$QryTableUsers      .= "`fleet_shortcut` blob  default '', ";
+	$QryTableUsers      .= "`fleet_shortcut` blob, ";
 	$QryTableUsers      .= "`b_tech_planet` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`spy_tech` int(11) NOT NULL default '0', ";
 	$QryTableUsers      .= "`computer_tech` int(11) NOT NULL default '0', ";

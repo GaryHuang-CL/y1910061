@@ -15,7 +15,7 @@ include($xnova_root_path . 'extension.inc');
 include($xnova_root_path . 'common.'.$phpEx);
 
 function ShowLeftMenu ( $Level , $Template = 'left_menu') {
-	global $lang, $dpath, $game_config;
+	global $lang, $dpath, $game_config, $user;
 
 	includeLang('leftmenu');
 
@@ -42,7 +42,7 @@ function ShowLeftMenu ( $Level , $Template = 'left_menu') {
 	} else {
 		$parse['ADMIN_LINK']  = "";
 	}
-	//Lien supplémentaire déterminé dans le panel admin
+	//Lien supplï¿½mentaire dï¿½terminï¿½ dans le panel admin
 	if ($game_config['link_enable'] == 1) {
 		$parse['added_link']  = "
 		<tr>
@@ -52,7 +52,7 @@ function ShowLeftMenu ( $Level , $Template = 'left_menu') {
 		$parse['added_link']  = "";
 	}
 	
-	//Maintenant on vérifie si les annonces sont activées ou non
+	//Maintenant on vï¿½rifie si les annonces sont activï¿½es ou non
 	if ($game_config['enable_announces'] == 1) {
 		$parse['announce_link']  = "
 		<tr>

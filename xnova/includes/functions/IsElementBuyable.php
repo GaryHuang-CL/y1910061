@@ -7,12 +7,12 @@
  * @copyright 2008 by Chlorel for XNova
  */
 
-// Verifie si un element est achetable au moment demandé
+// Checks whether an item is auyable at the time requested
 // $CurrentUser   -> Le Joueur lui meme
 // $CurrentPlanet -> La planete sur laquelle l'Element doit etre construit
 // $Element       -> L'Element que l'on convoite
-// $Incremental   -> true  pour un batiment ou une recherche
-//                -> false pour une defense ou un vaisseau
+// $Incremental   -> true  for a building or research
+//                -> false for a defense or vessel
 // $ForDestroy    -> false par defaut pour une construction
 //                -> true pour calculer la demi valeur du niveau en cas de destruction
 //
@@ -21,8 +21,8 @@ function IsElementBuyable ($CurrentUser, $CurrentPlanet, $Element, $Incremental 
 	global $pricelist, $resource;
 
 	if (IsVacationMode($CurrentUser)){
-   return false;
-}
+		return false;
+	}
 
 	if ($Incremental) {
 		$level  = ($CurrentPlanet[$resource[$Element]]) ? $CurrentPlanet[$resource[$Element]] : $CurrentUser[$resource[$Element]];
@@ -32,7 +32,7 @@ function IsElementBuyable ($CurrentUser, $CurrentPlanet, $Element, $Incremental 
 	$array    = array('metal', 'crystal', 'deuterium', 'energy_max');
 
 	foreach ($array as $ResType) {
-		if ($pricelist[$Element][$ResType] != 0) {
+		if (isset($pricelist[$Element][$ResType]) && $pricelist[$Element][$ResType] != 0) {
 			if ($Incremental) {
 				$cost[$ResType]  = floor($pricelist[$Element][$ResType] * pow($pricelist[$Element]['factor'], $level));
 			} else {

@@ -45,7 +45,7 @@ if (INSTALL != true) {
 	    $game_config[$row['config_name']] = $row['config_value'];
     }
 
-	if ($InLogin != true) {
+	if (!isset($InLogin) || $InLogin != true) {
 		$Result        = CheckTheUser ( $IsUserChecked );
 		$IsUserChecked = $Result['state'];
 		$user          = $Result['record'];
@@ -61,7 +61,8 @@ if (INSTALL != true) {
 	includeLang ("system");
 	includeLang ('tech');
 
-	if ( isset ($user) ) {
+	//if ( isset ($user) ) {
+	if ($user) {
 		$_fleets = doquery("SELECT * FROM {{table}} WHERE `fleet_start_time` <= '".time()."';", 'fleets'); //  OR fleet_end_time <= ".time()
 		while ($row = mysql_fetch_array($_fleets)) {
 			$array                = array();
@@ -112,7 +113,7 @@ if (INSTALL != true) {
 	} else {
 		// Bah si d�ja y a quelqu'un qui passe par l� et qu'a rien a faire de press� ...
 		// On se sert de lui pour mettre a jour tout les retardataires !!
-
+		$dpath     = "../" . DEFAULT_SKINPATH;
 	}
 } else {
 	$dpath     = "../" . DEFAULT_SKINPATH;

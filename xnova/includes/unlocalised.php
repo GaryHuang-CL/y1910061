@@ -208,7 +208,7 @@ function gettemplate ($templatename) {
 function includeLang ($filename, $ext = '.mo') {
 	global $xnova_root_path, $lang, $user;
 
-	if ($user['lang'] != '') {
+	if (isset($user['lang']) && $user['lang'] != '') {
 		$SelLanguage = $user['lang'];
 	} else {
 		$SelLanguage = DEFAULT_LANG;

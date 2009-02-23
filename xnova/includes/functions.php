@@ -95,7 +95,7 @@ function display ($page, $title = '', $topnav = true, $metatags = '', $AdminPage
 	}
 	$DisplayPage .= "<center>\n". $page ."\n</center>\n";
 	// Affichage du Debug si necessaire
-	if ($user['authlevel'] == 1 || $user['authlevel'] == 3) {
+	if ($user && ($user['authlevel'] == 1 || $user['authlevel'] == 3)) {
 		if ($game_config['debug'] == 1) $debug->echo_log();
 	}
 
@@ -153,9 +153,10 @@ function AdminUserHeader ($title = '', $metatags = '') {
 // Pied de page
 //
 function StdFooter() {
-	global $game_config, $lang;
-	$parse['copyright']     = $game_config['copyright'];
-	$parse['TranslationBy'] = $lang['TranslationBy'];
+	//global $game_config, $lang;
+	$parse = array();
+	//$parse['copyright']     = $game_config['copyright'];
+	//$parse['TranslationBy'] = $lang['TranslationBy'];
 	return parsetemplate(gettemplate('overall_footer'), $parse);
 }
 

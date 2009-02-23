@@ -33,7 +33,7 @@ function GetElementPrice ($user, $planet, $Element, $userfactor = true) {
 
 	$text = $lang['Requires'] . ": ";
 	foreach ($array as $ResType => $ResTitle) {
-		if ($pricelist[$Element][$ResType] != 0) {
+		if (isset($pricelist[$Element][$ResType]) && $pricelist[$Element][$ResType] != 0) {
 			$text .= $ResTitle . ": ";
 			if ($userfactor) {
 				$cost = floor($pricelist[$Element][$ResType] * pow($pricelist[$Element]['factor'], $level));

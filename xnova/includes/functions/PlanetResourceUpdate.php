@@ -20,8 +20,8 @@ function PlanetResourceUpdate ( $CurrentUser, &$CurrentPlanet, $UpdateTime, $Sim
 	$MaxCristalStorage              = $CurrentPlanet['crystal_max']   * MAX_OVERFLOW;
 	$MaxDeuteriumStorage            = $CurrentPlanet['deuterium_max'] * MAX_OVERFLOW;
 
-	// Calcul de production linéaire des divers types
-	$Caps             = array();
+	// Calcul de production linï¿½aire des divers types
+	$Caps             = array('metal_perhour' => 0, 'crystal_perhour' => 0, 'deuterium_perhour' => 0, 'energy_used' => 0, 'energy_max' => 0);
 	$BuildTemp        = $CurrentPlanet[ 'temp_max' ];
 
 	for ( $ProdID = 0; $ProdID < 300; $ProdID++ ) {

@@ -7,13 +7,13 @@
  * @copyright 2008 by Chlorel for XNova
  */
 
-// Gestion de la queue de construction des batiments
-// Parametres en entree :
-// &$CurrentPlanet -> la planete ou l'on verifie
-// $CurrentUser    -> Joueur a qui appartient la planete
+// Management construction queue of buildings
+// Parameters:
+// &$CurrentPlanet -> the planet where we audited
+// $CurrentUser    -> Player who owns the planet
 //
-// Retour :
-//                 -> boolean (vrai ou faux) non exploité pour le moment
+// Return :
+//                 -> boolean (true or false) untapped yet
 function CheckPlanetBuildingQueue ( &$CurrentPlanet, &$CurrentUser ) {
 	global $lang, $resource;
 

@@ -169,10 +169,10 @@ function setcoookie($a, $b, $c = '') {
         <link rel="stylesheet" type="text/css" href="http://mysqldb2.my.funpic.de/formate.css">
     </head>
 
+        <body>
     <center>
         
 
-        <body>
             <form method="POST" action="<?=$_SERVER['PHP_SELF']?>">
 <?php
 
