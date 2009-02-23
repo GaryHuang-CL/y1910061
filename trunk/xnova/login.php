@@ -59,8 +59,8 @@ include($xnova_root_path . 'common.' . $phpEx);
 
 		$page = parsetemplate(gettemplate('login_body'), $parse);
 
-		// Test pour prendre le nombre total de joueur et le nombre de joueurs connectés
-		if ($_GET['ucount'] == 1) {
+		// Test pour prendre le nombre total de joueur et le nombre de joueurs connectï¿½s
+		if (isset($_GET['ucount']) && $_GET['ucount'] == 1) {
 			$page = $PlayersOnline['onlinenow']."/".$Count['players'];
 			die ( $page );
 		} else {

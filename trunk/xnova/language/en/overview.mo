@@ -63,8 +63,10 @@ $lang['error']  = 'Error';
 // Divers
 $lang['MembersOnline']       = "Online Members";
 $lang['ov_news_title']       = "News";
-$lang['Raids'] 							 = 'Raids';
-
+$lang['Raids'] 				 = 'Raids';
+$lang['NumberOfRaids']       = "Raids Effectu&eacute;s";
+$lang['RaidsWin']            = "Raids Gagn&eacute;s";
+$lang['RaidsLoose']          = "Raids Perdus";
 // Gestion des flottes
 $lang['ov_fleet']            = "fleet";
 $lang['ov_une']              = "One ";

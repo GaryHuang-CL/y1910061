@@ -6,5 +6,5 @@ $dbsettings = Array(
 "pass"       => "", // MySQL password.
 "name"       => "xnova", // MySQL database name.
 "prefix"     => "game_", // Tables prefix.
-"secretword" => "XNova158255119"); // Cookies.
+"secretword" => "XNova925042032"); // Cookies.
 ?>

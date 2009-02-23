@@ -72,9 +72,9 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 
 	$Queue = ShowBuildingQueue ( $CurrentPlanet, $CurrentUser );
 
-	// On enregistre ce que l'on a modifi� dans planet !
+	// Record what has changed in planet!
 	BuildingSavePlanetRecord ( $CurrentPlanet );
-	// On enregistre ce que l'on a eventuellement modifi� dans users
+	// Record what has been any changes in users
 	BuildingSaveUserRecord ( $CurrentUser );
 
 	if ($Queue['lenght'] < MAX_BUILDING_QUEUE_SIZE) {
@@ -113,7 +113,7 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 				if ($Element == 31) {
 					// Sp�cial Laboratoire
 					if ($CurrentUser["b_tech_planet"] != 0 &&     // Si pas 0 y a une recherche en cours
-						$game_config['BuildLabWhileRun'] != 1) {  // Variable qui contient le parametre
+					$game_config['BuildLabWhileRun'] != 1) {  // Variable qui contient le parametre
 						// On verifie si on a le droit d'evoluer pendant les recherches (Setting dans config)
 						$parse['click'] = "<font color=#FF0000>". $lang['in_working'] ."</font>";
 					}
@@ -164,9 +164,9 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 		$parse['BuildList']        = "";
 	}
 
-    $parse['planet_field_current'] = $CurrentPlanet["field_current"];
-    $parse['planet_field_max']     = $CurrentPlanet['field_max'] + ($CurrentPlanet[$resource[33]] * 5);
-    $parse['field_libre']          = $parse['planet_field_max']  - $CurrentPlanet['field_current'];
+	$parse['planet_field_current'] = $CurrentPlanet["field_current"];
+	$parse['planet_field_max']     = $CurrentPlanet['field_max'] + ($CurrentPlanet[$resource[33]] * 5);
+	$parse['field_libre']          = $parse['planet_field_max']  - $CurrentPlanet['field_current'];
 
 	$parse['BuildingsList']        = $BuildingPage;
 

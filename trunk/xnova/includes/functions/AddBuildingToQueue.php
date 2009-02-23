@@ -8,13 +8,13 @@
  * @copyright 2008 by Chlorel for XNova
  */
 
-// Ajoute un batiment dans la queue
+// Adds a building in the queue
 // $CurrentPlanet -> Planete sur laquelle on construit
-// $CurrentUser   -> Joueur courrant
-// $Element       -> Batiment a construire
+// $CurrentUser   -> Current player
+// $Element       -> Building a construire
 //
-// Retour         -> Valeur de l'element inseré
-//                   ou false s'il ne peut pas l'inserer (queue pleine)
+// Retour         -> Value of the inserted element
+//                   or false if it can not insert (queue full)
 //
 function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode = true) {
 	global $lang, $resource;
@@ -41,7 +41,7 @@ function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode 
 	}
 
 	if ( $QueueID != false ) {
-		// Faut verifier si l'Element que l'on veut integrer est deja dans le tableau !
+		// Must check if the item you want to integrate is already in the table!
 		if ($QueueID > 1) {
 			$InArray = 0;
 			for ( $QueueElement = 0; $QueueElement < $ActualCount; $QueueElement++ ) {
