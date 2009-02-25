@@ -207,8 +207,6 @@
 					if($crop > $granary_capacity * 0.9){
 						sell(500, 4, 500, 3, 5, 9000);
 					}
-				}else if($server == "www.travian.org" && $user == "Kimon"){
-					build_infantry(1, 0);
 
 				}else if($server == "s3.travian.jp" && $user == "Kimon"){
 					
@@ -219,12 +217,12 @@
 						$c4 = round($crop / 70);
 						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
 						
-						if($c > 0) build_infantry(3, $c);
+						if($c > 0) build_infantry(2, $c);
 
 					}
 					
 					if($crop > $granary_capacity * 0.9){
-						sell(500, 4, 500, 3, 5, 9000);
+						sell(500, 4, 500, 2, 8, 9000);
 					}
 					
 				}else if($server == "s3.travian.jp" && $user == "Hömeless"){
@@ -281,17 +279,13 @@
 			// new village logic
 			if($newbie > 0){
 				
-				if(time() - $last_beg > 2000)
-					transfer_to_newbie($main_village, $village, $result);
-				
-				/*
 				if($attack_time_left < 0){
 					if(time() - $last_beg > 2000)
 						transfer_to_newbie($main_village, $village, $result);
 					
-				}else if($attack_time_left < 3600){
+				}else if($attack_time_left < 3600 && $defence == 0){
 					transfer_to_village($village, $main_village);
-				}*/
+				}
 			
 			// sell resources for crops
 			}
