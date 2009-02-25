@@ -13,7 +13,7 @@ function doquery($query, $table, $fetch = false){
 				$dbsettings["pass"]) or
 				$debug->error(mysql_error()."<br />$query","SQL Error");
 				//message(mysql_error()."<br />$query","SQL Error");
-
+		mysql_set_charset('utf8', $link);
 		mysql_select_db($dbsettings["name"]) or $debug->error(mysql_error()."<br />$query","SQL Error");
 		echo mysql_error();
 	}

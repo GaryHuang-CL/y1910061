@@ -59,7 +59,9 @@ $nextpage = $Page + 1;
 					header("Location: ?mode=ins&page=1&error=1");
 					exit();
 					}
-
+				
+				mysql_set_charset('utf8', $connection);
+				
 				$dbselect = @mysql_select_db($db);
 					if (!$dbselect) {
 					header("Location: ?mode=ins&page=1&error=1");
@@ -166,6 +168,8 @@ $nextpage = $Page + 1;
 					exit();
 					}
 
+				mysql_set_charset('utf8', $connection);
+				
 				$dbselect = @mysql_select_db($db_db);
 					if (!$dbselect) {
 					header("Location: ?mode=ins&page=1&error=1");
@@ -268,6 +272,8 @@ $nextpage = $Page + 1;
 					exit();
 					}
 
+				mysql_set_charset('utf8', $connection);
+				
 				$dbselect = @mysql_select_db($db);
 					if (!$dbselect) {
 					header("Location: ?mode=goto&page=2&error=1");
