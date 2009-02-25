@@ -50,8 +50,8 @@ function FlyingFleetHandler (&$planet) {
 				break;
 
 			case 5:
-				// Stationner chez un Allié
-			MissionCaseStayAlly ( $CurrentFleet );
+				// Parked at an Ally
+				MissionCaseStayAlly ( $CurrentFleet );
 				break;
 
 			case 6:
@@ -76,7 +76,7 @@ function FlyingFleetHandler (&$planet) {
 
 			case 10:
 				// Missiles !!
-				
+
 				break;
 
 			case 15:
