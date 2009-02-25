@@ -160,7 +160,7 @@
 		// <img class="res" src="img/un/r/2.gif">44 
 		// <img class="res" src="img/un/r/3.gif">44 
 		// <img class="res" src="img/un/r/4.gif">49 
-		if(!preg_match_all('#<img class="res" src=".+?img/un/r/[1-4]\.gif">([0-9]+)#', $result, $matches, PREG_SET_ORDER)){
+		if(!preg_match_all('#<img class="res" src="[^<]*?img/un/r/[1-4]\.gif">([0-9]+)#', $result, $matches, PREG_SET_ORDER)){
 			echo "FAILED: can not read report well $id resources \n";
 			record_report($id, "【資源未知】$title");
 			return;
@@ -171,8 +171,12 @@
 			$total += $match[1];
 		}
 		
+		
 		$max_raid = (($soldiers[0] - $died[0]) * 60 + ($soldiers[2] - $died[2]) * 50 + ($soldiers[5] - $died[5]) * 80);
 		$score = round(($total * 100) / $max_raid);
+
+
+		echo "DEBUG: $total, $max_raid " . "\n";
 		
     	$sql = "select score from targets where x = $x and y = $y";
 	    $res = mysql_query($sql); if(!$res) die(mysql_error());
@@ -224,13 +228,10 @@
 	{
 		// TEST
 		/*
-		$id = "10400879";
+		$id = "10839775";
 		if(!mysql_query("delete from reports where id = $id")) die(mysql_error());
-		read_report($id, "ホームがソウル・ソサエティを攻撃しました");
+		read_report($id, "ホームがryuryu村を攻撃しました");
 
-		$id = "10432010";
-		if(!mysql_query("delete from reports where id = $id")) die(mysql_error());
-		read_report($id, "ホームがhyougoを攻撃しました");
 
 		return;
 		*/
