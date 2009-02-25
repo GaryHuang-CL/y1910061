@@ -8,6 +8,7 @@ $dumpfile = dirname(__FILE__) . "/map.sql";
 $tblname = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd');
 $tblname_yesterday = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600 * 48);
 $tblname_idle_village = "idle_villages_" . str_replace(".", "_", $server);
+$tblname_very_old = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600 * 120);
 
 unlink($dumpfile); 
 
@@ -115,7 +116,11 @@ ON a.uid = idle_players.uid
 echo $sql . "\n";
 if(!mysql_query($sql)) die(mysql_error());
 
-$sql = "ALTER TABLE $tblname_idle_village ADD PRIMARY KEY (`id`);";
+$sql = "ALTER TABLE $tblname_idle_village ADD PRIMARY KEY (`id`)";
+echo $sql . "\n";
+if(!mysql_query($sql)) die(mysql_error());
+
+$sql = "DROP TABLE IF EXISTS $tblname_very_old";
 echo $sql . "\n";
 if(!mysql_query($sql)) die(mysql_error());
 
