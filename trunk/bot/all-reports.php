@@ -28,7 +28,7 @@
 			$start = $_GET['p'] * 50;
 		}
 		
-		$sql = "select id, title, attack_power, defend_power, attack_ally, defend_ally, `datetime` from ally_reports where 1 = 1";
+		$sql = "select id, title, attack_power, defend_power, attack_ally, defend_ally, `datetime`, attack_village, defend_village from ally_reports where 1 = 1";
 
 		if(array_key_exists('u', $_GET)){
 			$uid = $_GET['u'];
@@ -54,10 +54,13 @@
 	    	$ally1 = $row[4];
 	    	$ally2 = $row[5];
 	    	$datetime = $row[6];
+	    	$attack_village = $row[7];
+	    	$defend_village = $row[8];
 	    	
 	    	$link = $_SERVER['PHP_SELF'] . "?id=$id" ;
 	    	
-	    	echo "<tr><td><a href=\"$link\">$title</a></td><td>$attack_power</td><td>$defend_power</td><td>$ally1</td><td>$ally2</td><td>$datetime</td></tr>\n";
+	    	echo "<tr><td><a href=\"$link\">$title</a></td><td>$attack_power</td>";
+	    	echo "<td>$defend_power</td><td>$ally1</td><td>$ally2</td><td>$datetime</td><td>$attack_village</td><td>$defend_village</td></tr>\n";
 		}
 		
 		echo "\n</table>";
