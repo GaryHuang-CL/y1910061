@@ -1,10 +1,10 @@
 <?php
 /*
-Some rights reserved
-Code by jacekowski (jacekowski@wklej.org)
-licensed under CC BY-NC-SA http://creativecommons.org/licenses/by-nc-sa/2.5/ http://creativecommons.org/licenses/by-nc-sa/2.5/pl/
-all violations of BY, NC and SA rule will be punished
-*/
+ Some rights reserved
+ Code by jacekowski (jacekowski@wklej.org)
+ licensed under CC BY-NC-SA http://creativecommons.org/licenses/by-nc-sa/2.5/ http://creativecommons.org/licenses/by-nc-sa/2.5/pl/
+ all violations of BY, NC and SA rule will be punished
+ */
 function walka ($CurrentSet, $TargetSet, $CurrentTechno, $TargetTechno) {
 	global $pricelist, $CombatCaps, $game_config;
 	$runda       = array();
