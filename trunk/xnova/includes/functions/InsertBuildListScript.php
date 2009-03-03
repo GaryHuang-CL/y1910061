@@ -10,6 +10,8 @@
 function InsertBuildListScript ( $CallProgram ) {
 	global $lang;
 
+	includeLang('buildings');
+	
 	$BuildListScript  = "<script type=\"text/javascript\">\n";
 	$BuildListScript .= "<!--\n";
 	$BuildListScript .= "function t() {\n";

@@ -25,7 +25,8 @@ function IsElementBuyable ($CurrentUser, $CurrentPlanet, $Element, $Incremental 
 	}
 
 	if ($Incremental) {
-		$level  = ($CurrentPlanet[$resource[$Element]]) ? $CurrentPlanet[$resource[$Element]] : $CurrentUser[$resource[$Element]];
+		//$level  = ($CurrentPlanet[$resource[$Element]]) ? $CurrentPlanet[$resource[$Element]] : $CurrentUser[$resource[$Element]];
+		$level  = (isset($CurrentPlanet[$resource[$Element]])) ? $CurrentPlanet[$resource[$Element]] : $CurrentUser[$resource[$Element]];
 	}
 
 	$RetValue = true;

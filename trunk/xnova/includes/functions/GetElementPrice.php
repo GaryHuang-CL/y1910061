@@ -20,7 +20,8 @@ function GetElementPrice ($user, $planet, $Element, $userfactor = true) {
 	global $pricelist, $resource, $lang;
 
 	if ($userfactor) {
-		$level = ($planet[$resource[$Element]]) ? $planet[$resource[$Element]] : $user[$resource[$Element]];
+		//$level = ($planet[$resource[$Element]]) ? $planet[$resource[$Element]] : $user[$resource[$Element]];
+		$level = (isset($planet[$resource[$Element]])) ? $planet[$resource[$Element]] : $user[$resource[$Element]];
 	}
 
 	$is_buyeable = true;
