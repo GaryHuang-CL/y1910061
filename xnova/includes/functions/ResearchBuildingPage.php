@@ -104,7 +104,8 @@ function ResearchBuildingPage (&$CurrentPlanet, $CurrentUser, $InResearch, $TheP
 
 	$TechRowTPL = gettemplate('buildings_research_row');
 	$TechScrTPL = gettemplate('buildings_research_script');
-
+	$TechnoList = '';
+	
 	foreach($lang['tech'] as $Tech => $TechName) {
 		if ($Tech > 105 && $Tech <= 199) {
 			if ( IsTechnologieAccessible($CurrentUser, $CurrentPlanet, $Tech)) {
@@ -184,7 +185,7 @@ function ResearchBuildingPage (&$CurrentPlanet, $CurrentUser, $InResearch, $TheP
 	$PageParse                = $lang;
 	$PageParse['noresearch']  = $NoResearchMessage;
 	$PageParse['technolist']  = $TechnoList;
-	$Page                    .= parsetemplate(gettemplate('buildings_research'), $PageParse);
+	$Page                     = parsetemplate(gettemplate('buildings_research'), $PageParse);
 
 	display( $Page, $lang['Research'] );
 }

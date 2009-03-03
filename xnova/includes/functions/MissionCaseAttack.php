@@ -67,14 +67,14 @@ function MissionCaseAttack ($FleetRow)
 			}
 
 			include_once($xnova_root_path . 'includes/ataki.' . $phpEx);
-			// Calculating the duration of treatment (initialization)
+			// Calculating the report build time (start)
 			$mtime = microtime();
 			$mtime = explode(" ", $mtime);
 			$mtime = $mtime[1] + $mtime[0];
 			$starttime = $mtime;
 
 			$walka = walka($CurrentSet, $TargetSet, $CurrentTechno, $TargetTechno);
-			// Calculating the duration of treatment (calculation)
+			// Calculating the report build time (end)
 			$mtime = microtime();
 			$mtime = explode(" ", $mtime);
 			$mtime = $mtime[1] + $mtime[0];

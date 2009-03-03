@@ -63,11 +63,11 @@ function AdminMessage ($mes, $title = 'Error', $dest = "", $time = "3") {
 // Routine Affichage d'un message avec saut vers une autre page si souhait
 //
 function message ($mes, $title = 'Error', $dest = "", $time = "3") {
-	$parse['color'] = $color;
+	//$parse['color'] = $color;
 	$parse['title'] = $title;
 	$parse['mes']   = $mes;
 
-	$page .= parsetemplate(gettemplate('message_body'), $parse);
+	$page = parsetemplate(gettemplate('message_body'), $parse);
 
 	display ($page, $title, false, (($dest != "") ? "<meta http-equiv=\"refresh\" content=\"$time;URL=javascript:self.location='$dest';\">" : ""), false);
 }

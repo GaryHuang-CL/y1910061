@@ -25,7 +25,7 @@ function ShowOfficierPage ( &$CurrentUser ) {
 	}
 
 	// Si recrutement d'un officier
-	if ($_GET['mode'] == 2) {
+	if (isset($_GET['mode']) && $_GET['mode'] == 2) {
 		if ($CurrentUser['rpg_points'] > 0) {
 			$Selected    = $_GET['offi'];
 			if ( in_array($Selected, $reslist['officier']) ) {
@@ -91,7 +91,7 @@ function ShowOfficierPage ( &$CurrentUser ) {
 }
 
 	$page = ShowOfficierPage ( $user );
-	display($page, $lang['officier']);
+	display($page, $lang['Officier']);
 
 // -----------------------------------------------------------------------------------------------------------
 // History version

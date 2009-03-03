@@ -23,7 +23,7 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 		$bDoItNow       = false;
 		$TheCommand     = $_GET['cmd'];
 		$Element        = $_GET['building'];
-		$ListID         = $_GET['listid'];
+		//$ListID       = $_GET['listid'];
 		if       ( isset ( $Element )) {
 			if ( !strchr ( $Element, " ") ) {
 				if ( !strchr ( $Element, ",") ) {
@@ -38,7 +38,7 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 			} else {
 				$bThisIsCheated = true;
 			}
-		} elseif ( isset ( $ListID )) {
+		} elseif ( isset ( $_GET['listid'] )) {
 			$bDoItNow = true;
 		}
 		if ($bDoItNow == true) {
@@ -50,7 +50,7 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 				case 'remove':
 					// Supprimer un element de la queue (mais pas le premier)
 					// $RemID -> element de la liste a supprimer
-					RemoveBuildingFromQueue ( $CurrentPlanet, $CurrentUser, $ListID );
+					RemoveBuildingFromQueue ( $CurrentPlanet, $CurrentUser, $_GET['listid']);
 					break;
 				case 'insert':
 					// Insere un element dans la queue
@@ -170,9 +170,9 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 
 	$parse['BuildingsList']        = $BuildingPage;
 
-	$page                         .= parsetemplate(gettemplate('buildings_builds'), $parse);
+	$page                          = parsetemplate(gettemplate('buildings_builds'), $parse);
 
-	display($page, $lang['Builds']);
+	display($page, ''/*$lang['Builds']*/);
 }
 
 // -----------------------------------------------------------------------------------------------------------
