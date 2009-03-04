@@ -18,6 +18,10 @@ $lang['neededpass']        = 'Password';
 $lang['mail_welcome']      = 'Thank you for your registration in ({gameurl}). Your password is: {password}. Have fun! {gameurl}';
 $lang['mail_title']        = 'Registration';
 $lang['thanksforregistry'] = 'Thank you for your registration! You will get an email with your account details.';
+$lang['sender_message_ig'] = 'Admin';
+$lang['subject_message_ig']= 'Welcome';
+$lang['text_message_ig']   = 'Welcome to XNova, Wish you have good luck and fun!';
+
 // Errors
 $lang['error_mail']        = 'Invalid Email!<br />';
 $lang['error_planet']     = 'Error in planet name!.<br />';

@@ -36,7 +36,9 @@ function mymail($to, $title, $body, $from = '')
     }
 
     $rp = ADMINEMAIL;
-
+	
+    $org = 'XNova';
+    
     $head = '';
     $head .= "Content-Type: text/plain \r\n";
     $head .= "Date: " . date('r') . " \r\n";
@@ -68,10 +70,10 @@ if ($_POST) {
         $errors++;
     }
 
-    if (preg_match("/[^A-z0-9_\-]/", $_POST['hplanet']) == 1) {
-        $errorlist .= $lang['error_planetnum'];
-        $errors++;
-    }
+//    if (preg_match("/[^A-z0-9_\-]/", $_POST['hplanet']) == 1) {
+//        $errorlist .= $lang['error_planetnum'];
+//        $errors++;
+//    }
 
     if (!$_POST['character']) {
         $errorlist .= $lang['error_character'];
@@ -211,6 +213,8 @@ if ($_POST) {
         $sender = "0";
         $Subject = $lang['subject_message_ig'];
         $message = $lang['text_message_ig'];
+        
+        $Time = time();
         SendSimpleMessage($iduser, $sender, $Time, 1, $from, $Subject, $message);
 
         // Mise a jour du nombre de joueurs inscripts

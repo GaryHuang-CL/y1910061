@@ -26,7 +26,7 @@ function HandleTechnologieBuild ( &$CurrentPlanet, &$CurrentUser ) {
 			$WorkingPlanet = doquery("SELECT * FROM {{table}} WHERE `id` = '". $CurrentUser['b_tech_planet'] ."';", 'planets', true);
 		}
 
-		if ($WorkingPlanet) {
+		if (isset($WorkingPlanet) && $WorkingPlanet) {
 			$ThePlanet = $WorkingPlanet;
 		} else {
 			$ThePlanet = $CurrentPlanet;
