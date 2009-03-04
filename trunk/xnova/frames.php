@@ -10,7 +10,7 @@
 define('INSIDE'  , true);
 define('INSTALL' , false);
 
-$InLogin = false;
+//$InLogin = false;
 
 $XNova_Host    = $_SERVER['HTTP_HOST'];
 $XNova_Script  = $_SERVER['SCRIPT_NAME'];

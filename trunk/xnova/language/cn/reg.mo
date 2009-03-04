@@ -21,7 +21,7 @@ $lang['signup']            = ' 注册 ';
 $lang['neededpass']        = '玩家密码';
 
 // Send
-$lang['mail_welcome']      = '感谢注册多人网页线上游戏({gameurl}) \n你的密码是: {password}\n\nGOOD LUCK!\n{gameurl}';
+$lang['mail_welcome']      = '感谢注册多人网页线上游戏({gameurl}) ' . "\n". '你的密码是: {password}' . "\n\n" . 'GOOD LUCK!';
 $lang['mail_title']        = '你注册的XNOVA游戏信息';
 $lang['thanksforregistry'] = '感谢注册我们的游戏';
 $lang['sender_message_ig'] = 'Admin';
