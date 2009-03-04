@@ -40,7 +40,7 @@ function mymail($to, $title, $body, $from = '')
     $org = 'XNova';
     
     $head = '';
-    $head .= "Content-Type: text/plain \r\n";
+    $head .= "Content-Type: text/plain; charset=UTF-8\r\n";
     $head .= "Date: " . date('r') . " \r\n";
     $head .= "Return-Path: $rp \r\n";
     $head .= "From: $from \r\n";
@@ -52,6 +52,7 @@ function mymail($to, $title, $body, $from = '')
     $body = str_replace("\r\n", "\n", $body);
     $body = str_replace("\n", "\r\n", $body);
 
+	$title= '=?UTF-8?B?' . base64_encode($title) . '?=';
     return mail($to, $title, $body, $head);
 }
 
@@ -106,13 +107,15 @@ if ($_POST) {
     	$_POST['language'] = 'ja';
     }
     
-    // Le meilleur moyen de voir si un nom d'utilisateur est pris c'est d'essayer de l'appeler !!
-    $ExistUser = doquery("SELECT `username` FROM {{table}} WHERE `username` = '" . mysql_escape_string($_POST['character']) . "' LIMIT 1;", 'users', true);
+    begin_transaction();
+    
+    // Don't want to any change during this transaction, whole table is locked ...
+    $ExistUser = doquery("SELECT `username` FROM {{table}} WHERE `username` = '" . mysql_escape_string($_POST['character']) . "' LIMIT 1 FOR UPDATE;", 'users', true);
     if ($ExistUser) {
         $errorlist .= $lang['error_userexist'];
         $errors++;
     }
-    // Si l'on verifiait que l'adresse email n'existe pas encore ???
+    
     $ExistMail = doquery("SELECT `email` FROM {{table}} WHERE `email` = '" . mysql_escape_string($_POST['email']) . "' LIMIT 1;", 'users', true);
     if ($ExistMail) {
         $errorlist .= $lang['error_emailexist'];
@@ -125,6 +128,7 @@ if ($_POST) {
     }
 
     if ($errors != 0) {
+    	rollback();
         message ($errorlist, $lang['Register']);
     } else {
         $newpass    = $_POST['passwrd'];
@@ -187,13 +191,14 @@ if ($_POST) {
                 break;
             }
 
+            // whole table lock
             $QrySelectGalaxy = "SELECT * ";
             $QrySelectGalaxy .= "FROM {{table}} ";
             $QrySelectGalaxy .= "WHERE ";
             $QrySelectGalaxy .= "`galaxy` = '" . $Galaxy . "' AND ";
             $QrySelectGalaxy .= "`system` = '" . $System . "' AND ";
             $QrySelectGalaxy .= "`planet` = '" . $Planet . "' ";
-            $QrySelectGalaxy .= "LIMIT 1;";
+            $QrySelectGalaxy .= "LIMIT 1 FOR UPDATE;";
             $GalaxyRow = doquery($QrySelectGalaxy, 'galaxy', true);
 
             if ($GalaxyRow["id_planet"] == "0") {
@@ -243,6 +248,7 @@ if ($_POST) {
             $Message .= " (" . htmlentities($_POST["email"]) . ")";
             $Message .= "<br><br>" . $lang['error_mailsend'] . " <b>" . $newpass . "</b>";
         }
+        commit();
         message($Message, $lang['reg_welldone']);
     }
 } else {

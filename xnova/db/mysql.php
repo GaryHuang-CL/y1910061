@@ -1,33 +1,47 @@
 <?php
 
-function doquery($query, $table, $fetch = false){
-  global $link, $debug, $xnova_root_path;
-//    echo $query."<br />";
-	require($xnova_root_path.'config.php');
-
-
-
+function connect()
+{
+	global $link, $debug, $xnova_root_path;
 	if(!$link)
 	{
-		$link = mysql_connect($dbsettings["server"], $dbsettings["user"],
-				$dbsettings["pass"]) or
-				$debug->error(mysql_error()."<br />$query","SQL Error");
-				//message(mysql_error()."<br />$query","SQL Error");
-		mysql_set_charset('utf8', $link);
+		require($xnova_root_path.'config.php');
+		$link = mysql_connect($dbsettings["server"], $dbsettings["user"],$dbsettings["pass"]) or
+		$debug->error(mysql_error()."<br />$query","SQL Error");
 		mysql_select_db($dbsettings["name"]) or $debug->error(mysql_error()."<br />$query","SQL Error");
+		mysql_set_charset('utf8', $link) or $debug->error(mysql_error()."<br />$query","SQL Error");
 		echo mysql_error();
 	}
-	// por el momento $query se mostrara
-	// pero luego solo se vera en modo debug
+}
 
+function begin_transaction()
+{
+	connect();
+	mysql_query("begin") or $debug->error(mysql_error()."<br />$query","SQL Error");
+}
 
+function commit()
+{
+	mysql_query("commit") or $debug->error(mysql_error()."<br />$query","SQL Error");
+}
 
+function rollback()
+{
+	mysql_query("rollback") or $debug->error(mysql_error()."<br />$query","SQL Error");
+}
+
+function doquery($query, $table, $fetch = false){
+	global $debug, $xnova_root_path;
+	require($xnova_root_path.'config.php');
+
+	connect();
+	
 	$sql = str_replace("{{table}}", $dbsettings["prefix"].$table, $query);
 
 
 	$sqlquery = mysql_query($sql) or
-				$debug->error(mysql_error()."<br />$sql<br />","SQL Error");
-				//print(mysql_error()."<br />$query"."SQL Error");
+	$debug->error(mysql_error()."<br />$sql<br />","SQL Error");
+	//print(mysql_error()."<br />$query"."SQL Error");
 
 
 	unset($dbsettings);//se borra la array para liberar algo de memoria

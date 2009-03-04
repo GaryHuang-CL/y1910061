@@ -1,9 +1,9 @@
 <?php
 // Registration form
-$lang['registry']          = 'Registration';
+$lang['registry']          = '登録';
 $lang['form']              = 'Form';
 $lang['Register']          = 'Register';
-$lang['Undefined']         = '- Undefined -';
+$lang['Undefined']         = '未知';
 $lang['Male']              = 'Male';
 $lang['Female']            = 'Female';
 $lang['Multiverse']        = 'Multiverse';

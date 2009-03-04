@@ -43,7 +43,8 @@ class debug
 			//los errores que ocurran.
 			global $user,$xnova_root_path,$phpEx;
 			include($xnova_root_path . 'config.'.$phpEx);
-			if(!$link) die('mySQL no esta disponible por el momento, sentimos el inconveniente...');
+			if(!$link) die('mySQL error.');
+			mysql_query("rollback");
 			$query = "INSERT INTO {{table}} SET
 				`error_sender` = '{$user['id']}' ,
 				`error_time` = '".time()."' ,
@@ -57,9 +58,9 @@ class debug
 				
 
 			if (!function_exists('message'))
-				echo "Erreur, merci de contacter l'admin. Erreur n°: <b>".$q['rows']."</b>";
+				echo "Error, thank you to contact the admin. error:<b>" . $q['rows'] . "</b>";
 			else
-				message("Erreur, merci de contacter l'admin. Erreur n°: <b>".$q['rows']."</b>", "Erreur");
+				message("Error, thank you to contact the admin. error:<b>".$q['rows']."</b>", "Error");
 		//}
 		
 		die();

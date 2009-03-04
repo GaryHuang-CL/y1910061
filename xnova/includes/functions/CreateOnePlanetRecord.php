@@ -42,7 +42,7 @@ function CreateOnePlanetRecord($Galaxy, $System, $Position, $PlanetOwnerID, $Pla
 	$QrySelectPlanet .= "WHERE ";
 	$QrySelectPlanet .= "`galaxy` = '". $Galaxy ."' AND ";
 	$QrySelectPlanet .= "`system` = '". $System ."' AND ";
-	$QrySelectPlanet .= "`planet` = '". $Position ."';";
+	$QrySelectPlanet .= "`planet` = '". $Position ."' FOR UPDATE;";
 	$PlanetExist = doquery( $QrySelectPlanet, 'planets', true);
 
 	// Si $PlanetExist est autre chose que false ... c'est qu'il y a quelque chose l bas ...
@@ -156,7 +156,7 @@ function CreateOnePlanetRecord($Galaxy, $System, $Position, $PlanetOwnerID, $Pla
 		$QrySelectGalaxy .= "WHERE ";
 		$QrySelectGalaxy .= "`galaxy` = '". $planet['galaxy'] ."' AND ";
 		$QrySelectGalaxy .= "`system` = '". $planet['system'] ."' AND ";
-		$QrySelectGalaxy .= "`planet` = '". $planet['planet'] ."';";
+		$QrySelectGalaxy .= "`planet` = '". $planet['planet'] ."' FOR UPDATE;";
 		$GetGalaxyID      = doquery( $QrySelectGalaxy, 'galaxy', true);
 
 		if ($GetGalaxyID) {
