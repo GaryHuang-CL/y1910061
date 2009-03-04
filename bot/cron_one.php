@@ -291,7 +291,7 @@
 			}
 			
 			if($buycrop > 0){
-				sell_for_crop(1.5, 0, 4);
+				sell_for_crop(1, 0, 4);
 				
 				if($village != $main_village)
 					transfer_crop_to_village($village, $main_village, 5000);
