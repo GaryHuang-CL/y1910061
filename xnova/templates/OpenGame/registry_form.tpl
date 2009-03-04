@@ -38,6 +38,7 @@
 		<option value="F">{Female}</option>
 		</select></th>
 </tr>
+{LanguageDetail}
 <tr>
   <td height="20" colspan="2"></td>
   </tr>

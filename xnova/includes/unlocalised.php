@@ -206,12 +206,19 @@ function gettemplate ($templatename) {
 // Gestion de la localisation des chaines
 //
 function includeLang ($filename, $ext = '.mo') {
-	global $xnova_root_path, $lang, $user;
+	global $xnova_root_path, $lang, $user, $langInfos;
 
 	if (isset($user['lang']) && $user['lang'] != '') {
 		$SelLanguage = $user['lang'];
 	} else {
-		$SelLanguage = DEFAULT_LANG;
+		if(preg_match('#(zh|ja)#', $_SERVER['HTTP_ACCEPT_LANGUAGE'], $match)){
+			if($match[0] == 'zh'){
+				$SelLanguage = 'cn';
+			}else{
+				$SelLanguage = 'ja';
+			}
+		}else
+			$SelLanguage = DEFAULT_LANG;
 	}
 	include ($xnova_root_path . "language/". $SelLanguage ."/". $filename.$ext);
 }
