@@ -21,9 +21,7 @@ $IsUserChecked = false;
 define('DEFAULT_SKINPATH' , 'skins/xnova/');
 define('TEMPLATE_DIR'     , 'templates/');
 define('TEMPLATE_NAME'    , 'OpenGame');
-define('DEFAULT_LANG'     , 'cn');
-
-$HTTP_ACCEPT_LANGUAGE = DEFAULT_LANG;
+define('DEFAULT_LANG'     , 'en');
 
 include($xnova_root_path . 'includes/debug.class.'.$phpEx);
 $debug = new debug();
@@ -32,7 +30,6 @@ include($xnova_root_path . 'includes/constants.'.$phpEx);
 include($xnova_root_path . 'includes/functions.'.$phpEx);
 include($xnova_root_path . 'includes/unlocalised.'.$phpEx);
 include($xnova_root_path . 'includes/todofleetcontrol.'.$phpEx);
-include($xnova_root_path . 'language/'. DEFAULT_LANG .'/lang_info.cfg');
 
 if (INSTALL != true) {
     include($xnova_root_path . 'includes/vars.'.$phpEx);
@@ -50,17 +47,12 @@ if (INSTALL != true) {
 		$IsUserChecked = $Result['state'];
 		$user          = $Result['record'];
 	} elseif ($InLogin == false) {
-		// Jeux en mode 'clos' ???
 		if( $game_config['game_disable']) {
 			if ($user['authlevel'] < 1) {
 				message ( stripslashes ( $game_config['close_reason'] ), $game_config['game_name'] );
 			}
 		}
 	}
-
-	includeLang ("system");
-	includeLang ('tech');
-
 	//if ( isset ($user) ) {
 	if ($user) {
 		$_fleets = doquery("SELECT * FROM {{table}} WHERE `fleet_start_time` <= '".time()."';", 'fleets'); //  OR fleet_end_time <= ".time()
@@ -110,13 +102,21 @@ if (INSTALL != true) {
 		$galaxyrow = doquery("SELECT * FROM {{table}} WHERE `id_planet` = '".$planetrow['id']."';", 'galaxy', true);
 
 		CheckPlanetUsedFields($planetrow);
+		
+		date_default_timezone_set($user['timezone']);		
 	} else {
-		// Bah si d�ja y a quelqu'un qui passe par l� et qu'a rien a faire de press� ...
-		// On se sert de lui pour mettre a jour tout les retardataires !!
 		$dpath     = "../" . DEFAULT_SKINPATH;
 	}
+
+	includeLang ("lang_info", ".cfg");
+	includeLang ("system");
+	includeLang ('tech');
+	
 } else {
+	includeLang ("lang_info", ".cfg");
 	$dpath     = "../" . DEFAULT_SKINPATH;
 }
+
+
 
 ?>

@@ -443,6 +443,7 @@ $QryTableUsers      .= "`password` varchar(64)  NOT NULL default '', ";
 $QryTableUsers      .= "`email` varchar(64)  NOT NULL default '', ";
 $QryTableUsers      .= "`email_2` varchar(64)  NOT NULL default '', ";
 $QryTableUsers      .= "`lang` varchar(8)  NOT NULL default 'en', ";
+$QryTableUsers      .= "`timezone` varchar(256)  NOT NULL default NULL, ";
 $QryTableUsers      .= "`authlevel` tinyint(4) NOT NULL default '0', ";
 $QryTableUsers      .= "`sex` char(1)  default NULL, ";
 $QryTableUsers      .= "`avatar` varchar(255)  NOT NULL default '', ";

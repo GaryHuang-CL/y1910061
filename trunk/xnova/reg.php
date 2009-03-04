@@ -79,7 +79,7 @@ if ($_POST) {
         $errorlist .= $lang['error_character'];
         $errors++;
     }
-
+    
     if (strlen($_POST['passwrd']) < 4) {
         $errorlist .= $lang['error_password'];
         $errors++;
@@ -94,6 +94,18 @@ if ($_POST) {
         $errorlist .= $lang['error_rgt'];
         $errors++;
     }
+
+	if(!preg_match('#(zh|ja)#', $_SERVER['HTTP_ACCEPT_LANGUAGE'], $match)){
+		if (!$_POST['language'] || ($_POST['language'] != 'cn' && $_POST['language'] != 'ja')){
+        	$errorlist .= $lang['error_language'];
+			$errors++;
+		}
+    }else if($match[0] == 'zh'){
+    	$_POST['language'] = 'cn';
+    }else{
+    	$_POST['language'] = 'ja';
+    }
+    
     // Le meilleur moyen de voir si un nom d'utilisateur est pris c'est d'essayer de l'appeler !!
     $ExistUser = doquery("SELECT `username` FROM {{table}} WHERE `username` = '" . mysql_escape_string($_POST['character']) . "' LIMIT 1;", 'users', true);
     if ($ExistUser) {
@@ -115,15 +127,19 @@ if ($_POST) {
     if ($errors != 0) {
         message ($errorlist, $lang['Register']);
     } else {
-        $newpass = $_POST['passwrd'];
-        $UserName = CheckInputStrings ($_POST['character']);
-        $UserEmail = CheckInputStrings ($_POST['email']);
+        $newpass    = $_POST['passwrd'];
+        $UserName   = CheckInputStrings ($_POST['character']);
+        $UserEmail  = CheckInputStrings ($_POST['email']);
         $UserPlanet = CheckInputStrings (addslashes($_POST['planet']));
-
+        $UserLang   = $_POST['language'];
+		$TimeZone   = $UserLang == 'ja' ?  'Asia/Tokyo' : 'Asia/Shanghai';
+		  
         $md5newpass = md5($newpass);
         // Creation de l'utilisateur
         $QryInsertUser = "INSERT INTO {{table}} SET ";
         $QryInsertUser .= "`username` = '" . mysql_escape_string(strip_tags($UserName)) . "', ";
+        $QryInsertUser .= "`lang` = '" . $UserLang . "', ";
+        $QryInsertUser .= "`timezone` = '" . $TimeZone . "', ";
         $QryInsertUser .= "`email` = '" . mysql_escape_string($UserEmail) . "', ";
         $QryInsertUser .= "`email_2` = '" . mysql_escape_string($UserEmail) . "', ";
         $QryInsertUser .= "`sex` = '" . mysql_escape_string($_POST['sex']) . "', ";
@@ -230,15 +246,16 @@ if ($_POST) {
         message($Message, $lang['reg_welldone']);
     }
 } else {
-    // Afficher le formulaire d'enregistrement
-    $parse = $lang;
+
+	$parse = $lang;
     $parse['servername'] = $game_config['game_name'];
+	if(!preg_match('#(zh|ja)#', $_SERVER['HTTP_ACCEPT_LANGUAGE'], $match)){
+		$parse['LanguageDetail'] = '<tr><th>' . $lang['Language'] . '</th><th><select name="language"><option value=""></option><option value="cn">' 
+		                         . $lang['Chinese'] . '</option><option value="ja">' . $lang['Japanese'] . '</option></select></th></tr>';
+	}    
+    
     $page = parsetemplate(gettemplate('registry_form'), $parse);
 
     display ($page, $lang['registry'], false);
 }
-// -----------------------------------------------------------------------------------------------------------
-// History version
-// 1.0 - Version originelle
-// 1.1 - Menage + rangement + utilisation fonction de creation planete nouvelle generation
 ?>
