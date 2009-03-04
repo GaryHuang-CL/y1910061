@@ -11,6 +11,7 @@
     define('INSTALL' , false);
 
     $ugamela_root_path = './';
+    $xnova_root_path   = $ugamela_root_path;
     include($ugamela_root_path . 'extension.inc');
     include($ugamela_root_path . 'common.' . $phpEx);
 
@@ -19,7 +20,7 @@
     $lang['PHP_SELF'] = 'options.' . $phpEx;
 
     $dpath = (!$user["dpath"]) ? DEFAULT_SKINPATH : $user["dpath"];
-    $mode = $_GET['mode'];
+    $mode = isset($_GET['mode']) ? $_GET['mode'] : '';
 
     if ($_POST && $mode == "exit") { // Array ( [db_character]
        if (isset($_POST["exit_modus"]) && $_POST["exit_modus"] == 'on' and $user['urlaubs_until'] <= time()){
