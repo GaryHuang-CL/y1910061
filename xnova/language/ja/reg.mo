@@ -1,40 +1,40 @@
 <?php
 // Registration form
 $lang['registry']          = '登録';
-$lang['form']              = 'Form';
-$lang['Register']          = 'Register';
-$lang['Undefined']         = '未知';
-$lang['Male']              = 'Male';
-$lang['Female']            = 'Female';
+$lang['form']              = 'アカウント情報';
+$lang['Register']          = '登録';
+$lang['Undefined']         = '';
+$lang['Male']              = '男性';
+$lang['Female']            = '女性';
 $lang['Multiverse']        = 'Multiverse';
-$lang['E-Mail']            = 'E-Mail';
-$lang['MainPlanet']        = 'Main Planet';
-$lang['GameName']          = 'Game Name';
-$lang['Sex']               = 'Sex';
-$lang['accept']            = 'accept';
-$lang['signup']            = ' signup ';
-$lang['neededpass']        = 'Password';
+$lang['E-Mail']            = 'メールアドレス';
+$lang['MainPlanet']        = '惑星名称';
+$lang['GameName']          = 'ユーザー名';
+$lang['Sex']               = '性別';
+$lang['accept']            = '利用ルールに同意します。';
+$lang['signup']            = ' 登録 ';
+$lang['neededpass']        = 'パスワード';
 // Send
-$lang['mail_welcome']      = 'Thank you for your registration in ({gameurl}). Your password is: {password}. Have fun! {gameurl}';
-$lang['mail_title']        = 'Registration';
-$lang['thanksforregistry'] = 'Thank you for your registration! You will get an email with your account details.';
+$lang['mail_welcome']      = 'こんにちは。ご登録ありがとうございます。パスワード： {password}。' . "\n" . '{gameurl}';
+$lang['mail_title']        = 'ＸＮｏｖａへようこそ';
+$lang['thanksforregistry'] = 'ご登録ありがとうございます。アカウントの詳細をメールで送信します。';
 $lang['sender_message_ig'] = 'Admin';
-$lang['subject_message_ig']= 'Welcome';
-$lang['text_message_ig']   = 'Welcome to XNova, Wish you have good luck and fun!';
+$lang['subject_message_ig']= 'ようこそ';
+$lang['text_message_ig']   = 'ＸＮｏｖａへようこそ';
 
 // Errors
-$lang['error_mail']        = 'Invalid Email!<br />';
-$lang['error_planet']     = 'Error in planet name!.<br />';
-$lang['error_hplanetnum']  = 'You can only use alfanumeric characters in the planet name!<br />';
-$lang['error_character']   = 'Error in player name!<br />';
-$lang['error_charalpha']   = 'The username can only contain alfanumeric characters!<br />';
-$lang['error_password']    = 'The minimum password lenght is 4 characters!<br />';
-$lang['error_rgt']         = 'You must accept the terms and conditions.<<br />';
-$lang['error_userexist']   = 'The nickname is already in use!<br />';
-$lang['error_emailexist']  = 'Your E-Mail address is already in use!<br />';
-$lang['error_sex']         = 'You must choose a sex!<br />';
-$lang['error_mailsend']    = 'There was an error while sending the email. Your password is: ';
-$lang['reg_welldone']      = 'Registration done!';
+$lang['error_mail']        = '無効なメールアドレスです。<br />';
+$lang['error_planet']      = '無効な惑星名称です。<br />';
+$lang['error_hplanetnum']  = '惑星名称に英数字のみ使えます。<br />';
+$lang['error_character']   = '無効なユーザー名です。<br />';
+$lang['error_charalpha']   = 'ユーザー名に英数字のみ使えます。<br />';
+$lang['error_password']    = 'パスワードに少なくとも４桁を入力してください。<br />';
+$lang['error_rgt']         = '利用ルールに同意しなければなりません。<br />';
+$lang['error_userexist']   = '入力されたユーザー名がすでに使われています。<br />';
+$lang['error_emailexist']  = '入力されたメールアドレスがすでに登録されています。<br />';
+$lang['error_sex']         = '性別を選択してください。<br />';
+$lang['error_mailsend']    = 'メール送信エラーです。パスワード：';
+$lang['reg_welldone']      = '登録完了しました。';
 
 
 ?>
