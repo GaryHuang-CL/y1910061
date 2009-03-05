@@ -10,7 +10,7 @@ $lang['Register'] = '登録';
 $lang['Login_Error'] = 'エラー';
 $lang['PleaseWait'] = '少々お待ちください';
 
-$lang['Login_Ok'] = 'ログイン<a href="./"><blink>redirection...</blink></a><br><center><img src="images/progressbar.gif"></center>';
+$lang['Login_Ok'] = 'ログイン<a href="./"><blink>転送中…</blink></a><br><center><img src="images/progressbar.gif"></center>';
 $lang['Login_FailPassword'] = 'パスワードが違います！<br /><a href="login.php" target="_top">リトライ</a>';
 $lang['Login_FailUser'] = 'ユーザー名が違います！<br><a href=login.php>リトライ</a>';
 

@@ -1,51 +1,51 @@
 <?php
 
-$lang['Multiverse']   = 'Universe';
+$lang['Multiverse']   = '宇宙';
 
-$lang['Overview']     = 'Overview';
-$lang['Officiers']    = 'Officers';
+$lang['Overview']     = '概要';
+$lang['Officiers']    = '指揮官';
 
-$lang['Buildings']    = 'Buildings';
-$lang['Research']     = 'Research';
-$lang['Shipyard']     = 'Shipyard';
-$lang['Defense']      = 'Defense';
+$lang['Buildings']    = '建造物';
+$lang['Research']     = 'リサーチ';
+$lang['Shipyard']     = '造船所';
+$lang['Defense']      = '防衛';
 
-$lang['Resources']    = 'Resources';
-$lang['Imperium']     = 'Imperium';
-$lang['Marchand']     = 'Merchant';
-$lang['Annonces']     = 'Announces';
-$lang['Technology']   = 'Technology';
+$lang['Resources']    = '資源';
+$lang['Imperium']     = '概観';
+$lang['Marchand']     = '交易';
+$lang['Annonces']     = 'アナウンス';
+$lang['Technology']   = '技術';
 
-$lang['Galaxy']       = 'Galaxy';
-$lang['Fleet']        = 'Fleet';
+$lang['Galaxy']       = '銀河';
+$lang['Fleet']        = '艦隊';
 
-$lang['Alliance']     = 'Alliance';
-$lang['Chat']         = 'Chat';
-$lang['Statistics']   = 'Statistics';
-$lang['Search']       = 'Search';
-$lang['blocked']      = 'Banned';
-$lang['Records']      = 'Records';
+$lang['Alliance']     = '同盟';
+$lang['Chat']         = 'チャット';
+$lang['Statistics']   = '統計値';
+$lang['Search']       = 'サーチ';
+$lang['blocked']      = '禁止リスト';
+$lang['Records']      = 'レコード';
 
-$lang['Messages']     = 'Messages';
-$lang['Notes']        = 'Notes';
-$lang['Buddylist']    = 'Buddylist';
+$lang['Messages']     = 'メッセージ';
+$lang['Notes']        = 'ノート';
+$lang['Buddylist']    = '仲間リスト';
 
-$lang['Board']        = 'Board';
-$lang['Contact']      = 'Contact';
-$lang['Options']      = 'Options';
+$lang['Board']        = 'フォーラム';
+$lang['Contact']      = '連絡';
+$lang['Options']      = 'オプション';
 
-$lang['Logout']       = 'Logout';
+$lang['Logout']       = 'ログアウト';
 
-$lang['Help']         = 'Help';
-$lang['Rules']        = 'Rules';
-$lang['support_system'] = 'Support System';
+$lang['Help']         = 'ヘルプ';
+$lang['Rules']        = 'ルール';
+$lang['support_system'] = 'サポートシステム';
 
 // User menu titles
-$lang['devlp']        = 'Development';
-$lang['navig']        = 'Navigation';
-$lang['observ']       = 'Observatory';
-$lang['commun']       = 'Community';
-$lang['infog']        = 'Informations';
+$lang['devlp']        = '内政開発';
+$lang['navig']        = 'ナビゲーション';
+$lang['observ']       = '観測';
+$lang['commun']       = 'コミュニティ';
+$lang['infog']        = 'サーバ情報';
 
 // Administrator menu links
 $lang['adm_over']     = 'Overview';
@@ -73,8 +73,8 @@ $lang['adm_updpt']    = 'Points update';
 $lang['adm_msg']      = 'Message list';
 $lang['adm_md5']      = 'Encryption Tool';
 $lang['adm_build']    = 'Building queue';
-$lang['adm_banned_ip'] = 'IP Ban';
-$lang['adm_support'] = 'Admin Support';
+$lang['adm_banned_ip']= 'IP Ban';
+$lang['adm_support']  = 'Admin Support';
 
 $lang['adm_error']    = 'Errors';
 $lang['adm_help']     = 'Help Forum';
@@ -86,9 +86,9 @@ $lang['player']       = 'Players';
 $lang['tool']         = 'Tools';
 
 // Informations serveur
-$lang['lm_ifo_serv']  = "Resources";
-$lang['lm_ifo_game']  = "Game";
-$lang['lm_ifo_fleet'] = "Fleet";
-$lang['lm_ifo_queue'] = "Queues";
+$lang['lm_ifo_serv']  = "資源スピード";
+$lang['lm_ifo_game']  = "ゲームスピード";
+$lang['lm_ifo_fleet'] = "艦隊スピード";
+$lang['lm_ifo_queue'] = "艦隊の最大数";
 
 ?>
