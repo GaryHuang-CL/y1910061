@@ -42,40 +42,40 @@ $lang['gate_wait_data']  = "Error, no jumping data!";
 
 // ----------------------------------------------------------------------------------------------------------
 // Buildings Mines!
-$lang['info'][1]['name']          = "Metal Mine";
-$lang['info'][1]['description']   = "Metal is the primary resource used in the foundation of your Empire. At greater depths, the mines can produce more output of viable metal for use in the construction of buildings, ships, defense systems, and research. As the mines drill deeper, more energy is required for maximum production. As metal is the most abundant of all resources available, its value is considered to be the lowest of all resources for trading.";
-$lang['info'][2]['name']          = "Crystal Mine";
-$lang['info'][2]['description']   = "Crystals are the main resource used to build electronic circuits for computers and other electronic circuits and form certain alloy compounds for shields. Compared to the metal production process, the processing of raw crystalline structures into industrial crystals requires special processing. As such, more energy is required to process the raw crystal than needed for metal. Development of ships and buildings, and specialized research upgrades, require a certain quantity of crystals.";
-$lang['info'][3]['name']          = "Deuterium Synthesizer";
-$lang['info'][3]['description']   = "Deuterium is also called heavy hydrogen. It is a stable isotope of hydrogen with a natural abundance in the oceans of colonies of approximately one atom in 6500 of hydrogen (~154 PPM). Deuterium thus accounts for approximately 0.015% (on a weight basis, 0.030%) of all. Deuterium is processed by special synthesizers which can separate the water from the Deuterium using specially designed centrifuges. The upgrade of the synthesizer allows for increasing the amount of Deuterium deposits processed. Deuterium is used when carrying out sensor phalanx scans, viewing galaxies, as fuel for ships, and performing specialized research upgrades.";
+$lang['info'][1]['name']          = "メタル採掘所";
+$lang['info'][1]['description']   = "メタルは戦艦、建造物の建設に欠かせない重要な資源です。メタルは全ての資源の中で最も豊富なものですが、取引する上での価値は全ての資源の中で最も価値が低いです。採掘所がより深層部に到達するに応じて生産性は向上しますが、採掘にあたりより多くのエネルギー必要とします。";
+$lang['info'][2]['name']          = "クリスタル採掘所";
+$lang['info'][2]['description']   = "クリスタルは電子回路、一定の合金化合物の形成に使用される主な資源です。メタル製造工程に比べ、生粋のクリスタルから産業用クリスタルへの変換にはおよそ2倍のエネルギーが必要です。したがって取引する際クリスタルはより高価なものとなります。各機体、建造物にはある一定の量のクリスタルを必要としますが、適したクリスタルは希少で深層部で発見されます。より深層部のクリスタル採掘は高額となりますが、地表に近い部分に比べより多くのクリスタルの採掘が可能となります。";
+$lang['info'][3]['name']          = "デューテリウム シンセサイザー";
+$lang['info'][3]['description']   = "デューテリウムは重水素とも呼ばれ、深海で採掘されます。デューテリウム　シンセサイザーのアップグレード毎に、より多くのデューテリウムの採掘が可能となります。デューテリウムはセンサー軍団によるスキャン、銀河の表示、戦艦の燃料、リサーチレベルのアップグレードに使用されます。";
 
 // ----------------------------------------------------------------------------------------------------------
 // Buildings Energy!
-$lang['info'][4]['name']          = "Solar Plant";
-$lang['info'][4]['description']   = "Gigantic solar arrays are used to generate power for the mines and the deuterium synthesizer. As the solar plant is upgraded, the surface area of the photovoltaic cells covering the planet increases, resulting in a higher energy output across the power grids of your planet.";
-$lang['info'][12]['name']         = "Fusion Reactor";
-$lang['info'][12]['description']  = "In fusion power plants, hydrogen nuclei are fused into helium nuclei under enormous temperature and pressure, releasing tremendous amounts of energy. For each gram of Deuterium consumed, up to 41,32*10^-13 Joule of energy can be produced; with 1 g you are able to produce 172 MWh energy. <br>Larger reactor complexes use more deuterium and can produce more energy per hour. The energy effect could be increased by researching energy technology.<br>The energy production of the fusion plant is calculated like that:<br><br> 30 * [Level Fusion Plant] * (1,05 + [Level Energy Technology] * 0,01) ^ [Level Fusion Plant]";
+$lang['info'][4]['name']          = "ソーラー プラント";
+$lang['info'][4]['description']   = "巨大なソーラー プラントは採掘所、デューテリウム シンセサイザーのためのエネルギーを合成します。ソーラープラントのアップグレードにより、惑星の表面の太陽電池パネルの面積が上昇します。これにより多くのエネルギー合成が可能となります。ソーラープラントは惑星エネルギー供給の基本値を示します。";
+$lang['info'][12]['name']         = "核融合炉";
+$lang['info'][12]['description']  = "核融合炉では水素原子を膨大な圧力、高温によりヘリウム原子へ融合します。ヘリウム核は融合の結果、41.32*10^-13ジュールのエネルギーを放出します。(1グラムのデュートリウムから172 MWのエネルギーを生み出すことができます。)<br>核融合炉が大きいほど、更なるエネルギーを生成できます。<br>核融合炉のエネルギー生産の計算は次のようになっています:<br><br> 30 * [核融合炉のレベル] * (1,05 + [エネルギー技術のレベル] * 0,01) ^ [核融合炉のレベル]";
 
 // ----------------------------------------------------------------------------------------------------------
 // Buildings General!
-$lang['info'][14]['name']         = "Robotics Factory";
-$lang['info'][14]['description']  = "The Robotics Factory primary goal is the production of State of the Art construction robots. Each upgrade to the robotics factory results in the production of faster robots, which is used to reduce the time needed to construct buildings.";
-$lang['info'][15]['name']         = "Nanite Factory";
-$lang['info'][15]['description']  = "A nanomachine, also called a nanite, is a mechanical or electromechanical device whose dimensions are measured in nanometers (millionths of a millimeter, or units of 10^9 meter). The microscopic size of nanomachines translates into higher operational speed. This factory produces nanomachines that are the ultimate evolution in robotics technology. Once constructed, each upgrade significantly decreases production time for buildings, ships, and defensive structures.";
-$lang['info'][21]['name']         = "Shipyard";
-$lang['info'][21]['description']  = "The planetary shipyard is responsible for the construction of spacecraft and defensive mechanisms. As the shipyard is upgraded, it can produce a wider variety of vehicles at a much greater rate of speed. If a nanite factory is present on the planet, the speed at which ships are constructed is massively increased.";
-$lang['info'][22]['name']         = "Metal Storage";
-$lang['info'][22]['description']  = "This storage facility is used to store metal ore. Each level of upgrading increases the amount of metal ore that can be stored. If the storage capacity is exceeded, the metal mines are automatically shut down to prevent a catastrophic collapse in the metal mine shafts.";
-$lang['info'][23]['name']         = "Crystal Storage";
-$lang['info'][23]['description']  = "Raw crystal is stored in this building. With each level of upgrade, it increases the amount of crystal can be stored. Once the mines output exceeds the storage capacity, the crystal mines automatically shut down to prevent a collapse in the mines.";
-$lang['info'][24]['name']         = "Deuterium Tank";
-$lang['info'][24]['description']  = "The Deuterium tank is for storing newly-synthesized deuterium. Once it is processed by the synthesizer, it is piped into this tank for later use. With each upgrade of the tank, the total storage capacity is increased. Once the capacity is reached, the Deuterium Synthesizer is shut down to prevent the tanks rupture.";
-$lang['info'][31]['name']         = "Research Lab";
-$lang['info'][31]['description']  = "An essential part of any empire, Research Labs are where new technologies are discovered, an older technologies are improved upon. With each level of the Research Lab constructed, the speed in which new technologies are research is increased, while also unlocking newer technologies to research. In order to conduct research as quickly as possible, research scientists are immediately dispatched to the colony to begin work and development. In this way, knowledge about new technologies can easily be disseminated throughout the empire.";
-$lang['info'][33]['name']         = "Terraformer";
-$lang['info'][33]['description']  = "With the ever increasing mining of a colony, a problem arose. How can we continue to operate at a planets capacity and still survive? The land is being mined out and the atmosphere is deteriorating. Mining a colony to capacity can not only destroy the planet, but may kill all life on it. Scientists working feverishly discovered a method of creating enormous land masses using nanomachines. The Terraformer was born.<br><br> Once built, the Terraformer cannot be torn down.";
-$lang['info'][34]['name']         = "Alliance Depot";
-$lang['info'][34]['description']  = "The alliance depot supplies fuel to friendly fleets in orbit helping with defense. For each upgrade level of the alliance depot, 10,000 units of deuterium per hour can be sent to an orbiting fleet.";
+$lang['info'][14]['name']         = "ロボティクス 工場";
+$lang['info'][14]['description']  = "ロボティック工場は建造物の建設、建造物のアップグレードをするロボットを提供します。ロボティック工場の各アップグレードにより建設に使用されるロボティックユニット数、能率を向上し、建設時間の削減が可能となります。";
+$lang['info'][15]['name']         = "ナノマシン工場";
+$lang['info'][15]['description']  = "この工場では、ロボット工学技術における究極の発展型ロボットユニットを製造します。ナノマシンはネットワークを経由し並はずれた性能を発揮するナノメートルサイズのロボットです。一度リサーチされると、ナノマシンたちはあらゆる領域における生産性を向上します。ナノマシン工場により、各レベルにおける建造物、戦艦、防衛設備の建設時間が半分になります。";
+$lang['info'][21]['name']         = "造船所";
+$lang['info'][21]['description']  = "惑星造船所はスペースシップ、防衛システムの建設を行います。造船所のアップグレードにより様々な戦艦の製造をより早い期間で行うことができます。ナノマシン工場が存在している場合は、ユニット製造速度が格段に向上します。";
+$lang['info'][22]['name']         = "メタル貯蔵庫";
+$lang['info'][22]['description']  = "この建造物は採掘されたメタル鉱石のための巨大な貯蔵庫です。この建造物のアップグレードに伴い、より多くのメタル鉱石を貯蔵できます。メタル貯蔵庫の最大容量に達した時点で、それ以上のメタルを採掘することはできません。";
+$lang['info'][23]['name']         = "クリスタル貯蔵庫";
+$lang['info'][23]['description']  = "処理されていないクリスタルがこの建造物に格納されます。この建造物のアップグレードに伴い、クリスタルの貯蔵容量が向上します。クリスタル貯蔵庫の最大容量に達した時点で、それ以上のクリスタルを採掘することはできません。";
+$lang['info'][24]['name']         = "デューテリウム タンク";
+$lang['info'][24]['description']  = "この建造物は新しく抽出されたデューテリウムの貯蔵用に建設された巨大タンクです。デューテリウムは艦隊の建造に使用されるため、通常このデューテリウムタンクは造船所の付近に存在します。デューテリウムタンクのアップグレードに伴い、より多くのデューテリウムを貯蔵することができます。タンクの最大貯蔵容量に達した時点で、それ以上のデューテリウムを合成できません。";
+$lang['info'][31]['name']         = "リサーチセンター";
+$lang['info'][31]['description']  = "新しい領域の技術について研究するには、このリサーチセンターが必要です。リサーチセンターのアップグレードにより、新しい技術のリサーチ速度が向上するだけでなく、新しい領域の技術におけるリサーチの幅を広げることができます。可能な限り短い時間でリサーチを行うために、全てのリサーチ情報はリサーチ課題が開始された惑星に転送されます。リサーチ課題の完了次第、科学者たちは新しく研究された技術をホーム惑星に持ち帰ります。このように、容易に帝国中に新しい技術に関する知識を広めることができます。";
+$lang['info'][33]['name']         = "テラフォーマー";
+$lang['info'][33]['description']  = "惑星の開発の増大により、制限された居住面積は深刻な問題となります。高層建造物、地下工事などの伝統的な方法ではこの問題に対する十分な改善策にはなりません。高エネルギー物理学者、ナノ技術技術者たちはついに改善策を見つけました：それがテラフォーミング<br>莫大なエネルギー消費により、テラフォーマーは帯状の陸地だけでなく、大陸全体をも開墾することができます。この建造物では、特別に改良されたナノマシンの製造により、一定の品質の土壌を提供します。<br> 一度テラフォーマーが建設されると、取り壊すことができません。";
+$lang['info'][34]['name']         = "同盟補給基地";
+$lang['info'][34]['description']  = "同盟補給基地は軌道上の防御支援を行っている友好艦隊に燃料を供給します。同盟補給基地のそれぞれのアップグレードレベルにおいて、10,000ユニットのデューテリウム/時を軌道上の艦隊に送ることができます。";
 
 // ----------------------------------------------------------------------------------------------------------
 // Batiments Lune!
@@ -86,8 +86,8 @@ $lang['info'][42]['description']  = "Utilizing high-resolution sensors, the Sens
 $lang['info'][43]['name']         = "Jump Gate";
 $lang['info'][43]['description']  = "A Jump Gate is a system of giant transceivers capable of sending even the largest fleets to a receiving Gate anywhere in the universe without loss of time. Utilizing technology similar to that of a Worm Hole to achieve the jump, deuterium is not required. A recharge period of one hour must pass between jumps to allow for regeneration. Transporting resources through the Gate is not possible.";
 
-$lang['info'][44]['name']         = "Missile Silo";
-$lang['info'][44]['description']  = "When Earth destroyed itself in a full scale nuclear exchange back in the 21st century, the technology needed to build such weapons still existed in the universe. Scientists all over the universe worried about the threat of a nuclear bombardment from a rogue leader. So it was decided to use the same technology as a deterrent from launching such a horrible attack.<br><br> Missile silos are used to construct, store and launch interplanetary and anti-ballistic missiles. With each level of the silo, five interplanetary missiles or ten anti-ballistic missiles can be stored. Storage of both Interplanetary missiles and Anti-Ballistic missiles in the same silo is allowed.";
+$lang['info'][44]['name']         = "ミサイル塔";
+$lang['info'][44]['description']  = "ミサイル塔はミサイルの組立て、格納、発射に使用します。各開発レベルに応じて5発の星間ミサイル、または10発の抗弾道ミサイルが格納可能です。1発の星間ミサイルは2発分の抗弾道ミサイルと同じスペースが必要です。スペースに収まる範囲内であれば、異なるミサイルタイプを一度に格納することも可能です。";
 
 // ----------------------------------------------------------------------------------------------------------
 // Laboratory !

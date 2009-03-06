@@ -37,25 +37,25 @@ $lang['ov_pts_def']   				= '防衛';
 $lang['ov_pts_total'] 				= '合計';
 
 // Colony
-$lang['colony_abandon'] = 'Abandon colony';
-$lang['ov_rena_dele'] = 'Abandon and remove planet';
-$lang['functions'] = 'Functions';
-$lang['coords'] = 'Coordinates';
-$lang['your_planet'] = 'Your planet';
-$lang['deleteplanet'] = 'Delete planet!';
-$lang['security_query'] = 'Security Query';
-$lang['name'] = 'Name';
-$lang['namer'] = 'Name';
-$lang['password'] = 'Password';
-$lang['confirm_planet_delete'] = 'Do you wish to delete the planet';
-$lang['confirmed_with_password'] = 'Confirm with your password';
+$lang['colony_abandon'] 			= 'Abandon colony';
+$lang['ov_rena_dele'] 				= 'Abandon and remove planet';
+$lang['functions'] 					= 'Functions';
+$lang['coords'] 					= 'Coordinates';
+$lang['your_planet'] 				= 'Your planet';
+$lang['deleteplanet'] 				= 'Delete planet!';
+$lang['security_query'] 			= 'Security Query';
+$lang['name'] 						= 'Name';
+$lang['namer'] 						= 'Name';
+$lang['password'] 					= 'Password';
+$lang['confirm_planet_delete'] 		= 'Do you wish to delete the planet';
+$lang['confirmed_with_password'] 	= 'Confirm with your password';
 
 
 // Rename planet
 $lang['deletemessage_ok']    = "The planet was deleted";
 $lang['deletemessage_wrong'] = "The main planet cannot be deleted!";
 $lang['deletemessage_fail']  = "Incorrect password!";
-$lang['wrong_characters'] = 'You have entered an illegal chatacter. You can only use alfanumeric characters.';
+$lang['wrong_characters'] 	 = 'You have entered an illegal chatacter. You can only use alfanumeric characters.';
 $lang['error']  = 'Error';
 
 // Divers

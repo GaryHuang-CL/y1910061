@@ -24,6 +24,10 @@ function SendSimpleMessage ( $Owner, $Sender, $Time, $Type, $From, $Subject, $Me
 		$Time = time();
 	}
 
+	if ($Sender == '') {
+		$Sender = 0;
+	}
+
 	$QryInsertMessage  = "INSERT INTO {{table}} SET ";
 	$QryInsertMessage .= "`message_owner` = '". $Owner ."', ";
 	$QryInsertMessage .= "`message_sender` = '". $Sender ."', ";
