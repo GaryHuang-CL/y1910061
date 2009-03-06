@@ -495,6 +495,7 @@ switch ($mode) {
 			// Compteur de Membres en ligne
 			$OnlineUsers = doquery("SELECT COUNT(*) FROM {{table}} WHERE onlinetime>='" . (time()-15 * 60) . "'", 'users', 'true');
 			$parse['NumberMembersOnline'] = $OnlineUsers[0];
+			$parse['server_time'] = time() * 1000;
 
 			$page = parsetemplate(gettemplate('overview_body'), $parse);
 

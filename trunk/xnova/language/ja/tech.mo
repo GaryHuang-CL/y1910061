@@ -2,11 +2,11 @@
 
 $lang['Tech']         = "Technologies";
 $lang['Requirements'] = "Requirements";
-$lang['Metal']        = "Metal";
-$lang['Crystal']      = "Crystal";
-$lang['Deuterium']    = "Deuterium";
-$lang['Energy']       = "Energy";
-$lang['Message']      = "Message";
+$lang['Metal']        = "メタル";
+$lang['Crystal']      = "クリスタル";
+$lang['Deuterium']    = "デューテリウム";
+$lang['Energy']       = "エネルギー";
+$lang['Message']      = "メッセージ";
 $lang['level']        = "level";
 $lang['treeinfo']     = "[i]";
 $lang['comingsoon']   = "Coming Soon";

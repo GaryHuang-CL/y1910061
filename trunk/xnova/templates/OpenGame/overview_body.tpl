@@ -1,4 +1,9 @@
-<script language="JavaScript" type="text/javascript" src="scripts/time.js"></script>
+<script language="JavaScript" type="text/javascript">
+servertime = {server_time};
+loadtime = new Date();
+</script>
+<script language="JavaScript" type="text/javascript" src="/scripts/time.js">
+</script>
 <br>
 <table width="519">
 	<tr><td class="c" colspan="4"><a href="overview.php?mode=renameplanet" title="{Planet_menu}">{Planet} "{planet_name}"</a> ({user_username})</td></tr>
