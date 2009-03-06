@@ -30,18 +30,18 @@
 			<td class="header" align="center" width="140"><img src="{dpath}images/message.gif" border="0" height="22" width="42"></td>
 		</tr>
 		<tr class="header">
-			<td class="header" align="center" width="140"><i><b><font color="#ffffff">{Metal}</font></b></i></td>
-			<td class="header" align="center" width="140"><i><b><font color="#ffffff">{Crystal}</font></b></i></td>
-			<td class="header" align="center" width="140"><i><b><font color="#ffffff">{Deuterium}</font></b></i></td>
-			<td class="header" align="center" width="140"><i><b><font color="#ffffff">{Energy}</font></b></i></td>
-			<td class="header" align="center" width="140"><i><b><font color="#ffffff">{Message}</font></b></i></td>
+			<td class="header" align="center" width="140"><b><font color="#ffffff">{Metal}</font></b></td>
+			<td class="header" align="center" width="140"><b><font color="#ffffff">{Crystal}</font></b></td>
+			<td class="header" align="center" width="140"><b><font color="#ffffff">{Deuterium}</font></b></td>
+			<td class="header" align="center" width="140"><b><font color="#ffffff">{Energy}</font></b></td>
+			<td class="header" align="center" width="140"><b><font color="#ffffff">{Message}</font></b></td>
 		</tr>
 		<tr class="header">
-			<td class="header" align="center" width="140"><font>{metal}</font></td>
-			<td class="header" align="center" width="140"><font>{crystal}</font></td>
-			<td class="header" align="center" width="140"><font>{deuterium}</font></td>
-			<td class="header" align="center" width="140"><font>{energy}</font></td>
-			<td class="header" align="center" width="140"><font>{message}</font></td>
+			<td class="header" align="center" width="140">{metal}</td>
+			<td class="header" align="center" width="140">{crystal}</td>
+			<td class="header" align="center" width="140">{deuterium}</td>
+			<td class="header" align="center" width="140">{energy}</td>
+			<td class="header" align="center" width="140">{message}</td>
 		</tr>
 		</tbody>
 		</table>

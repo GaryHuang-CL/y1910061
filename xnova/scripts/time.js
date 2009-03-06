@@ -1,5 +1,15 @@
 function HeureCheck()
 {
+// src="time.js"
+	now = new Date();
+	delta = now.getTime() - loadtime.getTime();
+	now.setTime(servertime + delta);
+	document.getElementById("dateheure").innerHTML = now.toLocaleString();
+	setTimeout("HeureCheck()", 1000);
+}
+
+function HeureCheck_old()
+{
 krucial = new Date;
 heure = krucial.getHours();
 min = krucial.getMinutes();
@@ -31,5 +41,3 @@ tempo = setTimeout("HeureCheck()", 1000)
 }
 window.onload = HeureCheck;
 
-//Script r�alis� par Max485 membre de XNova
-//Message de Tom : La flemme d'en faire un mieux ^^
