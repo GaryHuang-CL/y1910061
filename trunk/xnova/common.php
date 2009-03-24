@@ -103,7 +103,8 @@ if (INSTALL != true) {
 
 		CheckPlanetUsedFields($planetrow);
 		
-		date_default_timezone_set($user['timezone']);		
+		date_default_timezone_set($user['timezone']);
+		
 	} else {
 		$dpath     = "../" . DEFAULT_SKINPATH;
 	}

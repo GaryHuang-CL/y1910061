@@ -63,19 +63,23 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 				default:
 					break;
 			} // switch
+			
+			PlanetResourceUpdate ( $CurrentUser, $CurrentPlanet, time() );
+			SetNextQueueElementOnTop ( $CurrentPlanet, $CurrentUser );
+			
+			BuildingSavePlanetRecord ( $CurrentPlanet );
+			
 		} elseif ($bThisIsCheated == true) {
 			ResetThisFuckingCheater ( $CurrentUser['id'] );
 		}
 	}
 
-	SetNextQueueElementOnTop ( $CurrentPlanet, $CurrentUser );
-
 	$Queue = ShowBuildingQueue ( $CurrentPlanet, $CurrentUser );
 
 	// Record what has changed in planet!
-	BuildingSavePlanetRecord ( $CurrentPlanet );
+	// BuildingSavePlanetRecord ( $CurrentPlanet );
 	// Record what has been any changes in users
-	BuildingSaveUserRecord ( $CurrentUser );
+	// BuildingSaveUserRecord ( $CurrentUser );
 
 	if ($Queue['lenght'] < MAX_BUILDING_QUEUE_SIZE) {
 		$CanBuildElement = true;
