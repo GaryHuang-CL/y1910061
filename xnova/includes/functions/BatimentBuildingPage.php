@@ -10,8 +10,6 @@
 function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 	global $lang, $resource, $reslist, $phpEx, $dpath, $game_config, $_GET;
 
-	CheckPlanetUsedFields ( $CurrentPlanet );
-
 	// Tables of buildings by type of possible planet
 	$Allowed['1'] = array(  1,  2,  3,  4, 12, 14, 15, 21, 22, 23, 24, 31, 33, 34, 44);
 	$Allowed['3'] = array( 12, 14, 21, 22, 23, 24, 34, 41, 42, 43);
@@ -22,9 +20,10 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 		$bThisIsCheated = false;
 		$bDoItNow       = false;
 		$TheCommand     = $_GET['cmd'];
-		$Element        = $_GET['building'];
 		//$ListID       = $_GET['listid'];
-		if       ( isset ( $Element )) {
+
+		if ( isset ( $_GET['building'] )) {
+			$Element    = $_GET['building'];
 			if ( !strchr ( $Element, " ") ) {
 				if ( !strchr ( $Element, ",") ) {
 					if (in_array( trim($Element), $Allowed[$CurrentPlanet['planet_type']])) {
@@ -42,6 +41,11 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 			$bDoItNow = true;
 		}
 		if ($bDoItNow == true) {
+			
+			begin_transaction();
+			
+			$CurrentPlanet = doquery("SELECT * FROM {{table}} WHERE `id` = '".$CurrentPlanet['id']."' FOR UPDATE;", 'planets', true);
+			
 			switch($TheCommand){
 				case 'cancel':
 					// Interrompre le premier batiment de la queue
@@ -69,11 +73,15 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 			
 			BuildingSavePlanetRecord ( $CurrentPlanet );
 			
+			commit();
+			
 		} elseif ($bThisIsCheated == true) {
 			ResetThisFuckingCheater ( $CurrentUser['id'] );
 		}
 	}
 
+	CheckPlanetUsedFields ( $CurrentPlanet );
+	
 	$Queue = ShowBuildingQueue ( $CurrentPlanet, $CurrentUser );
 
 	// Record what has changed in planet!
