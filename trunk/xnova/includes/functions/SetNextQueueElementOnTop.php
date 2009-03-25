@@ -84,7 +84,7 @@ function SetNextQueueElementOnTop ( &$CurrentPlanet, $CurrentUser ) {
 		// Ecriture de la mise a jour dans la BDD
 		$CurrentPlanet['b_building']    = $BuildEndTime;
 		$CurrentPlanet['b_building_id'] = $NewQueue;
-
+/*
 		$QryUpdatePlanet  = "UPDATE {{table}} SET ";
 		$QryUpdatePlanet .= "`metal` = '".         $CurrentPlanet['metal']         ."' , ";
 		$QryUpdatePlanet .= "`crystal` = '".       $CurrentPlanet['crystal']       ."' , ";
@@ -94,7 +94,7 @@ function SetNextQueueElementOnTop ( &$CurrentPlanet, $CurrentUser ) {
 		$QryUpdatePlanet .= "WHERE ";
 		$QryUpdatePlanet .= "`id` = '" .           $CurrentPlanet['id']            . "';";
 		doquery( $QryUpdatePlanet, 'planets');
-
+*/
 	}
 
 	return;
