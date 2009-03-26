@@ -9,26 +9,35 @@
 
 function UpdatePlanetBatimentQueueList ( &$CurrentPlanet, &$CurrentUser ) {
 	$RetValue = false;
-	if ( $CurrentPlanet['b_building_id'] != 0 ) {
+	$now = time();
+	
+	if ( $CurrentPlanet['b_building_id'] != 0 && $CurrentPlanet['b_building'] <= $now) {
+		begin_transaction();
+		
+		$CurrentPlanet = doquery("SELECT * FROM {{table}} WHERE `id` = '".$CurrentPlanet['id']."' FOR UPDATE;", 'planets', true);
+		
 		while ( $CurrentPlanet['b_building_id'] != 0 ) {
-			if ( $CurrentPlanet['b_building'] <= time() ) {
+			assert($CurrentPlanet['b_building']);
+			if ( $CurrentPlanet['b_building'] <= $now ) {
 				PlanetResourceUpdate ( $CurrentUser, $CurrentPlanet, $CurrentPlanet['b_building'], false );
-				$IsDone = CheckPlanetBuildingQueue( $CurrentPlanet, $CurrentUser );
+				
+				/*$IsDone =*/
+				CheckPlanetBuildingQueue( $CurrentPlanet, $CurrentUser );
+/*
 				if ( $IsDone == true ) {
 					SetNextQueueElementOnTop ( $CurrentPlanet, $CurrentUser );
+					BuildingSavePlanetRecord ( $CurrentPlanet );
 				}
+*/
 			} else {
 				$RetValue = true;
 				break;
 			}
 		}
+		
+		commit();
 	}
 	return $RetValue;
 }
-
-// Revision History
-// - 1.0 Mise en module initiale
-// - 1.1 Mise a jour des ressources sur la planete verifiée (pour prendre en compte les ressources produites
-//       pendant la construction et avant l'evolution evantuel d'une mine ou d'en batiment
 
 ?>

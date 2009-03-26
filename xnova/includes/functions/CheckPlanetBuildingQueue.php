@@ -95,29 +95,38 @@ function CheckPlanetBuildingQueue ( &$CurrentPlanet, &$CurrentUser ) {
 			$CurrentPlanet['field_current'] = $current;
 			$CurrentPlanet['field_max']     = $max;
 
+			SetNextQueueElementOnTop ( $CurrentPlanet, $CurrentUser );
+			
 			$QryUpdatePlanet  = "UPDATE {{table}} SET ";
 			$QryUpdatePlanet .= "`".$resource[$Element]."` = '".$CurrentPlanet[$resource[$Element]]."', ";
 			// Mise a 0 de l'heure de fin de construction ...
 			// Ca va activer la mise en place du batiment suivant de la queue
-			$QryUpdatePlanet .= "`b_building` = '". $CurrentPlanet['b_building'] ."' , ";
+			$QryUpdatePlanet .= "`b_building` = '".    $CurrentPlanet['b_building']    ."' , ";
 			$QryUpdatePlanet .= "`b_building_id` = '". $CurrentPlanet['b_building_id'] ."' , ";
-			$QryUpdatePlanet .= "`field_current` = '" . $CurrentPlanet['field_current'] . "', ";
-			$QryUpdatePlanet .= "`field_max` = '" . $CurrentPlanet['field_max'] . "' ";
+			$QryUpdatePlanet .= "`field_current` = '" .$CurrentPlanet['field_current'] ."' , ";
+			$QryUpdatePlanet .= "`field_max` = '" .    $CurrentPlanet['field_max']     ."' , ";
+			$QryUpdatePlanet .= "`metal` = '".         $CurrentPlanet['metal']         ."' , ";
+			$QryUpdatePlanet .= "`crystal` = '".       $CurrentPlanet['crystal']       ."' , ";
+			$QryUpdatePlanet .= "`deuterium` = '".     $CurrentPlanet['deuterium']     ."' , ";
+			$QryUpdatePlanet .= "`last_update` = '".   $CurrentPlanet['last_update']   ."'   ";
 			$QryUpdatePlanet .= "WHERE ";
 			$QryUpdatePlanet .= "`id` = '" . $CurrentPlanet['id'] . "';";
 			doquery( $QryUpdatePlanet, 'planets');
 
+			/*
 			$QryUpdateUser    = "UPDATE {{table}} SET ";
 			$QryUpdateUser   .= "`xpminier` = '".$CurrentUser['xpminier']."' ";
 			$QryUpdateUser   .= "WHERE ";
 			$QryUpdateUser   .= "`id` = '" . $CurrentUser['id'] . "';";
 			doquery( $QryUpdateUser, 'users');
-
+			*/
+			
 			$RetValue = true;
 		} else {
 			$RetValue = false;
 		}
 	} else {
+		assert(false);
 		$CurrentPlanet['b_building']    = 0;
 		$CurrentPlanet['b_building_id'] = 0;
 
