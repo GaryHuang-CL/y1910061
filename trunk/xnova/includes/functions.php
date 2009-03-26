@@ -170,4 +170,23 @@ function CalculateMaxPlanetFields (&$planet) {
 	return $planet["field_max"] + ($planet[ $resource[33] ] * 5);
 }
 
+function HandleEventQueue()
+{
+	$lockname = "HandleEventQueue";
+	
+	if(!get_lock($lockname)) return;
+	
+	$now = time();
+	
+	$planets = doquery("SELECT * FROM {{table}} WHERE b_building > 0 AND b_building < $now ORDER BY b_building LIMIT 5", 'planets');
+	while ($planetrow = mysql_fetch_array($planets)) {
+		$userid = $planetrow['id_owner'];
+		$user = doquery("SELECT * FROM {{table}} WHERE id = $userid", 'users', true);
+		
+		UpdatePlanetBatimentQueueList ( $planetrow, $user );
+	}
+	
+	release_lock($lockname);
+}
+
 ?>

@@ -17,17 +17,31 @@ function connect()
 function begin_transaction()
 {
 	connect();
-	mysql_query("begin") or $debug->error(mysql_error()."<br />$query","SQL Error");
+	@mysql_query("begin") or $debug->error(mysql_error()."<br />$query","SQL Error");
 }
 
 function commit()
 {
-	mysql_query("commit") or $debug->error(mysql_error()."<br />$query","SQL Error");
+	@mysql_query("commit") or $debug->error(mysql_error()."<br />$query","SQL Error");
 }
 
 function rollback()
 {
-	mysql_query("rollback") or $debug->error(mysql_error()."<br />$query","SQL Error");
+	@mysql_query("rollback") or $debug->error(mysql_error()."<br />$query","SQL Error");
+}
+
+function get_lock($lock)
+{
+	$sqlquery = @mysql_query("SELECT GET_LOCK('$lock', 0) AS mutex") or $debug->error(mysql_error()."<br />GET_LOCK","SQL Error");
+	
+	$row = mysql_fetch_array($sqlquery);
+	
+	return $row['mutex'];
+}
+
+function release_lock($lock)
+{
+	@mysql_query("SELECT RELEASE_LOCK('$lock')") or $debug->error(mysql_error()."<br />RELEASE_LOCK","SQL Error");
 }
 
 function doquery($query, $table, $fetch = false){

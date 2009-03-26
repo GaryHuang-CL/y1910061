@@ -41,7 +41,9 @@ if (INSTALL != true) {
     while ( $row = mysql_fetch_assoc($query) ) {
 	    $game_config[$row['config_name']] = $row['config_value'];
     }
-
+	
+    HandleEventQueue();
+    
 	if (!isset($InLogin) || $InLogin != true) {
 		$Result        = CheckTheUser ( $IsUserChecked );
 		$IsUserChecked = $Result['state'];

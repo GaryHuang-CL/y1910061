@@ -17,7 +17,7 @@ include($xnova_root_path . 'common.' . $phpEx);
 includeLang('buildings');
 
 // 	Updating the list of construction if necessary
-UpdatePlanetBatimentQueueList ( $planetrow, $user );
+// UpdatePlanetBatimentQueueList ( $planetrow, $user );
 $IsWorking = HandleTechnologieBuild ( $planetrow, $user );
 
 $_GET['mode'] = isset($_GET['mode']) ? $_GET['mode'] : "";
