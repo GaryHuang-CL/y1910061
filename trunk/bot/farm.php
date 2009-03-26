@@ -67,7 +67,7 @@
 		echo "$curr_clubs clubs, $curr_axes axes, $curr_tks tks availabe.\n";
 		
 		// Get a target
-		$sql = "SELECT x, y, `raid`, `score` FROM `targets` WHERE `village` = $village and `invalid` = 0 and NOW() > date_add(`timestamp`, INTERVAL (`interval` * 80) MINUTE) order by date_add(`timestamp`, INTERVAL (`interval` * 80) MINUTE) limit 1";
+		$sql = "SELECT x, y, `raid`, `score`, `player` FROM `targets` WHERE `village` = $village and `invalid` = 0 and NOW() > date_add(`timestamp`, INTERVAL (`interval` * 80) MINUTE) order by date_add(`timestamp`, INTERVAL (`interval` * 80) MINUTE) limit 1";
 		
 		$res = mysql_query($sql);
 		if(!$res) die(mysql_error());
@@ -82,6 +82,7 @@
 		$target_y = $row[1];
 		$raid     = $row[2];
 		$score_str= $row[3];
+		$player   = $row[4];
 		
 		$score = calc_score($score_str);
 		
@@ -140,7 +141,7 @@
 		$sql = "update `targets` set `timestamp` = now() where x = " . $target_x . " and y = " . $target_y;
 		mysql_query($sql);
 
-		if(attack_func($target_x, $target_y, $clubs, $axes, $tks, '', '', '', $result)){
+		if(attack_func($target_x, $target_y, $clubs, $axes, $tks, '', '', '', $result, $player)){
 			return ($curr_clubs - intval($clubs) >= $old_min_clubs ||
 				    $curr_axes - intval($axes) >= $old_min_clubs ||
 				    $curr_tks - intval($tks) >= $old_min_clubs);

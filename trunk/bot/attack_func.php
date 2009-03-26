@@ -17,7 +17,7 @@
 	
 	// t1: club, t3: axe, t6: tk, t11: hero
 	// t8: catapult t7:ram
-	function attack_func($target_x, $target_y, $t1, $t3, $t6, $t7, $t8, $t11, $result)
+	function attack_func($target_x, $target_y, $t1, $t3, $t6, $t7, $t8, $t11, $result, $target_player = "")
 	{
 		global $server;
 		
@@ -137,6 +137,21 @@
 			
 			$t11 = $matches[1];
 			// echo "t11 = " . $t11 . "\n";
+
+			if($target_player){
+				// <td class="s7"><a href="spieler.php?uid=11783">Vinsfeld</a></td></tr>
+				$ret = preg_match('#<td class="s7"><a href="spieler\.php\?uid=[0-9]+">([^<]+)</a></td></tr>#', $result, $matches);
+				if(!$ret) die("get player failed.");
+				
+				$player = $matches[1];
+				if($player != $target_player){
+					echo "Error: player changed.\n";
+					$sql = "update `targets` set `invalid` = 1, `invalid_msg` = '名義変更' where x = " . $target_x . " and y = " . $target_y;
+					if(!mysql_query($sql)) die(mysql_error());
+					return false;
+				}
+			}
+
 
 			// id=39&a=5941&c=3&kid=322334&t1=1&t2=0&t3=0&t4=0&t5=0&t6=0&t7=0&t8=0&t9=0&t10=0&t11=0&s1.x=&s1.y=&s1=ok
 			$postfields = 'id=' . $id . '&a=' . $a . '&c=' . $c . '&kid=' . $kid . '&t1=' . $t1 . '&t2=0&t3=' . $t3 . '&t4=0&t5=0&t6=' . $t6 . '&t7=' . $t7 . '&t8=' . $t8 . '&t9=0&t10=0'
