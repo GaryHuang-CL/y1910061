@@ -86,3 +86,20 @@
 [16-Jan-2009 06:15:02] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
 [16-Jan-2009 06:15:02] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
 [16-Jan-2009 06:15:02] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[03-Feb-2009 23:19:52] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'y1910061_travian'@'75.126.146.196' (using password: YES) in /home/y1910061/public_html/y1910061/db.php on line 2
+[03-Feb-2009 23:22:08] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'y1910061_travian'@'75.126.146.196' (using password: YES) in /home/y1910061/public_html/y1910061/db.php on line 2
+[03-Feb-2009 23:22:10] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'y1910061_travian'@'75.126.146.196' (using password: YES) in /home/y1910061/public_html/y1910061/db.php on line 2
+[03-Feb-2009 23:22:33] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'y1910061_travian'@'75.126.146.196' (using password: YES) in /home/y1910061/public_html/y1910061/db.php on line 2
+[03-Feb-2009 23:22:35] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'y1910061_travian'@'75.126.146.196' (using password: YES) in /home/y1910061/public_html/y1910061/db.php on line 2
+[04-Feb-2009 00:35:06] PHP Warning:  unlink(/home/y1910061/public_html/y1910061/map.sql): No such file or directory in /home/y1910061/public_html/y1910061/world.php on line 9
+[06-Feb-2009 00:45:10] PHP Parse error:  syntax error, unexpected T_EXIT in /home/y1910061/public_html/y1910061/viewpop.php on line 25
+[06-Feb-2009 21:06:29] PHP Parse error:  syntax error, unexpected ')' in /home/y1910061/public_html/y1910061/viewpop.php on line 55
+[09-Feb-2009 01:52:23] PHP Parse error:  syntax error, unexpected '[', expecting ']' in /home/y1910061/public_html/y1910061/all-reports.php on line 28
+[10-Feb-2009 21:05:05] PHP Notice:  Undefined variable: cart_capaciy in /home/y1910061/public_html/y1910061/transfer.php on line 486
+[10-Feb-2009 22:18:19] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/y1910061/public_html/y1910061/viewpop.php on line 59
+[10-Feb-2009 22:40:09] PHP Parse error:  syntax error, unexpected '[' in /home/y1910061/public_html/y1910061/viewpop.php on line 96
+[12-Feb-2009 16:47:59] PHP Warning:  mysql_connect(): Host '75.126.146.196' is not allowed to connect to this MySQL server in /home/y1910061/public_html/y1910061/db.php on line 2
+[12-Feb-2009 16:47:59] PHP Warning:  mysql_query(): Access denied for user 'y1910061'@'localhost' (using password: NO) in /home/y1910061/public_html/y1910061/cron_one.php on line 5
+[12-Feb-2009 16:47:59] PHP Warning:  mysql_query(): A link to the server could not be established in /home/y1910061/public_html/y1910061/cron_one.php on line 5
+[16-Feb-2009 00:35:22] PHP Warning:  unlink(/home/y1910061/public_html/y1910061/map.sql): No such file or directory in /home/y1910061/public_html/y1910061/world.php on line 13
+[24-Feb-2009 00:30:03] PHP Warning:  unlink(/home/y1910061/public_html/y1910061/map.sql): No such file or directory in /home/y1910061/public_html/y1910061/world.php on line 13
