@@ -19,7 +19,7 @@
 		curl_close ($ch);
 
 		// check if need login
-		$ret = preg_match('/statistiken\.php/', $result);
+		$ret = (preg_match('/statistiken\.php/', $result) && preg_match('#<td id=l4 title=[0-9]+>[0-9]+/[0-9]+</td>#', $result));
 		
 		//echo $result;
 		
