@@ -176,14 +176,18 @@ function HandleEventQueue()
 	
 	if(!get_lock($lockname)) return;
 	
-	$now = time();
-	
-	$planets = doquery("SELECT * FROM {{table}} WHERE b_building > 0 AND b_building < $now ORDER BY b_building LIMIT 5", 'planets');
-	while ($planetrow = mysql_fetch_array($planets)) {
-		$userid = $planetrow['id_owner'];
-		$user = doquery("SELECT * FROM {{table}} WHERE id = $userid", 'users', true);
+	$events = doquery("SELECT * FROM event_queue ORDER BY due_time LIMIT 5", 'NOTABLE');
+	while ($event = mysql_fetch_array($events)) {
 		
-		UpdatePlanetBatimentQueueList ( $planetrow, $user );
+		switch($event['type']){
+			case "building":
+				UpdatePlanetBatimentQueueList ( $event['id'] );
+				break;
+			case "tech":
+				break;
+			default:
+				assert(false);
+		}
 	}
 	
 	release_lock($lockname);
