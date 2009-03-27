@@ -7,37 +7,26 @@
  * @copyright 2008 By Chlorel for XNova
  */
 
-function UpdatePlanetBatimentQueueList ( &$CurrentPlanet, &$CurrentUser ) {
+//function UpdatePlanetBatimentQueueList ( &$CurrentPlanet, &$CurrentUser ) {
+function UpdatePlanetBatimentQueueList ( $planetid ) {
 	$RetValue = false;
 	$now = time();
 	
-	if ( $CurrentPlanet['b_building_id'] != 0 && $CurrentPlanet['b_building'] <= $now) {
-		begin_transaction();
-		
-		$CurrentPlanet = doquery("SELECT * FROM {{table}} WHERE `id` = '".$CurrentPlanet['id']."' FOR UPDATE;", 'planets', true);
-		
-		while ( $CurrentPlanet['b_building_id'] != 0 ) {
-			assert($CurrentPlanet['b_building']);
-			if ( $CurrentPlanet['b_building'] <= $now ) {
-				PlanetResourceUpdate ( $CurrentUser, $CurrentPlanet, $CurrentPlanet['b_building'], false );
-				
-				/*$IsDone =*/
-				CheckPlanetBuildingQueue( $CurrentPlanet, $CurrentUser );
-/*
-				if ( $IsDone == true ) {
-					SetNextQueueElementOnTop ( $CurrentPlanet, $CurrentUser );
-					BuildingSavePlanetRecord ( $CurrentPlanet );
-				}
-*/
-			} else {
-				$RetValue = true;
-				break;
-			}
-		}
-		
-		commit();
+	begin_transaction();
+	
+	$CurrentPlanet = doquery("SELECT * FROM {{table}} WHERE `id` = '" . $planetid . "' FOR UPDATE", 'planets', true);
+	if(!$CurrentPlanet || $CurrentPlanet['b_building'] == 0 || $CurrentPlanet['b_building'] > $now){
+		rollback();
+		return false;
 	}
-	return $RetValue;
+	
+	$CurrentUser = doquery("SELECT * FROM {{table}} WHERE `id` = '" . $CurrentPlanet['id_owner'] ."' LOCK IN SHARE MODE", 'users', true);
+	if(!$CurrentUser) return false;
+	
+	PlanetResourceUpdate ( $CurrentUser, $CurrentPlanet, $CurrentPlanet['b_building'], false );			
+	CheckPlanetBuildingQueue( $CurrentPlanet, $CurrentUser );
+	
+	commit();
 }
 
 ?>

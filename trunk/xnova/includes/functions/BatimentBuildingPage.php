@@ -81,7 +81,8 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 	}
 
 	CheckPlanetUsedFields ( $CurrentPlanet );
-	
+	PlanetResourceUpdate ( $CurrentUser, $CurrentPlanet, time() );
+		
 	$Queue = ShowBuildingQueue ( $CurrentPlanet, $CurrentUser );
 
 	// Record what has changed in planet!

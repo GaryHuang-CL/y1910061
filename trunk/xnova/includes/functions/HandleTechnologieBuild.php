@@ -20,6 +20,7 @@ function HandleTechnologieBuild ( &$CurrentPlanet, &$CurrentUser ) {
 	global $resource;
 
 	if ($CurrentUser['b_tech_planet'] != 0) {
+
 		// Y a une technologie en cours sur une de mes colonies
 		if ($CurrentUser['b_tech_planet'] != $CurrentPlanet['id']) {
 			// Et ce n'est pas sur celle ci !!
@@ -32,8 +33,28 @@ function HandleTechnologieBuild ( &$CurrentPlanet, &$CurrentUser ) {
 			$ThePlanet = $CurrentPlanet;
 		}
 
-		if ($ThePlanet['b_tech']    <= time() &&
+		$now = time();
+		
+		if ($ThePlanet['b_tech']    <= $now &&
 			$ThePlanet['b_tech_id'] != 0) {
+				
+			begin_transaction();
+			
+			$Me = doquery("SELECT * FROM {{table}} WHERE `id` = '". $CurrentUser['id'] ."' FOR UPDATE", 'users', true);
+			if ($Me['b_tech_planet'] == $CurrentUser['b_tech_planet']) {
+				$Result['WorkOn'] = "";
+				$Result['OnWork'] = false;
+				return $Result;				
+			}
+			
+			$ThePlanet = doquery("SELECT * FROM {{table}} WHERE `id` = '". $ThePlanet['id'] ."' FOR UPDATE", 'planets', true);
+
+			if ($ThePlanet['b_tech'] > $now || $ThePlanet['b_tech_id'] == 0) {
+				$Result['WorkOn'] = $ThePlanet;
+				$Result['OnWork'] = true;
+				return $Result;
+			}
+			
 			// La recherche en cours est terminée ...
 			$CurrentUser[$resource[$ThePlanet['b_tech_id']]]++;
 			// Mise a jour de la planete sur laquelle la technologie a été recherchée
@@ -60,8 +81,11 @@ function HandleTechnologieBuild ( &$CurrentPlanet, &$CurrentUser ) {
 			}
 			$Result['WorkOn'] = "";
 			$Result['OnWork'] = false;
-
+			
+			commit();
+			
 		} elseif ($ThePlanet["b_tech_id"] == 0) {
+			assert(false);
 			// Il n'y a rien a l'ouest ...
 			// Pas de Technologie en cours devait y avoir un bug lors de la derniere connexion
 			// On met l'enregistrement informant d'une techno en cours de recherche a jours

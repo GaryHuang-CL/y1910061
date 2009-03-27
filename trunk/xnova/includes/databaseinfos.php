@@ -553,4 +553,14 @@ $QryTableMulti      .= "`reason` text  NOT NULL, ";
 $QryTableMulti      .= "PRIMARY KEY  (`id`) ";
 $QryTableMulti      .= ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
+// EventQueue View
+$QryViewEventQueue  = "CREATE OR REPLACE VIEW event_queue AS ";
+$QryViewEventQueue .= "SELECT id, 'building' AS `type`, b_building AS `due_time` "; 
+$QryViewEventQueue .= "FROM game_planets ";
+$QryViewEventQueue .= "WHERE b_building > 0 AND b_building < UNIX_TIMESTAMP() ";
+$QryViewEventQueue .= "UNION ALL ";
+$QryViewEventQueue .= "SELECT id, 'tech' AS `type`, b_tech AS `due_time` "; 
+$QryViewEventQueue .= "FROM game_planets "; 
+$QryViewEventQueue .= "WHERE b_tech > 0 AND b_tech < UNIX_TIMESTAMP() ";
+
 ?>
