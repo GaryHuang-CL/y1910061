@@ -136,7 +136,7 @@
 
 				if($server == "s3.travian.jp" && $user == "3x3x3"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.2){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 55);
@@ -154,7 +154,7 @@
 
 				}else if($server == "s3.travian.jp" && $user == "inblackhole"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.2){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 55);
@@ -171,7 +171,7 @@
 					
 				}else if($server == "s3.travian.jp" && $user == "papurica731"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.2){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 160);
@@ -193,7 +193,7 @@
 
 				}else if($server == "s3.travian.jp" && $user == "docomo2"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.2){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 160);
@@ -210,7 +210,7 @@
 
 				}else if($server == "s3.travian.jp" && $user == "Kimon"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.2){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 160);
