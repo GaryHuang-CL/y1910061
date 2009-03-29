@@ -267,6 +267,8 @@
 					}
 
 					read_self_attack_reports();
+					
+					destroy_building($village, 34);
 				}
 			}else {
 				
