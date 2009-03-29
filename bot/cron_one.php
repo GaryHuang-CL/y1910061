@@ -39,7 +39,7 @@
 	require_once('army.php');
 	require_once('read-reports.php');
 	
-	$sql = "select server, user, password, race, main_village, last_report, beacon, message, busy from accounts where id = $account";
+	$sql = "select server, user, password, race, main_village, last_report, beacon, message, busy, redundant_resource from accounts where id = $account";
 	$res = mysql_query($sql);
 	if(!$res) die(mysql_error());
 	$row = mysql_fetch_row($res);
@@ -54,7 +54,8 @@
 	$beacon       = $row[6];
 	$message      = $row[7];
 	$busy         = $row[8];
-
+	$redundant_resource = $row[9];
+	
 	if($busy == 1){
 		echo "BUSY !!!!\n";
 		exit();

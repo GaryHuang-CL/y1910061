@@ -475,18 +475,58 @@
 	// sell 1 carts resource for crops
 	function sell_for_crop($ratio, $reserve, $reserve_carts)
 	{
-		global $wood, $brick, $iron, $cart_capacity;
+		global $wood, $brick, $iron, $cart_capacity, $redundant_resource;
 		
-		if($wood >= $brick && $wood >= $iron && $wood >= $reserve + $cart_capacity)
+		if($redundant_resource == 0){
+			if($wood >= $brick && $wood >= $iron && $wood >= $reserve + $cart_capacity)
+				$x = 1;
+			
+			else if($brick >= $wood && $brick >= $iron && $brick >= $reserve + $cart_capacity)
+				$x = 2;
+
+			else if($iron >= $wood && $iron >= $brick && $iron >= $reserve + $cart_capacity)
+				$x = 3;
+			
+			else return;
+
+		}else if($redundant_resource == 1 && $wood >= $reserve + $cart_capacity){
 			$x = 1;
-		
-		else if($brick >= $wood && $brick >= $iron && $brick >= $reserve + $cart_capacity)
+
+		}else if($redundant_resource == 2 && $brick >= $reserve + $cart_capacity){
 			$x = 2;
 
-		else if($iron >= $wood && $iron >= $brick && $iron >= $reserve + $cart_capacity)
+		}else if($redundant_resource == 3 && $iron >= $reserve + $cart_capacity){
 			$x = 3;
-		
-		else return;
+
+		}else if($redundant_resource == 4){
+			if($wood >= $brick && $wood >= $reserve + $cart_capacity)
+				$x = 1;
+			
+			else if($brick >= $wood && $brick >= $reserve + $cart_capacity)
+				$x = 2;
+			
+			else return;
+
+		}else if($redundant_resource == 5){
+			if($wood >= $iron && $wood >= $reserve + $cart_capacity)
+				$x = 1;
+			
+			else if($iron >= $wood && $iron >= $reserve + $cart_capacity)
+				$x = 3;
+			
+			else return;
+
+		}else if($redundant_resource == 6){
+
+			if($brick >= $iron && $brick >= $reserve + $cart_capacity)
+				$x = 2;
+			
+			else if($iron >= $brick && $iron >= $reserve + $cart_capacity)
+				$x = 3;
+			
+			else return;
+
+		}else return;
 		
 		sell($cart_capacity, $x, $cart_capacity * $ratio, 4, $reserve_carts, $reserve);
 
