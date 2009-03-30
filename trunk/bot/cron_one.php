@@ -266,9 +266,9 @@
 						avoid_attack_teutonic(95, 29);
 					}
 
-					read_self_attack_reports();
+					// read_self_attack_reports();
 					
-					destroy_building($village, 34);
+					// destroy_building($village, 34);
 				}
 			}else {
 				
@@ -305,5 +305,9 @@
 	}
 	
 	delete_self_trade_reports();
+	
+	if($server == "s3.travian.jp" && $user == "Hömeless"){
+		read_self_attack_reports();
+	}
 	read_ally_reports();
 ?>
