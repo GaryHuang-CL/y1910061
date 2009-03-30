@@ -257,7 +257,7 @@
 					}
 
 					if($crop > $granary_capacity * 0.9){
-						sell(1000, 4, 1000, rand(1, 2), 4, 1000);
+						sell(1000, 4, 2000, rand(1, 3), 4, 200000);
 					}
 
 					attack_and_farm_loop($village, $attack_time_left);
