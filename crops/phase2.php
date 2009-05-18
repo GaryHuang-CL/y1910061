@@ -39,6 +39,7 @@
 	}
 	
 	$x_range = intval($argv[1]);
+	sleep(($x_range + 400) / 2);
 	
 	$sql = "select x, y, d, c from crop_crawler where x >= $x_range and x < $x_range + 100 and crops is null and trim(oasis) = ''";
 	$res = mysql_query($sql);
