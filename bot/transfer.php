@@ -57,7 +57,7 @@
 		$t1 = min($r1, round($r1 * $ratio));
 		$t2 = min($r2, round($r2 * $ratio));
 		$t3 = min($r3, round($r3 * $ratio));
-		$t4 = min($r4, $total - $t1 - $t2 - $t3);
+		$t4 = max(0, min($r4, $total - $t1 - $t2 - $t3));
 
 		return array($t1, $t2, $t3, $t4);
 
@@ -384,13 +384,14 @@
 		
 		
 		// <input type="hidden" name="id" value="27">
-		$ret = preg_match('/<input type="hidden" name="id" value="([0-9]+)">/', $result, $matches);
+		// <input type="hidden" name="id" value="20" />
+		$ret = preg_match('/<input type="hidden" name="id" value="([0-9]+)" \/>/', $result, $matches);
 		if(!$ret) die("get id failed.");
 		
 		$id = $matches[1];
 
 		// <input type="hidden" name="a" value="113321">
-		$ret = preg_match('/<input type="hidden" name="a" value="([0-9]+)">/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="a" value="([0-9]+)" \/>/', $result, $matches);
 		if(!$ret) die("get a failed.");
 		
 		$a = $matches[1];

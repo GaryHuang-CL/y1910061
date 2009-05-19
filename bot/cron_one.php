@@ -137,7 +137,7 @@
 
 				if($server == "s3.travian.jp" && $user == "3x3x3"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5 && $crop > $granary_capacity * 0.5){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 55);
@@ -155,7 +155,7 @@
 
 				}else if($server == "s3.travian.jp" && $user == "inblackhole"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5 && $crop > $granary_capacity * 0.5){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 55);
@@ -172,7 +172,7 @@
 					
 				}else if($server == "s3.travian.jp" && $user == "papurica731"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5 && $crop > $granary_capacity * 0.5){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 160);
@@ -194,7 +194,7 @@
 
 				}else if($server == "s3.travian.jp" && $user == "docomo2"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5 && $crop > $granary_capacity * 0.5){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 160);
@@ -211,7 +211,7 @@
 
 				}else if($server == "s3.travian.jp" && $user == "Kimon"){
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5 && $crop > $granary_capacity * 0.5){
 						$c1 = round($wood / 100);
 						$c2 = round($brick / 130);
 						$c3 = round($iron / 160);
@@ -228,7 +228,7 @@
 					
 				}else if($server == "s3.travian.jp" && $user == "Hömeless"){
 
-					if($wood > $warehouse_capacity * 0.8){
+					if($wood > $warehouse_capacity * 0.8 && $crop > $granary_capacity * 0.5){
 						$c1 = round($wood / 95);
 						$c2 = round($brick / 75);
 						$c3 = round($iron / 40);
@@ -238,7 +238,7 @@
 						build_infantry(1, $c);
 					}
 
-					if($brick > $warehouse_capacity * 0.8){
+					if($brick > $warehouse_capacity * 0.8 && $crop > $granary_capacity * 0.5){
 						$c1 = round($wood / 450);
 						$c2 = round($brick / 515);
 						$c3 = round($iron / 480);
@@ -247,7 +247,7 @@
 						build_cavalry(6, $c);
 					}
 					
-					if($iron > $warehouse_capacity * 0.8){
+					if($iron > $warehouse_capacity * 0.8 && $crop > $granary_capacity * 0.5){
 						$c1 = round($wood / 130);
 						$c2 = round($brick / 120);
 						$c3 = round($iron / 170);
@@ -260,15 +260,23 @@
 						sell(1000, 4, 2000, rand(1, 3), 4, 200000);
 					}
 
-					attack_and_farm_loop($village, $attack_time_left);
+					//attack_and_farm_loop($village, $attack_time_left);
 
 					if($attack_time_left >=0 && $attack_time_left < 420){
 						avoid_attack_teutonic(95, 29);
 					}
 
+<<<<<<< .mine
+					//read_self_attack_reports();
+=======
 					// read_self_attack_reports();
+>>>>>>> .r119
 					
+<<<<<<< .mine
+					//destroy_building($village, 34);
+=======
 					// destroy_building($village, 34);
+>>>>>>> .r119
 				}
 			}else {
 				
@@ -304,10 +312,15 @@
 		}
 	}
 	
+<<<<<<< .mine
+	//delete_self_trade_reports();
+	//read_ally_reports();
+=======
 	delete_self_trade_reports();
 	
 	if($server == "s3.travian.jp" && $user == "Hömeless"){
 		read_self_attack_reports();
 	}
 	read_ally_reports();
+>>>>>>> .r119
 ?>
