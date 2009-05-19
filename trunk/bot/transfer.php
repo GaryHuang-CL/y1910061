@@ -25,9 +25,9 @@
 		// echo "Ratio : $ratio ... \n";
 		
 		// fill it
-		$t1 = min($r1, round($r1 * $ratio));
-		$t2 = min($r2, round($r2 * $ratio));
-		$t3 = min($r3, round($r3 * $ratio));
+		$t1 = min($r1, floor($r1 * $ratio));
+		$t2 = min($r2, floor($r2 * $ratio));
+		$t3 = min($r3, floor($r3 * $ratio));
 		$t4 = min($r4, $total_capacity - $t1 - $t2 - $t3);
 
 		return array($t1, $t2, $t3, $t4);
@@ -54,10 +54,10 @@
 		// echo "Ratio : $ratio\n";
 		
 		// fill it
-		$t1 = min($r1, round($r1 * $ratio));
-		$t2 = min($r2, round($r2 * $ratio));
-		$t3 = min($r3, round($r3 * $ratio));
-		$t4 = max(0, min($r4, $total - $t1 - $t2 - $t3));
+		$t1 = min($r1, floor($r1 * $ratio));
+		$t2 = min($r2, floor($r2 * $ratio));
+		$t3 = min($r3, floor($r3 * $ratio));
+		$t4 = min($r4, $total - $t1 - $t2 - $t3);
 
 		return array($t1, $t2, $t3, $t4);
 
