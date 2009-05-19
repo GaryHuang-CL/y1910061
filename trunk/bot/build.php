@@ -60,10 +60,12 @@
 		$result = curl_exec ($ch);
 		curl_close ($ch);
 
-		// <a href="?newdid=205861" class="active_vl">
-		$ret = preg_match('/<a href="\?newdid=([0-9]+)" class="active_vl">/', $result, $matches);
+		// <tr class="sel"><td class="dot">&#x25CF;</td><td class="text"><a href="?newdid=74731"
+		//$ret = preg_match('/<a href="\?newdid=([0-9]+)" class="active_vl">/', $result, $matches);
+		$ret = preg_match('/<tr class="sel"><td class="dot">&#x25CF;<\/td><td class="text"><a href="\?newdid=([0-9]+)"/', $result, $matches);
 		
 		if(!$ret) die("Failed to switch village.");
+		if($matches[1] != $village) die("Failed to switch village " . $matches[1] . "\n");
 		
 		return $result;
 
