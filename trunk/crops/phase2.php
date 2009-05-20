@@ -2,21 +2,52 @@
 
 	function parse($result, $x, $y)
 	{
-		// <div id="f6"></div>
+		$pos = strpos($result, '<div class="village_map');
+		
+		if($pos === false){
+			echo("failed to strpos.\n");
+			return false;
+		}
+		
+
 		// f6 is 15 crops, f1 is 9 crops
-		if(!preg_match('/<div id="f([0-9])"><\/div>/', $result, $matches)){
+		// f7, f8, f9 is 7 crops
+		
+		// w3 w6 w9 w10 is 25%
+		// w12 is 50%
+		if(!preg_match('#<img src="img/x\.gif" id="([a-z])([0-9]{1,2})"#', $result, $matches, 0, $pos)){
 			echo("failed to parse.\n");
 			return false;
 		}
 		
-		$crops = 6;
-		if($matches[1] == '6'){
-			$crops = 15;
-		} else if($matches[1] == '1'){
-			$crops = 9;
-		}
+		if($matches[1] == 'f'){
 
-		$sql = "update crop_crawler set crops = $crops where x = $x and y = $y";
+			if($matches[2] == '6'){
+				$crops = 15;
+			} else if($matches[2] == '1'){
+				$crops = 9;
+			} else if($matches[2] == '7'){
+				$crops = 7;
+			} else if($matches[2] == '8'){
+				$crops = 7;
+			} else if($matches[2] == '9'){
+				$crops = 7;
+			} else {
+				$crops = 6;
+			}
+			
+			$sql = "update crop_crawler set crops = $crops where x = $x and y = $y";
+			
+		}else if($matches[1] == 'w'){
+			$oasis = $matches[1] . $matches[2];
+			
+			$sql = "update crop_crawler set oasis = '$oasis' where x = $x and y = $y";
+		}else {
+			echo("expect f or w.\n");
+			return false;
+		}
+		
+		
 		
 		if(!mysql_query($sql)) die(mysql_error());
 		
@@ -27,7 +58,8 @@
 	// ----------------------------------------------------------------------------
 	// Main
 	// ----------------------------------------------------------------------------
-
+	// don't need phase2
+	exit();
 	require_once('common.php');
 	require_once('db.php');
 	require_once('login.php');
@@ -39,9 +71,9 @@
 	}
 	
 	$x_range = intval($argv[1]);
-	sleep(($x_range + 400) / 2);
+	//sleep(($x_range + 400) / 2);
 	
-	$sql = "select x, y, d, c from crop_crawler where x >= $x_range and x < $x_range + 100 and crops is null and trim(oasis) = ''";
+	$sql = "select x, y, d, c from crop_crawler where x >= $x_range and x < $x_range + 100 and crops is null and oasis is null";
 	$res = mysql_query($sql);
 	if(!$res) die(mysql_error());
 
