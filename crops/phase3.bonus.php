@@ -6,8 +6,16 @@
 
 	require_once('common.php');
 	require_once('db.php');
+	mysql_query("LOCK TABLES crop_crawler WRITE");
 	
-	$sql = "select x, y, d, c from crop_crawler where crops in (15, 9) and (bonus = 0 or bonus is null)";
+	$sql = "select count(1) from crop_crawler where crops is null and oasis is null";
+	$res = mysql_query($sql);
+	if(!$res) die(mysql_error());
+	$row = mysql_fetch_row($res);
+	
+	if($row[0] != 0) die("run phase2 first.");
+
+	$sql = "select x, y, d, c from crop_crawler where crops in (15, 9, 7) and (bonus = 0 or bonus is null)";
 	$res = mysql_query($sql);
 	if(!$res) die(mysql_error());
 
@@ -22,7 +30,7 @@
 		
 		// 7x7
 		// todo: place near 400
-		$sql = "select x, y, oasis, if(oasis = 'o12', 50, 25) as bonus from crop_crawler where x <= $x + 3 and x >= $x - 3 and y <= $y + 3 and y >= $y - 3 and oasis in ('o12','o10','o11','o3','o6','o9') order by cast(substr(oasis, 2) as unsigned) desc limit 3" ;
+		$sql = "select x, y, oasis, if(oasis = '12', 50, 25) as bonus from crop_crawler where x <= $x + 3 and x >= $x - 3 and y <= $y + 3 and y >= $y - 3 and oasis in ('12','10','11','3','6','9') order by cast(substr(oasis, 2) as unsigned) desc limit 3" ;
 		// echo $sql . "\n";
 		
 		$res2 = mysql_query($sql);
