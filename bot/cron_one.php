@@ -1,4 +1,41 @@
 <?php
+	function start_party($account, $village)
+	{
+		global $server;
+		
+		$url = "http://$server/build.php?gid=24";
+		
+		$ch = my_curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		$result = curl_exec ($ch);
+		curl_close ($ch);
+
+		if(preg_match('#<td width="25%"><span id=timer1>([0-9]+):([0-9]+):([0-9]+)</span></td>#', $result, $match)){
+			$hour = $match[1];
+			$minute = $match[2];
+			$second = $match[3];
+			
+			$due_time = time() + $hour * 3600 + $minute * 60 + $second;
+			$sql = "update villages set party_due_time = $due_time where account = $account and id = $village";
+			if(!mysql_query($sql)) die(mysql_error());
+			
+			echo $sql . "\n";
+			echo "Party due time $hour:$minute:$second ...\n";
+		}else if(preg_match('#<td width="28%"><a href="build.php\?id=([0-9]+)&a=1">[^<]+</a></td>#', $result, $match)){
+			$id = $match[1];
+			
+			$referer = $url;
+			$url = "http://$server/build.php?id=$id&a=1";
+			$ch = my_curl_init();
+			curl_setopt($ch, CURLOPT_URL, $url);
+			$result = curl_exec ($ch);
+			curl_close ($ch);
+			
+			echo "Party ...\n";
+		}
+
+	}
+	
 	function shutdown($account)
 	{
 		$sql = "update accounts set busy = 0 where id = $account";
@@ -76,7 +113,7 @@
 	$result = login();
 	$hour = get_server_hour($result);
 	
-	$sql = "select id, auto_transfer, noraid, name, newbie, last_beg, crop, cart_capacity, defence from villages where account = $account order by rand()";
+	$sql = "select id, auto_transfer, noraid, name, newbie, last_beg, crop, cart_capacity, defence, party, party_due_time from villages where account = $account order by rand()";
 	$res = mysql_query($sql);
 	if(!$res) die(mysql_error());
 	
@@ -90,7 +127,9 @@
 		$buycrop = $row[6];
 		$cart_capacity = $row[7];
 		$defence = $row[8];
-				
+		$party = $row[9];
+		$party_due_time = $row[10];
+
 		if($cart_capacity == 0){
 			if($race == "teuton") $cart_capacity = 1000;
 			else if($race == "gaolic") $cart_capacity = 750;
@@ -226,9 +265,41 @@
 						sell(500, 4, 500, 2, 8, 9000);
 					}
 					
+				}else if($server == "speed.travian.tw" && $user == "Kimon"){
+					
+					if(($wood > $warehouse_capacity * 0.7 || $brick > $warehouse_capacity * 0.8) && $crop > 2000){
+						$c1 = round($wood / 95);
+						$c2 = round($brick / 75);
+						$c3 = round($iron / 40);
+						$c4 = round($crop / 40);
+						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
+
+						build_infantry(1, $c);
+
+					}else if($iron > $warehouse_capacity * 0.7 && $crop > 2000){
+						$c1 = round($wood / 130);
+						$c2 = round($brick / 120);
+						$c3 = round($iron / 170);
+						$c4 = round($crop / 70);
+						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
+						build_infantry(3, $c);
+					}
+
+					if($crop > $granary_capacity * 0.95){
+						sell(3000, 4, 3000, 1, 0, 2000);
+					}
+
+					attack_and_farm_loop($village, $attack_time_left);
+					read_self_attack_reports();
+
+					if($attack_time_left >=0 && $attack_time_left < 1000){
+						build_infantry(1, 0);
+						avoid_attack_teutonic(43, 94);
+					}
+
 				}else if($server == "s3.travian.jp" && $user == "Hömeless"){
 
-					if($wood > $warehouse_capacity * 0.8 && $crop > $granary_capacity * 0.5){
+					if($wood > $warehouse_capacity * 0.9 && $crop > $granary_capacity * 0.5){
 						$c1 = round($wood / 95);
 						$c2 = round($brick / 75);
 						$c3 = round($iron / 40);
@@ -238,7 +309,7 @@
 						build_infantry(1, $c);
 					}
 
-					if($brick > $warehouse_capacity * 0.8 && $crop > $granary_capacity * 0.5){
+					if($brick > $warehouse_capacity * 0.9 && $crop > $granary_capacity * 0.5){
 						$c1 = round($wood / 450);
 						$c2 = round($brick / 515);
 						$c3 = round($iron / 480);
@@ -247,7 +318,7 @@
 						build_cavalry(6, $c);
 					}
 					
-					if($iron > $warehouse_capacity * 0.8 && $crop > $granary_capacity * 0.5){
+					if($iron > $warehouse_capacity * 0.9 && $crop > $granary_capacity * 0.5){
 						$c1 = round($wood / 130);
 						$c2 = round($brick / 120);
 						$c3 = round($iron / 170);
@@ -300,6 +371,10 @@
 					transfer_crop_to_village($village, $main_village, 5000);
 			
 			// villages in building
+			}
+			
+			if($party > 0 && $party_due_time < time()){
+				start_party($account, $village);
 			}
 		}
 	}

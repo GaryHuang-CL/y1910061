@@ -12,7 +12,7 @@
 		$user = $row[2];
 		$busy = $row[3];
 		
-		if($id == 7) continue;
+		//if($id == 7) continue;
 		if($id == 11) continue;
 		
 		echo " ----- $user @ $server -----\n";

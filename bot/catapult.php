@@ -34,20 +34,18 @@
 	// 30 : ‘å”n’I
 	// 37 : ‰p—Y‘î
 
-	$rally_point_level = 20;
+	$rally_point_level = 10;
 
 	// club, axe, tk, ram, catapult, hero, target_one, target_two
 	$plan = array(
-			array(3997, 5408,  154,   95, 140,  1 ,15,11),
-			array(0,    100,    '',   '' , 68, '' ,17,''),
-			array(0,    100,    '',   '' , 38, '' ,4, 4),
-			array(0,    100,    '',   '' , 38, '' ,4, 4),
-			array(0,    100,    '',   '' , 38, '' ,4, 4),
-			array(0,    100,    '',   '' , 20, '' ,8, 9),
+			array(800,  15,   '',    17,  17,  1, 26, ''),
+			array(0,    10,    '',   '' , 10,  '', 4, ''),
+			array(0,    10,    '',   '' , 10,  '', 4, ''),
+			array(0,   120,    '',   '' , 10,  '', 4, ''),
 	);
 
-	$target_x = 101;
-	$target_y = 27;
+	$target_x = 42;
+	$target_y = 103;
 
 
 	// ----------------------------------------------------------------------------
@@ -82,70 +80,70 @@
 		if(!preg_match('/"hidden" name="kid"/', $result, $matches)) die("no kid.");
 		
 		// <input type="hidden" name="id" value="39">
-		$ret = preg_match('/<input type="hidden" name="id" value="([0-9]+)">/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="id" value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get id failed.");
 		
 		$id = $matches[1];
 		echo "id = " . $id . "\n";
 
 		// <input type="hidden" name="a" value="46137">
-		$ret = preg_match('/<input type="hidden" name="a" value="([0-9]+)">/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="a" value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get a failed.");
 		
 		$a = $matches[1];
 		echo "a = " . $a . "\n";
 
 		// <input type="hidden" name="c" value="3">
-		$ret = preg_match('/<input type="hidden" name="c" value="([0-9]+)">/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="c" value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get c failed.");
 		
 		$c = $matches[1];
 		echo "c = " . $c . "\n";
 
 		// <input type="hidden" name="kid" value="356724">
-		$ret = preg_match('/<input type="hidden" name="kid" value="([0-9]+)">/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="kid" value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get kid failed.");
 		
 		$kid = $matches[1];
 		echo "kid = " . $kid . "\n";
 
 		// <input type="hidden" name="t1" value="10">
-		$ret = preg_match('/<input type="hidden" name="t1" value="([0-9]+)">/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="t1" value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get t1 failed.");
 		
 		$t1 = $matches[1];
 		echo "t1 = " . $t1 . "\n";
 
 		// <input type="hidden" name="t3" value="10">
-		$ret = preg_match('/<input type="hidden" name="t3" value="([0-9]+)">/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="t3" value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get t3 failed.");
 		
 		$t3 = $matches[1];
 		echo "t3 = " . $t3 . "\n";
 
 		// <input type="hidden" name="t6" value="10">
-		$ret = preg_match('/<input type="hidden" name="t6" value="([0-9]+)">/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="t6" value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get t6 failed.");
 		
 		$t6 = $matches[1];
 		echo "t6 = " . $t6 . "\n";
 
 		// <input type="hidden" name="t7" value="10">
-		$ret = preg_match('/<input type="hidden" name="t7" value="([0-9]+)">/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="t7" value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get t7 failed.");
 		
 		$t7 = $matches[1];
 		echo "t7 = " . $t7 . "\n";
 
 		// <input type="hidden" name="t8" value="10">
-		$ret = preg_match('/<input type="hidden" name="t8" value="([0-9]+)">/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="t8" value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get t8 failed.");
 		
 		$t8 = $matches[1];
 		echo "t8 = " . $t8 . "\n";
 
 		// <input type="hidden" name="t11" value="10">
-		$ret = preg_match('/<input type="hidden" name="t11" value="([0-9]+)">/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="t11" value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get t11 failed.");
 		
 		$t11 = $matches[1];

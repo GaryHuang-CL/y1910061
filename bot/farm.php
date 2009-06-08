@@ -43,8 +43,8 @@
 		global $server;
 		$url = "http://$server/a2b.php";
 
-		$max_clubs = 400;
-		$min_clubs = 20;
+		$max_clubs = 40;
+		$min_clubs = 8;
 
 		$troops = get_troops($result);
 
@@ -110,7 +110,7 @@
 			if($curr_clubs <= $max_clubs){
 				$clubs = $curr_clubs;
 			}else{
-				$clubs = $min_clubs + round(($max_clubs - $min_clubs) * $score / 100);
+				$clubs = $min_clubs + round(($max_clubs - $min_clubs) * $score * $score / 10000);
 				
 				if($curr_clubs - $clubs < $old_min_clubs)
 					$clubs = $curr_clubs;
@@ -120,7 +120,7 @@
 				$axes = $curr_axes;
 
 			}else{
-				$axes = $min_clubs + round(($max_clubs - $min_clubs) * $score / 100);
+				$axes = $min_clubs + round(($max_clubs - $min_clubs) * $score * $score / 10000);
 				
 				if($curr_axes - $axes < $old_min_clubs)
 					$axes = $curr_axes;
@@ -130,7 +130,7 @@
 				$tks = $curr_tks;
 
 			}else{
-				$tks = $min_clubs + round(($max_clubs - $min_clubs) * $score / 100);
+				$tks = $min_clubs + round(($max_clubs - $min_clubs) * $score * $score / 10000);
 				
 				if($curr_axes - $tks < $old_min_clubs)
 					$tks = $curr_tks;

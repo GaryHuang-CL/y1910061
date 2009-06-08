@@ -1,4 +1,4 @@
 <?php
-	$server = "s3.travian.jp";
-	$account = 7;
+	$server = "speed.travian.tw";
+	$account = 14;
 ?>

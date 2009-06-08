@@ -29,7 +29,7 @@
     	$combo[$id] = $name;
     }
     
-    $sql = " select a.id, a.name, IFNULL(b.num, 0), a.auto_transfer, a.newbie, a.crop, a.defence from `villages` as a " . 
+    $sql = " select a.id, a.name, IFNULL(b.num, 0), a.auto_transfer, a.newbie, a.crop, a.defence, a.party from `villages` as a " . 
            " left outer join (select count(1) as num, village from build where account = $account group by village) as b " .
            " on a.id =  b.village where a.account = $account order by a.id";
     
@@ -45,6 +45,7 @@
     	$newbie = $row[4];
     	$crop = $row[5];
     	$defence = $row[6];
+    	$party = $row[7];
     	
     	echo '<tr><td valign=top><a href="village.php?a=' . $account . '&id=' . $id . '">' . $name . ' (' . $num . ')</a> → </td><td>';
     	
@@ -66,6 +67,8 @@
     	echo ($crop > 0) ? "○" : "×";
     	echo "</a></td><td><a href=\"defence.php?a=$account&v=$id\">";
     	echo ($defence > 0) ? "○" : "×";
+    	echo "</a></td><td><a href=\"i_party.php?a=$account&v=$id\">";
+    	echo ($party > 0) ? "○" : "×";
     	echo "</a></td></tr>\n";
     }
     echo "</table>";
