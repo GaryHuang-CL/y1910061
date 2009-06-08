@@ -42,7 +42,7 @@
 		
 		// How many clubs there ?
 		// onClick="document.snd.t1.value=1; return false;
-		if(!preg_match('/onClick="document\.snd\.t1\.value=([0-9]+); return false;/', $result, $matches)){
+		if(!preg_match('/on[cC]lick="document\.snd\.t1\.value=([0-9]+); return false;/', $result, $matches)){
 			echo "no club for mission .\n";
 			return true;
 		}
@@ -72,7 +72,7 @@
 			// uniq mission, need all clubs, axes, tks and hero
 			
 			// onClick="document.snd.t11.value=1; return false;"
-			if(preg_match('/onClick="document\.snd\.t11\.value=1; return false;/', $result, $matches)){
+			if(preg_match('/on[cC]lick="document\.snd\.t11\.value=1; return false;/', $result, $matches)){
 				$hero = 1;
 			}else{
 				echo "Hero does NOT in home.\n";
@@ -80,14 +80,14 @@
 			}
 
 			// onClick="document.snd.t3.value=1; return false;
-			if(!preg_match('/onClick="document\.snd\.t3\.value=([0-9]+); return false;/', $result, $matches)){
+			if(!preg_match('/on[cC]lick="document\.snd\.t3\.value=([0-9]+); return false;/', $result, $matches)){
 				$axes = 0;
 			}else{
 				$axes = $matches[1];
 			}
 
 			// onClick="document.snd.t6.value=1; return false;
-			if(!preg_match('/onClick="document\.snd\.t6\.value=([0-9]+); return false;/', $result, $matches)){
+			if(!preg_match('/on[cC]lick="document\.snd\.t6\.value=([0-9]+); return false;/', $result, $matches)){
 				$tks = 0;
 			}else{
 				$tks = $matches[1];
@@ -96,7 +96,7 @@
 			// ram
 			if($with_ram == 1){
 				// onClick="document.snd.t7.value=1; return false;
-				if(preg_match('/onClick="document\.snd\.t7\.value=([0-9]+); return false;/', $result, $matches)){
+				if(preg_match('/on[cC]lick="document\.snd\.t7\.value=([0-9]+); return false;/', $result, $matches)){
 					$rams = $matches[1];
 				}
 			}

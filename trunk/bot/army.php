@@ -27,7 +27,8 @@
 		// How many army there ?
 		foreach($army_types as $t => $num){
 			// onClick="document.snd.t1.value=1; return false;
-			if(!preg_match('/onClick="document\.snd\.t' . $t . '\.value=([0-9]+); return false;/', $result, $matches)){
+			// onclick="document.snd.t1.value=26; return false;"
+			if(!preg_match('/on[Cc]lick="document\.snd\.t' . $t . '\.value=([0-9]+); return false;/', $result, $matches)){
 				echo "failed to get current army. $t \n";
 				continue;
 			}
@@ -55,7 +56,7 @@
 		$str = '';
 		$arr = array(1,4,7,9,2,5,8,10,3,6);
 		
-		if(preg_match('/onClick="document\.snd\.t11\.value=1; return false;/', $result)){
+		if(preg_match('/on[cC]lick="document\.snd\.t11\.value=1; return false;/', $result)){
 			array_push($arr, 11);
 		}
 		
@@ -255,7 +256,7 @@
 		
 		$troops = array();
 		for($t = 1; $t <= 11; $t++){
-			if(preg_match('/onClick="document\.snd\.t' . $t . '\.value=([0-9]+); return false;/', $result, $matches)){
+			if(preg_match('/on[cC]lick="document\.snd\.t' . $t . '\.value=([0-9]+); return false;/', $result, $matches)){
 				$troops[$t] = $matches[1];
 			}
 		}
@@ -267,7 +268,7 @@
 	{
 		if($t == $n) 
 			return "&t$t=$num";
-		else if(preg_match('/onClick="document.snd.t' . $n . '.value=([0-9]+)/', $result, $matches))
+		else if(preg_match('/on[cC]lick="document.snd.t' . $n . '.value=([0-9]+)/', $result, $matches))
 			return "&t$n=";
 		
 		return '';
@@ -289,7 +290,7 @@
 		curl_close ($ch);
 		
 		// onClick="document.snd.t5.value=0"
-		$ret = preg_match('/onClick="document.snd.t' . $t . '.value=([0-9]+)/', $result, $matches);
+		$ret = preg_match('/on[cC]lick="document.snd.t' . $t . '.value=([0-9]+)/', $result, $matches);
 		
 		if(!$ret){
 			echo "Failed to build cavalry.\n";
@@ -383,7 +384,7 @@
 		curl_close ($ch);
 		
 		// onClick="document.snd.t1.value=0"
-		$ret = preg_match('/onClick="document.snd.t' . $t . '.value=([0-9]+)/', $result, $matches);
+		$ret = preg_match('/on[cC]lick="document.snd.t' . $t . '.value=([0-9]+)/', $result, $matches);
 		
 		if(!$ret){
 			echo "Failed to build infantry.\n";

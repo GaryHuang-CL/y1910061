@@ -34,6 +34,7 @@
 	$tblname_yesterday = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600 * 24);
 	$tblname_before_yesterday = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600 * 48);
 	$tblname_idle_player = "idle_players_" . str_replace(".", "_", $server);
+	$tblname_idle_village = "idle_villages_" . str_replace(".", "_", $server);
 
 	$p = array_key_exists('p', $_GET) ? intval($_GET['p']) : 0;
 	$start = ($p * 20);
@@ -48,8 +49,8 @@ left outer join $tblname_before_yesterday c on a.id = c.id " .
 	(($limit == 2) ? " inner join targets as d on a.x = d.x and a.y = d.y and d.invalid = 0 "
 				   : " left outer join targets as d on a.x = d.x and a.y = d.y ") .
 		
-	(($limit == 1) ? " inner join idle_villages_s3_travian_jp e on a.id = e.id "
-				   : " left outer join idle_villages_s3_travian_jp e on a.id = e.id ");
+	(($limit == 1) ? " inner join $tblname_idle_village e on a.id = e.id "
+				   : " left outer join $tblname_idle_village e on a.id = e.id ");
 
 	if(array_key_exists('fx', $_GET))
 		$sql .= " where a.x = " . $_GET['fx'];

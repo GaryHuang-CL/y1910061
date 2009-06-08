@@ -24,46 +24,12 @@
 	$result = curl_exec ($ch);
 	curl_close ($ch);
 	
-	$all = array();
-	// <td class="nbr"><span>&#8226;</span>&nbsp; <a href="http://speed.travian.hk/dorf1.php?newdid=91866">Base</a></td>
-	// <td class="nbr"><span class="c2">&#8226;</span>&nbsp; <a href="" class="active_vl">Home</a></td>
-	if(preg_match_all('/<td class="nbr">.+?newdid=([0-9]+)[^0-9]*?">(.+?)<\/a><\/td>/', $result, $matches, PREG_SET_ORDER)){
-		foreach ($matches as $val) {
-			// echo $val[1] . ", " . $val[2] . "\n";
-			array_push($all, array($val[1], $val[2]));
-		}
-	}
-	
-	// <td class="right dlist1">(-53</td>
-	if(preg_match_all('/<td class="right dlist1">\(([-0-9]+)<\/td>/', $result, $matches, PREG_SET_ORDER)){
-		$i = 0;
-		
-		if(count($matches) != count($all)) die("x num failed.");
-		
-		foreach ($matches as $val) {
-			// echo $val[1] . "\n";
-			array_push($all[$i], $val[1]);
-			$i++;
-		}
-	}
-	
-	// <td class="left dlist3">-54)</td>
-	if(preg_match_all('/<td class="left dlist3">([-0-9]+)\)<\/td>/', $result, $matches, PREG_SET_ORDER)){
-		$i = 0;
-		
-		if(count($matches) != count($all)) die("y num failed.");
-		
-		foreach ($matches as $val) {
-			// echo $val[1] . "\n";
-			array_push($all[$i], $val[1]);
-			$i++;
-		}
-	}
-	
 	$all_id = array();
-	foreach ($all as $val) {
-		echo "$val[0] , $val[1]  ($val[2], $val[3])<br>\n";
-		$all_id[$val[0]] = array($val[1], $val[2], $val[3]);
+	// <td class="text"><a href="?newdid=74731" >ホーム</a></td><td class="x">(94</td><td>|</td><td class="y">28)</td>
+	if(preg_match_all('#<td class="text"><a href="\?newdid=([0-9]+)"[^>]*>(.+?)</a></td><td class="x">\(([-0-9]+)</td><td>\|</td><td class="y">([-0-9]+)\)</td>#', $result, $matches, PREG_SET_ORDER)){
+		foreach ($matches as $val) {
+			$all_id[$val[1]] = array($val[2], $val[3], $val[4]);
+		}
 	}
 
 	$db_all = array();

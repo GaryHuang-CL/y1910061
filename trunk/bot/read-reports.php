@@ -2,7 +2,7 @@
 	
 	function get_report_line($result, $type)
 	{
-		if(preg_match('#<tr><td>' . $type . '</td>(.*?)</td></tr>#', $result, $match)){
+		if(preg_match('#<tr><th>' . $type . '</th>(.*?)</td></tr>#', $result, $match)){
 			
 			$line = $match[1];
 			$ret = explode ('</td>', $line);
@@ -88,7 +88,7 @@
 
 		$player = $matches[2][1];
 
-		if(!preg_match_all('#<a href=karte\.php\?d=([0-9]+)&c=[a-z0-9]{2}>#', $result, $matches, PREG_SET_ORDER)){
+		if(!preg_match_all('#<a href="karte\.php\?d=([0-9]+)#', $result, $matches, PREG_SET_ORDER)){
 			record_report($id, "【村不明】$title");
 			return;
 		}
@@ -118,15 +118,19 @@
 	    $y = $row[1];
 
 
-		$soldiers = get_report_line($result, '兵士');
+		// $soldiers = get_report_line($result, '兵士');
+		$soldiers = get_report_line($result, '軍隊');
 		if(!$soldiers){
 			record_report($id, "【兵士情報不明】$title");
 			return;
 		}
 
-		$died = get_report_line($result, '死傷');
-		$captured = get_report_line($result, '捕虜');
-
+		// $died = get_report_line($result, '死傷');
+		$died = get_report_line($result, '傷亡');
+		
+		// $captured = get_report_line($result, '捕虜');
+		$captured = get_report_line($result, '俘虜');
+		
 		if(!$died && !$captured){
 			record_report($id, "【死傷捕虜不明】$title");
 			return;
@@ -160,7 +164,8 @@
 		// <img class="res" src="img/un/r/2.gif">44 
 		// <img class="res" src="img/un/r/3.gif">44 
 		// <img class="res" src="img/un/r/4.gif">49 
-		if(!preg_match_all('#<img class="res" src="[^<]*?img/un/r/[1-4]\.gif">([0-9]+)#', $result, $matches, PREG_SET_ORDER)){
+		// <img class="r1" src="img/x.gif" alt="木材" title="木材" />871
+		if(!preg_match_all('#<img class="r[1-4]" src="img/x.gif" alt="[^"]+" title="[^"]+" />([0-9]+)#', $result, $matches, PREG_SET_ORDER)){
 			echo "FAILED: can not read report well $id resources \n";
 			record_report($id, "【資源未知】$title");
 			return;
@@ -202,7 +207,7 @@
 		$new_score = implode('|', $scores);
 		
     	if($total == $max_raid){
-			echo "reraid...($x,$y) $soldiers $total\n";
+			echo "reraid...($x,$y) $total\n";
 	    	$sql = "update targets set `timestamp` = date_sub(now(),  interval 1 day), `score` = '$new_score' where x = $x and y = $y";
 	    }else{
 	    	$sql = "update targets set `timestamp` = `timestamp`, `score` = '$new_score' where x = $x and y = $y";
@@ -228,9 +233,9 @@
 	{
 		// TEST
 		/*
-		$id = "10839775";
+		$id = "4436942";
 		if(!mysql_query("delete from reports where id = $id")) die(mysql_error());
-		read_report($id, "ホームがryuryu村を攻撃しました");
+		read_report($id, "- 攻擊 村莊");
 
 
 		return;
@@ -249,7 +254,7 @@
 			$result = curl_exec ($ch);
 			curl_close ($ch);
 			
-			if(!preg_match_all('#<td class="s7"><a href="berichte\.php\?id=([0-9]+)">([^<]+)</a> [^<]+</td>#', $result, $matches, PREG_SET_ORDER))
+			if(!preg_match_all('#<td class="topic"><a href="berichte\.php\?id=([0-9]+)">([^<]+)</a> [^<]+</td>#', $result, $matches, PREG_SET_ORDER))
 				break;
 			
 			foreach($matches as $match){

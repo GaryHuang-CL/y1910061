@@ -34,7 +34,7 @@
 
 		$hero_post_str = '';
 		// onClick="document.snd.t11.value=1; return false;"
-		if(preg_match('/onClick="document\.snd\.t11\.value=1; return false;/', $result, $matches)){
+		if(preg_match('/on[cC]lick="document\.snd\.t11\.value=1; return false;/', $result, $matches)){
 			// echo "Hero in home.\n";
 			
 			if($t11 == ''){
@@ -69,70 +69,70 @@
 		
 		if($ret){
 			// <input type="hidden" name="id" value="39">
-			$ret = preg_match('/<input type="hidden" name="id" value="([0-9]+)">/', $result, $matches);
+			$ret = preg_match('/<input type="hidden" name="id" value="([0-9]+)"/', $result, $matches);
 			if(!$ret) die("get id failed.");
 			
 			$id = $matches[1];
 			// echo "id = " . $id . "\n";
 
 			// <input type="hidden" name="a" value="46137">
-			$ret = preg_match('/<input type="hidden" name="a" value="([0-9]+)">/', $result, $matches);
+			$ret = preg_match('/<input type="hidden" name="a" value="([0-9]+)"/', $result, $matches);
 			if(!$ret) die("get a failed.");
 			
 			$a = $matches[1];
 			// echo "a = " . $a . "\n";
 
 			// <input type="hidden" name="c" value="3">
-			$ret = preg_match('/<input type="hidden" name="c" value="([0-9]+)">/', $result, $matches);
+			$ret = preg_match('/<input type="hidden" name="c" value="([0-9]+)"/', $result, $matches);
 			if(!$ret) die("get c failed.");
 			
 			$c = $matches[1];
 			// echo "c = " . $c . "\n";
 
 			// <input type="hidden" name="kid" value="356724">
-			$ret = preg_match('/<input type="hidden" name="kid" value="([0-9]+)">/', $result, $matches);
+			$ret = preg_match('/<input type="hidden" name="kid" value="([0-9]+)"/', $result, $matches);
 			if(!$ret) die("get kid failed.");
 			
 			$kid = $matches[1];
 			// echo "kid = " . $kid . "\n";
 
 			// <input type="hidden" name="t1" value="10">
-			$ret = preg_match('/<input type="hidden" name="t1" value="([0-9]+)">/', $result, $matches);
+			$ret = preg_match('/<input type="hidden" name="t1" value="([0-9]+)"/', $result, $matches);
 			if(!$ret) die("get t1 failed.");
 			
 			$t1 = $matches[1];
 			// echo "t1 = " . $t1 . "\n";
 
 			// <input type="hidden" name="t3" value="10">
-			$ret = preg_match('/<input type="hidden" name="t3" value="([0-9]+)">/', $result, $matches);
+			$ret = preg_match('/<input type="hidden" name="t3" value="([0-9]+)"/', $result, $matches);
 			if(!$ret) die("get t3 failed.");
 			
 			$t3 = $matches[1];
 			// echo "t3 = " . $t3 . "\n";
 
 			// <input type="hidden" name="t6" value="10">
-			$ret = preg_match('/<input type="hidden" name="t6" value="([0-9]+)">/', $result, $matches);
+			$ret = preg_match('/<input type="hidden" name="t6" value="([0-9]+)"/', $result, $matches);
 			if(!$ret) die("get t6 failed.");
 			
 			$t6 = $matches[1];
 			// echo "t6 = " . $t6 . "\n";
 
 			// <input type="hidden" name="t7" value="10">
-			$ret = preg_match('/<input type="hidden" name="t7" value="([0-9]+)">/', $result, $matches);
+			$ret = preg_match('/<input type="hidden" name="t7" value="([0-9]+)"/', $result, $matches);
 			if(!$ret) die("get t7 failed.");
 			
 			$t7 = $matches[1];
 			// echo "t7 = " . $t7 . "\n";
 
 			// <input type="hidden" name="t8" value="10">
-			$ret = preg_match('/<input type="hidden" name="t8" value="([0-9]+)">/', $result, $matches);
+			$ret = preg_match('/<input type="hidden" name="t8" value="([0-9]+)"/', $result, $matches);
 			if(!$ret) die("get t8 failed.");
 			
 			$t8 = $matches[1];
 			// echo "t8 = " . $t8 . "\n";
 
 			// <input type="hidden" name="t11" value="10">
-			$ret = preg_match('/<input type="hidden" name="t11" value="([0-9]+)">/', $result, $matches);
+			$ret = preg_match('/<input type="hidden" name="t11" value="([0-9]+)"/', $result, $matches);
 			if(!$ret) die("get t11 failed.");
 			
 			$t11 = $matches[1];
@@ -140,7 +140,7 @@
 
 			if($target_player){
 				// <td class="s7"><a href="spieler.php?uid=11783">Vinsfeld</a></td></tr>
-				$ret = preg_match('#<td class="s7"><a href="spieler\.php\?uid=[0-9]+">([^<]+)</a></td></tr>#', $result, $matches);
+				$ret = preg_match('#<a href="spieler\.php\?uid=[0-9]+">([^<]+)</a></td>#', $result, $matches);
 				if(!$ret) die("get player failed.");
 				
 				$player = $matches[1];

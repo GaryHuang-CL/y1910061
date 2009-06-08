@@ -15,8 +15,9 @@
 	{
 		// try to find out error message
 		// </form></p><div class="f10 e b">Šß‰Æ t21782146 ˆöˆá”½‹K‘¥§”í••½</div></div></div></div>
+		// <div class="f10 e b">Šß‰Æ ?Ç—r ˆöˆá”½—VE‹K‘¥§”í••½</div>
 		
-		$ret = preg_match('/<div class="f10 e b">(.+?)<\/div><\/div><\/div><\/div>/', $result, $matches);
+		$ret = preg_match('/<div class="f10 e b">(.+?)<\/div>/', $result, $matches);
 		if(!$ret){
 			$invalid_msg = "Unknown";
 		}else{
@@ -66,13 +67,12 @@
 	// return seconds remain
 	function detect_attack($result)
 	{
-		$pos = strpos($result, '<td><b class="c5 f10" align="right">&raquo;');
+		$pos = strpos($result, '<img src="img/x.gif" class="att1"');
 		
 		if ($pos === false) return -1;
 
 		echo "************ Being ATTACKED !!! ************\n";
-		
-		$ret = preg_match('/<td class=.?"f10.?"><span id=timer[0-9]>([0-9]+):([0-9]+):([0-9]+)<\/span>/', $result, $matches, 0, $pos);
+		$ret = preg_match('/<td><span id="timer[0-9]">([0-9]+):([0-9]+):([0-9]+)<\/span>/', $result, $matches, 0, $pos);
 		
 		if($ret){
 			$hour = intval($matches[1]);
