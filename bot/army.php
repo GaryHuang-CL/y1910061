@@ -121,7 +121,7 @@
 
 		// get arrive time
 		// <span id=tp2>14:24:06</span>
-		$ret = preg_match('#<span id=tp2>([0-9]+):([0-9]+):([0-9]+)</span>#', $result, $matches);
+		$ret = preg_match('#<span id="tp2">([0-9]+):([0-9]+):([0-9]+)</span>#', $result, $matches);
 		if(!$ret) die("get arrive time failed.");
 		
 		$h = $matches[1];

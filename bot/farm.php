@@ -41,10 +41,13 @@
 	function farm($result, $village)
 	{
 		global $server;
+		global $account;
+		global $farm_lo, $farm_hi;
+		
 		$url = "http://$server/a2b.php";
 
-		$max_clubs = 40;
-		$min_clubs = 8;
+		$max_clubs = $farm_hi;
+		$min_clubs = $farm_lo;
 
 		$troops = get_troops($result);
 
@@ -67,7 +70,7 @@
 		echo "$curr_clubs clubs, $curr_axes axes, $curr_tks tks availabe.\n";
 		
 		// Get a target
-		$sql = "SELECT x, y, `raid`, `score`, `player` FROM `targets` WHERE `village` = $village and `invalid` = 0 and NOW() > date_add(`timestamp`, INTERVAL (`interval` * 80) MINUTE) order by date_add(`timestamp`, INTERVAL (`interval` * 80) MINUTE) limit 1";
+		$sql = "SELECT x, y, `raid`, `score`, `player` FROM `targets` WHERE account = $account and `village` = $village and `invalid` = 0 and NOW() > date_add(`timestamp`, INTERVAL (`interval` * 80) MINUTE) order by date_add(`timestamp`, INTERVAL (`interval` * 80) MINUTE) limit 1";
 		
 		$res = mysql_query($sql);
 		if(!$res) die(mysql_error());
@@ -138,7 +141,7 @@
 		}
 		
 		// Update the target
-		$sql = "update `targets` set `timestamp` = now() where x = " . $target_x . " and y = " . $target_y;
+		$sql = "update `targets` set `timestamp` = now() where account = $account and x = " . $target_x . " and y = " . $target_y;
 		mysql_query($sql);
 
 		if(attack_func($target_x, $target_y, $clubs, $axes, $tks, '', '', '', $result, $player)){

@@ -3,11 +3,21 @@
 	// Main
 	// ----------------------------------------------------------------------------
 	require_once("db.php");
-	require_once("attack_ac.php");
+
+	if(!array_key_exists('a', $_GET)) die("no parameter.");
 	
+	$account = $_GET['a'];
+
+	$sql = "select server from accounts where id = $account";
+    $res = mysql_query($sql);
+    if(!$res) die(mysql_error());
+	$row = mysql_fetch_row($res);
+	if(!$row) die("Account not found.");
+	$server = $row[0];
+
 	if(array_key_exists('id', $_GET)){
 		$id = intval($_GET['id']);
-		$sql = "update reports set `read` = 1 where `id` = $id";
+		$sql = "update reports set `read` = 1 where account = $account and `id` = $id";
 	    if(!mysql_query($sql)) die(mysql_error());
 
 		$url = "http://$server/berichte.php?id=$id";
@@ -16,7 +26,7 @@
 	}else{
 		echo '<head><meta http-equiv="content-type" content="text/html; charset=UTF-8"></head>';
 
-		$sql = "select id, title, `read` from reports order by id desc limit 100";
+		$sql = "select id, title, `read` from reports where account = $account order by id desc limit 100";
 	    $res = mysql_query($sql);
 	    if(!$res) die(mysql_error());
 	    

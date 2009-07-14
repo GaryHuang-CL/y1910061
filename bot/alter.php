@@ -5,15 +5,22 @@
 	// ----------------------------------------------------------------------------
 
 	require_once("db.php");
-	require_once('attack_ac.php');
 	
-	$tblname = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600);	
-	
-	if(!array_key_exists('x', $_GET) || !array_key_exists('y', $_GET) || !array_key_exists('t', $_GET)) die("No post.");
+	if(!array_key_exists('x', $_GET) || !array_key_exists('y', $_GET) || !array_key_exists('t', $_GET) || !array_key_exists('a', $_GET)) die("No post.");
 
-	$x = $_GET['x'];
-	$y = $_GET['y'];
-	$t = $_GET['t'];
+	$x 		 = $_GET['x'];
+	$y 		 = $_GET['y'];
+	$t 		 = $_GET['t'];
+	$account = $_GET['a'];
+
+	$sql = "select server from accounts where id = $account";
+    $res = mysql_query($sql);
+    if(!$res) die(mysql_error());
+	$row = mysql_fetch_row($res);
+	if(!$row) die("Account not found.");
+	$server = $row[0];
+
+	$tblname = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600);	
 	
 	if(array_key_exists('i', $_GET)){
 		$interval = max(1, intval($_GET['i']));
@@ -39,15 +46,15 @@
 	$row = mysql_fetch_row($res);
 	$player = $row[0];
 
-	$sql = " select count(1) from targets where x = $x and y = $y ";
+	$sql = " select count(1) from targets where account = $account and x = $x and y = $y ";
     $res = mysql_query($sql);
     if(!$res) die(mysql_error());
 	$row = mysql_fetch_row($res);
 	
 	if($row[0] == 0){
-	   	$sql = " insert into targets(x, y, invalid, village, `interval`, `raid`, `player`) values ($x, $y, $t, $village, $interval, $raid, '$player')";
+	   	$sql = " insert into targets(account, x, y, invalid, village, `interval`, `raid`, `player`) values ($account, $x, $y, $t, $village, $interval, $raid, '$player')";
 	}else{
-   		$sql = " update targets set `timestamp` = `timestamp`, invalid = $t, village = $village, `interval` = $interval, `raid` = $raid, `player` = '$player' where x = $x and y = $y";
+   		$sql = " update targets set `timestamp` = `timestamp`, invalid = $t, village = $village, `interval` = $interval, `raid` = $raid, `player` = '$player' where account = $account and x = $x and y = $y";
    	}
    	
     if(!mysql_query($sql)) die(mysql_error());
