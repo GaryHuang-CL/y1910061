@@ -121,14 +121,14 @@
 	// return seconds remain
 	function detect_oasis_attack($result)
 	{
-		$pos = strpos($result, '<td><b class="c6 f10" align="right">&raquo;');
+		$pos = strpos($result, '<img src="img/x.gif" class="att3"');
 		
 		if ($pos === false) return -1;
 
 		echo "************ OASIS Being ATTACKED !!! ************\n";
 		
-		$ret = preg_match('/<td class=.?"f10.?"><span id=timer[0-9]>([0-9]+):([0-9]+):([0-9]+)<\/span>/', $result, $matches, 0, $pos);
-		
+		$ret = preg_match('/<td><span id="timer[0-9]">([0-9]+):([0-9]+):([0-9]+)<\/span>/', $result, $matches, 0, $pos);
+
 		if($ret){
 			$hour = intval($matches[1]);
 			$minute = intval($matches[2]);

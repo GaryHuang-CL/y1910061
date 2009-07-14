@@ -7,6 +7,8 @@
 	function attack($result, $village)
 	{
 		global $server;
+		global $account;
+		
 		$url = "http://$server/a2b.php";
 		
 		$server_hour = get_server_hour($result);
@@ -16,7 +18,7 @@
 		$start = ($server_hour == 0 ? 23 : $server_hour - 1);
 		$stop  = ($server_hour == 23 ? 0 : $server_hour + 1);
 
-		$sql = "select x, y, min_clubs, `recursive`, `seq`, `ram` from mission where village = $village and TO_DAYS(now()) > `recursive` and `hour` in (" . $start . "," . $server_hour . "," . $stop . ") order by `recursive`";
+		$sql = "select x, y, min_clubs, `recursive`, `seq`, `ram` from mission where account = $account and village = $village and TO_DAYS(now()) > `recursive` and `hour` in (" . $start . "," . $server_hour . "," . $stop . ") order by `recursive`";
 		$res = mysql_query($sql);
 		if(!$res) die(mysql_error());
 

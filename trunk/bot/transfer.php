@@ -142,7 +142,10 @@
 
 		// <input type="hidden" name="a" value="113321">
 		$ret = preg_match('/<input type="hidden" name="a" value="([0-9]+)">/', $result, $matches);
-		if(!$ret) die("get a failed.");
+		if(!$ret) {
+			echo("get a failed.\n");
+			return false;
+		}
 		
 		$a = $matches[1];
 		// echo "a = " . $a . "\n";
@@ -367,8 +370,8 @@
 		}
 
 		// get free merchants
-		// <p class="f10">商人： 19/20</p><p><input type="image"
-		$ret = preg_match('/<p class="f10">\S+ ([0-9]+)\/[0-9]+<\/p><p><input type="image"/', $result, $matches);
+		// </table><p>商人： 10/13</p>
+		$ret = preg_match('#</table><p>\S+ ([-0-9]+)/[0-9]+</p>#', $result, $matches);
 		if(!$ret){
 			echo "FAILED : get free merchants.\n";
 			return false;
@@ -529,7 +532,7 @@
 
 		}else return;
 		
-		sell($cart_capacity, $x, $cart_capacity * $ratio, 4, $reserve_carts, $reserve);
+		sell($cart_capacity * 2, $x, $cart_capacity * $ratio * 2, 4, $reserve_carts, $reserve);
 
 	}
 ?>

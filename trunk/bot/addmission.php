@@ -4,15 +4,15 @@
 	// Main
 	// ----------------------------------------------------------------------------
 
-	if(!array_key_exists('x', $_GET) || !array_key_exists('y', $_GET) ) {
+	if(!array_key_exists('x', $_GET) || !array_key_exists('y', $_GET) || !array_key_exists('a', $_GET) ) {
 		if(!array_key_exists('seq', $_GET)) die("No post.");
 	}else{
 		$x = $_GET['x'];
 		$y = $_GET['y'];
+		$account = $_GET['a'];
 	}
 
 	require_once("db.php");
-	require_once('attack_ac.php');
 
 	if(array_key_exists('h', $_GET) && array_key_exists('c', $_GET) && array_key_exists('r', $_GET)  && array_key_exists('v', $_GET)) {
 		$hour = $_GET['h'];
@@ -22,7 +22,7 @@
 		$referer = $_GET['referer'];
 		$ram = intval($_GET['ram']);
 
-		$sql = " insert into mission(`village`, `x`, `y`, `hour`, `min_clubs`, `recursive`, `ram`) VALUES($village, $x, $y, $hour, $clubs, $recursive, $ram)";
+		$sql = " insert into mission(account, `village`, `x`, `y`, `hour`, `min_clubs`, `recursive`, `ram`) VALUES($account, $village, $x, $y, $hour, $clubs, $recursive, $ram)";
 
     	if(!mysql_query($sql)) die(mysql_error());
     	

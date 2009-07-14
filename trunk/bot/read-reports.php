@@ -29,7 +29,9 @@
 	// record self attack reports for farm suppose
 	function record_report($id, $title)
 	{
-		$sql = "replace into reports(id, title) values($id, '$title')";
+		global $account;
+		
+		$sql = "replace into reports(account, id, title) values($account, $id, '$title')";
 		if(!mysql_query($sql)) die(mysql_error());
 	}
 

@@ -47,7 +47,7 @@
 		}
 		
 		if($nowait == false){
-			usleep(rand(1, 6) * 200000);
+			usleep(rand(1, 3) * 200000);
 		}
 		return $ch;
 	}

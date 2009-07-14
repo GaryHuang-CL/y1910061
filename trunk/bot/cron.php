@@ -12,7 +12,8 @@
 		$user = $row[2];
 		$busy = $row[3];
 		
-		//if($id == 7) continue;
+		if($id == 2) continue; // inblackhole
+		if($id == 8) continue; // papurica731
 		if($id == 11) continue;
 		
 		echo " ----- $user @ $server -----\n";

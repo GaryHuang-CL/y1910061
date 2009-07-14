@@ -14,7 +14,6 @@
 	$chars = array("-", "①", "②", "③", "④", "⑤", "⑥", "⑦", "⑧", "⑨", "⑩", "⑪", "⑫", "⑬", "⑭", "⑮", "⑯", "⑰", "⑱", "⑲", "⑳");
 	
 	require_once("db.php");
-	require_once('attack_ac.php');
 
 	$limit = 0;
 	
@@ -22,12 +21,19 @@
 		$limit = $_GET['limit'];;
 	}
 
-	if(!array_key_exists('x', $_GET) || !array_key_exists('y', $_GET)) die("No x|y.");
+	if(!array_key_exists('x', $_GET) || !array_key_exists('y', $_GET) || !array_key_exists('a', $_GET)) die("No x|y|a.");
 	
 	$ox = $_GET['x'];
 	$oy = $_GET['y'];
-	
-	
+	$account = $_GET['a'];
+
+	$sql = "select server from accounts where id = $account";
+    $res = mysql_query($sql);
+    if(!$res) die(mysql_error());
+	$row = mysql_fetch_row($res);
+	if(!$row) die("Account not found.");
+	$server = $row[0];
+
 	$fx = $_GET['fx'];
 
 	$tblname = "x_world_" . str_replace(".", "_", $server) . "_" . date('ymd', time() - 3600);
@@ -46,8 +52,8 @@ from $tblname a
 left outer join $tblname_yesterday b on a.id = b.id
 left outer join $tblname_before_yesterday c on a.id = c.id " .
 
-	(($limit == 2) ? " inner join targets as d on a.x = d.x and a.y = d.y and d.invalid = 0 "
-				   : " left outer join targets as d on a.x = d.x and a.y = d.y ") .
+	(($limit == 2) ? " inner join targets as d on d.account = $account and a.x = d.x and a.y = d.y and d.invalid = 0 "
+				   : " left outer join targets as d on d.account = $account and a.x = d.x and a.y = d.y ") .
 		
 	(($limit == 1) ? " inner join $tblname_idle_village e on a.id = e.id "
 				   : " left outer join $tblname_idle_village e on a.id = e.id ");
@@ -112,13 +118,13 @@ left outer join $tblname_before_yesterday c on a.id = c.id " .
 	    // farm 1 hour
     	if($invalid == 0 && $interval == 1){
     		if($new_raid <= 20){
-    			echo "<a href=\"alter.php?x=$x&y=$y&t=0&i=1&r=$new_raid\">" . $chars[$raid] . "</a>";
+    			echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=1&r=$new_raid\">" . $chars[$raid] . "</a>";
     		}else{
-    			echo "<a href=\"alter.php?x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
+    			echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
     		}
     		
     	}else{
-    		echo "<a href=\"alter.php?x=$x&y=$y&t=0&i=1&r=1\">×</a>";
+    		echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=1&r=1\">×</a>";
     	}
     	
     	echo "</td><td>";
@@ -126,12 +132,12 @@ left outer join $tblname_before_yesterday c on a.id = c.id " .
 	    // farm 2 hour
     	if($invalid == 0 && $interval == 2){
     		if($new_raid <= 5){
-	    		echo "<a href=\"alter.php?x=$x&y=$y&t=0&i=2&r=$new_raid\">" . $chars[$raid] . "</a>";
+	    		echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=2&r=$new_raid\">" . $chars[$raid] . "</a>";
     		}else{
-    			echo "<a href=\"alter.php?x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
+    			echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
     		}
     	}else{
-    		echo "<a href=\"alter.php?x=$x&y=$y&t=0&i=2&r=1\">×</a>";
+    		echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=2&r=1\">×</a>";
     	}
     	
     	echo "</td><td>";
@@ -139,12 +145,12 @@ left outer join $tblname_before_yesterday c on a.id = c.id " .
 	    // farm 4 hour
     	if($invalid == 0 && $interval == 4){
     		if($new_raid <= 5){
-	    		echo "<a href=\"alter.php?x=$x&y=$y&t=0&i=4&r=$new_raid\">" . $chars[$raid] . "</a>";
+	    		echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=4&r=$new_raid\">" . $chars[$raid] . "</a>";
     		}else{
-    			echo "<a href=\"alter.php?x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
+    			echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
     		}
     	}else{
-    		echo "<a href=\"alter.php?x=$x&y=$y&t=0&i=4&r=1\">×</a>";
+    		echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=4&r=1\">×</a>";
     	}
     	
     	echo "</td><td>";
@@ -152,12 +158,12 @@ left outer join $tblname_before_yesterday c on a.id = c.id " .
 	    // farm 8 hour
     	if($invalid == 0 && $interval == 8){
     		if($new_raid <= 5){
-	    		echo "<a href=\"alter.php?x=$x&y=$y&t=0&i=8&r=$new_raid\">" . $chars[$raid] . "</a>";
+	    		echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=8&r=$new_raid\">" . $chars[$raid] . "</a>";
     		}else{
-    			echo "<a href=\"alter.php?x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
+    			echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
     		}
     	}else{
-    		echo "<a href=\"alter.php?x=$x&y=$y&t=0&i=8&r=1\">×</a>";
+    		echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=8&r=1\">×</a>";
     	}
     	
     	echo "</td><td>";
@@ -179,7 +185,7 @@ left outer join $tblname_before_yesterday c on a.id = c.id " .
     		echo "</a><br>";
     	}
     	
-   		echo "</td><td><a href=\"addmission.php?x=$x&y=$y\">Add</a></td>";
+   		echo "</td><td><a href=\"addmission.php?a=$account&x=$x&y=$y\">Add</a></td>";
     	echo "</td><td>$my_v_name</td><td>$score</td><td>";
     	
     	if($reports > 0)
@@ -191,14 +197,14 @@ left outer join $tblname_before_yesterday c on a.id = c.id " .
     echo "</table><br>";
     
     if($p > 0){
-	    echo '<a href="viewpop.php?' . "x=$ox&y=$oy&p=" . ($p - 1);
+	    echo '<a href="viewpop.php?' . "a=$account&x=$ox&y=$oy&p=" . ($p - 1);
 	   	echo "&limit=" . $limit;
 	   	
 	   	echo '">Prev</a>&nbsp;';
     }
     
     $p = $p + 1;
-    echo '<a href="viewpop.php?' . "x=$ox&y=$oy&p=" . $p;
+    echo '<a href="viewpop.php?' . "a=$account&x=$ox&y=$oy&p=" . $p;
    	echo "&limit=" . $limit;
 	
    	echo '">Next</a><br><hr>';

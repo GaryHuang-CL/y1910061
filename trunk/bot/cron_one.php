@@ -76,7 +76,7 @@
 	require_once('army.php');
 	require_once('read-reports.php');
 	
-	$sql = "select server, user, password, race, main_village, last_report, beacon, message, busy, redundant_resource from accounts where id = $account";
+	$sql = "select server, user, password, race, main_village, last_report, beacon, message, busy, redundant_resource, farm_lo, farm_hi from accounts where id = $account";
 	$res = mysql_query($sql);
 	if(!$res) die(mysql_error());
 	$row = mysql_fetch_row($res);
@@ -92,6 +92,8 @@
 	$message      = $row[7];
 	$busy         = $row[8];
 	$redundant_resource = $row[9];
+	$farm_lo = $row[10];
+	$farm_hi = $row[11];
 	
 	if($busy == 1){
 		echo "BUSY !!!!\n";
@@ -174,100 +176,42 @@
 					if(!mysql_query($sql)) die(mysql_error());
 				}
 
-				if($server == "s3.travian.jp" && $user == "3x3x3"){
+				if($server == "speed.travian.tw" && $user == "3x3x3"){
+					build_infantry(2, 7);
+					reinforce(46, 101, array(2=>0));
 					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5 && $crop > $granary_capacity * 0.5){
-						$c1 = round($wood / 100);
-						$c2 = round($brick / 130);
-						$c3 = round($iron / 55);
-						$c4 = round($crop / 30);
-						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
-						
-						if($c > 0) build_infantry(1, $c);
-
+					if($crop > 5000){
+						sell(1500, 4, 1500, 3, 0, 3000);
 					}
 					
-					if($crop > $granary_capacity * 0.9){
-						sell(750, 4, 750, 2, 4, 9000);
+					if($brick > 5000){
+						sell(1500, 2, 1500, 3, 0, 3000);
 					}
 
-
-				}else if($server == "s3.travian.jp" && $user == "inblackhole"){
-					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5 && $crop > $granary_capacity * 0.5){
-						$c1 = round($wood / 100);
-						$c2 = round($brick / 130);
-						$c3 = round($iron / 55);
-						$c4 = round($crop / 30);
-						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
-						
-						if($c > 0) build_infantry(1, $c);
-
+					if($wood > 5000){
+						sell(1500, 1, 1500, 3, 0, 3000);
 					}
 					
-					if($crop > $granary_capacity * 0.9){
-						sell(750, 4, 750, 2, 4, 9000);
-					}
-					
-				}else if($server == "s3.travian.jp" && $user == "papurica731"){
-					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5 && $crop > $granary_capacity * 0.5){
-						$c1 = round($wood / 100);
-						$c2 = round($brick / 130);
-						$c3 = round($iron / 160);
-						$c4 = round($crop / 70);
-						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
-						
-						if($c > 0) build_infantry(2, $c);
-
-					}
-					
-					if($crop > $granary_capacity * 0.9){
-						sell(500, 4, 500, 3, 5, 9000);
-					}
-
-					// トマト@k9999	(89|19)
-					//if($hour > 2 && $hour < 10){
-					//	transfer_resouce_to_xy($village, 89, 19, 0, 0, 0, 1000, 0);
-					//}
-
-				}else if($server == "s3.travian.jp" && $user == "docomo2"){
-					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5 && $crop > $granary_capacity * 0.5){
-						$c1 = round($wood / 100);
-						$c2 = round($brick / 130);
-						$c3 = round($iron / 160);
-						$c4 = round($crop / 70);
-						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
-						
-						if($c > 0) build_infantry(2, $c);
-
-					}
-					
-					if($crop > $granary_capacity * 0.9){
-						sell(500, 4, 500, 2, 5, 9000);
-					}
-
-				}else if($server == "s3.travian.jp" && $user == "Kimon"){
-					
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.8 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5 && $crop > $granary_capacity * 0.5){
-						$c1 = round($wood / 100);
-						$c2 = round($brick / 130);
-						$c3 = round($iron / 160);
-						$c4 = round($crop / 70);
-						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
-						
-						if($c > 0) build_infantry(2, $c);
-
-					}
-					
-					if($crop > $granary_capacity * 0.9){
-						sell(500, 4, 500, 2, 8, 9000);
-					}
 					
 				}else if($server == "speed.travian.tw" && $user == "Kimon"){
 					
-					if(($wood > $warehouse_capacity * 0.7 || $brick > $warehouse_capacity * 0.8) && $crop > 2000){
+					if($iron > $warehouse_capacity * 0.9 && $crop > 8000){
+						$c1 = round($wood / 130);
+						$c2 = round($brick / 120);
+						$c3 = round($iron / 170);
+						$c4 = round($crop / 70);
+						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
+						build_infantry(3, $c);
+
+					}else if($brick > $warehouse_capacity * 0.9 && $crop > 8000){
+						$c1 = round($wood / 450);
+						$c2 = round($brick / 515);
+						$c3 = round($iron / 480);
+						$c4 = round($crop / 80);
+						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
+						build_cavalry(6, $c);
+
+					}else if($wood > $warehouse_capacity * 0.9 && $crop > 8000){
 						$c1 = round($wood / 95);
 						$c2 = round($brick / 75);
 						$c3 = round($iron / 40);
@@ -275,14 +219,6 @@
 						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
 
 						build_infantry(1, $c);
-
-					}else if($iron > $warehouse_capacity * 0.7 && $crop > 2000){
-						$c1 = round($wood / 130);
-						$c2 = round($brick / 120);
-						$c3 = round($iron / 170);
-						$c4 = round($crop / 70);
-						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
-						build_infantry(3, $c);
 					}
 
 					if($crop > $granary_capacity * 0.95){
@@ -293,53 +229,10 @@
 					read_self_attack_reports();
 
 					if($attack_time_left >=0 && $attack_time_left < 1000){
-						build_infantry(1, 0);
-						avoid_attack_teutonic(43, 94);
+						build_infantry(3, 0);
+						avoid_attack_teutonic(49, 104);
 					}
 
-				}else if($server == "s3.travian.jp" && $user == "Hömeless"){
-
-					if($wood > $warehouse_capacity * 0.9 && $crop > $granary_capacity * 0.5){
-						$c1 = round($wood / 95);
-						$c2 = round($brick / 75);
-						$c3 = round($iron / 40);
-						$c4 = round($crop / 40);
-						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
-
-						build_infantry(1, $c);
-					}
-
-					if($brick > $warehouse_capacity * 0.9 && $crop > $granary_capacity * 0.5){
-						$c1 = round($wood / 450);
-						$c2 = round($brick / 515);
-						$c3 = round($iron / 480);
-						$c4 = round($crop / 80);
-						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
-						build_cavalry(6, $c);
-					}
-					
-					if($iron > $warehouse_capacity * 0.9 && $crop > $granary_capacity * 0.5){
-						$c1 = round($wood / 130);
-						$c2 = round($brick / 120);
-						$c3 = round($iron / 170);
-						$c4 = round($crop / 70);
-						$c = round(min($c1, $c2, $c3, $c4) * 9 / 10);
-						build_infantry(3, $c);
-					}
-
-					if($crop > $granary_capacity * 0.9){
-						sell(1000, 4, 1000, rand(1, 2), 4, 1000);
-					}
-
-					//attack_and_farm_loop($village, $attack_time_left);
-
-					if($attack_time_left >=0 && $attack_time_left < 420){
-						avoid_attack_teutonic(95, 29);
-					}
-
-					//read_self_attack_reports();
-					
-					//destroy_building($village, 34);
 				}
 			}else {
 				
@@ -349,11 +242,11 @@
 					transfer_to_village($village, $main_village, false, 75);
 				}
 			}
-			
+
 			// new village logic
 			if($newbie > 0){
 				
-				if($attack_time_left < 0){
+				if($attack_time_left < 0 || $attack_time_left > 3600){
 					if(time() - $last_beg > 2000)
 						transfer_to_newbie($main_village, $village, $result);
 					

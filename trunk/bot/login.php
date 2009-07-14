@@ -67,14 +67,14 @@
 			// echo $login . "\n";
 			
 			// <input class="fm fm110" type="text" name="e96c60c" value="" maxlength="15"> <span class="e f7"></span>
-			$ret = preg_match('/<input class="fm fm110" type="text" name="([a-z0-9]+)" value=".*?" maxlength="15"/', $result, $matches);
+			$ret = preg_match('/<input class="text" type="text" name="([a-z0-9]+)" value=".*?" maxlength="15"/', $result, $matches);
 			if(!$ret) die("get post name user failed.");
 
 			$var_user = $matches[1];
 			// echo $var_user . "\n";
 			
 			// <input class="fm fm110" type="password" name="ee54ffc" value="" maxlength="20"> <span class="e f7"></span>
-			$ret = preg_match('/<input class="fm fm110" type="password" name="([a-z0-9]+)" value=".*?" maxlength="20"/', $result, $matches);
+			$ret = preg_match('/<input class="text" type="password" name="([a-z0-9]+)" value=".*?" maxlength="20"/', $result, $matches);
 			if(!$ret) die("get post name password failed.");
 
 			$var_password = $matches[1];
