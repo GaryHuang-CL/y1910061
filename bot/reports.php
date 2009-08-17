@@ -38,7 +38,7 @@
 	    	if($mark == 1){
 	    		echo "<a href=\"http://$server/berichte.php?id=$id\">$title</a><br>\n";
 	    	}else{
-	    		echo "<a href=\"reports.php?id=$id\"><b>$title</b></a><br>\n";
+	    		echo "<a href=\"reports.php?a=$account&id=$id\"><b>$title</b></a><br>\n";
 	    	}
 		}
 	}

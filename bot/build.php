@@ -1,4 +1,15 @@
 <?php
+	define("SAWMILL",      		5);
+	define("BRICKYARD",    		6);
+	define("IRON_FOUNDRY", 		7);
+	define("GRAIN_MILL", 		8);
+	define("BAKERY", 			9);
+	define("WAREHOUSE",      	10);
+	define("GRANARY",        	11);
+	define("MAIN_BUILDING", 	15);
+	define("MARKETPLACE",	 	17);
+	define("RESIDENCE", 		25);
+
 	function build_warehouse()
 	{
 		return build_gid(10);
@@ -38,6 +49,7 @@
 		$result = curl_exec ($ch);
 		curl_close ($ch);
 		
+		update_check_time($result);
 		return $result;
 	}
 
@@ -61,7 +73,8 @@
 
 		// <tr class="sel"><td class="dot">&#x25CF;</td><td class="text"><a href="?newdid=74731"
 		//$ret = preg_match('/<a href="\?newdid=([0-9]+)" class="active_vl">/', $result, $matches);
-		$ret = preg_match('/<tr class="sel"><td class="dot">&#x25CF;<\/td><td class="text"><a href="\?newdid=([0-9]+)"/', $result, $matches);
+		// <td class="dot hl">&#x25CF;</td><td class="link"><a href="?newdid=120659&amp;c=e40" >
+		$ret = preg_match('/<td class="dot hl">&#x25CF;<\/td><td class="link"><a href="\?newdid=([0-9]+)/', $result, $matches);
 		
 		if(!$ret) die("Failed to switch village.");
 		if($matches[1] != $village) die("Failed to switch village " . $matches[1] . "\n");
@@ -154,6 +167,14 @@
 		return $ret;
 	}
 
+	function get_building_level($result, $gid)
+	{
+		if(preg_match('#<img src="img/x.gif" class="building d[0-9]+ g' . $gid . 'b?" alt="[^0-9]+([0-9]+)" />#', $result, $match)){
+			return $match[1];
+		}
+		
+		return false;
+	}
 	
 	function get_free_space($result)
 	{
@@ -200,14 +221,22 @@
 			list($id, $level) = each($level_type);
 			
 			if($level >= 10) continue;
-			$min_capacity = array(800, 800, 2300, 3100, 4000, 5000, 6300, 7800, 9600, 14000);
+			$min_capacity = array(800, 800, 1200, 1200, 1700, 5000, 6300, 7800, 9600, 14000);
 			
 			if($min_capacity[$level] > $granary_capacity){
-				build_granary();
+				if($granary_capacity > 800)
+					build_granary();
+				else
+					create_granary();
 				return false;
 			}
 			
 			if($min_capacity[$level] > $warehouse_capacity){
+				if($warehouse_capacity == 800){
+					create_warehouse();
+					return false;
+				}
+				
 				if($dorf2_html = build_warehouse()){
 
 					if(!strstr($dorf2_html, 'id="map2"')){
@@ -239,6 +268,7 @@
 		}
 		
 		echo "all resource fields level 10.\n";
+		build_when_all_resource_done();
 		
 		return false;
 		
@@ -251,9 +281,10 @@
 		global $race;
 
 		// ^<div class="f10 b">.+<span id=timer1>
-		if(preg_match('/<div class="f10 b">.+<span id=timer1>/', $result, $matches)){
+		// <span id="timer1">1:51:21</span>
+		if(preg_match('/<td><span id="timer1">[0-9]+:[0-9]+:[0-9]+<\/span>/', $result, $matches)){
 			if($race == "roman"){
-				if(preg_match('/<div class="f10 b">.+<span id=timer2>/', $result, $matches)){
+				if(preg_match('/<td><span id="timer2">[0-9]+:[0-9]+:[0-9]+<\/span>/', $result, $matches)){
 					echo "Building timer2 (roman) found.\n";
 					return;
 				}
@@ -371,6 +402,7 @@
 		$result = curl_exec ($ch);
 		curl_close ($ch);
 		
+		update_check_time($result);
 		//echo $result;
 	}
 	
@@ -446,6 +478,11 @@
 	
 	function create_building($gid, $result)
 	{
+		if(!$result){
+			$result = get_dorf2_page();
+			if(!$result) return false;
+		}
+		
 		$id = get_free_space($result);
 		
 		if(!$id) return false;
@@ -455,17 +492,17 @@
 		return build_or_upgrade($id, $gid);
 	}
 	
-	function create_main_building($result)
+	function create_main_building($result = '')
 	{
 		return create_building(15, $result);
 	}
 	
-	function create_warehouse($result)
+	function create_warehouse($result = '')
 	{
 		return create_building(10, $result);
 	}
 
-	function create_granary($result)
+	function create_granary($result = '')
 	{
 		return create_building(11, $result);
 	}
@@ -516,7 +553,7 @@
 		curl_setopt($ch, CURLOPT_REFERER, $url);
 		$result = curl_exec ($ch);
 		curl_close ($ch);
-
+		update_check_time($result);
 		return true;
 	}
 	
@@ -584,5 +621,103 @@
 		echo $result;
 		die("failed to get production.\n");
 
+	}
+	
+	function update_check_time($result)
+	{
+		global $next_check_time;
+		
+		// <span id="timer1">1:51:21</span>
+		$ret = preg_match_all('#<span id="timer[0-9]">([0-9]+):([0-9]+):([0-9]+)</span>#', $result, $matches, PREG_SET_ORDER);
+		
+		if(!$ret) return;
+		
+		foreach($matches as $match){
+			$hour = $match[1];
+			$minute = $match[2];
+			$second = $match[3];
+			echo $match[0] . "\n";
+				$next_check_time = min($next_check_time, $hour * 3600 + $minute * 60 + $second);
+		}
+	}
+	
+	function create_or_upgrade($result, $gid, $max_level = 10)
+	{
+		$level = get_building_level($result, $gid);
+		
+		if($level === false){
+			create_building($gid, $result);
+			return true;
+
+		}else if($level < $max_level){
+			build_gid($gid);
+			return true;
+		}
+		
+		return false;
+	}
+	
+	// build when all resource level 10
+	function build_when_all_resource_done()
+	{
+		global $village, $main_village, $newbie;
+		
+		if($village == $main_village) return;
+		
+		if(!$newbie) return;
+		
+		$result = get_dorf2_page();
+		if(!$result) return;
+		
+		if(create_or_upgrade($result, MAIN_BUILDING)){
+			echo "build MAIN_BUILDING.\n";
+			return;
+		}
+		
+		$targets = array(MARKETPLACE, SAWMILL, BRICKYARD, IRON_FOUNDRY, GRAIN_MILL);
+		$levels= array();
+		
+		foreach($targets as $target){
+			$level = get_building_level($result, $target);
+			
+			if(!$level){
+				echo "Create $target\n ..\n";
+				create_building($target, $result);
+				return;
+			}
+			
+			$levels[$target] = $level;
+		}
+		
+		asort($levels);
+		
+		print_r($levels);
+		
+		list($target, $level) = each($levels);
+		
+		if($level < 5){
+			build_gid($target);
+			return;
+		}
+		
+		// RESIDENCE to level 10
+		if(create_or_upgrade($result, RESIDENCE)){
+			echo "build RESIDENCE.\n";
+			return;
+		}
+		
+		// MARKETPLACE to level 10
+		if(create_or_upgrade($result, MARKETPLACE)){
+			echo "build MARKETPLACE.\n";
+			return;
+		}
+		
+		// BAKERY to level 10
+		if(create_or_upgrade($result, BAKERY)){
+			echo "build BAKERY.\n";
+			return;
+		}
+		
+		echo "Nothing to build..\n";
 	}
 ?>

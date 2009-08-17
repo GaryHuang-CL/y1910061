@@ -43,6 +43,7 @@
 		global $server;
 		global $account;
 		global $farm_lo, $farm_hi;
+		global $village_x, $village_y;
 		
 		$url = "http://$server/a2b.php";
 
@@ -70,8 +71,8 @@
 		echo "$curr_clubs clubs, $curr_axes axes, $curr_tks tks availabe.\n";
 		
 		// Get a target
-		$sql = "SELECT x, y, `raid`, `score`, `player` FROM `targets` WHERE account = $account and `village` = $village and `invalid` = 0 and NOW() > date_add(`timestamp`, INTERVAL (`interval` * 80) MINUTE) order by date_add(`timestamp`, INTERVAL (`interval` * 80) MINUTE) limit 1";
-		
+		$sql = "SELECT x, y, `raid`, `score`, `player` FROM `targets` WHERE account = $account and `village` = $village and `invalid` = 0 and NOW() > `timestamp` order by (sqrt((x - $village_x) * (x - $village_x) + (y - $village_y) * (y - $village_y))) / IF(avg_score=0, 1, avg_score) limit 1";
+		echo $sql . "\n";
 		$res = mysql_query($sql);
 		if(!$res) die(mysql_error());
 
@@ -140,8 +141,18 @@
 			}
 		}
 		
+		$distance = sqrt( ($target_x - $village_x) * ($target_x - $village_x) + ($target_y - $village_y) * ($target_y - $village_y) );
+		echo "distance: $distance\n";
+		
+		$second_cost = round($distance / 5 * 3600);
+		echo "second_cost: $second_cost\n";
+		
+		$second_cost = max($second_cost, 138 * 60);
+		$next_raid_interval = rand($second_cost, 3 * $second_cost);
+		echo "next_raid_interval: $next_raid_interval\n";
+		
 		// Update the target
-		$sql = "update `targets` set `timestamp` = now() where account = $account and x = " . $target_x . " and y = " . $target_y;
+		$sql = "update `targets` set `timestamp` = FROM_UNIXTIME(unix_timestamp(now()) + $next_raid_interval) where account = $account and x = " . $target_x . " and y = " . $target_y;
 		mysql_query($sql);
 
 		if(attack_func($target_x, $target_y, $clubs, $axes, $tks, '', '', '', $result, $player)){

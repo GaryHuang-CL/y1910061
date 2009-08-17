@@ -2,7 +2,35 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 </head>
 <?php
+	function parse_html($html)
+	{
+		$ret = array();
+		
+		$doc = new DOMDocument();
+		$doc->loadHTML($html);
+		$xpath = new DOMXPath($doc);
 
+		$table = $doc->getElementById('vlist');
+		
+		$query = 'tbody/tr';
+		$entries = $xpath->query($query, $table);
+		
+		foreach ($entries as $entry) {
+		    $nameNode = $entry->childNodes->item(1);
+		    $coods = $entry->childNodes->item(2)->getElementsByTagName('div');
+		    
+		    list(,$x) = explode("(", $coods->item(0)->nodeValue);
+		    list($y,) = explode(")", $coods->item(2)->nodeValue);
+		    
+		    list(,$id) = explode("=", $nameNode->firstChild->attributes->getNamedItem("href")->nodeValue);
+		    
+		    $name = $nameNode->nodeValue;
+		    $ret[$id] = array($name, $x, $y);
+		}
+
+		return $ret;
+	}
+	
 	if(!array_key_exists('a', $_GET)) die("No a.");
 	$account = $_GET['a'];
 	
@@ -24,13 +52,7 @@
 	$result = curl_exec ($ch);
 	curl_close ($ch);
 	
-	$all_id = array();
-	// <td class="text"><a href="?newdid=74731" >ホーム</a></td><td class="x">(94</td><td>|</td><td class="y">28)</td>
-	if(preg_match_all('#<td class="text"><a href="\?newdid=([0-9]+)"[^>]*>(.+?)</a></td><td class="x">\(([-0-9]+)</td><td>\|</td><td class="y">([-0-9]+)\)</td>#', $result, $matches, PREG_SET_ORDER)){
-		foreach ($matches as $val) {
-			$all_id[$val[1]] = array($val[2], $val[3], $val[4]);
-		}
-	}
+	$all_id = parse_html($result);
 
 	$db_all = array();
 	

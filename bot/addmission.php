@@ -53,6 +53,7 @@
 <form method="GET" action="addmission.php">
 <input type="hidden" name="x" value="<?php echo $x;?>">
 <input type="hidden" name="y" value="<?php echo $y;?>">
+<input type="hidden" name="a" value="<?php echo $account;?>">
 <input type="hidden" name="referer" value="<?php echo $_SERVER['HTTP_REFERER'];?>">
 	
 Hour:

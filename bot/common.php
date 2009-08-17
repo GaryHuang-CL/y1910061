@@ -8,8 +8,14 @@
 
 	function my_curl_init($nowait = false){
 		global $account;
+		global $proxy;
 		
-		//$proxy = 'secure-gw.tetra-tis.net:8080';
+		if($proxy == 1){
+			$proxy_server = 'localhost:58000';
+		}else{
+			$proxy_server = $proxy;
+		}
+		
 		$user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.0; ja; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11';
 		
 		$today = getdate();
@@ -23,7 +29,7 @@
 		$header[]  = "Accept-Charset: UTF-8,*";
 		$header[]  = "Keep-Alive: 300";
 
-		if(isset($proxy)){
+		if($proxy){
 			$header[] = "Proxy-Connection: keep-alive";
 		}else{
 			$header[] = "Connection: keep-alive";
@@ -42,12 +48,12 @@
 		curl_setopt ($ch, CURLOPT_ENCODING, 'gzip,deflate');
 
 		
-		if(isset($proxy)){
-			curl_setopt ($ch, CURLOPT_PROXY, $proxy);
+		if($proxy){
+			curl_setopt ($ch, CURLOPT_PROXY, $proxy_server);
 		}
 		
 		if($nowait == false){
-			usleep(rand(1, 3) * 200000);
+			usleep(rand(1, 4) * 500000);
 		}
 		return $ch;
 	}

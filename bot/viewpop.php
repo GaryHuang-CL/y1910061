@@ -104,7 +104,8 @@ left outer join $tblname_before_yesterday c on a.id = c.id " .
 		$reports = $row2[0];
 		
     	if($raid == 0) $raid = 1;
-
+		if($raid > 5) $raid = 1;
+		
     	echo "<tr><td><a href=\"http://$server/karte.php?z=$d\">$village_name</a></td><td>$x</td><td>$y</td><td>$distance</td><td>$player_name</td><td>$ally_name</td>";
 
 		if(!empty($idle)){
@@ -115,55 +116,44 @@ left outer join $tblname_before_yesterday c on a.id = c.id " .
 
 		$new_raid = $raid + 1;
 		
-	    // farm 1 hour
-    	if($invalid == 0 && $interval == 1){
-    		if($new_raid <= 20){
-    			echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=1&r=$new_raid\">" . $chars[$raid] . "</a>";
-    		}else{
-    			echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
-    		}
-    		
+		$referer = base64_encode($_SERVER['REQUEST_URI']);
+		
+    	if($invalid == 0 && $raid == 1){
+    		echo "<a href=\"alter.php?referer=$referer&a=$account&x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
     	}else{
-    		echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=1&r=1\">×</a>";
+    		echo "<a href=\"alter.php?referer=$referer&a=$account&x=$x&y=$y&t=0&i=1&r=1\">×</a>";
     	}
     	
     	echo "</td><td>";
 
-	    // farm 2 hour
-    	if($invalid == 0 && $interval == 2){
-    		if($new_raid <= 5){
-	    		echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=2&r=$new_raid\">" . $chars[$raid] . "</a>";
-    		}else{
-    			echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
-    		}
+    	if($invalid == 0 && $raid == 2){
+    		echo "<a href=\"alter.php?referer=$referer&a=$account&x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
     	}else{
-    		echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=2&r=1\">×</a>";
+    		echo "<a href=\"alter.php?referer=$referer&a=$account&x=$x&y=$y&t=0&i=1&r=2\">×</a>";
     	}
     	
     	echo "</td><td>";
 
-	    // farm 4 hour
-    	if($invalid == 0 && $interval == 4){
-    		if($new_raid <= 5){
-	    		echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=4&r=$new_raid\">" . $chars[$raid] . "</a>";
-    		}else{
-    			echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
-    		}
+    	if($invalid == 0 && $raid == 3){
+    		echo "<a href=\"alter.php?referer=$referer&a=$account&x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
     	}else{
-    		echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=4&r=1\">×</a>";
+    		echo "<a href=\"alter.php?referer=$referer&a=$account&x=$x&y=$y&t=0&i=1&r=3\">×</a>";
     	}
     	
     	echo "</td><td>";
 
-	    // farm 8 hour
-    	if($invalid == 0 && $interval == 8){
-    		if($new_raid <= 5){
-	    		echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=8&r=$new_raid\">" . $chars[$raid] . "</a>";
-    		}else{
-    			echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
-    		}
+    	if($invalid == 0 && $raid == 4){
+    		echo "<a href=\"alter.php?referer=$referer&a=$account&x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
     	}else{
-    		echo "<a href=\"alter.php?a=$account&x=$x&y=$y&t=0&i=8&r=1\">×</a>";
+    		echo "<a href=\"alter.php?referer=$referer&a=$account&x=$x&y=$y&t=0&i=1&r=4\">×</a>";
+    	}
+    	
+    	echo "</td><td>";
+
+    	if($invalid == 0 && $raid == 5){
+    		echo "<a href=\"alter.php?referer=$referer&a=$account&x=$x&y=$y&t=3\">" . $chars[$raid] . "</a>";
+    	}else{
+    		echo "<a href=\"alter.php?referer=$referer&a=$account&x=$x&y=$y&t=0&i=1&r=5\">×</a>";
     	}
     	
     	echo "</td><td>";
@@ -211,6 +201,7 @@ left outer join $tblname_before_yesterday c on a.id = c.id " .
 
 	$time_end = microtime(true);
 	echo round($time_end - $time_start, 5);
+
 
 ?>
 </html>

@@ -57,6 +57,8 @@
 	{
 		global $server;
 		global $user;
+		global $report_str;
+		global $account;
 		
 		// x_world will be get at 0:30
 		// run at hostjava.net
@@ -121,17 +123,17 @@
 
 
 		// $soldiers = get_report_line($result, '兵士');
-		$soldiers = get_report_line($result, '軍隊');
+		$soldiers = get_report_line($result, $report_str[0]);
 		if(!$soldiers){
 			record_report($id, "【兵士情報不明】$title");
 			return;
 		}
 
 		// $died = get_report_line($result, '死傷');
-		$died = get_report_line($result, '傷亡');
+		$died = get_report_line($result, $report_str[1]);
 		
 		// $captured = get_report_line($result, '捕虜');
-		$captured = get_report_line($result, '俘虜');
+		$captured = get_report_line($result, $report_str[2]);
 		
 		if(!$died && !$captured){
 			record_report($id, "【死傷捕虜不明】$title");
@@ -194,7 +196,7 @@
 	    }
 	    
 		$old_score = $row[0];
-		if(empty($old_score)){
+		if(strlen($old_score) == 0){
 			$scores = array();
 		}else{
     		$scores = explode('|', $old_score);
@@ -202,17 +204,24 @@
     	
     	array_push($scores, $score);
 
-		if(count($scores) > 5){
+		if(count($scores) > 10){
 			array_shift($scores);
 		}
 		
 		$new_score = implode('|', $scores);
-		
+		$avg_score = calc_score($new_score);
+			
     	if($total == $max_raid){
 			echo "reraid...($x,$y) $total\n";
-	    	$sql = "update targets set `timestamp` = date_sub(now(),  interval 1 day), `score` = '$new_score' where x = $x and y = $y";
+	    	$sql = "update targets set `timestamp` = date_sub(now(),  interval 3 day), `score` = '$new_score', `avg_score` = $avg_score where account = $account and x = $x and y = $y";
+	    }else if($total == 0 && count($scores) >= 3 && $scores[count($scores) - 2] == 0 && $scores[count($scores) - 3] == 0){
+	    	echo "raid nothing 3 times ... ($x,$y) \n";
+	    	$sql = "update targets set `timestamp` = date_add(now(),  interval 3 day), `score` = '$new_score', `avg_score` = $avg_score where account = $account and x = $x and y = $y";
+	    }else if($total == 0){
+	    	echo "raid nothing ... ($x,$y) \n";
+	    	$sql = "update targets set `timestamp` = date_add(now(),  interval 1 day), `score` = '$new_score', `avg_score` = $avg_score where account = $account and x = $x and y = $y";
 	    }else{
-	    	$sql = "update targets set `timestamp` = `timestamp`, `score` = '$new_score' where x = $x and y = $y";
+	    	$sql = "update targets set `timestamp` = `timestamp`, `score` = '$new_score', `avg_score` = $avg_score where account = $account and x = $x and y = $y";
 	    }
 	    
     	if(!mysql_query($sql)) die(mysql_error());
@@ -256,7 +265,8 @@
 			$result = curl_exec ($ch);
 			curl_close ($ch);
 			
-			if(!preg_match_all('#<td class="topic"><a href="berichte\.php\?id=([0-9]+)">([^<]+)</a> [^<]+</td>#', $result, $matches, PREG_SET_ORDER))
+			// <td class="sub"><a href="berichte.php?id=26188365">? 攻擊 我已經蓋陷阱了＠＠</a> （新）</td>
+			if(!preg_match_all('#<td class="sub"><a href="berichte\.php\?id=([0-9]+)">([^<]+)</a> [^<]+</td>#', $result, $matches, PREG_SET_ORDER))
 				break;
 			
 			foreach($matches as $match){
