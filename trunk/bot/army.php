@@ -1,5 +1,10 @@
 <?php
 
+	function _attack($x, $y, $army_types, $arrive_time = false)
+	{
+		send_army(3, $x, $y, $army_types, $arrive_time);
+	}
+
 	function raid($x, $y, $army_types, $arrive_time = false)
 	{
 		send_army(4, $x, $y, $army_types, $arrive_time);
@@ -460,6 +465,85 @@
 		}
 		
 		echo "Building... $num infantry.\n";
+	}
+
+	function build_settler() 
+	{
+		global $server;
+		
+		$url = "http://$server/build.php?gid=25";
+
+		echo $url . "\n";
+
+		$ch = my_curl_init();
+		curl_setopt($ch, CURLOPT_URL,$url);
+		$result = curl_exec ($ch);
+		curl_close ($ch);
+		
+		// onClick="document.snd.t10.value=0
+		if(!preg_match('/on[cC]lick="document\.snd\.t10\.value=([0-9]+)/', $result, $matches)){
+			echo "Failed to build settler.\n";
+			return;
+		}
+
+		$num = intval($matches[1]);
+
+		if($num <= 0){
+			echo "No resource to build settler.\n";
+			return;
+		}
+		
+		// <input type="hidden" name="id" value="19">
+		if(!preg_match('/<input type="hidden" name="id" value="([0-9]+)"/', $result, $matches)){
+			echo("get id failed.\n");
+			return;
+		}
+		
+		$id = $matches[1];
+		echo "id = " . $id . "\n";
+
+		// <input type="hidden" name="z" value="15">
+		if(!preg_match('/<input type="hidden" name="z" value="([0-9]+)"/', $result, $matches)){
+			echo("get z failed.\n");
+			return;
+		}
+		
+		$z = $matches[1];
+		echo "z = " . $z . "\n";
+
+		// <input type="hidden" name="a" value="2">
+		if(!preg_match('/<input type="hidden" name="a" value="([0-9]+)"/', $result, $matches)){
+			echo("get a failed.\n");
+			return;
+		}
+		
+		$a = $matches[1];
+		echo "a = " . $a . "\n";
+
+		// id=19&z=4802&a=2&t10=1&s1.x=&s1.y=&s1=ok
+		$postfields = 'id=' . $id . '&z=' . $z . '&a=' . $a . '&t10=' . $num . '&s1.x=&s1.y=&s1=ok';
+
+		echo $postfields . "\n";
+
+		$referer = $url;
+		$url = "http://$server/build.php";
+
+		echo $url . "\n";
+		
+		$ch = my_curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
+		curl_setopt($ch, CURLOPT_REFERER, $referer);
+
+		$result = curl_exec ($ch);
+		curl_close ($ch);
+		
+		if(!$result){
+			echo(curl_error($ch) . "\n");
+		}
+		
+		echo "Building... $num settlers.\n";
 	}
 
 ?>

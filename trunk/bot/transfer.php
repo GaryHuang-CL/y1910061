@@ -258,7 +258,8 @@
 		curl_close ($ch);
 		
 		// <tr><td colspan="2">XXX 15/20<br><br></td></tr>
-		$ret = preg_match('/<tr><td colspan="2">.+?([0-9]+)\/([0-9]+)<br><br><\/td><\/tr>/', $result, $matches);
+		// <td class="mer">è§êl 20/20</td> 
+		$ret = preg_match('/<td class="mer">.+?([0-9]+)\/([0-9]+)<\/td>/', $result, $matches);
 		if(!$ret){
 			echo "FAILED : get carts.\n";
 			return false;
@@ -267,14 +268,10 @@
 		$carts = $matches[1];
 		// echo "Carts : $carts \n";
 		
-		// diff between s5 and 3x
-		// <a href="#" onMouseUp="add_res(1);" onClick="return false;">(3000)</a></td>
-		// <a href="#" onClick="add_res(1); return false;" onDBLclick="add_res(1); return false;">(1000)</a></td>
-		if(!preg_match('/<a href="#" onMouseUp="add_res\(1\);" onClick="return false;">\(([0-9]+)\)<\/a><\/td>/', $result, $matches)){
-			if(!preg_match('/<a href="#" onClick="add_res\(1\); return false;" onDBLclick="add_res\(1\); return false;">\(([0-9]+)\)<\/a><\/td>/', $result, $matches)){
-				echo "FAILED : get amount per cart\n";
-				return false;
-			}
+		// var carry = 1500;
+		if(!preg_match('/var carry = ([0-9]+);/', $result, $matches)){
+			echo "FAILED : get amount per cart\n";
+			return false;
 		}
 		
 		$amount_per_cart = $matches[1];

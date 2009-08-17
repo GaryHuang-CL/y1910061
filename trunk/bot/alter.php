@@ -12,7 +12,8 @@
 	$y 		 = $_GET['y'];
 	$t 		 = $_GET['t'];
 	$account = $_GET['a'];
-
+	$referer = base64_decode ($_GET['referer']);
+	
 	$sql = "select server from accounts where id = $account";
     $res = mysql_query($sql);
     if(!$res) die(mysql_error());
@@ -59,7 +60,8 @@
    	
     if(!mysql_query($sql)) die(mysql_error());
 
-	$referer = $_SERVER['HTTP_REFERER'];
+	// $referer = $_SERVER['SCRIPT_NAME'];
+	
 	header("Location: $referer");
 
 ?>

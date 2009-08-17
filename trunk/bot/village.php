@@ -16,13 +16,14 @@
 
 	require_once("db.php");
 
-	$sql = "select server, user, password, race, main_village, last_report from accounts where id = $account";
+	$sql = "select server, user, password, race, main_village, last_report, proxy from accounts where id = $account";
 	$res = mysql_query($sql);
 	if(!$res) die(mysql_error());
 	$row = mysql_fetch_row($res);
 	if(!$row) die("Account not found. $account \n");
 	
 	$server       = $row[0];
+	$proxy        = $row[6];
 
 	$sql = "select empty_space from servers where addr = '$server'";
 	$res = mysql_query($sql);
@@ -41,7 +42,13 @@
     $download = (mysql_num_rows($res) != 40);
     
     if($download){
-		
+		if($proxy == 1){
+			echo "Start proxy server.\n";
+			$cmd = "./ppp/ppp.py";
+			exec($cmd . " > /dev/null &");
+			sleep(2);
+		}
+
 		if($village != 0){
 			$url = "http://$server/dorf1.php?newdid=$village";
 			$referer = "http://$server/dorf1.php";
@@ -96,6 +103,12 @@
 		curl_setopt($ch, CURLOPT_REFERER, $referer);
 		$result = curl_exec ($ch);
 		curl_close ($ch);
+
+		if($proxy == 1){
+			echo "Shutdown proxy server.\n";
+			$cmd = "pkill -u y1910061 python";
+			exec($cmd . " > /dev/null &");
+		}
 
 		// <area href="build.php?id=19" title="兵營 等級 9" coords="53,91,53,37,128,37,128,91,91,112" shape="poly">
 		// <area href="build.php?id=40" title="Aussen Bauplatz" coords="220,230,185" shape="circle" alt="" />
@@ -154,7 +167,9 @@
     	}
     	
     	if($download){
+    		$name = mysql_escape_string($name);
     		$sql = "replace into build_names(account, village, id, name) values($account, $village, $id, '$name')";
+    		
     		if(!mysql_query($sql)) die(mysql_error());
     	}
 	}

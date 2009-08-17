@@ -13,11 +13,13 @@
 	
 	function handle_bad_target($result, $target_x, $target_y)
 	{
+		global $account;
+		
 		// try to find out error message
 		// </form></p><div class="f10 e b">Šß‰Æ t21782146 ˆöˆá”½‹K‘¥§”í••½</div></div></div></div>
 		// <div class="f10 e b">Šß‰Æ ?Ç—r ˆöˆá”½—VE‹K‘¥§”í••½</div>
-		
-		$ret = preg_match('/<div class="f10 e b">(.+?)<\/div>/', $result, $matches);
+		// <p class="error">Beginner's protection until 09/07/16 at 21:40:06</span><span> </p>
+		$ret = preg_match('#<p class="error">(.+?)</span><span>#', $result, $matches);
 		if(!$ret){
 			$invalid_msg = "Unknown";
 		}else{
@@ -28,11 +30,11 @@
 		
 		$sql = "update `targets` set `invalid` = 1, `invalid_msg` = '" .
 		        mysql_real_escape_string($invalid_msg) . 
-		        "' where x = " . $target_x . " and y = " . $target_y;
+		        "' where account = $account and x = " . $target_x . " and y = " . $target_y;
 		
 		if(!mysql_query($sql)) die(mysql_error());
 		
-		$sql = "delete from `mission` where x = " . $target_x . " and y = " . $target_y;
+		$sql = "delete from `mission` where account = $account and x = " . $target_x . " and y = " . $target_y;
 		if(!mysql_query($sql)) die(mysql_error());
 		
 	}
@@ -72,7 +74,7 @@
 		if ($pos === false) return -1;
 
 		echo "************ Being ATTACKED !!! ************\n";
-		$ret = preg_match('/<td><span id="timer[0-9]">([0-9]+):([0-9]+):([0-9]+)<\/span>/', $result, $matches, 0, $pos);
+		$ret = preg_match('/<span id="timer[0-9]">([0-9]+):([0-9]+):([0-9]+)<\/span>/', $result, $matches, 0, $pos);
 		
 		if($ret){
 			$hour = intval($matches[1]);
@@ -89,7 +91,8 @@
 	
 	function attack_mail($title)
 	{
-		$to  = 'dmwjgmt@docomo.ne.jp';
+		// $to  = 'dmwjgmt@docomo.ne.jp';
+		$to  = 'nerd.liny@gmail.com';
 
 		// subject
 		$subject= '=?UTF-8?B?' . base64_encode($title) . '?=';

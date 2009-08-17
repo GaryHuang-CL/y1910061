@@ -3,7 +3,7 @@
 
 	require_once('db.php');
 	
-	$sql = "select id, server, user, busy from accounts order by rand()";
+	$sql = "select id, server, user, busy from accounts where next_check_time < now() order by rand()";
 	$res = mysql_query($sql);
 	if(!$res) die(mysql_error());
 	while($row = mysql_fetch_row($res)){
@@ -12,9 +12,8 @@
 		$user = $row[2];
 		$busy = $row[3];
 		
-		if($id == 2) continue; // inblackhole
-		if($id == 8) continue; // papurica731
-		if($id == 11) continue;
+		if($id == 1) continue; // squash
+		if($id == 16) continue; // Kimon@com4
 		
 		echo " ----- $user @ $server -----\n";
 
@@ -22,7 +21,6 @@
 		exec("/usr/local/bin/php cron_one.php $id", $output);
 		foreach ($output as $line)
 			echo "$line\n";
-
 	}
 	
 ?>
