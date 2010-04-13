@@ -74,9 +74,18 @@
 				$str .= "&t$n=";
 		}
 
+		// <input type="hidden" name="timestamp" value="1252545240" />
+		$ret = preg_match('/<input type="hidden"\s+name="timestamp" value="([0-9]+)"/', $result, $matches);
+		if(!$ret) die("get timestamp failed.");
+		$timestamp = $matches[1];
+
+		// <input type="hidden" name="timestamp_checksum" value="c831c6" />
+		$ret = preg_match('/<input type="hidden"\s+name="timestamp_checksum" value="([a-z0-9]+)"/', $result, $matches);
+		if(!$ret) die("get timestamp_checksum failed.");
+		$timestamp_checksum = $matches[1];
+
 		// b=1&t1=80&t4=&t7=&t9=&t2=&t5=&t8=&t10=&t3=&t6=&c=2&dname=&x=-128&y=-46&s1.x=&s1.y=&s1=ok
-		// b=1&t1=535&t4=&t7=&t9=&t2=&t5=&t8=&t10=&t3=&t6=&c=4&dname=&x=-63&y=-82&s1.x=29&s1.y=16&s1=ok
-		$postfields = 'b=1' . $str . '&c=' . $c . '&dname=&x=' . $x . '&y=' . $y . '&s1.x=&s1.y=&s1=ok';
+		$postfields =  'timestamp=' . $timestamp . '&timestamp_checksum='  . $timestamp_checksum . '&b=1' . $str . '&c=' . $c . '&dname=&x=' . $x . '&y=' . $y . '&s1.x=&s1.y=&s1=ok';
 
 		echo $postfields . "\n";
 
@@ -97,28 +106,28 @@
 		}
 
 		// <input type="hidden" name="id" value="39">
-		$ret = preg_match('/<input type="hidden" name="id" value="([0-9]+)"/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="id"\s+value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get id failed.");
 		
 		$id = $matches[1];
 		echo "id = " . $id . "\n";
 
 		// <input type="hidden" name="a" value="46137">
-		$ret = preg_match('/<input type="hidden" name="a" value="([0-9]+)"/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="a"\s+value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get a failed.");
 		
 		$a = $matches[1];
 		echo "a = " . $a . "\n";
 
 		// <input type="hidden" name="c" value="3">
-		$ret = preg_match('/<input type="hidden" name="c" value="([0-9]+)"/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="c"\s+value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get c failed.");
 		
 		$c = $matches[1];
 		echo "c = " . $c . "\n";
 
 		// <input type="hidden" name="kid" value="356724">
-		$ret = preg_match('/<input type="hidden" name="kid" value="([0-9]+)"/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="kid"\s+value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get kid failed.");
 		
 		$kid = $matches[1];
@@ -175,9 +184,19 @@
 			$str .= $s;
 		}
 		
+		// <input type="hidden" name="timestamp" value="1252545240" />
+		$ret = preg_match('/<input type="hidden" name="timestamp" value="([0-9]+)"/', $result, $matches);
+		if(!$ret) die("get timestamp failed.");
+		$timestamp = $matches[1];
+
+		// <input type="hidden" name="timestamp_checksum" value="c831c6" />
+		$ret = preg_match('/<input\s+type="hidden"\s+name="timestamp_checksum"\s+value="([a-z0-9]+)"/', $result, $matches);
+		if(!$ret) die("get timestamp_checksum failed.");
+		$timestamp_checksum = $matches[1];
+
 		// id=39&a=3953&c=2&kid=357519&t1=80&t2=0&t3=0&t4=0&t5=0&t6=0&t7=0&t8=0&t9=0&t10=0&t11=0&s1.x=&s1.y=&s1=ok
-		$postfields = 'id=' . $id . '&a=' . $a . '&c=' . $c . '&kid=' . $kid . $str . '&s1.x=&s1.y=&s1=ok';
-		
+		$postfields = 'timestamp=' . $timestamp . '&timestamp_checksum='  . $timestamp_checksum . '&id=' . $id . '&a=' . $a . '&c=' . $c . '&kid=' . $kid . $str . '&s1.x=&s1.y=&s1=ok';
+
 		echo $postfields . "\n";
 		
 		$ch = my_curl_init(true);
@@ -319,7 +338,7 @@
 		echo "id = " . $id . "\n";
 
 		// <input type="hidden" name="z" value="15">
-		$ret = preg_match('/<input type="hidden" name="z" value="([0-9]+)"/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="z" value="([0-9a-z]+)"/', $result, $matches);
 		if(!$ret) die("get z failed.");
 		
 		$z = $matches[1];
@@ -413,7 +432,7 @@
 		echo "id = " . $id . "\n";
 
 		// <input type="hidden" name="z" value="15">
-		$ret = preg_match('/<input type="hidden" name="z" value="([0-9]+)"/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="z" value="([0-9a-z]+)"/', $result, $matches);
 		if(!$ret) die("get z failed.");
 		
 		$z = $matches[1];
@@ -469,9 +488,13 @@
 
 	function build_settler() 
 	{
-		global $server;
+		global $server, $village, $main_village;
 		
-		$url = "http://$server/build.php?gid=25";
+		if($village == $main_village && $village != 0){
+			$url = "http://$server/build.php?gid=26";
+		}else{
+			$url = "http://$server/build.php?gid=25";
+		}
 
 		echo $url . "\n";
 
