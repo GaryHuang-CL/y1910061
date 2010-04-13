@@ -33,14 +33,14 @@
 		curl_close ($ch);
 		
 		// <a href="dorf2.php?a=28&c=23d">
-		$ret = preg_match('/<a href="(dorf2\.php\?a=[0-9]+&c=[0-9a-z]+)">/', $result, $matches);
+		$ret = preg_match('/href="(dorf2\.php\?a=[0-9]+&amp;c=[0-9a-z]+)">/', $result, $matches);
 		
 		if(!$ret){
 			echo "build gid $gid failed.\n";
 			return false;
 		}
 
-		$url2 = "http://$server/" . $matches[1];
+		$url2 = "http://$server/" . html_entity_decode($matches[1]);
 		echo $url2 . "\n";
 		
 		$ch = my_curl_init();
@@ -71,10 +71,9 @@
 		$result = curl_exec ($ch);
 		curl_close ($ch);
 
-		// <tr class="sel"><td class="dot">&#x25CF;</td><td class="text"><a href="?newdid=74731"
-		//$ret = preg_match('/<a href="\?newdid=([0-9]+)" class="active_vl">/', $result, $matches);
-		// <td class="dot hl">&#x25CF;</td><td class="link"><a href="?newdid=120659&amp;c=e40" >
-		$ret = preg_match('/<td class="dot hl">&#x25CF;<\/td><td class="link"><a href="\?newdid=([0-9]+)/', $result, $matches);
+		// <td class="dot hl">&#x25CF;</td>
+		// <td class="link"><a href="?newdid=226563">
+		$ret = preg_match('/<td class="dot hl">&#x25CF;<\/td>\s*<td class="link"><a href="\?newdid=([0-9]+)/', $result, $matches);
 		
 		if(!$ret) die("Failed to switch village.");
 		if($matches[1] != $village) die("Failed to switch village " . $matches[1] . "\n");
@@ -338,7 +337,7 @@
 		curl_close ($ch);
 
 		// <a href="dorf2.php?a=28&c=23d">
-		$ret = preg_match('/<a href="(dorf[12]\.php\?a=[0-9]+&c=[0-9a-z]+)">/', $result, $matches);
+		$ret = preg_match('/href="(dorf[12]\.php\?a=[0-9]+&amp;c=[0-9a-z]+)">/', $result, $matches);
 		
 		if(!$ret){
 			// relay point
@@ -348,10 +347,10 @@
 			// wall
 			// dorf2.php?a=31&id=40&c=061
 			if($id == 40) {
-				$ret = preg_match('/<a href="(dorf2\.php\?a=[0-9]+&id=' . $id . '&c=[0-9a-z]+)">/', $result, $matches);
+				$ret = preg_match('/href="(dorf2\.php\?a=[0-9]+&amp;id=' . $id . '&amp;c=[0-9a-z]+)">/', $result, $matches);
 			}else if($gid > 0){	
 				// <a href="dorf2.php?a=23&id=33&c=0c6">
-				$ret = preg_match('/<a href="(dorf[12]\.php\?a=' . $gid . '&id=' . $id . '&c=[0-9a-z]+)">/', $result, $matches);
+				$ret = preg_match('/href="(dorf[12]\.php\?a=' . $gid . '&amp;id=' . $id . '&amp;c=[0-9a-z]+)">/', $result, $matches);
 			}
 		}
 		
@@ -378,7 +377,7 @@
 				curl_close ($ch);
 				
 				// <a href="dorf2.php?a=28&c=23d">
-				$ret = preg_match('/<a href="(dorf[12]\.php\?a=[0-9]+&c=[0-9a-z]+)">/', $result, $matches);
+				$ret = preg_match('/href="(dorf[12]\.php\?a=[0-9]+&amp;c=[0-9a-z]+)">/', $result, $matches);
 
 				if(!$ret) return;
 				echo "roman auto building..\n";
@@ -387,7 +386,7 @@
 			}
 		}
 		
-		$url2 = "http://$server/" . $matches[1];
+		$url2 = "http://$server/" . html_entity_decode($matches[1]);
 		echo $url2 . "\n";
 		
 		if($seq >= 0){
@@ -523,7 +522,7 @@
 		curl_close ($ch);
 
 		// <a href="dorf2.php?a=28&c=23d">
-		$ret = preg_match('/<a href="(dorf[12]\.php\?a=[0-9]+&c=[0-9a-z]+)">/', $result, $matches);
+		$ret = preg_match('/href="(dorf[12]\.php\?a=[0-9]+&amp;c=[0-9a-z]+)">/', $result, $matches);
 		
 		if(!$ret){
 			// relay point
@@ -533,10 +532,10 @@
 			// wall
 			// dorf2.php?a=31&id=40&c=061
 			if($id == 40) {
-				$ret = preg_match('/<a href="(dorf2\.php\?a=[0-9]+&id=' . $id . '&c=[0-9a-z]+)">/', $result, $matches);
+				$ret = preg_match('/href="(dorf2\.php\?a=[0-9]+&amp;id=' . $id . '&amp;c=[0-9a-z]+)">/', $result, $matches);
 			}else if($gid > 0){	
 				// <a href="dorf2.php?a=23&id=33&c=0c6">
-				$ret = preg_match('/<a href="(dorf[12]\.php\?a=' . $gid . '&id=' . $id . '&c=[0-9a-z]+)">/', $result, $matches);
+				$ret = preg_match('/href="(dorf[12]\.php\?a=' . $gid . '&amp;id=' . $id . '&amp;c=[0-9a-z]+)">/', $result, $matches);
 			}
 		}
 
@@ -545,7 +544,7 @@
 			return false;
 		}
 
-		$url2 = "http://$server/" . $matches[1];
+		$url2 = "http://$server/" . html_entity_decode($matches[1]);
 		echo $url2 . "\n";
 		
 		$ch = my_curl_init();
@@ -673,7 +672,19 @@
 			echo "build MAIN_BUILDING.\n";
 			return;
 		}
+
+		// RESIDENCE to level 10
+		if(create_or_upgrade($result, RESIDENCE)){
+			echo "build RESIDENCE.\n";
+			return;
+		}
 		
+		// GRANARY to level 12
+		if(create_or_upgrade($result, GRANARY, 12)){
+			echo "build GRANARY level 12.\n";
+			return;
+		}
+
 		$targets = array(MARKETPLACE, SAWMILL, BRICKYARD, IRON_FOUNDRY, GRAIN_MILL);
 		$levels= array();
 		
@@ -700,24 +711,29 @@
 			return;
 		}
 		
-		// RESIDENCE to level 10
-		if(create_or_upgrade($result, RESIDENCE)){
-			echo "build RESIDENCE.\n";
+		// WAREHOUSE to level 14
+		if(create_or_upgrade($result, WAREHOUSE, 14)){
+			echo "build WAREHOUSE.\n";
 			return;
 		}
-		
-		// MARKETPLACE to level 10
-		if(create_or_upgrade($result, MARKETPLACE)){
-			echo "build MARKETPLACE.\n";
+
+		// GRANARY to level 14
+		if(create_or_upgrade($result, GRANARY, 14)){
+			echo "build GRANARY.\n";
 			return;
 		}
-		
-		// BAKERY to level 10
-		if(create_or_upgrade($result, BAKERY)){
+
+		// BAKERY to level 5
+		if(create_or_upgrade($result, BAKERY, 5)){
 			echo "build BAKERY.\n";
 			return;
 		}
-		
+		// MARKETPLACE to level 15
+		if(create_or_upgrade($result, MARKETPLACE, 15)){
+			echo "build MARKETPLACE.\n";
+			return;
+		}
+
 		echo "Nothing to build..\n";
 	}
 ?>

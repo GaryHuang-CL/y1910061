@@ -5,29 +5,26 @@
 	function parse_html($html)
 	{
 		$ret = array();
-		
-		$doc = new DOMDocument();
-		$doc->loadHTML($html);
-		$xpath = new DOMXPath($doc);
-
-		$table = $doc->getElementById('vlist');
-		
-		$query = 'tbody/tr';
-		$entries = $xpath->query($query, $table);
-		
-		foreach ($entries as $entry) {
-		    $nameNode = $entry->childNodes->item(1);
-		    $coods = $entry->childNodes->item(2)->getElementsByTagName('div');
-		    
-		    list(,$x) = explode("(", $coods->item(0)->nodeValue);
-		    list($y,) = explode(")", $coods->item(2)->nodeValue);
-		    
-		    list(,$id) = explode("=", $nameNode->firstChild->attributes->getNamedItem("href")->nodeValue);
-		    
-		    $name = $nameNode->nodeValue;
-		    $ret[$id] = array($name, $x, $y);
+		/*
+		 <a href="?newdid=168817">C06</a></td><td class="aligned_coords">
+			<div class="cox">(199</div>
+			<div class="pi">|</div>
+			<div class="coy">32)</div>
+			</td>
+		*/
+		if(preg_match_all('#<a href="\?newdid=(\d+)"[^>]*>([^<]+)</a></td><td class="aligned_coords">\s+<div class="cox">\(([-0-9]+)</div>\s+<div class="pi">\|</div>\s+<div class="coy">([-0-9]+)\)</div>#', $html, $matches, PREG_SET_ORDER)){
+			foreach($matches as $match){
+				$id = $match[1];
+				$name = $match[2];
+				$x = $match[3];
+				$y = $match[4];
+				
+				$ret[$id] = array($name, $x, $y);
+			}
+		}else{
+			die("pattern does not match.");
 		}
-
+		
 		return $ret;
 	}
 	

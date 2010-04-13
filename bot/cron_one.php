@@ -203,70 +203,121 @@
 					if(!mysql_query($sql)) die(mysql_error());
 				}
 
-				if($server == "speed.travian.tw" && $user == "metatronangelo"){
-					build_infantry(2, 0);
-
-
-				}else if($server == "s4.travian.com" && $user == "ceto"){
-					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.9 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5 && $crop > $granary_capacity * 0.3){
+				if($server == "s4.travian.com" && $user == "flock"){
+					
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.9 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5 && $crop > 75000){
+						$reserve = round(min($wood / 100, $brick / 130, $iron / 55, $crop / 30) / 2) ;
+						build_infantry(1, $reserve);
 						
-						if($brick > $iron && $brick > $wood){
-							$reserve = round(min($wood / 450, $brick / 515, $iron / 480, $crop / 80) / 2) ;
-							build_cavalry(6, $reserve);
-							
-						}else if($iron >= $wood && $iron >= $brick){
-							$reserve = round(min($wood / 130, $brick / 120, $iron / 170, $crop / 70) / 2) ;
-							build_infantry(3, $reserve);
-
-						}else if($wood >= $iron && $wood >= $brick){
-							if($brick > $iron){
-								$reserve = round(min($wood / 95, $brick / 75, $iron / 40, $crop / 40) / 2) ;
-								build_infantry(1, $reserve);
-							}else{
-								$reserve = round(min($wood / 370, $brick / 270, $iron / 290, $crop / 75) / 2) ;
-								build_cavalry(5, $reserve);
-							}
+						if($iron > $brick * 2){
+							sell(3000, 3, 3000, 2, 8, 9000);
 						}
 					}
 
-					attack_and_farm_loop($village, $attack_time_left);
-					if($attack_time_left >=0 && $attack_time_left < 1000){
+					if($attack_time_left >= 0){
 						build_infantry(1, 0);
-					}
-
-					if($crop > $granary_capacity * 0.9){
-						sell(1000, 4, 1000, 3, 0, 0);
 					}
 					
+
+				}else if($server == "s4.travian.com" && $user == "futaba"){
+/*
+					if($wood <= $brick && $wood <= $iron)
+						sell(500, 4, 500, 1, 4, 3000);
+					else if($brick <= $wood && $brick <= $iron)
+						sell(500, 4, 500, 2, 4, 3000);
+					else
+						sell(500, 4, 500, 3, 4, 3000);
+*/					
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.9 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5 && $crop > 75000){
+						if($wood >= $iron){
+							$reserve = round(min($wood / 550, $brick / 440, $iron / 320, $crop / 100) / 2) ;
+							build_cavalry(5, $reserve);
+						}else{
+							$reserve = round(min($wood / 150, $brick / 160, $iron / 210, $crop / 80) / 2) ;
+							build_infantry(3, $reserve);
+						}
+					}
+
+					//if($attack_time_left >=0){
+					//	build_infantry(3, 0);
+					//}
+
+				}else if($server == "s4.travian.com" && $user == "SeaMonkey"){
+					if(max($wood, $brick, $iron) > $warehouse_capacity * 0.9 && min($wood, $brick, $iron) > $warehouse_capacity * 0.5 && $crop > 75000){
+						$reserve = round(min($wood / 100, $brick / 130, $iron / 160, $crop / 70)  / 2) ;
+						build_infantry(2, $reserve);
+					}
+
+					if($attack_time_left >= 0){
+						build_infantry(2, 0);
+					}
+					
+					
+				}else if($server == "s4.travian.com" && $user == "Kimon"){
+					if(max(/*$wood, */ $brick, $iron) > $warehouse_capacity * 0.9 && min($wood, $brick, $iron) > $warehouse_capacity * 0.6 && $crop > 75000){
+						if($brick > $iron /*&& $brick > $wood*/){
+							$reserve = round(min($wood / 450, $brick / 515, $iron / 480, $crop / 80) / 2) ;
+							build_cavalry(6, $reserve);
+							
+						}else if(/*$iron >= $wood && */ $iron >= $brick){
+							$reserve = round(min($wood / 130, $brick / 120, $iron / 170, $crop / 70) / 2) ;
+							build_infantry(3, $reserve);
+						/*
+						}else {
+							$reserve = round(min($wood / 95, $brick / 75, $iron / 40, $crop / 40) * 3 / 4) ;
+							build_infantry(1, $reserve);
+						*/
+						}
+					}
+					
+					attack_and_farm_loop($village, $attack_time_left);
+					read_self_attack_reports();
+
+					if($attack_time_left >= 0 && $attack_time_left < 800){
+						avoid_attack_teutonic(249, 56);
+						reinforce(232, 57, array(10=>0));
+						build_infantry(3, 0);
+					}
+
+				}else if($server == "s4.travian.com" && $user == "ceto"){
+					if(max(/*$wood, */ $brick, $iron) > $warehouse_capacity * 0.9 && min($wood, $brick, $iron) > $warehouse_capacity * 0.6 && $crop > 75000 ){
+						
+						if($brick > $iron /*&& $brick > $wood*/){
+							$reserve = round(min($wood / 450, $brick / 515, $iron / 480, $crop / 80) / 2) ;
+							build_cavalry(6, $reserve);
+							
+						}else if(/*$iron >= $wood && */ $iron >= $brick){
+							$reserve = round(min($wood / 130, $brick / 120, $iron / 170, $crop / 70) / 2) ;
+							build_infantry(3, $reserve);
+						/*
+						}else if($wood >= $iron && $wood >= $brick){
+							$reserve = round(min($wood / 95, $brick / 75, $iron / 40, $crop / 40) / 2) ;
+							build_infantry(1, $reserve);
+						*/
+						}
+					}
+
+
+					// attack_and_farm_loop($village, $attack_time_left);
+					if($attack_time_left >=0 && $attack_time_left < 800){
+						// avoid_attack_teutonic(184, 47);
+						build_infantry(3, 0);
+					}
+/*
+					if($crop > $granary_capacity * 0.9){
+						if($wood <= $brick && $wood <= $iron)
+							sell(1000, 4, 1000, 1, 10, 0);
+						else if($brick <= $wood && $brick <= $iron)
+							sell(1000, 4, 1000, 2, 10, 0);
+						else
+							sell(1000, 4, 1000, 3, 10, 0);
+						
+					}
+*/
+					// read_self_attack_reports();
+
 				}
 				
-/*
-				if($server == "s4.travian.com" && $user == "squash"){
-
-					build_infantry(1, 2);
-
-					attack_and_farm_loop($village, $attack_time_left);
-					read_self_attack_reports();
-
-					if($attack_time_left >=0 && $attack_time_left < 1000){
-						build_infantry(1, 0);
-						avoid_attack_teutonic(136, 38);
-					}
-
-				}else if($server == "s4.travian.com" && $user == "failed"){
-
-					build_infantry(1, 0);
-
-					attack_and_farm_loop($village, $attack_time_left);
-					read_self_attack_reports();
-
-					if($attack_time_left >=0 && $attack_time_left < 1000){
-						build_infantry(1, 0);
-						avoid_attack_teutonic(3, 37);
-					}
-
-				}
-*/
 			}else {
 				
 				if($attack_time_left >= 0 && $attack_time_left < 3600 && $defence == 0){
@@ -275,19 +326,89 @@
 					transfer_to_village($village, $main_village, false, 75);
 				}
 			}
-
+			
+			// C01
 			if($server == "s4.travian.com" && $user == "ceto" && $village == 3681){
-				build_infantry(2, 75);
+				if(max($wood, $brick, $iron) > $warehouse_capacity * 0.95 && min($wood, $brick, $iron) > $warehouse_capacity * 0.2 && $crop > min(3000, $granary_capacity * 0.3)){
+					
+					if($iron >= $wood){
+						$reserve = round(min($wood / 130, $brick / 120, $iron / 170, $crop / 70) * 3 / 4) ;
+						build_infantry(3, $reserve);
 
-				attack_and_farm_loop($village, $attack_time_left);
-				read_self_attack_reports();
+					}if($wood >= $iron){
+						$reserve = round(min($wood / 145, $brick / 70, $iron / 85, $crop / 40) * 3 / 4) ;
+						build_infantry(2, $reserve);
+					}
+				}
+
+				// attack_and_farm_loop($village, $attack_time_left);
 
 				if($attack_time_left >=0 && $attack_time_left < 1000){
 					build_infantry(2, 0);
 					//avoid_attack_teutonic(52, 10);
-					//reinforce(47, 17, array(10=>0));
+					reinforce(49, 11, array(1=>0, 2=>0,3=>0));
+				}
+				
+				reinforce(250, 58, array(2=>0), "15:30:01");
+				transfer_to_village($village, 160873);
+			
+			// C03
+			}else if($server == "s4.travian.com" && $user == "ceto" && $village == 143603){
+/*
+				if(max($wood, $brick, $iron) > $warehouse_capacity * 0.96 && min($wood, $brick, $iron) > $warehouse_capacity * 0.6 && $crop > min(3000, $granary_capacity * 0.3)){
+					$reserve = round(min($wood / 95, $brick / 75, $iron / 40, $crop / 40) * 4 / 5) ;
+					build_infantry(1, $reserve);
+				}
+
+				attack_and_farm_loop($village, $attack_time_left);
+
+				if($attack_time_left >= 0 && $attack_time_left < 1000){
+					avoid_attack_teutonic(233, 71);
+					build_infantry(1, 0);
+				}
+				
+				if($crop > $granary_capacity * 0.74)
+					transfer_to_village($village, 178771);
+				else
+					transfer_to_village($village, 178771, true);
+*/
+				//if($hour < 9)
+				//	transfer_resource_to_xy($village, 250, 58, 0, 0, 0, 2200, 0);
+
+			// C04
+			}else if($server == "s4.travian.com" && $user == "ceto" && $village == 155356){
+				
+				// transfer_to_village($village, $main_village, true);
+				//sell(1000, 4, 1000, rand(1, 3), 4, 0);
+
+			// C05
+			}else if($server == "s4.travian.com" && $user == "ceto" && $village == 160873){
+				
+				// transfer_to_village($village, $main_village, true);
+				//sell(1000, 4, 1000, rand(1, 3), 7, 0);
+				
+			// C06
+			}else if($server == "s4.travian.com" && $user == "ceto" && $village == 168817){
+				
+				if($attack_time_left >= 0 && $attack_time_left < 1000){
+					avoid_attack_teutonic(233, 71);
+					build_infantry(1, 0);
+				}
+
+			}else if($server == "s4.travian.com" && $user == "flock" && $village == 103391){
+				//transfer_to_village($village, $main_village);
+				//if($attack_time_left >= 0){
+					//reinforce(18, 128, array(1=>0));
+				//	build_infantry(1, 0);
+				//}
+				continue;
+			}else if($server == "s4.travian.com" && $user == "futaba" && $village == 97907){
+				transfer_to_village($village, $main_village);
+				if($attack_time_left >= 0){
+					build_infantry(2, 0);
 				}
 			}
+
 
 			// new village logic
 			if($newbie > 0){

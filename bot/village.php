@@ -112,7 +112,9 @@
 
 		// <area href="build.php?id=19" title="兵營 等級 9" coords="53,91,53,37,128,37,128,91,91,112" shape="poly">
 		// <area href="build.php?id=40" title="Aussen Bauplatz" coords="220,230,185" shape="circle" alt="" />
-		if(!preg_match_all('/<area href="build\.php\?id=([0-9]+)" title="(.+?)" coords=".+?" shape=".+?"/', $result, $matches, PREG_SET_ORDER)) die("No matching dorf2.");
+		// <area href="build.php?id=21" title="Sawmill Level 5" alt="Sawmill Level 5" coords="196,56,196,2,271,2,271,56,234,77" shape="poly"/>
+		// <area href="build.php?id=39" title="Rally Point Level 1" coords="270,158,303,135,316,155,318,178,304,211,288,227,263,238,250,215" shape="poly" alt="" />
+		if(!preg_match_all('/<area href="build\.php\?id=([0-9]+)" title="(.+?)"/', $result, $matches, PREG_SET_ORDER)) die("No matching dorf2.");
 
 		foreach ($matches as $val) {
 			$buildings[$val[1]] = $val[2];

@@ -27,7 +27,14 @@
 		// fill it
 		$t1 = min($r1, floor($r1 * $ratio));
 		$t2 = min($r2, floor($r2 * $ratio));
-		$t3 = min($r3, floor($r3 * $ratio));
+		
+		// if no crop let's fill it with iron
+		if($r4 > 0){
+			$t3 = min($r3, floor($r3 * $ratio));
+		}else{
+			$t3 = min($r3, $total_capacity - $t1 - $t2);
+		}
+		
 		$t4 = min($r4, $total_capacity - $t1 - $t2 - $t3);
 
 		return array($t1, $t2, $t3, $t4);
@@ -367,8 +374,8 @@
 		}
 
 		// get free merchants
-		// </table><p>è§êlÅF 10/13</p>
-		$ret = preg_match('#</table><p>\S+ ([-0-9]+)/[0-9]+</p>#', $result, $matches);
+		// <p>Merchants: 20/20</p>
+		$ret = preg_match('#<p>\S+ ([-0-9]+)/[0-9]+</p>#', $result, $matches);
 		if(!$ret){
 			echo "FAILED : get free merchants.\n";
 			return false;
@@ -383,15 +390,14 @@
 		}
 		
 		
-		// <input type="hidden" name="id" value="27">
 		// <input type="hidden" name="id" value="20" />
-		$ret = preg_match('/<input type="hidden" name="id" value="([0-9]+)" \/>/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="id"\s+value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get id failed.");
 		
 		$id = $matches[1];
 
 		// <input type="hidden" name="a" value="113321">
-		$ret = preg_match('/<input type="hidden" name="a" value="([0-9]+)" \/>/', $result, $matches);
+		$ret = preg_match('/<input type="hidden" name="a"\s+value="([0-9]+)"/', $result, $matches);
 		if(!$ret) die("get a failed.");
 		
 		$a = $matches[1];
@@ -419,7 +425,7 @@
 	}
 
 	// transfer any resource from current village to any village, with reserve carts
-	function transfer_resouce_to_xy($village_from, $x, $y, $r1, $r2, $r3, $r4, $reserve_carts)
+	function transfer_resource_to_xy($village_from, $x, $y, $r1, $r2, $r3, $r4, $reserve_carts)
 	{
 		list($result, $carts, $amount_per_cart, $market_id) = get_transfer_page($village_from);
 		
