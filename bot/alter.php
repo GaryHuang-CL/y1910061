@@ -55,7 +55,7 @@
 	if($row[0] == 0){
 	   	$sql = " insert into targets(account, x, y, invalid, village, `interval`, `raid`, `player`) values ($account, $x, $y, $t, $village, $interval, $raid, '$player')";
 	}else{
-   		$sql = " update targets set `timestamp` = `timestamp`, invalid = $t, village = $village, `interval` = $interval, `raid` = $raid, `player` = '$player' where account = $account and x = $x and y = $y";
+   		$sql = " update targets set `timestamp` = now(), invalid = $t, village = $village, `interval` = $interval, `raid` = $raid, `player` = '$player' where account = $account and x = $x and y = $y";
    	}
    	
     if(!mysql_query($sql)) die(mysql_error());

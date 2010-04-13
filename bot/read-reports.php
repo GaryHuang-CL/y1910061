@@ -153,6 +153,11 @@
 			}
 		}
 
+    	$died_total = array_sum($died);
+    	if($captured){
+    		$died_total -= array_sum($captured);
+    	}
+
 		if(array_sum($soldiers) == array_sum($died)){
 			    	
 			// remove this one from raid list?
@@ -211,12 +216,15 @@
 		$new_score = implode('|', $scores);
 		$avg_score = calc_score($new_score);
 			
-    	if($total == $max_raid){
+	    if($died_total > 0){
+	    	echo "$died_total died.\n";
+    		$sql = "update targets set `timestamp` = date_add(now(),  interval 2 day), `score` = '$new_score', `avg_score` = $avg_score, invalid_msg = '死傷' where account = $account and x = $x and y = $y";
+    	}else if($total == $max_raid){
 			echo "reraid...($x,$y) $total\n";
 	    	$sql = "update targets set `timestamp` = date_sub(now(),  interval 3 day), `score` = '$new_score', `avg_score` = $avg_score where account = $account and x = $x and y = $y";
 	    }else if($total == 0 && count($scores) >= 3 && $scores[count($scores) - 2] == 0 && $scores[count($scores) - 3] == 0){
 	    	echo "raid nothing 3 times ... ($x,$y) \n";
-	    	$sql = "update targets set `timestamp` = date_add(now(),  interval 3 day), `score` = '$new_score', `avg_score` = $avg_score where account = $account and x = $x and y = $y";
+	    	$sql = "update targets set invalid = 1, invalid_msg = 'ゼロ３回', `score` = '$new_score', `avg_score` = $avg_score where account = $account and x = $x and y = $y";
 	    }else if($total == 0){
 	    	echo "raid nothing ... ($x,$y) \n";
 	    	$sql = "update targets set `timestamp` = date_add(now(),  interval 1 day), `score` = '$new_score', `avg_score` = $avg_score where account = $account and x = $x and y = $y";
@@ -228,10 +236,8 @@
 
 		// <td class="c">0</td>
 		// <td>1</td>
-		if(array_sum($died) > 0){
-
+		if($died_total > 0){
 			record_report($id, "【死傷】$title (" . array_sum($died) . ")");
-			
 		}else if($total == 0){
 			echo "raid zero.\n";
 			record_report($id, "【無駄】$title");
@@ -266,7 +272,10 @@
 			curl_close ($ch);
 			
 			// <td class="sub"><a href="berichte.php?id=26188365">? 攻擊 我已經蓋陷阱了＠＠</a> （新）</td>
-			if(!preg_match_all('#<td class="sub"><a href="berichte\.php\?id=([0-9]+)">([^<]+)</a> [^<]+</td>#', $result, $matches, PREG_SET_ORDER))
+			// <div><a href="berichte.php?id=34902718">C03 attacks g rudios`s village</a> (new)</div>
+			// <a href="berichte.php?id=34909013">C03 attacks KamE_kAze</a> </div>
+
+			if(!preg_match_all('#<a href="berichte\.php\?id=([0-9]+)">([^<]+)</a> [^<]+</div>#', $result, $matches, PREG_SET_ORDER))
 				break;
 			
 			foreach($matches as $match){
