@@ -45,10 +45,20 @@
 			
 		}
 
+		// <input type="hidden" name="timestamp" value="1252545240" />
+		$ret = preg_match('/<input type="hidden" name="timestamp" value="([0-9]+)"/', $result, $matches);
+		if(!$ret) die("get timestamp failed.");
+		$timestamp = $matches[1];
+
+		// <input type="hidden" name="timestamp_checksum" value="c831c6" />
+		$ret = preg_match('/<input type="hidden" name="timestamp_checksum" value="([a-z0-9]+)"/', $result, $matches);
+		if(!$ret) die("get timestamp_checksum failed.");
+		$timestamp_checksum = $matches[1];
+
 		// Post it
 		// b=1&t1=1&t4=&t7=&t9=&t2=&t5=&t8=&t10=&t3=&t6=&c=3&dname=&x=-69&y=-2&s1.x=&s1.y=&s1=ok
 		// b=1&t1=50&t4=&t7=&t9=&t2=&t5=&t8=&t10=&t3=&t6=&t11=1&c=3&dname=&x=-122&y=-45&s1.x=&s1.y=&s1=ok
-		$postfields = 'b=1&t1=' . $t1 . '&t4=&t7='. $t7. '&t9=&t2=&t5=&t8='. $t8 . '&t10=&t3='. $t3 . '&t6=' . $t6
+		$postfields = 'timestamp=' . $timestamp . '&timestamp_checksum='  . $timestamp_checksum . '&b=1&t1=' . $t1 . '&t4=&t7='. $t7. '&t9=&t2=&t5=&t8='. $t8 . '&t10=&t3='. $t3 . '&t6=' . $t6
 					. $hero_post_str
 		            . '&c=3&dname=&x=' . $target_x . '&y=' . $target_y . '&s1.x=&s1.y=&s1=ok';
 
@@ -138,6 +148,16 @@
 			$t11 = $matches[1];
 			// echo "t11 = " . $t11 . "\n";
 
+			// <input type="hidden" name="timestamp" value="1252545240" />
+			$ret = preg_match('/<input type="hidden" name="timestamp" value="([0-9]+)"/', $result, $matches);
+			if(!$ret) die("get timestamp failed.");
+			$timestamp = $matches[1];
+
+			// <input type="hidden" name="timestamp_checksum" value="c831c6" />
+			$ret = preg_match('/<input type="hidden" name="timestamp_checksum" value="([a-z0-9]+)"/', $result, $matches);
+			if(!$ret) die("get timestamp_checksum failed.");
+			$timestamp_checksum = $matches[1];
+
 			if($target_player){
 				// <td class="s7"><a href="spieler.php?uid=11783">Vinsfeld</a></td></tr>
 				$ret = preg_match('#<a href="spieler\.php\?uid=[0-9]+">([^<]+)</a></td>#', $result, $matches);
@@ -154,7 +174,7 @@
 
 
 			// id=39&a=5941&c=3&kid=322334&t1=1&t2=0&t3=0&t4=0&t5=0&t6=0&t7=0&t8=0&t9=0&t10=0&t11=0&s1.x=&s1.y=&s1=ok
-			$postfields = 'id=' . $id . '&a=' . $a . '&c=' . $c . '&kid=' . $kid . '&t1=' . $t1 . '&t2=0&t3=' . $t3 . '&t4=0&t5=0&t6=' . $t6 . '&t7=' . $t7 . '&t8=' . $t8 . '&t9=0&t10=0'
+			$postfields = 'timestamp=' . $timestamp . '&timestamp_checksum='  . $timestamp_checksum . '&id=' . $id . '&a=' . $a . '&c=' . $c . '&kid=' . $kid . '&t1=' . $t1 . '&t2=0&t3=' . $t3 . '&t4=0&t5=0&t6=' . $t6 . '&t7=' . $t7 . '&t8=' . $t8 . '&t9=0&t10=0'
 			              . '&t11=' . $t11 . '&s1.x=&s1.y=&s1=ok';
 			
 			echo $postfields . "\n";

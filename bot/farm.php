@@ -147,8 +147,8 @@
 		$second_cost = round($distance / 5 * 3600);
 		echo "second_cost: $second_cost\n";
 		
-		$second_cost = max($second_cost, 138 * 60);
-		$next_raid_interval = rand($second_cost, 3 * $second_cost);
+		$second_cost = max($second_cost, 198 * 60);
+		$next_raid_interval = rand($second_cost, 2 * $second_cost);
 		echo "next_raid_interval: $next_raid_interval\n";
 		
 		// Update the target
