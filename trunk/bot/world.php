@@ -1,5 +1,5 @@
 <?php
-if($argc < 2) die("need server parameter");
+if($argc < 2) die("please give  server parameter");
 $server = $argv[1];
 
 include("db.php");
