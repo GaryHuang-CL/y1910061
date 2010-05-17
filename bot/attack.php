@@ -3,7 +3,7 @@
 	// Attack by mission
 	// Return true if there is mission and no enough troops, and need stop to farm
 	// Return false if there is no mission, or some error
-	
+	// interesting...
 	function attack($result, $village)
 	{
 		global $server;
