@@ -230,5 +230,5 @@
 	auto_reinforce_tk(-42, -80, 1500);
 	auto_reinforce_tk(-3,  -38, 1400);
 
-// game over
+
 ?>
