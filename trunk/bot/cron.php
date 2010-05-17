@@ -13,7 +13,7 @@
 		$busy = $row[3];
 		
 		if($id == 1) continue; // squash
-		if($id == 16) continue; // Kimon@com4, conflict here.
+		if($id == 16) continue; // Kimon@com4, still playing
 		
 		echo " ----- $user @ $server -----\n";
 
