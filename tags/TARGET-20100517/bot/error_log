@@ -1,0 +1,105 @@
+[15-Nov-2008 16:48:11] PHP Warning:  sleep() [<a href='function.sleep'>function.sleep</a>]: Number of seconds must be greater than or equal to 0 in /home/y1910061/public_html/y1910061/cron_one.php on line 126
+[17-Nov-2008 03:27:59] PHP Fatal error:  Can't use function return value in write context in /home/y1910061/public_html/y1910061/map.php on line 167
+[17-Nov-2008 03:28:42] PHP Parse error:  syntax error, unexpected '{' in /home/y1910061/public_html/y1910061/map.php on line 167
+[19-Nov-2008 00:49:55] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/y1910061/public_html/y1910061/build.php on line 257
+[19-Nov-2008 18:40:01] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 18:40:01] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 18:40:01] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 18:40:01] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 18:40:01] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 18:40:01] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 18:40:01] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 18:40:01] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 18:42:01] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 18:48:01] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 18:54:01] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 19:00:01] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 19:00:02] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 19:00:02] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 19:00:02] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 19:00:02] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 19:00:02] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 19:00:02] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 19:00:02] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 19:00:02] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 19:06:01] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 19:12:01] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 19:12:17] PHP Parse error:  syntax error, unexpected T_STRING in /home/y1910061/public_html/y1910061/cron_one.php on line 158
+[19-Nov-2008 23:31:03] PHP Parse error:  syntax error, unexpected T_LNUMBER, expecting T_VARIABLE or '$' in /home/y1910061/public_html/y1910061/transfer.php on line 414
+[20-Nov-2008 00:45:05] PHP Fatal error:  Function name must be a string in /home/y1910061/public_html/y1910061/map.php on line 168
+[20-Nov-2008 22:52:00] PHP Notice:  Undefined variable: village_from in /home/y1910061/public_html/y1910061/cron_one.php on line 235
+[20-Nov-2008 22:53:27] PHP Notice:  Undefined variable: village_from in /home/y1910061/public_html/y1910061/cron_one.php on line 235
+[20-Nov-2008 22:55:15] PHP Notice:  Undefined variable: village_from in /home/y1910061/public_html/y1910061/cron_one.php on line 235
+[20-Nov-2008 22:56:47] PHP Notice:  Undefined variable: village_from in /home/y1910061/public_html/y1910061/cron_one.php on line 235
+[20-Nov-2008 23:01:42] PHP Notice:  Undefined variable: village_from in /home/y1910061/public_html/y1910061/cron_one.php on line 235
+[20-Nov-2008 23:02:07] PHP Notice:  Undefined variable: village_from in /home/y1910061/public_html/y1910061/cron_one.php on line 235
+[20-Nov-2008 23:02:09] PHP Notice:  Undefined variable: village_from in /home/y1910061/public_html/y1910061/cron_one.php on line 230
+[20-Nov-2008 23:02:19] PHP Notice:  Undefined variable: village_from in /home/y1910061/public_html/y1910061/cron_one.php on line 230
+[24-Nov-2008 22:57:22] PHP Notice:  Undefined variable: soldier in /home/y1910061/public_html/y1910061/read-reports.php on line 103
+[24-Nov-2008 22:57:22] PHP Warning:  Division by zero in /home/y1910061/public_html/y1910061/read-reports.php on line 103
+[24-Nov-2008 22:57:22] PHP Notice:  Undefined variable: soldier in /home/y1910061/public_html/y1910061/read-reports.php on line 137
+[26-Nov-2008 23:45:12] PHP Notice:  Undefined variable: row in /home/y1910061/public_html/y1910061/read-reports.php on line 55
+[05-Dec-2008 21:43:52] PHP Warning:  curl_error(): 65 is not a valid cURL handle resource in /home/y1910061/public_html/y1910061/army.php on line 396
+[21-Dec-2008 00:24:12] PHP Parse error:  syntax error, unexpected T_REQUIRE_ONCE, expecting T_VARIABLE or '$' in /home/y1910061/public_html/y1910061/catapult-fake.php on line 8
+[25-Dec-2008 05:30:07] PHP Notice:  Undefined variable: id in /home/y1910061/public_html/y1910061/cron_one.php on line 45
+[25-Dec-2008 05:30:29] PHP Notice:  Undefined variable: id in /home/y1910061/public_html/y1910061/cron_one.php on line 302
+[25-Dec-2008 05:36:02] PHP Notice:  Undefined variable: id in /home/y1910061/public_html/y1910061/cron_one.php on line 45
+[25-Dec-2008 05:36:35] PHP Notice:  Undefined variable: id in /home/y1910061/public_html/y1910061/cron_one.php on line 302
+[25-Dec-2008 05:40:01] PHP Notice:  Undefined variable: id in /home/y1910061/public_html/y1910061/cron_one.php on line 45
+[25-Dec-2008 05:40:01] PHP Notice:  Undefined variable: id in /home/y1910061/public_html/y1910061/cron_one.php on line 45
+[25-Dec-2008 05:40:04] PHP Notice:  Undefined variable: id in /home/y1910061/public_html/y1910061/cron_one.php on line 45
+[25-Dec-2008 05:40:46] PHP Notice:  Undefined variable: id in /home/y1910061/public_html/y1910061/cron_one.php on line 302
+[25-Dec-2008 05:41:19] PHP Notice:  Undefined variable: id in /home/y1910061/public_html/y1910061/cron_one.php on line 302
+[25-Dec-2008 05:41:19] PHP Notice:  Undefined variable: id in /home/y1910061/public_html/y1910061/cron_one.php on line 302
+[25-Dec-2008 05:42:01] PHP Notice:  Undefined variable: id in /home/y1910061/public_html/y1910061/cron_one.php on line 45
+[25-Dec-2008 05:42:25] PHP Notice:  Undefined variable: id in /home/y1910061/public_html/y1910061/cron_one.php on line 302
+[26-Dec-2008 00:27:34] PHP Notice:  Undefined variable: server in /home/y1910061/public_html/y1910061/utils.php on line 263
+[26-Dec-2008 01:12:01] PHP Parse error:  syntax error, unexpected ',' in /home/y1910061/public_html/y1910061/cron_one.php on line 177
+[26-Dec-2008 01:18:01] PHP Parse error:  syntax error, unexpected ',' in /home/y1910061/public_html/y1910061/cron_one.php on line 177
+[26-Dec-2008 01:20:01] PHP Parse error:  syntax error, unexpected ',' in /home/y1910061/public_html/y1910061/cron_one.php on line 177
+[26-Dec-2008 01:20:01] PHP Parse error:  syntax error, unexpected ',' in /home/y1910061/public_html/y1910061/cron_one.php on line 177
+[26-Dec-2008 01:20:01] PHP Parse error:  syntax error, unexpected ',' in /home/y1910061/public_html/y1910061/cron_one.php on line 177
+[26-Dec-2008 01:20:01] PHP Parse error:  syntax error, unexpected ',' in /home/y1910061/public_html/y1910061/cron_one.php on line 177
+[26-Dec-2008 01:20:01] PHP Parse error:  syntax error, unexpected ',' in /home/y1910061/public_html/y1910061/cron_one.php on line 177
+[26-Dec-2008 01:20:02] PHP Parse error:  syntax error, unexpected ',' in /home/y1910061/public_html/y1910061/cron_one.php on line 177
+[26-Dec-2008 01:20:02] PHP Parse error:  syntax error, unexpected ',' in /home/y1910061/public_html/y1910061/cron_one.php on line 177
+[26-Dec-2008 01:20:02] PHP Parse error:  syntax error, unexpected ',' in /home/y1910061/public_html/y1910061/cron_one.php on line 177
+[26-Dec-2008 01:20:14] PHP Parse error:  syntax error, unexpected ',' in /home/y1910061/public_html/y1910061/cron_one.php on line 177
+[16-Jan-2009 05:42:01] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 05:45:02] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 05:45:02] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 05:45:02] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 05:45:03] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 05:45:03] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 05:48:01] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 05:54:01] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 06:00:09] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 06:00:09] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 06:00:09] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 06:00:09] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 06:00:09] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 06:00:09] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 06:06:01] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 06:12:01] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 06:15:02] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 06:15:02] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 06:15:02] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 06:15:02] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[16-Jan-2009 06:15:02] PHP Parse error:  syntax error, unexpected '}' in /home/y1910061/public_html/y1910061/read-reports.php on line 23
+[03-Feb-2009 23:19:52] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'y1910061_travian'@'75.126.146.196' (using password: YES) in /home/y1910061/public_html/y1910061/db.php on line 2
+[03-Feb-2009 23:22:08] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'y1910061_travian'@'75.126.146.196' (using password: YES) in /home/y1910061/public_html/y1910061/db.php on line 2
+[03-Feb-2009 23:22:10] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'y1910061_travian'@'75.126.146.196' (using password: YES) in /home/y1910061/public_html/y1910061/db.php on line 2
+[03-Feb-2009 23:22:33] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'y1910061_travian'@'75.126.146.196' (using password: YES) in /home/y1910061/public_html/y1910061/db.php on line 2
+[03-Feb-2009 23:22:35] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'y1910061_travian'@'75.126.146.196' (using password: YES) in /home/y1910061/public_html/y1910061/db.php on line 2
+[04-Feb-2009 00:35:06] PHP Warning:  unlink(/home/y1910061/public_html/y1910061/map.sql): No such file or directory in /home/y1910061/public_html/y1910061/world.php on line 9
+[06-Feb-2009 00:45:10] PHP Parse error:  syntax error, unexpected T_EXIT in /home/y1910061/public_html/y1910061/viewpop.php on line 25
+[06-Feb-2009 21:06:29] PHP Parse error:  syntax error, unexpected ')' in /home/y1910061/public_html/y1910061/viewpop.php on line 55
+[09-Feb-2009 01:52:23] PHP Parse error:  syntax error, unexpected '[', expecting ']' in /home/y1910061/public_html/y1910061/all-reports.php on line 28
+[10-Feb-2009 21:05:05] PHP Notice:  Undefined variable: cart_capaciy in /home/y1910061/public_html/y1910061/transfer.php on line 486
+[10-Feb-2009 22:18:19] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/y1910061/public_html/y1910061/viewpop.php on line 59
+[10-Feb-2009 22:40:09] PHP Parse error:  syntax error, unexpected '[' in /home/y1910061/public_html/y1910061/viewpop.php on line 96
+[12-Feb-2009 16:47:59] PHP Warning:  mysql_connect(): Host '75.126.146.196' is not allowed to connect to this MySQL server in /home/y1910061/public_html/y1910061/db.php on line 2
+[12-Feb-2009 16:47:59] PHP Warning:  mysql_query(): Access denied for user 'y1910061'@'localhost' (using password: NO) in /home/y1910061/public_html/y1910061/cron_one.php on line 5
+[12-Feb-2009 16:47:59] PHP Warning:  mysql_query(): A link to the server could not be established in /home/y1910061/public_html/y1910061/cron_one.php on line 5
+[16-Feb-2009 00:35:22] PHP Warning:  unlink(/home/y1910061/public_html/y1910061/map.sql): No such file or directory in /home/y1910061/public_html/y1910061/world.php on line 13
+[24-Feb-2009 00:30:03] PHP Warning:  unlink(/home/y1910061/public_html/y1910061/map.sql): No such file or directory in /home/y1910061/public_html/y1910061/world.php on line 13
